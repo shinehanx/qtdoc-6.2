@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- metaobjects.qdoc -->
+  <title>元对象系统 | Qt Core 6.2.3 | Qt6 中文参考手册</title>
+  <link rel="stylesheet" type="text/css" href="http://qtdoc.cutebook.net/qtcore/style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="http://qtdoc.cutebook.net/qtcore/../qtdoc/index.html">Qt 6.2</a></li>
+<li><a href="http://qtdoc.cutebook.net/qtcore/qtcore-index.html">Qt Core</a></li>
+<li>元对象系统</li>
+<li id="buildversion"><a href="http://qtdoc.cutebook.net/qtcore/qtcore-index.html">Qt 6.2&#x2e;3 参考文档</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">元对象系统(The Meta-Object System)</h1>
+<!-- $$$metaobjects.html-description -->
+<div class="descr" id="details">
+<p>Qt的元对象系统为对象间通信、运行时类型信息和动态属性系统提供了信号和槽机制。</p>
+<p>元对象系统基于三件事：</p>
+<ol class="1" type="1"><li><a href="http://qtdoc.cutebook.net/qtcore/qobject.html">QObject</a> 类为可以利用元对象系统的对象提供了一个基类。</li>
+<li>类声明为private的 <a href="http://qtdoc.cutebook.net/qtcore/qobject.html#Q_OBJECT">Q_OBJECT</a> 宏用于启用元对象功能，例如动态属性、信号和槽。</li>
+<li><a href="http://qtdoc.cutebook.net/qtcore/../qtdoc/moc.html">元对象编译器(Meta-Object Compiler)</a> (<code>简写：moc</code>)  为每个 <a href="http://qtdoc.cutebook.net/qtcore/qobject.html">QObject</a> 子类生成实现元对象功能所需的代码。</li>
+</ol>
+<p><code>moc</code> 工具读取C++源文件。如果它找到一个或多个包含 <a href="http://qtdoc.cutebook.net/qtcore/qobject.html#Q_OBJECT">Q_OBJECT</a> 宏的类声明, 它将生成另一个C++源文件，其中包含每个类的元对象代码。此生成的源文件 <code>#include</code>到类的源文件中，要么更常见的是编译并与类的实现链接。</p>
+<p>除了提供 <a href="http://qtdoc.cutebook.net/qtcore/signalsandslots.html">信号和插槽</a> 机制用于对象之间的通信（引入系统的主要原因）之外，元对象代码还提供以下附加功能：</p>
+<ul>
+<li><a href="http://qtdoc.cutebook.net/qtcore/qobject.html#metaObject">QObject::metaObject()</a> 函数返回类的关联 <a href="http://qtdoc.cutebook.net/qtcore/qmetaobject.html">元对象(meta-object)</a> .</li>
+<li><a href="http://qtdoc.cutebook.net/qtcore/qmetaobject.html#className">QMetaObject::className()</a> 在运行时以字符串形式返回类名，而无需通过C++编译器提供本机运行时类型信息 （RTTI） 支持。</li>
+<li><a href="http://qtdoc.cutebook.net/qtcore/qobject.html#inherits">QObject::inherits</a>() 函数返回对象是否是在 <a href="http://qtdoc.cutebook.net/qtcore/qobject.html">QObject</a> 继承树中继承指定类名为参数className的实例</li>
+<li><a href="http://qtdoc.cutebook.net/qtcore/qobject.html#tr">QObject::tr</a>() 翻译<a href="http://qtdoc.cutebook.net/qtcore/../qtdoc/internationalization.html">国际化的字符串</a>.</li>
+<li><a href="http://qtdoc.cutebook.net/qtcore/qobject.html#setProperty">QObject::setProperty</a>() 和 <a href="http://qtdoc.cutebook.net/qtcore/qobject.html#property">QObject::property</a>() ，动态设置属性，和按名称获取属性。</li>
+<li><a href="http://qtdoc.cutebook.net/qtcore/qmetaobject.html#newInstance">QMetaObject::newInstance</a>() 创建类的新实例。</li>
+</ul>
+<span id="qobjectcast"></span><p>还可以在 <a href="http://qtdoc.cutebook.net/qtcore/qobject.html">QObject</a> 类上使用<a href="http://qtdoc.cutebook.net/qtcore/qobject.html#qobject_cast-1">qobject_cast</a>() 执行动态转换。<a href="http://qtdoc.cutebook.net/qtcore/qobject.html#qobject_cast-1">qobject_cast</a>() 函数的行为类似于标准C++的  <code>dynamic_cast()</code>, 其优点是它不需要 RTTI 支持，并且可以跨动态库工作。它尝试将其参数转换为尖括号中指定的指针类型，如果对象类型正确（在运行时确定），则返回非零指针;如果对象的类型不兼容，则返回 <code>nullptr</code>.</p>
+<p>例如，假设 <code>MyWidget</code> 继承自 <a href="http://qtdoc.cutebook.net/qtcore/../qtwidgets/qwidget.html">QWidget</a> 并使用<a href="http://qtdoc.cutebook.net/qtcore/qobject.html#Q_OBJECT">Q_OBJECT</a> 宏声明：</p>
+<pre class="cpp">
+     <span class="type"><a href="http://qtdoc.cutebook.net/qtcore/qobject.html">QObject</a></span> <span class="operator">*</span>obj <span class="operator">=</span> <span class="keyword">new</span> MyWidget;
+</pre>
+<p>类型为<code>QObject *</code> 的 <code>obj</code> 变量实际上引用了一个 <code>MyWidget</code> 对象，因此我们可以适当地转换它：</p>
+<pre class="cpp">
+     <span class="type"><a href="http://qtdoc.cutebook.net/qtcore/../qtwidgets/qwidget.html">QWidget</a></span> <span class="operator">*</span>widget <span class="operator">=</span> qobject_cast<span class="operator">&lt;</span><span class="type"><a href="http://qtdoc.cutebook.net/qtcore/../qtwidgets/qwidget.html">QWidget</a></span> <span class="operator">*</span><span class="operator">&gt;</span>(obj);
+</pre>
+<p>从<a href="http://qtdoc.cutebook.net/qtcore/qobject.html">QObject</a> 到 <a href="http://qtdoc.cutebook.net/qtcore/../qtwidgets/qwidget.html">QWidget</a> 的强制转换是成功的，因为该对象实际上是 <code>MyWidget</code>，它是  <a href="http://qtdoc.cutebook.net/qtcore/../qtwidgets/qwidget.html">QWidget</a>的子类。由于我们知道<code>obj</code> 是 <code>MyWidget</code>，我们也可以将其转换为 <code>MyWidget *</code>:</p>
+<pre class="cpp">
+     MyWidget <span class="operator">*</span>myWidget <span class="operator">=</span> qobject_cast<span class="operator">&lt;</span>MyWidget <span class="operator">*</span><span class="operator">&gt;</span>(obj);
+</pre>
+<p><code>MyWidget</code>的转换是成功的，因为<href="http://qtdoc.cutebook.net/qtcore/qobject.html#qobject_cast-1">qobject_cast</a>() 分内置Qt类型和自定义类型。</p>
+<pre class="cpp">
+     <span class="type"><a href="http://qtdoc.cutebook.net/qtcore/../qtwidgets/qlabel.html">QLabel</a></span> <span class="operator">*</span>label <span class="operator">=</span> qobject_cast<span class="operator">&lt;</span><span class="type"><a href="http://qtdoc.cutebook.net/qtcore/../qtwidgets/qlabel.html">QLabel</a></span> <span class="operator">*</span><span class="operator">&gt;</span>(obj);
+     <span class="comment">// label is 0</span>
+</pre>
+<p>另一方面，转换为< href="http://qtdoc.cutebook.net/qtcore/../qtwidgets/qlabel.html">QLabel</a> 失败。然后将指针设置为 0。这样就可以在运行时根据类型以不同的方式处理不同类型的对象：</p>
+<pre class="cpp">
+     <span class="keyword">if</span> (<span class="type"><a href="http://qtdoc.cutebook.net/qtcore/../qtwidgets/qlabel.html">QLabel</a></span> <span class="operator">*</span>label <span class="operator">=</span> qobject_cast<span class="operator">&lt;</span><span class="type"><a href="http://qtdoc.cutebook.net/qtcore/../qtwidgets/qlabel.html">QLabel</a></span> <span class="operator">*</span><span class="operator">&gt;</span>(obj)) {
+         label<span class="operator">-</span><span class="operator">&gt;</span>setText(tr(<span class="string">&quot;Ping&quot;</span>));
+     } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="type"><a href="http://qtdoc.cutebook.net/qtcore/../qtwidgets/qpushbutton.html">QPushButton</a></span> <span class="operator">*</span>button <span class="operator">=</span> qobject_cast<span class="operator">&lt;</span><span class="type"><a href="http://qtdoc.cutebook.net/qtcore/../qtwidgets/qpushbutton.html">QPushButton</a></span> <span class="operator">*</span><span class="operator">&gt;</span>(obj)) {
+         button<span class="operator">-</span><span class="operator">&gt;</span>setText(tr(<span class="string">&quot;Pong!&quot;</span>));
+     }
+</pre>
+<p>虽然可以使用<a href="http://qtdoc.cutebook.net/qtcore/qobject.html">QObject</a>作为基类，而不使用<a href="http://qtdoc.cutebook.net/qtcore/qobject.html#Q_OBJECT">Q_OBJECT</a>宏和元对象代码，但如果不使用<a href="http://qtdoc.cutebook.net/qtcore/qobject.html#Q_OBJECT">Q_OBJECT宏，则信号和插槽以及此处描述的其他功能都将不可用</a>。从元对象系统的角度来看，没有元代码的<a href="http://qtdoc.cutebook.net/qtcore/qobject.html">QObject</a>子类等效于其最接近的元对象代码的祖先。 这意味着，例如，<a href="http://qtdoc.cutebook.net/qtcore/qmetaobject.html#className">QMetaObject::className</a>() 将不返回类的实际名称，而是返回此祖先的类名。</p>
+<p>因此，我们强烈建议 <a href="http://qtdoc.cutebook.net/qtcore/qobject.html">QObject</a> 的所有子类都使用 <a href="http://qtdoc.cutebook.net/qtcore/qobject.html#Q_OBJECT">Q_OBJECT</a>宏，无论它们是否实际使用信号、槽和属性。</p>
+</div>
+<p><b>另请参阅</b><a href="http://qtdoc.cutebook.net/qtcore/qmetaobject.html">QMetaObject</a>，<a href="http://qtdoc.cutebook.net/qtcore/properties.html">Qt的属性系统</a>，以及<a href="http://qtdoc.cutebook.net/qtcore/signalsandslots.html">信号和插槽</a>。</p>
+<!-- @@@metaobjects.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 Qt Company Ltd. 此处包含的文档贡献是其各自所有者的版权。
+   <br/>    此处提供的文档是根据自由软件基金会发布的<a href="http://www.gnu.org/licenses/fdl.html"> GNU 自由文档许可证 1.3 版</a> 的条款授予许可的。<br/>    Qt 和相应的商标是Qt Company Ltd.在芬兰和/或全球其他国家/地区的商标。所有其他商标均为其各自所有者的财产。</p>
+</div>
+</body>
+</html>
