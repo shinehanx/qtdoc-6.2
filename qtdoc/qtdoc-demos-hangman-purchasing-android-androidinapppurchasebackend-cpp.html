@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtpurchasing-overview.qdoc -->
+  <title>In-App purchasing demo | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 6.2</a></li>
+<li>In-App purchasing demo</li>
+<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">In-App purchasing demo</h1>
+<pre class="cpp">
+ <span class="comment">/****************************************************************************
+ **
+ ** Copyright (C) 2021 The Qt Company Ltd.
+ ** Contact: https://www.qt.io/licensing/
+ **
+ ** This file is part of the examples of the Qt Toolkit.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** Commercial License Usage
+ ** Licensees holding valid commercial Qt licenses may use this file in
+ ** accordance with the commercial license agreement provided with the
+ ** Software or, alternatively, in accordance with the terms contained in
+ ** a written agreement between you and The Qt Company. For licensing terms
+ ** and conditions see https://www.qt.io/terms-conditions. For further
+ ** information use the contact form at https://www.qt.io/contact-us.
+ **
+ ** BSD License Usage
+ ** Alternatively, you may use this file under the terms of the BSD license
+ ** as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of The Qt Company Ltd nor the names of its
+ **     contributors may be used to endorse or promote products derived
+ **     from this software without specific prior written permission.
+ **
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ **
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ <span class="preprocessor">#include &lt;QDebug&gt;</span>
+
+ <span class="preprocessor">#include &lt;QJniEnvironment&gt;</span>
+ <span class="preprocessor">#include &lt;QtCore&gt;</span>
+
+ <span class="preprocessor">#include &quot;androidinapppurchasebackend.h&quot;</span>
+ <span class="preprocessor">#include &quot;androidinappproduct.h&quot;</span>
+ <span class="preprocessor">#include &quot;androidinapptransaction.h&quot;</span>
+ <span class="preprocessor">#include &quot;../inapp/inappstore.h&quot;</span>
+
+ AndroidInAppPurchaseBackend<span class="operator">::</span>AndroidInAppPurchaseBackend(<span class="type"><a href="../qtcore/qobject.html">QObject</a></span> <span class="operator">*</span>parent)
+     : InAppPurchaseBackend(parent)
+     <span class="operator">,</span> m_isReady(<span class="keyword">false</span>)
+ {
+     m_javaObject <span class="operator">=</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(<span class="string">&quot;org/qtproject/qt/android/purchasing/InAppPurchase&quot;</span><span class="operator">,</span>
+                               <span class="string">&quot;(Landroid/content/Context;J)V&quot;</span><span class="operator">,</span>
+                               <span class="type"><a href="../qtcore/qnativeinterface-sub-qtcore.html">QNativeInterface</a></span><span class="operator">::</span><span class="type">QAndroidApplication</span><span class="operator">::</span>context()<span class="operator">,</span>
+                               <span class="keyword">this</span>);
+
+     <span class="keyword">if</span> (<span class="operator">!</span>m_javaObject<span class="operator">.</span>isValid()) {
+         <a href="../qtcore/qtglobal.html#qWarning">qWarning</a>(<span class="string">&quot;Cannot initialize IAP backend for Android due to missing dependency: InAppPurchase class&quot;</span>);
+         <span class="keyword">return</span>;
+     }
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>initialize()
+ {
+     m_javaObject<span class="operator">.</span>callMethod<span class="operator">&lt;</span><span class="type">void</span><span class="operator">&gt;</span>(<span class="string">&quot;initializeConnection&quot;</span>);
+ }
+
+ bool AndroidInAppPurchaseBackend<span class="operator">::</span>isReady() <span class="keyword">const</span>
+ {
+     <span class="type"><a href="../qtcore/qmutexlocker.html">QMutexLocker</a></span> locker(<span class="operator">&amp;</span>m_mutex);
+     <span class="keyword">return</span> m_isReady;
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>restorePurchases()
+ {
+     <span class="keyword">for</span> (<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>purchasedUnlockeble : purchasedUnlockebles) {
+         InAppProduct <span class="operator">*</span>product <span class="operator">=</span> store()<span class="operator">-</span><span class="operator">&gt;</span>registeredProduct(purchasedUnlockeble);
+         Q_ASSERT(product <span class="operator">!</span><span class="operator">=</span> <span class="number">0</span>);
+
+         checkFinalizationStatus(product<span class="operator">,</span> InAppTransaction<span class="operator">::</span>PurchaseRestored);
+     }
+
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>queryProducts(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qlist.html">QList</a></span><span class="operator">&lt;</span>Product<span class="operator">&gt;</span> <span class="operator">&amp;</span>products)
+ {
+     <span class="type"><a href="../qtcore/qmutexlocker.html">QMutexLocker</a></span> locker(<span class="operator">&amp;</span>m_mutex);
+     <span class="type"><a href="../qtcore/qjnienvironment.html">QJniEnvironment</a></span> environment;
+
+     <span class="type"><a href="../qtcore/qstringlist.html">QStringList</a></span> newProducts;
+     <span class="keyword">for</span> (<span class="type">int</span> i <span class="operator">=</span> <span class="number">0</span>; i <span class="operator">&lt;</span> products<span class="operator">.</span>size(); <span class="operator">+</span><span class="operator">+</span>i) {
+         <span class="keyword">const</span> Product <span class="operator">&amp;</span>product <span class="operator">=</span> products<span class="operator">.</span>at(i);
+         <span class="keyword">if</span> (m_productTypeForPendingId<span class="operator">.</span>contains(product<span class="operator">.</span>identifier)) {
+             <a href="../qtcore/qtglobal.html#qWarning">qWarning</a>(<span class="string">&quot;Product query already pending for %s&quot;</span><span class="operator">,</span> <a href="../qtcore/qtglobal.html#qPrintable">qPrintable</a>(product<span class="operator">.</span>identifier));
+             <span class="keyword">continue</span>;
+         }
+         <span class="keyword">else</span>{
+             m_productTypeForPendingId<span class="operator">[</span>product<span class="operator">.</span>identifier<span class="operator">]</span> <span class="operator">=</span> product<span class="operator">.</span>productType;
+             newProducts<span class="operator">.</span>append(product<span class="operator">.</span>identifier);
+         }
+     }
+
+     <span class="keyword">if</span> (newProducts<span class="operator">.</span>isEmpty())
+         <span class="keyword">return</span>;
+
+     jclass cls <span class="operator">=</span> environment<span class="operator">-</span><span class="operator">&gt;</span>FindClass(<span class="string">&quot;java/lang/String&quot;</span>);
+     jobjectArray productIds <span class="operator">=</span> environment<span class="operator">-</span><span class="operator">&gt;</span>NewObjectArray(newProducts<span class="operator">.</span>size()<span class="operator">,</span> cls<span class="operator">,</span> <span class="number">0</span>);
+     environment<span class="operator">-</span><span class="operator">&gt;</span>DeleteLocalRef(cls);
+
+     <span class="keyword">for</span> (<span class="type">int</span> i <span class="operator">=</span> <span class="number">0</span>; i <span class="operator">&lt;</span> newProducts<span class="operator">.</span>size(); <span class="operator">+</span><span class="operator">+</span>i) {
+         <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span> identifier <span class="operator">=</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span><span class="operator">::</span>fromString(newProducts<span class="operator">.</span>at(i));
+         environment<span class="operator">-</span><span class="operator">&gt;</span>SetObjectArrayElement(productIds<span class="operator">,</span> i<span class="operator">,</span> identifier<span class="operator">.</span>object());
+     }
+
+     m_javaObject<span class="operator">.</span>callMethod<span class="operator">&lt;</span><span class="type">void</span><span class="operator">&gt;</span>(<span class="string">&quot;queryDetails&quot;</span><span class="operator">,</span>
+                                   <span class="string">&quot;([Ljava/lang/String;)V&quot;</span><span class="operator">,</span>
+                                   productIds);
+     environment<span class="operator">-</span><span class="operator">&gt;</span>DeleteLocalRef(productIds);
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>queryProduct(InAppProduct<span class="operator">::</span>ProductType productType<span class="operator">,</span>
+                                                 <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>identifier)
+ {
+     queryProducts(<span class="type"><a href="../qtcore/qlist.html">QList</a></span><span class="operator">&lt;</span>Product<span class="operator">&gt;</span>() <span class="operator">&lt;</span><span class="operator">&lt;</span> Product(productType<span class="operator">,</span> identifier));
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>setPlatformProperty(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>propertyName<span class="operator">,</span> <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>value)
+ {
+     <span class="type"><a href="../qtcore/qmutexlocker.html">QMutexLocker</a></span> locker(<span class="operator">&amp;</span>m_mutex);
+     <span class="keyword">if</span> (propertyName<span class="operator">.</span>compare(<span class="type"><a href="../qtcore/qstring.html#QStringLiteral">QStringLiteral</a></span>(<span class="string">&quot;AndroidPublicKey&quot;</span>)<span class="operator">,</span> <span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>CaseInsensitive) <span class="operator">=</span><span class="operator">=</span> <span class="number">0</span>) {
+         m_javaObject<span class="operator">.</span>callMethod<span class="operator">&lt;</span><span class="type">void</span><span class="operator">&gt;</span>(<span class="string">&quot;setPublicKey&quot;</span><span class="operator">,</span>
+                                       <span class="string">&quot;(Ljava/lang/String;)V&quot;</span><span class="operator">,</span>
+                                       <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span><span class="operator">::</span>fromString(value)<span class="operator">.</span>object<span class="operator">&lt;</span>jstring<span class="operator">&gt;</span>());
+     }
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>consumeTransaction(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>purchaseToken)
+ {
+     <span class="type"><a href="../qtcore/qmutexlocker.html">QMutexLocker</a></span> locker(<span class="operator">&amp;</span>m_mutex);
+     m_javaObject<span class="operator">.</span>callMethod<span class="operator">&lt;</span><span class="type">void</span><span class="operator">&gt;</span>(<span class="string">&quot;consumePurchase&quot;</span><span class="operator">,</span>
+                                   <span class="string">&quot;(Ljava/lang/String;)V&quot;</span><span class="operator">,</span>
+                                   <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span><span class="operator">::</span>fromString(purchaseToken)<span class="operator">.</span>object<span class="operator">&lt;</span>jstring<span class="operator">&gt;</span>());
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>registerFinalizedUnlockable(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>purchaseToken)
+ {
+     <span class="type"><a href="../qtcore/qmutexlocker.html">QMutexLocker</a></span> locker(<span class="operator">&amp;</span>m_mutex);
+     m_javaObject<span class="operator">.</span>callMethod<span class="operator">&lt;</span><span class="type">void</span><span class="operator">&gt;</span>(<span class="string">&quot;acknowledgeUnlockablePurchase&quot;</span><span class="operator">,</span>
+                                   <span class="string">&quot;(Ljava/lang/String;)V&quot;</span><span class="operator">,</span>
+                                   <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span><span class="operator">::</span>fromString(purchaseToken)<span class="operator">.</span>object<span class="operator">&lt;</span>jstring<span class="operator">&gt;</span>());
+ }
+
+ bool AndroidInAppPurchaseBackend<span class="operator">::</span>transactionFinalizedForProduct(InAppProduct <span class="operator">*</span>product)
+ {
+     Q_ASSERT(m_infoForPurchase<span class="operator">.</span>contains(product<span class="operator">-</span><span class="operator">&gt;</span>identifier()));
+
+     <span class="keyword">if</span> (product<span class="operator">-</span><span class="operator">&gt;</span>productType() <span class="operator">!</span><span class="operator">=</span> InAppProduct<span class="operator">::</span>Consumable <span class="operator">&amp;</span><span class="operator">&amp;</span> purchasedUnlockebles<span class="operator">.</span>contains(product<span class="operator">-</span><span class="operator">&gt;</span>identifier()))
+     {
+         <span class="keyword">return</span> <span class="keyword">true</span>;
+     }
+     <span class="keyword">return</span> <span class="keyword">false</span>;
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>checkFinalizationStatus(InAppProduct <span class="operator">*</span>product<span class="operator">,</span>
+                                                            InAppTransaction<span class="operator">::</span>TransactionStatus status)
+ {
+     <span class="comment">// Verifies the finalization status of an item based on the following logic:</span>
+     <span class="comment">// 1. If the item is not purchased yet, do nothing (it's either never been purchased, or it's a</span>
+     <span class="comment">//    consumed consumable.</span>
+     <span class="comment">// 2. If the item is purchased, and it's a consumable, it's unfinalized. Emit a new transaction.</span>
+     <span class="comment">//    Consumable items are consumed when they are finalized.</span>
+     <span class="comment">// 3. If the item is purchased, and it's an unlockable, check the local cache for finalized</span>
+     <span class="comment">//    unlockable purchases. If it's not there, then the transaction is unfinalized. This means</span>
+     <span class="comment">//    that if the cache gets deleted or corrupted, the worst-case scenario is that the transactions</span>
+     <span class="comment">//    are republished.</span>
+     <span class="type"><a href="../qtcore/qhash.html">QHash</a></span><span class="operator">&lt;</span><span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> PurchaseInfo<span class="operator">&gt;</span><span class="operator">::</span>iterator it <span class="operator">=</span> m_infoForPurchase<span class="operator">.</span>find(product<span class="operator">-</span><span class="operator">&gt;</span>identifier());
+
+     <span class="keyword">if</span> (it <span class="operator">=</span><span class="operator">=</span> m_infoForPurchase<span class="operator">.</span>end()) {
+         <span class="keyword">return</span>;
+     }
+
+     <span class="keyword">const</span> PurchaseInfo <span class="operator">&amp;</span>info <span class="operator">=</span> it<span class="operator">.</span>value();
+     <span class="keyword">if</span> (transactionFinalizedForProduct(product)) {
+         AndroidInAppTransaction <span class="operator">*</span>transaction <span class="operator">=</span> <span class="keyword">new</span> AndroidInAppTransaction(info<span class="operator">.</span>signature<span class="operator">,</span>
+                                                                              info<span class="operator">.</span>data<span class="operator">,</span>
+                                                                              info<span class="operator">.</span>purchaseToken<span class="operator">,</span>
+                                                                              info<span class="operator">.</span>orderId<span class="operator">,</span>
+                                                                              status<span class="operator">,</span>
+                                                                              product<span class="operator">,</span>
+                                                                              info<span class="operator">.</span>timestamp<span class="operator">,</span>
+                                                                              InAppTransaction<span class="operator">::</span>NoFailure<span class="operator">,</span>
+                                                                              <span class="type"><a href="../qtcore/qstring.html">QString</a></span>()<span class="operator">,</span>
+                                                                              <span class="keyword">this</span>);
+         <span class="keyword">emit</span> transactionReady(transaction);
+     }
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>registerProduct(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>productId<span class="operator">,</span>
+                                                    <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>price<span class="operator">,</span>
+                                                    <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>title<span class="operator">,</span>
+                                                    <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>description)
+ {
+     <span class="type"><a href="../qtcore/qmutexlocker.html">QMutexLocker</a></span> locker(<span class="operator">&amp;</span>m_mutex);
+     <span class="type"><a href="../qtcore/qhash.html">QHash</a></span><span class="operator">&lt;</span><span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> InAppProduct<span class="operator">::</span>ProductType<span class="operator">&gt;</span><span class="operator">::</span>iterator it <span class="operator">=</span> m_productTypeForPendingId<span class="operator">.</span>find(productId);
+     Q_ASSERT(it <span class="operator">!</span><span class="operator">=</span> m_productTypeForPendingId<span class="operator">.</span>end());
+
+     AndroidInAppProduct <span class="operator">*</span>product <span class="operator">=</span> <span class="keyword">new</span> AndroidInAppProduct(<span class="keyword">this</span><span class="operator">,</span> price<span class="operator">,</span> title<span class="operator">,</span> description<span class="operator">,</span> it<span class="operator">.</span>value()<span class="operator">,</span> it<span class="operator">.</span>key()<span class="operator">,</span> <span class="keyword">this</span>);
+
+     <span class="keyword">emit</span> productQueryDone(product);
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>registerPurchased(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>identifier<span class="operator">,</span>
+                                                      <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>signature<span class="operator">,</span>
+                                                      <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>data<span class="operator">,</span>
+                                                      <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>purchaseToken<span class="operator">,</span>
+                                                      <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>orderId<span class="operator">,</span>
+                                                      <span class="keyword">const</span> <span class="type"><a href="../qtcore/qdatetime.html">QDateTime</a></span> <span class="operator">&amp;</span>timestamp)
+ {
+     <span class="type"><a href="../qtcore/qmutexlocker.html">QMutexLocker</a></span> locker(<span class="operator">&amp;</span>m_mutex);
+     m_infoForPurchase<span class="operator">.</span>insert(identifier<span class="operator">,</span> PurchaseInfo(signature<span class="operator">,</span> data<span class="operator">,</span> purchaseToken<span class="operator">,</span> orderId<span class="operator">,</span> timestamp));
+
+     <span class="type"><a href="../qtcore/qhash.html">QHash</a></span><span class="operator">&lt;</span><span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> InAppProduct<span class="operator">::</span>ProductType<span class="operator">&gt;</span><span class="operator">::</span>iterator it <span class="operator">=</span> m_productTypeForPendingId<span class="operator">.</span>find(identifier);
+     <span class="keyword">if</span> (it<span class="operator">.</span>value() <span class="operator">=</span><span class="operator">=</span> InAppProduct<span class="operator">::</span>Unlockable <span class="operator">&amp;</span><span class="operator">&amp;</span> <span class="operator">!</span>purchasedUnlockebles<span class="operator">.</span>contains(identifier))
+         purchasedUnlockebles<span class="operator">.</span>append(identifier);
+
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>registerReady()
+ {
+     <span class="type"><a href="../qtcore/qmutexlocker.html">QMutexLocker</a></span> locker(<span class="operator">&amp;</span>m_mutex);
+     m_isReady <span class="operator">=</span> <span class="keyword">true</span>;
+     <span class="keyword">emit</span> ready();
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>purchaseProduct(AndroidInAppProduct <span class="operator">*</span>product)
+ {
+     <span class="type"><a href="../qtcore/qmutexlocker.html">QMutexLocker</a></span> locker(<span class="operator">&amp;</span>m_mutex);
+     <span class="keyword">if</span> (<span class="operator">!</span>m_javaObject<span class="operator">.</span>isValid()) {
+         purchaseFailed(product<span class="operator">,</span> InAppTransaction<span class="operator">::</span>ErrorOccurred<span class="operator">,</span> <span class="type"><a href="../qtcore/qstring.html#QStringLiteral">QStringLiteral</a></span>(<span class="string">&quot;Java backend is not initialized&quot;</span>));
+         <span class="keyword">return</span>;
+     }
+
+     <span class="type">int</span> requestCode <span class="operator">=</span> <span class="number">0</span>;
+     <span class="keyword">while</span> (m_activePurchaseRequests<span class="operator">.</span>contains(requestCode)) {
+         requestCode<span class="operator">+</span><span class="operator">+</span>;
+         <span class="keyword">if</span> (requestCode <span class="operator">=</span><span class="operator">=</span> <span class="number">0</span>) {
+             <a href="../qtcore/qtglobal.html#qWarning">qWarning</a>(<span class="string">&quot;No available request code for purchase request.&quot;</span>);
+             <span class="keyword">return</span>;
+         }
+     }
+
+     m_activePurchaseRequests<span class="operator">[</span>requestCode<span class="operator">]</span> <span class="operator">=</span> product;
+
+     m_javaObject<span class="operator">.</span>callMethod<span class="operator">&lt;</span><span class="type">void</span><span class="operator">&gt;</span>(<span class="string">&quot;launchBillingFlow&quot;</span><span class="operator">,</span>
+                                   <span class="string">&quot;(Ljava/lang/String;I)V&quot;</span><span class="operator">,</span>
+                                   <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span><span class="operator">::</span>fromString(product<span class="operator">-</span><span class="operator">&gt;</span>identifier())<span class="operator">.</span>object<span class="operator">&lt;</span>jstring<span class="operator">&gt;</span>()<span class="operator">,</span>
+                                   requestCode);
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>purchaseFailed(<span class="type">int</span> requestCode<span class="operator">,</span> <span class="type">int</span> failureReason<span class="operator">,</span> <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>errorString)
+ {
+     <span class="type"><a href="../qtcore/qmutexlocker.html">QMutexLocker</a></span> locker(<span class="operator">&amp;</span>m_mutex);
+     InAppProduct <span class="operator">*</span>product <span class="operator">=</span> m_activePurchaseRequests<span class="operator">.</span>take(requestCode);
+     <span class="keyword">if</span> (product <span class="operator">=</span><span class="operator">=</span> <span class="number">0</span>) {
+         <a href="../qtcore/qtglobal.html#qWarning">qWarning</a>(<span class="string">&quot;No product registered for requestCode %d&quot;</span><span class="operator">,</span> requestCode);
+         <span class="keyword">return</span>;
+     }
+
+     purchaseFailed(product<span class="operator">,</span> failureReason<span class="operator">,</span> errorString);
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>purchaseFailed(InAppProduct <span class="operator">*</span>product<span class="operator">,</span> <span class="type">int</span> failureReason<span class="operator">,</span> <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>errorString)
+ {
+     InAppTransaction <span class="operator">*</span>transaction <span class="operator">=</span> <span class="keyword">new</span> AndroidInAppTransaction(<span class="type"><a href="../qtcore/qstring.html">QString</a></span>()<span class="operator">,</span>
+                                                                   <span class="type"><a href="../qtcore/qstring.html">QString</a></span>()<span class="operator">,</span>
+                                                                   <span class="type"><a href="../qtcore/qstring.html">QString</a></span>()<span class="operator">,</span>
+                                                                   <span class="type"><a href="../qtcore/qstring.html">QString</a></span>()<span class="operator">,</span>
+                                                                   InAppTransaction<span class="operator">::</span>PurchaseFailed<span class="operator">,</span>
+                                                                   product<span class="operator">,</span>
+                                                                   <span class="type"><a href="../qtcore/qdatetime.html">QDateTime</a></span>()<span class="operator">,</span>
+                                                                   InAppTransaction<span class="operator">::</span>FailureReason(failureReason)<span class="operator">,</span>
+                                                                   errorString<span class="operator">,</span>
+                                                                   <span class="keyword">this</span>);
+     <span class="keyword">emit</span> transactionReady(transaction);
+ }
+
+ <span class="type">void</span> AndroidInAppPurchaseBackend<span class="operator">::</span>purchaseSucceeded(<span class="type">int</span> requestCode<span class="operator">,</span>
+                                                      <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>signature<span class="operator">,</span>
+                                                      <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>data<span class="operator">,</span>
+                                                      <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>purchaseToken<span class="operator">,</span>
+                                                      <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>orderId<span class="operator">,</span>
+                                                      <span class="keyword">const</span> <span class="type"><a href="../qtcore/qdatetime.html">QDateTime</a></span> <span class="operator">&amp;</span>timestamp)
+
+ {
+     <span class="type"><a href="../qtcore/qmutexlocker.html">QMutexLocker</a></span> locker(<span class="operator">&amp;</span>m_mutex);
+     InAppProduct <span class="operator">*</span>product <span class="operator">=</span> m_activePurchaseRequests<span class="operator">.</span>take(requestCode);
+     <span class="keyword">if</span> (product <span class="operator">=</span><span class="operator">=</span> <span class="number">0</span>) {
+         <a href="../qtcore/qtglobal.html#qWarning">qWarning</a>(<span class="string">&quot;No product registered for requestCode %d&quot;</span><span class="operator">,</span> requestCode);
+         <span class="keyword">return</span>;
+     }
+
+     m_infoForPurchase<span class="operator">.</span>insert(product<span class="operator">-</span><span class="operator">&gt;</span>identifier()<span class="operator">,</span> PurchaseInfo(signature<span class="operator">,</span> data<span class="operator">,</span> purchaseToken<span class="operator">,</span> orderId<span class="operator">,</span> timestamp));
+     InAppTransaction <span class="operator">*</span>transaction <span class="operator">=</span> <span class="keyword">new</span> AndroidInAppTransaction(signature<span class="operator">,</span>
+                                                                   data<span class="operator">,</span>
+                                                                   purchaseToken<span class="operator">,</span>
+                                                                   orderId<span class="operator">,</span>
+                                                                   InAppTransaction<span class="operator">::</span>PurchaseApproved<span class="operator">,</span>
+                                                                   product<span class="operator">,</span>
+                                                                   timestamp<span class="operator">,</span>
+                                                                   InAppTransaction<span class="operator">::</span>NoFailure<span class="operator">,</span>
+                                                                   <span class="type"><a href="../qtcore/qstring.html">QString</a></span>()<span class="operator">,</span>
+                                                                   <span class="keyword">this</span>);
+     <span class="keyword">emit</span> transactionReady(transaction);
+ }
+</pre>

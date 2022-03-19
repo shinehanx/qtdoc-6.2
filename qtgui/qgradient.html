@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qbrush.cpp -->
+  <title>QGradient Class | Qt GUI 6.2.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 6.2</a></li>
+<li><a href="qtgui-index.html">Qt GUI</a></li>
+<li><a href="qtgui-module.html">C++ Classes</a></li>
+<li>QGradient</li>
+<li id="buildversion"><a href="qtgui-index.html">Qt 6.2&#x2e;3 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#related-non-members">Related Non-Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QGradient Class</h1>
+<!-- $$$QGradient-brief -->
+<p>The QGradient class is used in combination with <a href="qbrush.html">QBrush</a> to specify gradient fills. <a href="#details">More...</a></p>
+<!-- @@@QGradient -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QGradient&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> CMake:</td><td class="memItemRight bottomAlign"> find_package(Qt6 COMPONENTS Gui REQUIRED) <br/>
+target_link_libraries(mytarget PRIVATE Qt6::Gui)</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += gui</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherited By:</td><td class="memItemRight bottomAlign"> <p><a href="qconicalgradient.html">QConicalGradient</a>, <a href="qlineargradient.html">QLinearGradient</a>, and <a href="qradialgradient.html">QRadialGradient</a></p>
+</td></tr></table></div>
+<ul>
+<li><a href="qgradient-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#CoordinateMode-enum">CoordinateMode</a></b> { LogicalMode, ObjectMode, StretchToDeviceMode, ObjectBoundingMode }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#Preset-enum">Preset</a></b> { WarmFlame, NightFade, SpringWarmth, JuicyPeach, YoungPassion, &hellip;, PerfectBlue }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#Spread-enum">Spread</a></b> { PadSpread, RepeatSpread, ReflectSpread }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#Type-enum">Type</a></b> { LinearGradient, RadialGradient, ConicalGradient, NoGradient }</td></tr>
+</table></div>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#QGradient-1">QGradient</a></b>(QGradient::Preset <i>preset</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGradient::CoordinateMode </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#coordinateMode">coordinateMode</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#setColorAt">setColorAt</a></b>(qreal <i>position</i>, const QColor &amp;<i>color</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#setCoordinateMode">setCoordinateMode</a></b>(QGradient::CoordinateMode <i>mode</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#setSpread">setSpread</a></b>(QGradient::Spread <i>method</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#setStops">setStops</a></b>(const QGradientStops &amp;<i>stopPoints</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGradient::Spread </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#spread">spread</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGradientStops </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#stops">stops</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGradient::Type </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#type">type</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#operator-not-eq">operator!=</a></b>(const QGradient &amp;<i>gradient</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#operator-eq-eq">operator==</a></b>(const QGradient &amp;<i>gradient</i>) const</td></tr>
+</table></div>
+<h2 id="related-non-members">Related Non-Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#QGradientStop-typedef">QGradientStop</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qgradient.html#QGradientStops-typedef">QGradientStops</a></b></td></tr>
+</table></div>
+<!-- $$$QGradient-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>Qt currently supports three types of gradient fills:</p>
+<ul>
+<li><i>Linear</i> gradients interpolate colors between start and end points.</li>
+<li><i>Simple</i> radial gradients interpolate colors between a focal point and end points on a circle surrounding it.</li>
+<li><i>Extended</i> radial gradients interpolate colors between a center and a focal circle.</li>
+<li><i>Conical</i> gradients interpolate colors around a center point.</li>
+</ul>
+<p>A gradient's type can be retrieved using the <a href="qgradient.html#type">type</a>() function. Each of the types is represented by a subclass of QGradient:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th ><a href="qlineargradient.html">QLinearGradient</a></th><th ><a href="qradialgradient.html">QRadialGradient</a></th><th ><a href="qconicalgradient.html">QConicalGradient</a></th></tr></thead>
+<tr valign="top" class="odd"><td ><img src="images/qgradient-linear.png" alt="" /></td><td ><img src="images/qgradient-radial.png" alt="" /></td><td ><img src="images/qgradient-conical.png" alt="" /></td></tr>
+</table></div>
+<p>The colors in a gradient are defined using stop points of the <a href="qgradient.html#QGradientStop-typedef">QGradientStop</a> type; i.e&#x2e;, a position and a color. Use the <a href="qgradient.html#setColorAt">setColorAt</a>() function to define a single stop point. Alternatively, use the <a href="qgradient.html#setStops">setStops</a>() function to define several stop points in one go. Note that the latter function <i>replaces</i> the current set of stop points.</p>
+<p>It is the gradient's complete set of stop points (accessible through the <a href="qgradient.html#stops">stops</a>() function) that describes how the gradient area should be filled. If no stop points have been specified, a gradient of black at 0 to white at 1 is used.</p>
+<p>A diagonal linear gradient from black at (100, 100) to white at (200, 200) could be specified like this:</p>
+<pre class="cpp">
+ <span class="type"><a href="qlineargradient.html">QLinearGradient</a></span> linearGrad(<span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span>(<span class="number">100</span><span class="operator">,</span> <span class="number">100</span>)<span class="operator">,</span> <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span>(<span class="number">200</span><span class="operator">,</span> <span class="number">200</span>));
+ linearGrad<span class="operator">.</span>setColorAt(<span class="number">0</span><span class="operator">,</span> <span class="type">Qt</span><span class="operator">::</span>black);
+ linearGrad<span class="operator">.</span>setColorAt(<span class="number">1</span><span class="operator">,</span> <span class="type">Qt</span><span class="operator">::</span>white);
+</pre>
+<p>A gradient can have an arbitrary number of stop points. The following would create a radial gradient starting with red in the center, blue and then green on the edges:</p>
+<pre class="cpp">
+ <span class="type"><a href="qradialgradient.html">QRadialGradient</a></span> radialGrad(<span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span>(<span class="number">100</span><span class="operator">,</span> <span class="number">100</span>)<span class="operator">,</span> <span class="number">100</span>);
+ radialGrad<span class="operator">.</span>setColorAt(<span class="number">0</span><span class="operator">,</span> <span class="type">Qt</span><span class="operator">::</span>red);
+ radialGrad<span class="operator">.</span>setColorAt(<span class="number">0.5</span><span class="operator">,</span> <span class="type">Qt</span><span class="operator">::</span>blue);
+ radialGrad<span class="operator">.</span>setColorAt(<span class="number">1</span><span class="operator">,</span> <span class="type">Qt</span><span class="operator">::</span>green);
+</pre>
+<p>It is possible to repeat or reflect the gradient outside its area by specifying the <a href="qgradient.html#Spread-enum">spread method</a> using the <a href="qgradient.html#setSpread">setSpread</a>() function. The default is to pad the outside area with the color at the closest stop point. The currently set <a href="qgradient.html#Spread-enum">spread method</a> can be retrieved using the <a href="qgradient.html#spread">spread</a>() function. The <a href="qgradient.html#Spread-enum">QGradient::Spread</a> enum defines three different methods:</p>
+<div class="table"><table class="generic">
+ <tr valign="top" class="odd"><td ><img src="images/qradialgradient-pad.png" alt="" /></td><td ><img src="images/qradialgradient-repeat.png" alt="" /></td><td ><img src="images/qradialgradient-reflect.png" alt="" /></td></tr>
+<tr valign="top" class="even"><td ><a href="qgradient.html#Spread-enum">PadSpread</a></td><td ><a href="qgradient.html#Spread-enum">RepeatSpread</a></td><td ><a href="qgradient.html#Spread-enum">ReflectSpread</a></td></tr>
+</table></div>
+<p>Note that the <a href="qgradient.html#setSpread">setSpread</a>() function only has effect for linear and radial gradients. The reason is that the conical gradient is closed by definition, i.e&#x2e; the <i>conical</i> gradient fills the entire circle from 0 - 360 degrees, while the boundary of a radial or a linear gradient can be specified through its radius or final stop points, respectively.</p>
+<p>The gradient coordinates can be specified in logical coordinates, relative to device coordinates, or relative to object bounding box coordinates. The <a href="qgradient.html#CoordinateMode-enum">coordinate mode</a> can be set using the <a href="qgradient.html#setCoordinateMode">setCoordinateMode</a>() function. The default is <a href="qgradient.html#CoordinateMode-enum">LogicalMode</a>, where the gradient coordinates are specified in the same way as the object coordinates. To retrieve the currently set <a href="qgradient.html#CoordinateMode-enum">coordinate mode</a> use <a href="qgradient.html#coordinateMode">coordinateMode</a>().</p>
+</div>
+<p><b>See also </b><a href="../qtwidgets/qtwidgets-painting-gradients-example.html">The Gradients Example</a> and <a href="qbrush.html">QBrush</a>.</p>
+<!-- @@@QGradient -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$CoordinateMode$$$LogicalMode$$$StretchToDeviceMode$$$ObjectBoundingMode$$$ObjectMode -->
+<h3 class="fn" id="CoordinateMode-enum">enum QGradient::<span class="name">CoordinateMode</span></h3>
+<p>This enum specifies how gradient coordinates map to the paint device on which the gradient is used.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QGradient::LogicalMode</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">This is the default mode. The gradient coordinates are specified logical space just like the object coordinates.</td></tr>
+<tr><td class="topAlign"><code>QGradient::ObjectMode</code></td><td class="topAlign tblval"><code>3</code></td><td class="topAlign">In this mode the gradient coordinates are relative to the bounding rectangle of the object being drawn, with (0,0) in the top left corner, and (1,1) in the bottom right corner of the object's bounding rectangle. This value was added in Qt 5.12.</td></tr>
+<tr><td class="topAlign"><code>QGradient::StretchToDeviceMode</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">In this mode the gradient coordinates are relative to the bounding rectangle of the paint device, with (0,0) in the top left corner, and (1,1) in the bottom right corner of the paint device.</td></tr>
+<tr><td class="topAlign"><code>QGradient::ObjectBoundingMode</code></td><td class="topAlign tblval"><code>2</code></td><td class="topAlign">This mode is the same as ObjectMode, except that the {<a href="qbrush.html#transform">QBrush::transform</a>()} {brush transform}, if any, is applied relative to the logical space instead of the object space. This enum value is deprecated and should not be used in new code.</td></tr>
+</table></div>
+<!-- @@@CoordinateMode -->
+<!-- $$$Preset$$$WarmFlame$$$NightFade$$$SpringWarmth$$$JuicyPeach$$$YoungPassion$$$LadyLips$$$SunnyMorning$$$RainyAshville$$$FrozenDreams$$$WinterNeva$$$DustyGrass$$$TemptingAzure$$$HeavyRain$$$AmyCrisp$$$MeanFruit$$$DeepBlue$$$RipeMalinka$$$CloudyKnoxville$$$MalibuBeach$$$NewLife$$$TrueSunset$$$MorpheusDen$$$RareWind$$$NearMoon$$$WildApple$$$SaintPetersburg$$$PlumPlate$$$EverlastingSky$$$HappyFisher$$$Blessing$$$SharpeyeEagle$$$LadogaBottom$$$LemonGate$$$ItmeoBranding$$$ZeusMiracle$$$OldHat$$$StarWine$$$HappyAcid$$$AwesomePine$$$NewYork$$$ShyRainbow$$$MixedHopes$$$FlyHigh$$$StrongBliss$$$FreshMilk$$$SnowAgain$$$FebruaryInk$$$KindSteel$$$SoftGrass$$$GrownEarly$$$SharpBlues$$$ShadyWater$$$DirtyBeauty$$$GreatWhale$$$TeenNotebook$$$PoliteRumors$$$SweetPeriod$$$WideMatrix$$$SoftCherish$$$RedSalvation$$$BurningSpring$$$NightParty$$$SkyGlider$$$HeavenPeach$$$PurpleDivision$$$AquaSplash$$$SpikyNaga$$$LoveKiss$$$CleanMirror$$$PremiumDark$$$ColdEvening$$$CochitiLake$$$SummerGames$$$PassionateBed$$$MountainRock$$$DesertHump$$$JungleDay$$$PhoenixStart$$$OctoberSilence$$$FarawayRiver$$$AlchemistLab$$$OverSun$$$PremiumWhite$$$MarsParty$$$EternalConstance$$$JapanBlush$$$SmilingRain$$$CloudyApple$$$BigMango$$$HealthyWater$$$AmourAmour$$$RiskyConcrete$$$StrongStick$$$ViciousStance$$$PaloAlto$$$HappyMemories$$$MidnightBloom$$$Crystalline$$$PartyBliss$$$ConfidentCloud$$$LeCocktail$$$RiverCity$$$FrozenBerry$$$ChildCare$$$FlyingLemon$$$NewRetrowave$$$HiddenJaguar$$$AboveTheSky$$$Nega$$$DenseWater$$$Seashore$$$MarbleWall$$$CheerfulCaramel$$$NightSky$$$MagicLake$$$YoungGrass$$$ColorfulPeach$$$GentleCare$$$PlumBath$$$HappyUnicorn$$$AfricanField$$$SolidStone$$$OrangeJuice$$$GlassWater$$$NorthMiracle$$$FruitBlend$$$MillenniumPine$$$HighFlight$$$MoleHall$$$SpaceShift$$$ForestInei$$$RoyalGarden$$$RichMetal$$$JuicyCake$$$SmartIndigo$$$SandStrike$$$NorseBeauty$$$AquaGuidance$$$SunVeggie$$$SeaLord$$$BlackSea$$$GrassShampoo$$$LandingAircraft$$$WitchDance$$$SleeplessNight$$$AngelCare$$$CrystalRiver$$$SoftLipstick$$$SaltMountain$$$PerfectWhite$$$FreshOasis$$$StrictNovember$$$MorningSalad$$$DeepRelief$$$SeaStrike$$$NightCall$$$SupremeSky$$$LightBlue$$$MindCrawl$$$LilyMeadow$$$SugarLollipop$$$SweetDessert$$$MagicRay$$$TeenParty$$$FrozenHeat$$$GagarinView$$$FabledSunset$$$PerfectBlue$$$NumPresets -->
+<h3 class="fn" id="Preset-enum"><code>[since 5.12] </code>enum QGradient::<span class="name">Preset</span></h3>
+<p>This enum specifies a set of predefined presets for <a href="qgradient.html">QGradient</a>, based on the gradients from <a href="https://webgradients.com/">https://webgradients.com/</a>.</p>
+<div class="table"><table class="valuelist"><tr><th class="tblConst">Constant</th><th class="tblVal">Value</th></tr>
+<tr><td class="topAlign"><code>QGradient::WarmFlame</code></td><td class="topAlign tblval"><code>1</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::NightFade</code></td><td class="topAlign tblval"><code>2</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SpringWarmth</code></td><td class="topAlign tblval"><code>3</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::JuicyPeach</code></td><td class="topAlign tblval"><code>4</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::YoungPassion</code></td><td class="topAlign tblval"><code>5</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::LadyLips</code></td><td class="topAlign tblval"><code>6</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SunnyMorning</code></td><td class="topAlign tblval"><code>7</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::RainyAshville</code></td><td class="topAlign tblval"><code>8</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::FrozenDreams</code></td><td class="topAlign tblval"><code>9</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::WinterNeva</code></td><td class="topAlign tblval"><code>10</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::DustyGrass</code></td><td class="topAlign tblval"><code>11</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::TemptingAzure</code></td><td class="topAlign tblval"><code>12</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::HeavyRain</code></td><td class="topAlign tblval"><code>13</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::AmyCrisp</code></td><td class="topAlign tblval"><code>14</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MeanFruit</code></td><td class="topAlign tblval"><code>15</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::DeepBlue</code></td><td class="topAlign tblval"><code>16</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::RipeMalinka</code></td><td class="topAlign tblval"><code>17</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::CloudyKnoxville</code></td><td class="topAlign tblval"><code>18</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MalibuBeach</code></td><td class="topAlign tblval"><code>19</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::NewLife</code></td><td class="topAlign tblval"><code>20</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::TrueSunset</code></td><td class="topAlign tblval"><code>21</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MorpheusDen</code></td><td class="topAlign tblval"><code>22</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::RareWind</code></td><td class="topAlign tblval"><code>23</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::NearMoon</code></td><td class="topAlign tblval"><code>24</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::WildApple</code></td><td class="topAlign tblval"><code>25</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SaintPetersburg</code></td><td class="topAlign tblval"><code>26</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::PlumPlate</code></td><td class="topAlign tblval"><code>28</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::EverlastingSky</code></td><td class="topAlign tblval"><code>29</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::HappyFisher</code></td><td class="topAlign tblval"><code>30</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::Blessing</code></td><td class="topAlign tblval"><code>31</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SharpeyeEagle</code></td><td class="topAlign tblval"><code>32</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::LadogaBottom</code></td><td class="topAlign tblval"><code>33</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::LemonGate</code></td><td class="topAlign tblval"><code>34</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::ItmeoBranding</code></td><td class="topAlign tblval"><code>35</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::ZeusMiracle</code></td><td class="topAlign tblval"><code>36</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::OldHat</code></td><td class="topAlign tblval"><code>37</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::StarWine</code></td><td class="topAlign tblval"><code>38</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::HappyAcid</code></td><td class="topAlign tblval"><code>41</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::AwesomePine</code></td><td class="topAlign tblval"><code>42</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::NewYork</code></td><td class="topAlign tblval"><code>43</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::ShyRainbow</code></td><td class="topAlign tblval"><code>44</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MixedHopes</code></td><td class="topAlign tblval"><code>46</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::FlyHigh</code></td><td class="topAlign tblval"><code>47</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::StrongBliss</code></td><td class="topAlign tblval"><code>48</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::FreshMilk</code></td><td class="topAlign tblval"><code>49</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SnowAgain</code></td><td class="topAlign tblval"><code>50</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::FebruaryInk</code></td><td class="topAlign tblval"><code>51</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::KindSteel</code></td><td class="topAlign tblval"><code>52</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SoftGrass</code></td><td class="topAlign tblval"><code>53</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::GrownEarly</code></td><td class="topAlign tblval"><code>54</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SharpBlues</code></td><td class="topAlign tblval"><code>55</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::ShadyWater</code></td><td class="topAlign tblval"><code>56</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::DirtyBeauty</code></td><td class="topAlign tblval"><code>57</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::GreatWhale</code></td><td class="topAlign tblval"><code>58</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::TeenNotebook</code></td><td class="topAlign tblval"><code>59</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::PoliteRumors</code></td><td class="topAlign tblval"><code>60</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SweetPeriod</code></td><td class="topAlign tblval"><code>61</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::WideMatrix</code></td><td class="topAlign tblval"><code>62</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SoftCherish</code></td><td class="topAlign tblval"><code>63</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::RedSalvation</code></td><td class="topAlign tblval"><code>64</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::BurningSpring</code></td><td class="topAlign tblval"><code>65</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::NightParty</code></td><td class="topAlign tblval"><code>66</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SkyGlider</code></td><td class="topAlign tblval"><code>67</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::HeavenPeach</code></td><td class="topAlign tblval"><code>68</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::PurpleDivision</code></td><td class="topAlign tblval"><code>69</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::AquaSplash</code></td><td class="topAlign tblval"><code>70</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SpikyNaga</code></td><td class="topAlign tblval"><code>72</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::LoveKiss</code></td><td class="topAlign tblval"><code>73</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::CleanMirror</code></td><td class="topAlign tblval"><code>75</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::PremiumDark</code></td><td class="topAlign tblval"><code>76</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::ColdEvening</code></td><td class="topAlign tblval"><code>77</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::CochitiLake</code></td><td class="topAlign tblval"><code>78</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SummerGames</code></td><td class="topAlign tblval"><code>79</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::PassionateBed</code></td><td class="topAlign tblval"><code>80</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MountainRock</code></td><td class="topAlign tblval"><code>81</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::DesertHump</code></td><td class="topAlign tblval"><code>82</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::JungleDay</code></td><td class="topAlign tblval"><code>83</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::PhoenixStart</code></td><td class="topAlign tblval"><code>84</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::OctoberSilence</code></td><td class="topAlign tblval"><code>85</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::FarawayRiver</code></td><td class="topAlign tblval"><code>86</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::AlchemistLab</code></td><td class="topAlign tblval"><code>87</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::OverSun</code></td><td class="topAlign tblval"><code>88</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::PremiumWhite</code></td><td class="topAlign tblval"><code>89</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MarsParty</code></td><td class="topAlign tblval"><code>90</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::EternalConstance</code></td><td class="topAlign tblval"><code>91</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::JapanBlush</code></td><td class="topAlign tblval"><code>92</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SmilingRain</code></td><td class="topAlign tblval"><code>93</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::CloudyApple</code></td><td class="topAlign tblval"><code>94</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::BigMango</code></td><td class="topAlign tblval"><code>95</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::HealthyWater</code></td><td class="topAlign tblval"><code>96</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::AmourAmour</code></td><td class="topAlign tblval"><code>97</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::RiskyConcrete</code></td><td class="topAlign tblval"><code>98</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::StrongStick</code></td><td class="topAlign tblval"><code>99</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::ViciousStance</code></td><td class="topAlign tblval"><code>100</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::PaloAlto</code></td><td class="topAlign tblval"><code>101</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::HappyMemories</code></td><td class="topAlign tblval"><code>102</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MidnightBloom</code></td><td class="topAlign tblval"><code>103</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::Crystalline</code></td><td class="topAlign tblval"><code>104</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::PartyBliss</code></td><td class="topAlign tblval"><code>106</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::ConfidentCloud</code></td><td class="topAlign tblval"><code>107</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::LeCocktail</code></td><td class="topAlign tblval"><code>108</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::RiverCity</code></td><td class="topAlign tblval"><code>109</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::FrozenBerry</code></td><td class="topAlign tblval"><code>110</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::ChildCare</code></td><td class="topAlign tblval"><code>112</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::FlyingLemon</code></td><td class="topAlign tblval"><code>113</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::NewRetrowave</code></td><td class="topAlign tblval"><code>114</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::HiddenJaguar</code></td><td class="topAlign tblval"><code>115</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::AboveTheSky</code></td><td class="topAlign tblval"><code>116</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::Nega</code></td><td class="topAlign tblval"><code>117</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::DenseWater</code></td><td class="topAlign tblval"><code>118</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::Seashore</code></td><td class="topAlign tblval"><code>120</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MarbleWall</code></td><td class="topAlign tblval"><code>121</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::CheerfulCaramel</code></td><td class="topAlign tblval"><code>122</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::NightSky</code></td><td class="topAlign tblval"><code>123</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MagicLake</code></td><td class="topAlign tblval"><code>124</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::YoungGrass</code></td><td class="topAlign tblval"><code>125</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::ColorfulPeach</code></td><td class="topAlign tblval"><code>126</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::GentleCare</code></td><td class="topAlign tblval"><code>127</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::PlumBath</code></td><td class="topAlign tblval"><code>128</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::HappyUnicorn</code></td><td class="topAlign tblval"><code>129</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::AfricanField</code></td><td class="topAlign tblval"><code>131</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SolidStone</code></td><td class="topAlign tblval"><code>132</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::OrangeJuice</code></td><td class="topAlign tblval"><code>133</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::GlassWater</code></td><td class="topAlign tblval"><code>134</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::NorthMiracle</code></td><td class="topAlign tblval"><code>136</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::FruitBlend</code></td><td class="topAlign tblval"><code>137</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MillenniumPine</code></td><td class="topAlign tblval"><code>138</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::HighFlight</code></td><td class="topAlign tblval"><code>139</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MoleHall</code></td><td class="topAlign tblval"><code>140</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SpaceShift</code></td><td class="topAlign tblval"><code>142</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::ForestInei</code></td><td class="topAlign tblval"><code>143</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::RoyalGarden</code></td><td class="topAlign tblval"><code>144</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::RichMetal</code></td><td class="topAlign tblval"><code>145</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::JuicyCake</code></td><td class="topAlign tblval"><code>146</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SmartIndigo</code></td><td class="topAlign tblval"><code>147</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SandStrike</code></td><td class="topAlign tblval"><code>148</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::NorseBeauty</code></td><td class="topAlign tblval"><code>149</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::AquaGuidance</code></td><td class="topAlign tblval"><code>150</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SunVeggie</code></td><td class="topAlign tblval"><code>151</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SeaLord</code></td><td class="topAlign tblval"><code>152</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::BlackSea</code></td><td class="topAlign tblval"><code>153</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::GrassShampoo</code></td><td class="topAlign tblval"><code>154</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::LandingAircraft</code></td><td class="topAlign tblval"><code>155</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::WitchDance</code></td><td class="topAlign tblval"><code>156</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SleeplessNight</code></td><td class="topAlign tblval"><code>157</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::AngelCare</code></td><td class="topAlign tblval"><code>158</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::CrystalRiver</code></td><td class="topAlign tblval"><code>159</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SoftLipstick</code></td><td class="topAlign tblval"><code>160</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SaltMountain</code></td><td class="topAlign tblval"><code>161</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::PerfectWhite</code></td><td class="topAlign tblval"><code>162</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::FreshOasis</code></td><td class="topAlign tblval"><code>163</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::StrictNovember</code></td><td class="topAlign tblval"><code>164</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MorningSalad</code></td><td class="topAlign tblval"><code>165</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::DeepRelief</code></td><td class="topAlign tblval"><code>166</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SeaStrike</code></td><td class="topAlign tblval"><code>167</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::NightCall</code></td><td class="topAlign tblval"><code>168</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SupremeSky</code></td><td class="topAlign tblval"><code>169</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::LightBlue</code></td><td class="topAlign tblval"><code>170</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MindCrawl</code></td><td class="topAlign tblval"><code>171</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::LilyMeadow</code></td><td class="topAlign tblval"><code>172</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SugarLollipop</code></td><td class="topAlign tblval"><code>173</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::SweetDessert</code></td><td class="topAlign tblval"><code>174</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::MagicRay</code></td><td class="topAlign tblval"><code>175</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::TeenParty</code></td><td class="topAlign tblval"><code>176</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::FrozenHeat</code></td><td class="topAlign tblval"><code>177</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::GagarinView</code></td><td class="topAlign tblval"><code>178</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::FabledSunset</code></td><td class="topAlign tblval"><code>179</code></td></tr>
+<tr><td class="topAlign"><code>QGradient::PerfectBlue</code></td><td class="topAlign tblval"><code>180</code></td></tr>
+</table></div>
+<p>This enum was introduced or modified in Qt 5.12.</p>
+<!-- @@@Preset -->
+<!-- $$$Spread$$$PadSpread$$$ReflectSpread$$$RepeatSpread -->
+<h3 class="fn" id="Spread-enum">enum QGradient::<span class="name">Spread</span></h3>
+<p>Specifies how the area outside the gradient area should be filled.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QGradient::PadSpread</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">The area is filled with the closest stop color. This is the default.</td></tr>
+<tr><td class="topAlign"><code>QGradient::RepeatSpread</code></td><td class="topAlign tblval"><code>2</code></td><td class="topAlign">The gradient is repeated outside the gradient area.</td></tr>
+<tr><td class="topAlign"><code>QGradient::ReflectSpread</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">The gradient is reflected outside the gradient area.</td></tr>
+</table></div>
+<p><b>See also </b><a href="qgradient.html#spread">spread</a>() and <a href="qgradient.html#setSpread">setSpread</a>().</p>
+<!-- @@@Spread -->
+<!-- $$$Type$$$LinearGradient$$$RadialGradient$$$ConicalGradient$$$NoGradient -->
+<h3 class="fn" id="Type-enum">enum QGradient::<span class="name">Type</span></h3>
+<p>Specifies the type of gradient.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QGradient::LinearGradient</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">Interpolates colors between start and end points (<a href="qlineargradient.html">QLinearGradient</a>).</td></tr>
+<tr><td class="topAlign"><code>QGradient::RadialGradient</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">Interpolate colors between a focal point and end points on a circle surrounding it (<a href="qradialgradient.html">QRadialGradient</a>).</td></tr>
+<tr><td class="topAlign"><code>QGradient::ConicalGradient</code></td><td class="topAlign tblval"><code>2</code></td><td class="topAlign">Interpolate colors around a center point (<a href="qconicalgradient.html">QConicalGradient</a>).</td></tr>
+<tr><td class="topAlign"><code>QGradient::NoGradient</code></td><td class="topAlign tblval"><code>3</code></td><td class="topAlign">No gradient is used.</td></tr>
+</table></div>
+<p><b>See also </b><a href="qgradient.html#type">type</a>().</p>
+<!-- @@@Type -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QGradient$$$QGradientQGradient::Preset -->
+<h3 class="fn" id="QGradient-1"><code>[since 5.12] </code>QGradient::<span class="name">QGradient</span>(<span class="type"><a href="qgradient.html#Preset-enum">QGradient::Preset</a></span> <i>preset</i>)</h3>
+<p>Constructs a gradient based on a predefined <i>preset</i>.</p>
+<p>The coordinate mode of the resulting gradient is <a href="qgradient.html#CoordinateMode-enum">QGradient::ObjectMode</a>, allowing the preset to be applied to arbitrary object sizes.</p>
+<p>This function was introduced in Qt 5.12.</p>
+<!-- @@@QGradient -->
+<!-- $$$coordinateMode[overload1]$$$coordinateMode -->
+<h3 class="fn" id="coordinateMode"><span class="type"><a href="qgradient.html#CoordinateMode-enum">QGradient::CoordinateMode</a></span> QGradient::<span class="name">coordinateMode</span>() const</h3>
+<p>Returns the coordinate mode of this gradient. The default mode is <a href="qgradient.html#CoordinateMode-enum">LogicalMode</a>.</p>
+<p><b>See also </b><a href="qgradient.html#setCoordinateMode">setCoordinateMode</a>().</p>
+<!-- @@@coordinateMode -->
+<!-- $$$setColorAt[overload1]$$$setColorAtqrealconstQColor& -->
+<h3 class="fn" id="setColorAt"><span class="type">void</span> QGradient::<span class="name">setColorAt</span>(<span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> <i>position</i>, const <span class="type"><a href="qcolor.html">QColor</a></span> &amp;<i>color</i>)</h3>
+<p>Creates a stop point at the given <i>position</i> with the given <i>color</i>. The given <i>position</i> must be in the range 0 to 1.</p>
+<p><b>See also </b><a href="qgradient.html#setStops">setStops</a>() and <a href="qgradient.html#stops">stops</a>().</p>
+<!-- @@@setColorAt -->
+<!-- $$$setCoordinateMode[overload1]$$$setCoordinateModeQGradient::CoordinateMode -->
+<h3 class="fn" id="setCoordinateMode"><span class="type">void</span> QGradient::<span class="name">setCoordinateMode</span>(<span class="type"><a href="qgradient.html#CoordinateMode-enum">QGradient::CoordinateMode</a></span> <i>mode</i>)</h3>
+<p>Sets the coordinate mode of this gradient to <i>mode</i>. The default mode is <a href="qgradient.html#CoordinateMode-enum">LogicalMode</a>.</p>
+<p><b>See also </b><a href="qgradient.html#coordinateMode">coordinateMode</a>().</p>
+<!-- @@@setCoordinateMode -->
+<!-- $$$setSpread[overload1]$$$setSpreadQGradient::Spread -->
+<h3 class="fn" id="setSpread"><span class="type">void</span> QGradient::<span class="name">setSpread</span>(<span class="type"><a href="qgradient.html#Spread-enum">QGradient::Spread</a></span> <i>method</i>)</h3>
+<p>Specifies the spread <i>method</i> that should be used for this gradient.</p>
+<p>Note that this function only has effect for linear and radial gradients.</p>
+<p><b>See also </b><a href="qgradient.html#spread">spread</a>().</p>
+<!-- @@@setSpread -->
+<!-- $$$setStops[overload1]$$$setStopsconstQGradientStops& -->
+<h3 class="fn" id="setStops"><span class="type">void</span> QGradient::<span class="name">setStops</span>(const <span class="type"><a href="qgradient.html#QGradientStops-typedef">QGradientStops</a></span> &amp;<i>stopPoints</i>)</h3>
+<p>Replaces the current set of stop points with the given <i>stopPoints</i>. The positions of the points must be in the range 0 to 1, and must be sorted with the lowest point first.</p>
+<p><b>See also </b><a href="qgradient.html#setColorAt">setColorAt</a>() and <a href="qgradient.html#stops">stops</a>().</p>
+<!-- @@@setStops -->
+<!-- $$$spread[overload1]$$$spread -->
+<h3 class="fn" id="spread"><span class="type"><a href="qgradient.html#Spread-enum">QGradient::Spread</a></span> QGradient::<span class="name">spread</span>() const</h3>
+<p>Returns the spread method use by this gradient. The default is <a href="qgradient.html#Spread-enum">PadSpread</a>.</p>
+<p><b>See also </b><a href="qgradient.html#setSpread">setSpread</a>().</p>
+<!-- @@@spread -->
+<!-- $$$stops[overload1]$$$stops -->
+<h3 class="fn" id="stops"><span class="type"><a href="qgradient.html#QGradientStops-typedef">QGradientStops</a></span> QGradient::<span class="name">stops</span>() const</h3>
+<p>Returns the stop points for this gradient.</p>
+<p>If no stop points have been specified, a gradient of black at 0 to white at 1 is used.</p>
+<p><b>See also </b><a href="qgradient.html#setStops">setStops</a>() and <a href="qgradient.html#setColorAt">setColorAt</a>().</p>
+<!-- @@@stops -->
+<!-- $$$type[overload1]$$$type -->
+<h3 class="fn" id="type"><span class="type"><a href="qgradient.html#Type-enum">QGradient::Type</a></span> QGradient::<span class="name">type</span>() const</h3>
+<p>Returns the type of gradient.</p>
+<!-- @@@type -->
+<!-- $$$operator!=[overload1]$$$operator!=constQGradient& -->
+<h3 class="fn" id="operator-not-eq"><span class="type">bool</span> QGradient::<span class="name">operator!=</span>(const <span class="type">QGradient</span> &amp;<i>gradient</i>) const</h3>
+<p>Returns <code>true</code> if the gradient is the same as the other <i>gradient</i> specified; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="qgradient.html#operator-eq-eq">operator==</a>().</p>
+<!-- @@@operator!= -->
+<!-- $$$operator==[overload1]$$$operator==constQGradient& -->
+<h3 class="fn" id="operator-eq-eq"><span class="type">bool</span> QGradient::<span class="name">operator==</span>(const <span class="type">QGradient</span> &amp;<i>gradient</i>) const</h3>
+<p>Returns <code>true</code> if the gradient is the same as the other <i>gradient</i> specified; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="qgradient.html#operator-not-eq">operator!=</a>().</p>
+<!-- @@@operator== -->
+</div>
+<div class="relnonmem">
+<h2>Related Non-Members</h2>
+<!-- $$$QGradientStop -->
+<h3 class="fn" id="QGradientStop-typedef"><span class="name">QGradientStop</span></h3>
+<p>Typedef for QPair&lt;<a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a>, <a href="qcolor.html">QColor</a>&gt;.</p>
+<!-- @@@QGradientStop -->
+<!-- $$$QGradientStops -->
+<h3 class="fn" id="QGradientStops-typedef"><span class="name">QGradientStops</span></h3>
+<p>Typedef for <a href="../qtcore/qlist.html">QList</a>&lt;<a href="qgradient.html#QGradientStop-typedef">QGradientStop</a>&gt;.</p>
+<!-- @@@QGradientStops -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- cmake-macros.qdoc -->
+  <title>qt_add_lrelease | Qt Linguist Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 6.2</a></li>
+<li><a href="qtlinguist-index.html">Qt Linguist Manual</a></li>
+<li>qt_add_lrelease</li>
+<li id="buildversion"><a href="qtlinguist-index.html">Qt 6.2&#x2e;3 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#synopsis">Synopsis</a></li>
+<li class="level1"><a href="#description">Description</a></li>
+<li class="level1"><a href="#options">Options</a></li>
+<li class="level1"><a href="#processing-generated-qm-files">Processing Generated .qm Files</a></li>
+<li class="level1"><a href="#build-by-default">Build by Default</a></li>
+<li class="level1"><a href="#umbrella-target">Umbrella Target</a></li>
+<li class="level1"><a href="#examples">Examples</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">qt_add_lrelease</h1>
+<!-- $$$qtlinguist-cmake-qt-add-lrelease.html-description -->
+<div class="descr" id="details">
+<span id="qt6-add-lrelease"></span><h2 id="synopsis">Synopsis</h2>
+<pre class="cpp plain">
+ qt_add_lrelease(target TS_FILES file1.ts [file2.ts ..&#x2e;]
+                 [NO_TARGET_DEPENDENCY]
+                 [NO_GLOBAL_TARGET]
+                 [QM_FILES_OUTPUT_VARIABLE variable-name]
+                 [OPTIONS ..&#x2e;])
+</pre>
+<p>If <a href="../qtcmake/cmake-qt5-and-qt6-compatibility.html#versionless-commands">versionless commands</a> are disabled, use <code>qt6_add_lrelease()</code> instead. It supports the same set of arguments as this command.</p>
+<h2 id="description">Description</h2>
+<p>Creates a target <code>${target}_lrelease</code> to transform <code>.ts</code> files into <code>.qm</code> files with <a href="linguist-manager.html#lrelease">lrelease</a>.</p>
+<p>The parameter <code>target</code> is an existing executable or library target that contains sources with translatable strings.</p>
+<p>The <code>.ts</code> files must be specified with the argument <code>TS_FILES</code>.</p>
+<p>This function is designed to be used in conjunction with <a href="qtlinguist-cmake-qt-add-lupdate.html#qt6-add-lupdate">qt_add_lupdate</a>. See also the convenience wrapper <a href="qtlinguist-cmake-qt-add-translations.html#qt6-add-translations">qt_add_translations</a>.</p>
+<h2 id="options">Options</h2>
+<p>You can set additional <code>OPTIONS</code> that should be passed when <code>lrelease</code> is invoked. You can find possible options in the <a href="linguist-manager.html#lrelease">lrelease documentation</a>.</p>
+<p>By default, the <code>.qm</code> files will be placed in the current build directory (<code>CMAKE_CURRENT_BINARY_DIR</code>). To change this, you can set <code>OUTPUT_LOCATION</code> as a property of the source <code>.ts</code> file.</p>
+<p>For example, with the following code, the <code>.qm</code> files are generated in a <code>translations</code> directory below the current build directory.</p>
+<pre class="cpp">
+ set_source_files_properties(app_en.ts app_de.ts
+     PROPERTIES OUTPUT_LOCATION &quot;${CMAKE_CURRENT_BINARY_DIR}/translations&quot;)
+</pre>
+<h2 id="processing-generated-qm-files">Processing Generated .qm Files</h2>
+<p>To further process the generated <code>.qm</code> files, for example to create install rules, <code>qt_add_lrelease</code> can store the paths of the <code>.qm</code> files in a variable. Pass <code>QM_FILES_OUTPUT_VARIABLE &lt;variable-name&gt;</code> to the function for that.</p>
+<h2 id="build-by-default">Build by Default</h2>
+<p>By default, the command makes <code>${target}</code> depend on <code>${target}_lrelease</code>. This ensures that the <code>.qm</code> files are always up-to-date when <code>${target}</code> is built. This behavior can be turned off with <code>NO_TARGET_DEPENDENCY</code>. In this case, the user must build the <code>${target}_lrelease</code> target manually.</p>
+<h2 id="umbrella-target">Umbrella Target</h2>
+<p>In addition to the target <code>${target}_lrelease</code>, an umbrella target <code>release_translations</code> is created. This target will build all <code>${target}_lrelease</code> targets that were created with <code>qt_add_lrelease</code>.</p>
+<p>Pass <code>NO_GLOBAL_TARGET</code> to <code>qt_add_lrelease</code> to prevent this behavior.</p>
+<p>The name of this target can be overridden by setting the variable <code>QT_GLOBAL_LRELEASE_TARGET</code> before calling <code>qt_add_lrelease</code>.</p>
+<h2 id="examples">Examples</h2>
+<p>Add the targets <code>myapp_lrelease</code> and <code>update_translations</code> for updating the <code>.ts</code> file of an application <code>myapp</code>. Also, install the generated <code>.qm</code> files.</p>
+<pre class="cpp">
+ qt_add_lrelease(myapp
+     TS_FILES myapp_de.ts
+     QM_FILES_OUTPUT_VARIABLE qm_files)
+ install(FILES ${qm_files} DESTINATION &quot;translations&quot;)
+</pre>
+</div>
+<!-- @@@qtlinguist-cmake-qt-add-lrelease.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

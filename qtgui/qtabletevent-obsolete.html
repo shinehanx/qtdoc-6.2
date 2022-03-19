@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qevent.cpp -->
+  <title>Obsolete Members for QTabletEvent | Qt GUI 6.2.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 6.2</a></li>
+<li><a href="qtgui-index.html">Qt GUI</a></li>
+<li><a href="qtgui-module.html">C++ Classes</a></li>
+<li>QTabletEvent</li>
+<li id="buildversion"><a href="qtgui-index.html">Qt 6.2&#x2e;3 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QTabletEvent</h1>
+<p><b>The following members of class <a href="qtabletevent.html">QTabletEvent</a> are deprecated.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.0)) </code>QPoint </td><td class="memItemRight bottomAlign"><b><a href="qtabletevent-obsolete.html#globalPos">globalPos</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.0)) </code>const QPointF </td><td class="memItemRight bottomAlign"><b><a href="qtabletevent-obsolete.html#globalPosF">globalPosF</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.0)) </code>int </td><td class="memItemRight bottomAlign"><b><a href="qtabletevent-obsolete.html#globalX">globalX</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.0)) </code>int </td><td class="memItemRight bottomAlign"><b><a href="qtabletevent-obsolete.html#globalY">globalY</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.0)) </code>QPoint </td><td class="memItemRight bottomAlign"><b><a href="qtabletevent-obsolete.html#pos">pos</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.0)) </code>const QPointF </td><td class="memItemRight bottomAlign"><b><a href="qtabletevent-obsolete.html#posF">posF</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.0)) </code>qint64 </td><td class="memItemRight bottomAlign"><b><a href="qtabletevent-obsolete.html#uniqueId">uniqueId</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.0)) </code>int </td><td class="memItemRight bottomAlign"><b><a href="qtabletevent-obsolete.html#x">x</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.0)) </code>int </td><td class="memItemRight bottomAlign"><b><a href="qtabletevent-obsolete.html#y">y</a></b>() const</td></tr>
+</table></div>
+<h2>Member Function Documentation</h2>
+<!-- $$$globalPos[overload1]$$$globalPos -->
+<h3 class="fn" id="globalPos"><span class="type"><a href="../qtcore/qpoint.html">QPoint</a></span> QTabletEvent::<span class="name">globalPos</span>() const</h3>
+<p>This function is deprecated since 6.0. We strongly advise against using it in new code.</p>
+<p>Use <a href="qsinglepointevent.html#globalPosition">globalPosition</a>().toPoint() instead.</p>
+<p>Returns the global position of the device <i>at the time of the event</i>. This is important on asynchronous windows systems like X11; whenever you move your widgets around in response to mouse events, globalPos() can differ significantly from the current position <a href="qcursor.html#pos">QCursor::pos</a>().</p>
+<p><b>See also </b><a href="qtabletevent-obsolete.html#globalX">globalX</a>() and <a href="qtabletevent-obsolete.html#globalY">globalY</a>().</p>
+<!-- @@@globalPos -->
+<!-- $$$globalPosF[overload1]$$$globalPosF -->
+<h3 class="fn" id="globalPosF">const <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span> QTabletEvent::<span class="name">globalPosF</span>() const</h3>
+<p>This function is deprecated since 6.0. We strongly advise against using it in new code.</p>
+<p>Use <a href="qsinglepointevent.html#globalPosition">globalPosition</a>() instead. Returns the global position of the device <i>at the time of the event</i>. This is important on asynchronous windows systems like X11; whenever you move your widgets around in response to mouse events, globalPosF() can differ significantly from the current position <a href="qcursor.html#pos">QCursor::pos</a>().</p>
+<p><b>See also </b><a href="qtabletevent-obsolete.html#posF">posF</a>().</p>
+<!-- @@@globalPosF -->
+<!-- $$$globalX[overload1]$$$globalX -->
+<h3 class="fn" id="globalX"><span class="type">int</span> QTabletEvent::<span class="name">globalX</span>() const</h3>
+<p>This function is deprecated since 6.0. We strongly advise against using it in new code.</p>
+<p>Use <a href="qsinglepointevent.html#globalPosition">globalPosition</a>().<a href="qtabletevent-obsolete.html#x">x</a>() instead.</p>
+<p>Returns the global x position of the mouse pointer at the time of the event.</p>
+<p><b>See also </b><a href="qtabletevent-obsolete.html#globalY">globalY</a>() and <a href="qtabletevent-obsolete.html#globalPos">globalPos</a>().</p>
+<!-- @@@globalX -->
+<!-- $$$globalY[overload1]$$$globalY -->
+<h3 class="fn" id="globalY"><span class="type">int</span> QTabletEvent::<span class="name">globalY</span>() const</h3>
+<p>This function is deprecated since 6.0. We strongly advise against using it in new code.</p>
+<p>Use <a href="qsinglepointevent.html#globalPosition">globalPosition</a>().<a href="qtabletevent-obsolete.html#y">y</a>() instead.</p>
+<p>Returns the global y position of the tablet device at the time of the event.</p>
+<p><b>See also </b><a href="qtabletevent-obsolete.html#globalX">globalX</a>() and <a href="qtabletevent-obsolete.html#globalPos">globalPos</a>().</p>
+<!-- @@@globalY -->
+<!-- $$$pos[overload1]$$$pos -->
+<h3 class="fn" id="pos"><span class="type"><a href="../qtcore/qpoint.html">QPoint</a></span> QTabletEvent::<span class="name">pos</span>() const</h3>
+<p>This function is deprecated since 6.0. We strongly advise against using it in new code.</p>
+<p>Use <a href="qsinglepointevent.html#position">position</a>().toPoint() instead.</p>
+<p>Returns the position of the device, relative to the widget that received the event.</p>
+<p>If you move widgets around in response to mouse events, use <a href="qtabletevent-obsolete.html#globalPos">globalPos</a>() instead of this function.</p>
+<p><b>See also </b><a href="qtabletevent-obsolete.html#x">x</a>(), <a href="qtabletevent-obsolete.html#y">y</a>(), and <a href="qtabletevent-obsolete.html#globalPos">globalPos</a>().</p>
+<!-- @@@pos -->
+<!-- $$$posF[overload1]$$$posF -->
+<h3 class="fn" id="posF">const <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span> QTabletEvent::<span class="name">posF</span>() const</h3>
+<p>This function is deprecated since 6.0. We strongly advise against using it in new code.</p>
+<p>Use <a href="qsinglepointevent.html#position">position</a>() instead.</p>
+<p>Returns the position of the device, relative to the widget that received the event.</p>
+<p>If you move widgets around in response to mouse events, use <a href="qtabletevent-obsolete.html#globalPosF">globalPosF</a>() instead of this function.</p>
+<p><b>See also </b><a href="qtabletevent-obsolete.html#globalPosF">globalPosF</a>().</p>
+<!-- @@@posF -->
+<!-- $$$uniqueId[overload1]$$$uniqueId -->
+<h3 class="fn" id="uniqueId"><span class="type"><a href="../qtcore/qtglobal.html#qint64-typedef">qint64</a></span> QTabletEvent::<span class="name">uniqueId</span>() const</h3>
+<p>This function is deprecated since 6.0. We strongly advise against using it in new code.</p>
+<p>Use <a href="qpointerevent.html#pointingDevice">pointingDevice</a>().uniqueId() instead.</p>
+<p>Returns a unique ID for the current device, making it possible to differentiate between multiple devices being used at the same time on the tablet.</p>
+<p>Support of this feature is dependent on the tablet.</p>
+<p>Values for the same device may vary from OS to OS.</p>
+<p>Later versions of the Wacom driver for Linux will now report the ID information. If you have a tablet that supports unique ID and are not getting the information on Linux, consider upgrading your driver.</p>
+<p>As of Qt 4.2, the unique ID is the same regardless of the orientation of the pen. Earlier versions would report a different value when using the eraser-end versus the pen-end of the stylus on some OS's.</p>
+<p><b>See also </b><a href="qpointerevent.html#pointerType">pointerType</a>().</p>
+<!-- @@@uniqueId -->
+<!-- $$$x[overload1]$$$x -->
+<h3 class="fn" id="x"><span class="type">int</span> QTabletEvent::<span class="name">x</span>() const</h3>
+<p>This function is deprecated since 6.0. We strongly advise against using it in new code.</p>
+<p>Use <a href="qsinglepointevent.html#position">position</a>().x() instead.</p>
+<p>Returns the x position of the device, relative to the widget that received the event.</p>
+<p><b>See also </b><a href="qtabletevent-obsolete.html#y">y</a>() and <a href="qtabletevent-obsolete.html#pos">pos</a>().</p>
+<!-- @@@x -->
+<!-- $$$y[overload1]$$$y -->
+<h3 class="fn" id="y"><span class="type">int</span> QTabletEvent::<span class="name">y</span>() const</h3>
+<p>This function is deprecated since 6.0. We strongly advise against using it in new code.</p>
+<p>Use <a href="qsinglepointevent.html#position">position</a>().y() instead.</p>
+<p>Returns the y position of the device, relative to the widget that received the event.</p>
+<p><b>See also </b><a href="qtabletevent-obsolete.html#x">x</a>() and <a href="qtabletevent-obsolete.html#pos">pos</a>().</p>
+<!-- @@@y -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

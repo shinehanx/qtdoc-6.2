@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- whatsnew62.qdoc -->
+  <title>New Classes and Functions in Qt 6.2 | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 6.2</a></li>
+<li>New Classes and Functions in Qt 6.2</li>
+<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#additions-to-other-qt-6-releases">Additions to Other Qt 6 Releases</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">New Classes and Functions in Qt 6.2</h1>
+<!-- $$$newclasses62.html-description -->
+<div class="descr" id="details">
+<p>This page contains a comprehensive list of all new classes and functions introduced in Qt 6.2&#x2e; Links to new APIs in previous Qt 6 releases are found at the bottom of this page.</p>
+<ul>
+<li><a href="#new-namespaces">    New Namespaces</a></li>
+<li><a href="#new-classes">    New Classes</a></li>
+<li><a href="#new-member-functions">    New Member Functions</a></li>
+<li><a href="#new-functions-in-namespaces">    New Functions in Namespaces</a></li>
+<li><a href="#new-global-functions">    New Global Functions</a></li>
+<li><a href="#new-macros">    New Macros</a></li>
+<li><a href="#new-enum-types">    New Enum Types</a></li>
+<li><a href="#new-properties">    New Properties</a></li>
+<li><a href="#new-variables">    New Variables</a></li>
+<li><a href="#new-qml-types">    New QML Types</a></li>
+<li><a href="#new-qml-properties">    New QML Properties</a></li>
+<li><a href="#new-qml-methods">    New QML Methods</a></li>
+</ul>
+<h3 id="new-namespaces">    New Namespaces</h3>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> <code>(preliminary) </code>namespace </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtandroidprivate.html">QtAndroidPrivate</a></b></td></tr>
+</table></div>
+<h3 id="new-classes">    New Classes</h3>
+<div class="flowListDiv">
+<dl class="flowList odd"><dt class="alphaChar"><b>A</b></dt>
+<dd><a href="../qtcore/qandroidactivityresultreceiver.html">QAndroidActivityResultReceiver</a></dd>
+<dd><a href="../qtcore/qnativeinterface-qandroidapplication.html">QAndroidApplication</a> (<a href="../qtcore/qnativeinterface-sub-qtcore.html">QNativeInterface</a>)</dd>
+<dd><a href="../qtcore/qandroidbinder.html">QAndroidBinder</a></dd>
+<dd><a href="../qtcore/qandroidintent.html">QAndroidIntent</a></dd>
+<dd><a href="../qtcore/qandroidparcel.html">QAndroidParcel</a></dd>
+<dd><a href="../qtcore/qandroidservice.html">QAndroidService</a></dd>
+<dd><a href="../qtcore/qandroidserviceconnection.html">QAndroidServiceConnection</a></dd>
+</dl>
+<dl class="flowList even"><dt class="alphaChar"><b>C</b></dt>
+<dd><a href="../qtcharts/qcoloraxis.html">QColorAxis</a></dd>
+</dl>
+<dl class="flowList odd"><dt class="alphaChar"><b>H</b></dt>
+<dd><a href="../qtcore/qhashseed.html">QHashSeed</a></dd>
+</dl>
+<dl class="flowList even"><dt class="alphaChar"><b>M</b></dt>
+<dd><a href="../qtserialbus/qmodbusrtuserialclient.html">QModbusRtuSerialClient</a></dd>
+<dd><a href="../qtserialbus/qmodbusrtuserialserver.html">QModbusRtuSerialServer</a></dd>
+</dl>
+<dl class="flowList odd"><dt class="alphaChar"><b>N</b></dt>
+<dd><a href="../qtpositioning/qnmeasatelliteinfosource.html">QNmeaSatelliteInfoSource</a></dd>
+</dl>
+<dl class="flowList even"><dt class="alphaChar"><b>Q</b></dt>
+<dd><a href="../qtquick3d/qquick3dinstancing.html">QQuick3DInstancing</a></dd>
+</dl>
+<dl class="flowList odd"><dt class="alphaChar"><b>R</b></dt>
+<dd><a href="../qtgui/qrgbafloat.html">QRgbaFloat</a></dd>
+</dl>
+<dl class="flowList even"><dt class="alphaChar"><b>S</b></dt>
+<dd><a href="../qtcore/qcalendar-systemid.html">SystemId</a> (<a href="../qtcore/qcalendar.html">QCalendar</a>)</dd>
+</dl>
+<dl class="flowList odd"><dt class="alphaChar"><b>W</b></dt>
+<dd><a href="../qtwebengine/qwebenginecontextmenurequest.html">QWebEngineContextMenuRequest</a></dd>
+<dd><a href="../qtwebengine/qwebenginehistorymodel.html">QWebEngineHistoryModel</a></dd>
+<dd><a href="../qtwebengine/qwebengineloadinginfo.html">QWebEngineLoadingInfo</a></dd>
+<dd><a href="../qtwebengine/qwebenginenavigationrequest.html">QWebEngineNavigationRequest</a></dd>
+<dd><a href="../qtwebengine/qwebenginenewwindowrequest.html">QWebEngineNewWindowRequest</a></dd>
+</dl>
+<dl class="flowList even"><dt class="alphaChar"><b>X</b></dt>
+<dd><a href="../qtgui/qnativeinterface-qx11application.html">QX11Application</a> (<a href="../qtgui/qnativeinterface-sub-qtgui.html">QNativeInterface</a>)</dd>
+</dl>
+</div>
+<h3 id="new-member-functions">    New Member Functions</h3>
+<p>Class <a href="../qtbluetooth/qbluetoothdevicediscoveryagent.html">QBluetoothDeviceDiscoveryAgent</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qbluetoothdevicediscoveryagent.html#errorOccurred">errorOccurred</a></b>(QBluetoothDeviceDiscoveryAgent::Error <i>error</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtbluetooth/qbluetoothdeviceinfo.html">QBluetoothDeviceInfo</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qbluetoothdeviceinfo.html#setName">setName</a></b>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtbluetooth/qbluetoothlocaldevice.html">QBluetoothLocalDevice</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qbluetoothlocaldevice.html#errorOccurred">errorOccurred</a></b>(QBluetoothLocalDevice::Error <i>error</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtbluetooth/qbluetoothserver.html">QBluetoothServer</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qbluetoothserver.html#errorOccurred">errorOccurred</a></b>(QBluetoothServer::Error <i>error</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtbluetooth/qbluetoothservicediscoveryagent.html">QBluetoothServiceDiscoveryAgent</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qbluetoothservicediscoveryagent.html#errorOccurred">errorOccurred</a></b>(QBluetoothServiceDiscoveryAgent::Error <i>error</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtbluetooth/qbluetoothsocket.html">QBluetoothSocket</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qbluetoothsocket.html#errorOccurred">errorOccurred</a></b>(QBluetoothSocket::SocketError <i>error</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtbluetooth/qlowenergycharacteristic.html">QLowEnergyCharacteristic</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QLowEnergyDescriptor </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qlowenergycharacteristic.html#clientCharacteristicConfiguration">clientCharacteristicConfiguration</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtbluetooth/qlowenergycontroller.html">QLowEnergyController</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QLowEnergyController *</td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qlowenergycontroller.html#createPeripheral">createPeripheral</a></b>(const QBluetoothAddress &amp;<i>localDevice</i>, QObject *<i>parent</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qlowenergycontroller.html#errorOccurred">errorOccurred</a></b>(QLowEnergyController::Error <i>newError</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qlowenergycontroller.html#mtu">mtu</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtbluetooth/qlowenergyservice.html">QLowEnergyService</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qlowenergyservice.html#errorOccurred">errorOccurred</a></b>(QLowEnergyService::ServiceError <i>newError</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcharts/qabstractaxis.html">QAbstractAxis</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qabstractaxis.html#labelsTruncatedChanged">labelsTruncatedChanged</a></b>(bool <i>labelsTruncated</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qabstractaxis.html#truncateLabelsChanged">truncateLabelsChanged</a></b>(bool <i>truncateLabels</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcharts/qbarset.html">QBarSet</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qbarset.html#deselectAllBars">deselectAllBars</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qbarset.html#deselectBar">deselectBar</a></b>(int <i>index</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qbarset.html#deselectBars">deselectBars</a></b>(const QList&lt;int&gt; &amp;<i>indexes</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qbarset.html#isBarSelected">isBarSelected</a></b>(int <i>index</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qbarset.html#selectAllBars">selectAllBars</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qbarset.html#selectBar">selectBar</a></b>(int <i>index</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qbarset.html#selectBars">selectBars</a></b>(const QList&lt;int&gt; &amp;<i>indexes</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;int&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qbarset.html#selectedBars">selectedBars</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QColor </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qbarset.html#selectedColor">selectedColor</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qbarset.html#setBarSelected">setBarSelected</a></b>(int <i>index</i>, bool <i>selected</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qbarset.html#setSelectedColor">setSelectedColor</a></b>(const QColor &amp;<i>color</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qbarset.html#toggleSelection">toggleSelection</a></b>(const QList&lt;int&gt; &amp;<i>indexes</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcharts/qlegend.html">QLegend</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qlegend.html#attachedToChartChanged">attachedToChartChanged</a></b>(bool <i>attached</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qlegend.html#isInteractive">isInteractive</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qlegend.html#setInteractive">setInteractive</a></b>(bool <i>interactive</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcharts/qxyseries.html">QXYSeries</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QPair&lt;qreal, qreal&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#bestFitLineEquation">bestFitLineEquation</a></b>(bool &amp;<i>ok</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#clearPointConfiguration">clearPointConfiguration</a></b>(const int <i>index</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#clearPointConfiguration-1">clearPointConfiguration</a></b>(const int <i>index</i>, const QXYSeries::PointConfiguration <i>key</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#clearPointsConfiguration">clearPointsConfiguration</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#clearPointsConfiguration-1">clearPointsConfiguration</a></b>(const QXYSeries::PointConfiguration <i>key</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#colorBy">colorBy</a></b>(const QList&lt;qreal&gt; &amp;<i>sourceData</i>, const QLinearGradient &amp;<i>gradient</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#deselectAllPoints">deselectAllPoints</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#deselectPoint">deselectPoint</a></b>(int <i>index</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#deselectPoints">deselectPoints</a></b>(const QList&lt;int&gt; &amp;<i>indexes</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#isPointSelected">isPointSelected</a></b>(int <i>index</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QImage &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#lightMarker">lightMarker</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#lightMarkerChanged">lightMarkerChanged</a></b>(const QImage &amp;<i>lightMarker</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#markerSize">markerSize</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QHash&lt;QXYSeries::PointConfiguration, QVariant&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#pointConfiguration">pointConfiguration</a></b>(const int <i>index</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QHash&lt;int, QHash&lt;QXYSeries::PointConfiguration, QVariant&gt;&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#pointsConfiguration">pointsConfiguration</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#selectAllPoints">selectAllPoints</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#selectPoint">selectPoint</a></b>(int <i>index</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#selectPoints">selectPoints</a></b>(const QList&lt;int&gt; &amp;<i>indexes</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QImage &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#selectedLightMarker">selectedLightMarker</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;int&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#selectedPoints">selectedPoints</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#setLightMarker">setLightMarker</a></b>(const QImage &amp;<i>lightMarker</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#setMarkerSize">setMarkerSize</a></b>(qreal <i>size</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#setPointConfiguration">setPointConfiguration</a></b>(const int <i>index</i>, const QHash&lt;QXYSeries::PointConfiguration, QVariant&gt; &amp;<i>configuration</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#setPointConfiguration-1">setPointConfiguration</a></b>(const int <i>index</i>, const QXYSeries::PointConfiguration <i>key</i>, const QVariant &amp;<i>value</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#setPointSelected">setPointSelected</a></b>(int <i>index</i>, bool <i>selected</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#setPointsConfiguration">setPointsConfiguration</a></b>(const QHash&lt;int, QHash&lt;QXYSeries::PointConfiguration, QVariant&gt;&gt; &amp;<i>pointsConfiguration</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#setSelectedLightMarker">setSelectedLightMarker</a></b>(const QImage &amp;<i>selectedLightMarker</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#sizeBy">sizeBy</a></b>(const QList&lt;qreal&gt; &amp;<i>sourceData</i>, const qreal <i>minSize</i>, const qreal <i>maxSize</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qxyseries.html#toggleSelection">toggleSelection</a></b>(const QList&lt;int&gt; &amp;<i>indexes</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qabstractproxymodel.html">QAbstractProxyModel</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QModelIndex </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qabstractproxymodel.html#createSourceIndex">createSourceIndex</a></b>(int <i>row</i>, int <i>col</i>, void *<i>internalPtr</i>) const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qbytearray.html">QByteArray</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbytearray.html#lastIndexOf-2">lastIndexOf</a></b>(QByteArrayView <i>bv</i>) const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qbytearrayview.html">QByteArrayView</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbytearrayview.html#compare">compare</a></b>(QByteArrayView <i>bv</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbytearrayview.html#lastIndexOf-1">lastIndexOf</a></b>(QByteArrayView <i>bv</i>) const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qfileinfo.html">QFileInfo</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> std::filesystem::path </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfileinfo.html#filesystemJunctionTarget">filesystemJunctionTarget</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfileinfo.html#junctionTarget">junctionTarget</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qflags.html">QFlags</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QFlags&lt;T&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qflags.html#fromInt">fromInt</a></b>(QFlags::Int <i>i</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QFlags&lt;T&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qflags.html#operator-and-2">operator&amp;</a></b>(QFlags&lt;T&gt; <i>other</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QFlags&lt;T&gt; &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qflags.html#operator-and-eq-2">operator&amp;=</a></b>(QFlags&lt;T&gt; <i>mask</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> size_t </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qflags.html#qHash">qHash</a></b>(QFlags&lt;Enum&gt; <i>flags</i>, size_t <i>seed</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qflags.html#testAnyFlag">testAnyFlag</a></b>(Enum <i>flag</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qflags.html#testAnyFlags">testAnyFlags</a></b>(QFlags&lt;T&gt; <i>flags</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qflags.html#testFlags">testFlags</a></b>(QFlags&lt;T&gt; <i>flags</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QFlags::Int </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qflags.html#toInt">toInt</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qjniobject.html">QJniObject</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qjniobject.html#className">className</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> jclass </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qjniobject.html#objectClass">objectClass</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qjnienvironment.html">QJniEnvironment</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> jfieldID </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qjnienvironment.html#findField">findField</a></b>(jclass <i>clazz</i>, const char *<i>fieldName</i>, const char *<i>signature</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> jmethodID </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qjnienvironment.html#findMethod">findMethod</a></b>(jclass <i>clazz</i>, const char *<i>methodName</i>, const char *<i>signature</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> jfieldID </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qjnienvironment.html#findStaticField">findStaticField</a></b>(jclass <i>clazz</i>, const char *<i>fieldName</i>, const char *<i>signature</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> jmethodID </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qjnienvironment.html#findStaticMethod">findStaticMethod</a></b>(jclass <i>clazz</i>, const char *<i>methodName</i>, const char *<i>signature</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qjnienvironment.html#isValid">isValid</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qlatin1string.html">QLatin1String</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlatin1string.html#lastIndexOf-1">lastIndexOf</a></b>(QStringView <i>str</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlatin1string.html#lastIndexOf-2">lastIndexOf</a></b>(QLatin1String <i>l1</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qlocale.html">QLocale</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QLocale::Territory </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlocale.html#codeToTerritory">codeToTerritory</a></b>(QStringView <i>territoryCode</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlocale.html#nativeTerritoryName">nativeTerritoryName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QLocale::Territory </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlocale.html#territory">territory</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlocale.html#territoryToCode">territoryToCode</a></b>(QLocale::Territory <i>territory</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlocale.html#territoryToString">territoryToString</a></b>(QLocale::Territory <i>territory</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qlockfile.html">QLockFile</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlockfile.html#setStaleLockTime-1">setStaleLockTime</a></b>(std::chrono::milliseconds <i>value</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> std::chrono::milliseconds </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlockfile.html#staleLockTimeAsDuration">staleLockTimeAsDuration</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlockfile.html#tryLock-1">tryLock</a></b>(std::chrono::milliseconds <i>timeout</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qmetamethod.html">QMetaMethod</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetamethod.html#isConst">isConst</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qmetaobject.html">QMetaObject</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QMetaType </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetaobject.html#metaType">metaType</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qnativeinterface-qandroidapplication.html">QAndroidApplication</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qnativeinterface-qandroidapplication.html#context">context</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qnativeinterface-qandroidapplication.html#hideSplashScreen">hideSplashScreen</a></b>(int <i>duration</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qnativeinterface-qandroidapplication.html#isActivityContext">isActivityContext</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QFuture&lt;QVariant&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qnativeinterface-qandroidapplication.html#runOnAndroidMainThread">runOnAndroidMainThread</a></b>(const std::function&lt;QVariant ()&gt; &amp;<i>runnable</i>, const QDeadlineTimer <i>timeout</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qnativeinterface-qandroidapplication.html#sdkVersion">sdkVersion</a></b>()</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qstring.html">QString</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#lastIndexOf-2">lastIndexOf</a></b>(QLatin1String <i>str</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#lastIndexOf-4">lastIndexOf</a></b>(const QString &amp;<i>str</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#lastIndexOf-5">lastIndexOf</a></b>(QStringView <i>str</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#lastIndexOf-7">lastIndexOf</a></b>(const QRegularExpression &amp;<i>re</i>, QRegularExpressionMatch *<i>rmatch</i>) const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qstringview.html">QStringView</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringview.html#lastIndexOf-1">lastIndexOf</a></b>(QStringView <i>str</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringview.html#lastIndexOf-3">lastIndexOf</a></b>(QLatin1String <i>l1</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringview.html#lastIndexOf-5">lastIndexOf</a></b>(const QRegularExpression &amp;<i>re</i>, QRegularExpressionMatch *<i>rmatch</i>) const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/qtimezone.html">QTimeZone</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QLocale::Territory </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtimezone.html#territory">territory</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtcore/quntypedbindable.html">QUntypedBindable</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QMetaType </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/quntypedbindable.html#metaType">metaType</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtgui/qcolorspace.html">QColorSpace</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qcolorspace.html#description">description</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qcolorspace.html#setDescription">setDescription</a></b>(const QString &amp;<i>description</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtgui/qimage.html">QImage</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QImage </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimage.html#fromData">fromData</a></b>(QByteArrayView <i>data</i>, const char *<i>format</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimage.html#loadFromData">loadFromData</a></b>(QByteArrayView <i>data</i>, const char *<i>format</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtgui/qnativegestureevent.html">QNativeGestureEvent</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qnativegestureevent.html#delta">delta</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qnativegestureevent.html#fingerCount">fingerCount</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtnetwork/qabstractsocket.html">QAbstractSocket</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qabstractsocket.html#bind-1">bind</a></b>(QHostAddress::SpecialAddress <i>addr</i>, quint16 <i>port</i>, QAbstractSocket::BindMode <i>mode</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtnetwork/qnetworkaddressentry.html">QNetworkAddressEntry</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QDebug </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qnetworkaddressentry.html#operator-lt-lt">operator&lt;&lt;</a></b>(QDebug <i>debug</i>, const QNetworkAddressEntry &amp;<i>entry</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtnetwork/qnetworkrequest.html">QNetworkRequest</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qnetworkrequest.html#decompressedSafetyCheckThreshold">decompressedSafetyCheckThreshold</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qnetworkrequest.html#setDecompressedSafetyCheckThreshold">setDecompressedSafetyCheckThreshold</a></b>(qint64 <i>threshold</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtnfc/qndefmessage.html">QNdefMessage</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QNdefMessage &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtnfc/qndefmessage.html#operator-eq">operator=</a></b>(const QNdefMessage &amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QNdefMessage &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtnfc/qndefmessage.html#operator-eq-1">operator=</a></b>(QNdefMessage &amp;&amp;<i>other</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtnfc/qndeffilter.html">QNdefFilter</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtnfc/qndeffilter.html#match">match</a></b>(const QNdefMessage &amp;<i>message</i>) const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtnfc/qndefrecord.html">QNdefRecord</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtnfc/qndefrecord.html#clear">clear</a></b>()</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtnfc/qnearfieldmanager.html">QNearFieldManager</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtnfc/qnearfieldmanager.html#isEnabled">isEnabled</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtnfc/qnearfieldmanager.html#setUserInformation">setUserInformation</a></b>(const QString &amp;<i>message</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtnfc/qnearfieldmanager.html#targetDetectionStopped">targetDetectionStopped</a></b>()</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtpositioning/qgeoaddress.html">QGeoAddress</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoAddress &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeoaddress.html#operator-eq-2">operator=</a></b>(QGeoAddress &amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeoaddress.html#setStreetNumber">setStreetNumber</a></b>(const QString &amp;<i>streetNumber</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeoaddress.html#streetNumber">streetNumber</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtpositioning/qgeoareamonitorinfo.html">QGeoAreaMonitorInfo</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoAreaMonitorInfo &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeoareamonitorinfo.html#operator-eq-1">operator=</a></b>(QGeoAreaMonitorInfo &amp;&amp;<i>other</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtpositioning/qgeoareamonitorsource.html">QGeoAreaMonitorSource</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QVariant </td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeoareamonitorsource.html#backendProperty">backendProperty</a></b>(const QString &amp;<i>name</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeoareamonitorsource.html#setBackendProperty">setBackendProperty</a></b>(const QString &amp;<i>name</i>, const QVariant &amp;<i>value</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtpositioning/qgeocoordinate.html">QGeoCoordinate</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoCoordinate &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeocoordinate.html#operator-eq-1">operator=</a></b>(QGeoCoordinate &amp;&amp;<i>other</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtpositioning/qgeolocation.html">QGeoLocation</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoShape </td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeolocation.html#boundingShape">boundingShape</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoLocation &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeolocation.html#operator-eq-1">operator=</a></b>(QGeoLocation &amp;&amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeolocation.html#setBoundingShape">setBoundingShape</a></b>(const QGeoShape &amp;<i>boundingShape</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtpositioning/qgeopositioninfo.html">QGeoPositionInfo</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoPositionInfo &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeopositioninfo.html#operator-eq-1">operator=</a></b>(QGeoPositionInfo &amp;&amp;<i>other</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtpositioning/qgeosatelliteinfo.html">QGeoSatelliteInfo</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QGeoSatelliteInfo &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeosatelliteinfo.html#operator-eq-1">operator=</a></b>(QGeoSatelliteInfo &amp;&amp;<i>other</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtpositioning/qgeosatelliteinfosource.html">QGeoSatelliteInfoSource</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QVariant </td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeosatelliteinfosource.html#backendProperty">backendProperty</a></b>(const QString &amp;<i>name</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="../qtpositioning/qgeosatelliteinfosource.html#setBackendProperty">setBackendProperty</a></b>(const QString &amp;<i>name</i>, const QVariant &amp;<i>value</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtqml/qjsengine.html">QJSEngine</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QJSValue </td><td class="memItemRight bottomAlign"><b><a href="../qtqml/qjsengine.html#newSymbol">newSymbol</a></b>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtqml/qqmlcontext.html">QQmlContext</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QObject *</td><td class="memItemRight bottomAlign"><b><a href="../qtqml/qqmlcontext.html#objectForName">objectForName</a></b>(const QString &amp;<i>name</i>) const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtqml/qqmllistreference.html">QQmlListReference</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtqml/qqmllistreference.html#size">size</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtquick/qquickitemgrabresult.html">QQuickItemGrabResult</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickitemgrabresult.html#saveToFile-1">saveToFile</a></b>(const QUrl &amp;<i>filePath</i>) const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtquick/qquickrendertarget.html">QQuickRenderTarget</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QQuickRenderTarget </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickrendertarget.html#fromOpenGLRenderBuffer">fromOpenGLRenderBuffer</a></b>(uint <i>renderbufferId</i>, const QSize &amp;<i>pixelSize</i>, int <i>sampleCount</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtserialbus/qcanbusdevice.html">QCanBusDevice</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QCanBusDeviceInfo </td><td class="memItemRight bottomAlign"><b><a href="../qtserialbus/qcanbusdevice.html#deviceInfo">deviceInfo</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtserialbus/qcanbusdeviceinfo.html">QCanBusDeviceInfo</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtserialbus/qcanbusdeviceinfo.html#plugin">plugin</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtserialbus/qmodbusrtuserialserver.html">QModbusRtuSerialServer</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="../qtserialbus/qmodbusrtuserialserver.html#interFrameDelay">interFrameDelay</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtserialbus/qmodbusrtuserialserver.html#setInterFrameDelay">setInterFrameDelay</a></b>(int <i>microseconds</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtsql/qsqlquery.html">QSqlQuery</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QSqlQuery &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtsql/qsqlquery.html#operator-eq-1">operator=</a></b>(QSqlQuery &amp;&amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtsql/qsqlquery.html#swap">swap</a></b>(QSqlQuery &amp;<i>other</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtsql/qsqlquerymodel.html">QSqlQueryModel</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtsql/qsqlquerymodel.html#setQuery">setQuery</a></b>(QSqlQuery &amp;&amp;<i>query</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtwaylandcompositor/qwaylandbufferref.html">QWaylandBufferRef</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtwaylandcompositor/qwaylandbufferref.html#hasProtectedContent">hasProtectedContent</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtwebengine/qwebengineprofile.html">QWebEngineProfile</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebengineprofile.html#requestIconForIconURL">requestIconForIconURL</a></b>(const QUrl &amp;<i>url</i>, int <i>desiredSizeInPixel</i>, std::function&lt;void (const QIcon &amp;, const QUrl &amp;)&gt; <i>iconAvailableCallback</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebengineprofile.html#requestIconForPageURL">requestIconForPageURL</a></b>(const QUrl &amp;<i>url</i>, int <i>desiredSizeInPixel</i>, std::function&lt;void (const QIcon &amp;, const QUrl &amp;, const QUrl &amp;)&gt; <i>iconAvailableCallback</i>) const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtwebengine/qwebenginepage.html">QWebEnginePage</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebenginepage.html#loadingChanged">loadingChanged</a></b>(const QWebEngineLoadingInfo &amp;<i>loadingInfo</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebenginepage.html#navigationRequested">navigationRequested</a></b>(QWebEngineNavigationRequest &amp;<i>request</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebenginepage.html#newWindowRequested">newWindowRequested</a></b>(QWebEngineNewWindowRequest &amp;<i>request</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtwebengine/qwebengineview.html">QWebEngineView</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QWebEngineView *</td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebengineview.html#forPage">forPage</a></b>(const QWebEnginePage *<i>page</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QWebEngineContextMenuRequest *</td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebengineview.html#lastContextMenuRequest">lastContextMenuRequest</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebengineview.html#pdfPrintingFinished">pdfPrintingFinished</a></b>(const QString &amp;<i>filePath</i>, bool <i>success</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebengineview.html#print">print</a></b>(QPrinter *<i>printer</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebengineview.html#printFinished">printFinished</a></b>(bool <i>success</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebengineview.html#printRequested">printRequested</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebengineview.html#printToPdf">printToPdf</a></b>(const QString &amp;<i>filePath</i>, const QPageLayout &amp;<i>layout</i>, const QPageRanges &amp;<i>ranges</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebengineview.html#printToPdf-1">printToPdf</a></b>(const std::function&lt;void (const QByteArray &amp;)&gt; &amp;<i>resultCallback</i>, const QPageLayout &amp;<i>layout</i>, const QPageRanges &amp;<i>ranges</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtwebsockets/qwebsocket.html">QWebSocket</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebsockets/qwebsocket.html#alertReceived">alertReceived</a></b>(QSsl::AlertLevel <i>level</i>, QSsl::AlertType <i>type</i>, const QString &amp;<i>description</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebsockets/qwebsocket.html#alertSent">alertSent</a></b>(QSsl::AlertLevel <i>level</i>, QSsl::AlertType <i>type</i>, const QString &amp;<i>description</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebsockets/qwebsocket.html#continueInterruptedHandshake">continueInterruptedHandshake</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebsockets/qwebsocket.html#handshakeInterruptedOnError">handshakeInterruptedOnError</a></b>(const QSslError &amp;<i>error</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebsockets/qwebsocket.html#peerVerifyError">peerVerifyError</a></b>(const QSslError &amp;<i>error</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtwebsockets/qwebsocketserver.html">QWebSocketServer</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebsockets/qwebsocketserver.html#alertReceived">alertReceived</a></b>(QSsl::AlertLevel <i>level</i>, QSsl::AlertType <i>type</i>, const QString &amp;<i>description</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebsockets/qwebsocketserver.html#alertSent">alertSent</a></b>(QSsl::AlertLevel <i>level</i>, QSsl::AlertType <i>type</i>, const QString &amp;<i>description</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtwebsockets/qwebsocketserver.html#handshakeInterruptedOnError">handshakeInterruptedOnError</a></b>(const QSslError &amp;<i>error</i>)</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtwidgets/qgraphicssceneevent.html">QGraphicsSceneEvent</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> quint64 </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qgraphicssceneevent.html#timestamp">timestamp</a></b>() const</td></tr>
+</table></div>
+<br/><p>Class <a href="../qtwidgets/qgraphicsscenewheelevent.html">QGraphicsSceneWheelEvent</a>:</p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qgraphicsscenewheelevent.html#isInverted">isInverted</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Qt::ScrollPhase </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qgraphicsscenewheelevent.html#phase">phase</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QPoint </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qgraphicsscenewheelevent.html#pixelDelta">pixelDelta</a></b>() const</td></tr>
+</table></div>
+<br/><h3 id="new-functions-in-namespaces">    New Functions in Namespaces</h3>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qproperty.html#beginPropertyUpdateGroup">beginPropertyUpdateGroup</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtandroidprivate.html#bindService">bindService</a></b>(const QAndroidIntent &amp;<i>serviceIntent</i>, const QAndroidServiceConnection &amp;<i>serviceConnection</i>, QtAndroidPrivate::BindFlags <i>flags</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> <code>(preliminary) </code>QFuture&lt;QtAndroidPrivate::PermissionResult&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtandroidprivate.html#checkPermission-1">checkPermission</a></b>(const QString &amp;<i>permission</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> <code>(preliminary) </code>QFuture&lt;QtAndroidPrivate::PermissionResult&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtandroidprivate.html#checkPermission">checkPermission</a></b>(QtAndroidPrivate::PermissionType <i>permission</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qproperty.html#endPropertyUpdateGroup">endPropertyUpdateGroup</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbytearray.html#operator-22-22_qba">operator&quot;&quot;_qba</a></b>(const char *<i>str</i>, size_t <i>size</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#operator-22-22_qs">operator&quot;&quot;_qs</a></b>(const char16_t *<i>str</i>, size_t <i>size</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> <code>(preliminary) </code>QFuture&lt;QtAndroidPrivate::PermissionResult&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtandroidprivate.html#requestPermission-1">requestPermission</a></b>(const QString &amp;<i>permission</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> <code>(preliminary) </code>QFuture&lt;QtAndroidPrivate::PermissionResult&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtandroidprivate.html#requestPermission">requestPermission</a></b>(QtAndroidPrivate::PermissionType <i>permission</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtandroidprivate.html#startActivity-2">startActivity</a></b>(const QJniObject &amp;<i>intent</i>, int <i>receiverRequestCode</i>, std::function&lt;void (int, int, const QJniObject &amp;)&gt; <i>callbackFunc</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtandroidprivate.html#startActivity-1">startActivity</a></b>(const QAndroidIntent &amp;<i>intent</i>, int <i>receiverRequestCode</i>, QAndroidActivityResultReceiver *<i>resultReceiver</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtandroidprivate.html#startActivity">startActivity</a></b>(const QJniObject &amp;<i>intent</i>, int <i>receiverRequestCode</i>, QAndroidActivityResultReceiver *<i>resultReceiver</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtandroidprivate.html#startIntentSender">startIntentSender</a></b>(const QJniObject &amp;<i>intentSender</i>, int <i>receiverRequestCode</i>, QAndroidActivityResultReceiver *<i>resultReceiver</i>)</td></tr>
+</table></div>
+<h3 id="new-global-functions">    New Global Functions</h3>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> std::underlying_type_t&lt;Enum&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtglobal.html#qToUnderlying">qToUnderlying</a></b>(Enum <i>e</i>)</td></tr>
+</table></div>
+<h3 id="new-macros">    New Macros</h3>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtglobal.html#PRIXQUINTPTR">PRIXQUINTPTR</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtglobal.html#PRIdQINTPTR">PRIdQINTPTR</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtglobal.html#PRIdQPTRDIFF">PRIdQPTRDIFF</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtglobal.html#PRIdQSIZETYPE">PRIdQSIZETYPE</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtglobal.html#PRIiQINTPTR">PRIiQINTPTR</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtglobal.html#PRIiQPTRDIFF">PRIiQPTRDIFF</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtglobal.html#PRIiQSIZETYPE">PRIiQSIZETYPE</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtglobal.html#PRIoQUINTPTR">PRIoQUINTPTR</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtglobal.html#PRIuQUINTPTR">PRIuQUINTPTR</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtglobal.html#PRIxQUINTPTR">PRIxQUINTPTR</a></b></td></tr>
+</table></div>
+<h3 id="new-enum-types">    New Enum Types</h3>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="../qtcharts/qchartview.html#RubberBand-enum">RubberBand</a></b> { NoRubberBand, VerticalRubberBand, HorizontalRubberBand, RectangleRubberBand, ClickThroughRubberBand }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum class </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qinputdevice.html#Capability-enum">Capability</a></b> { None, Position, Area, Pressure, Velocity, &hellip;, All }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qlocalsocket.html#SocketOption-enum">SocketOption</a></b> { NoOptions, AbstractNamespaceOption }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qlowenergyservice.html#DiscoveryMode-enum">DiscoveryMode</a></b> { FullDiscovery, SkipValueDiscovery }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebenginecontextmenurequest.html#EditFlag-enum">EditFlag</a></b> { CanUndo, CanRedo, CanCut, CanCopy, CanPaste, &hellip;, CanEditRichly }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebenginecontextmenurequest.html#MediaFlag-enum">MediaFlag</a></b> { MediaInError, MediaPaused, MediaMuted, MediaLoop, MediaCanSave, &hellip;, MediaCanRotate }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="../qtwebengine/qwebenginecontextmenurequest.html#MediaType-enum">MediaType</a></b> { MediaTypeNone, MediaTypeImage, MediaTypeVideo, MediaTypeAudio, MediaTypeCanvas, &hellip;, MediaTypePlugin }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum class </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtandroidprivate.html#BindFlag-enum">BindFlag</a></b> { None, AutoCreate, DebugUnbind, NotForeground, AboveClient, &hellip;, ExternalService }</td></tr>
+</table></div>
+<h3 id="new-properties">    New Properties</h3>
+<div class="table"><table class="propsummary">
+<tr><td class="topAlign"><ul>
+<li class="fn"><b><a href="../qtnetwork/qlocalsocket.html#socketOptions-prop">socketOptions</a></b> : </li>
+<li class="fn"><b><a href="../qtnetwork/qnetworkinformation.html#isBehindCaptivePortal-prop">isBehindCaptivePortal</a></b> : const </li>
+<li class="fn"><b><a href="../qtcore/qthreadpool.html#threadPriority-prop">threadPriority</a></b> : const </li>
+<li class="fn"><b><a href="../qtwebengine/qwebenginepage.html#loading-prop">loading</a></b> : const </li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn"><b><a href="../qtcharts/qxyseries.html#bestFitLineColor-prop">bestFitLineColor</a></b> : const </li>
+<li class="fn"><b><a href="../qtcharts/qxyseries.html#bestFitLineVisible-prop">bestFitLineVisible</a></b> : const </li>
+<li class="fn"><b><a href="../qtcharts/qxyseries.html#selectedColor-prop">selectedColor</a></b> : const </li>
+</ul>
+</td></tr>
+</table></div>
+<h3 id="new-variables">    New Variables</h3>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qlowenergycharacteristic.html#CCCDDisable-var">CCCDDisable</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qlowenergycharacteristic.html#CCCDEnableIndication-var">CCCDEnableIndication</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qlowenergycharacteristic.html#CCCDEnableNotification-var">CCCDEnableNotification</a></b></td></tr>
+</table></div>
+<h3 id="new-qml-types">    New QML Types</h3>
+<div class="flowListDiv">
+<dl class="flowList odd"><dt class="alphaChar"><b>A</b></dt>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-affector3d.html">Affector3D</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-attractor3d.html">Attractor3D</a></dd>
+</dl>
+<dl class="flowList even"><dt class="alphaChar"><b>D</b></dt>
+<dd><a href="../qtquickdialogs/qml-qtquick-dialogs-dialog.html">Dialog</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-direction3d.html">Direction3D</a></dd>
+</dl>
+<dl class="flowList odd"><dt class="alphaChar"><b>E</b></dt>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-emitburst3d.html">EmitBurst3D</a></dd>
+</dl>
+<dl class="flowList even"><dt class="alphaChar"><b>F</b></dt>
+<dd><a href="../qtquickdialogs/qml-qtquick-dialogs-filedialog.html">FileDialog</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-fileinstancing.html">FileInstancing</a></dd>
+<dd><a href="../qtquickdialogs/qml-qtquick-dialogs-fontdialog.html">FontDialog</a></dd>
+</dl>
+<dl class="flowList odd"><dt class="alphaChar"><b>G</b></dt>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-gravity3d.html">Gravity3D</a></dd>
+</dl>
+<dl class="flowList even"><dt class="alphaChar"><b>I</b></dt>
+<dd><a href="../qtquick3d/qml-qtquick3d-instancelistentry.html">InstanceListEntry</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-helpers-instancerange.html">InstanceRange</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-instancing.html">Instancing</a></dd>
+</dl>
+<dl class="flowList odd"><dt class="alphaChar"><b>M</b></dt>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-modelparticle3d.html">ModelParticle3D</a></dd>
+</dl>
+<dl class="flowList even"><dt class="alphaChar"><b>P</b></dt>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-particle3d.html">Particle3D</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-particleabstractshape3d.html">ParticleAbstractShape3D</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-particleemitter3d.html">ParticleEmitter3D</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-particlemodelshape3d.html">ParticleModelShape3D</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-particleshape3d.html">ParticleShape3D</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-particlesystem3d.html">ParticleSystem3D</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-particlesystem3dlogging.html">ParticleSystem3DLogging</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-pointrotator3d.html">PointRotator3D</a></dd>
+</dl>
+<dl class="flowList odd"><dt class="alphaChar"><b>R</b></dt>
+<dd><a href="../qtquick3d/qml-qtquick3d-helpers-randominstancing.html">RandomInstancing</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-assetutils-runtimeloader.html">RuntimeLoader</a></dd>
+</dl>
+<dl class="flowList even"><dt class="alphaChar"><b>S</b></dt>
+<dd><a href="../qtquickcontrols/qml-qtquick-controls2-selectionrectangle.html">SelectionRectangle</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-spriteparticle3d.html">SpriteParticle3D</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-spritesequence3d.html">SpriteSequence3D</a></dd>
+<dd><a href="../qtqmlcore/qml-qtcore-standardpaths.html">StandardPaths</a></dd>
+</dl>
+<dl class="flowList odd"><dt class="alphaChar"><b>T</b></dt>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-targetdirection3d.html">TargetDirection3D</a></dd>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-trailemitter3d.html">TrailEmitter3D</a></dd>
+</dl>
+<dl class="flowList even"><dt class="alphaChar"><b>V</b></dt>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-vectordirection3d.html">VectorDirection3D</a></dd>
+</dl>
+<dl class="flowList odd"><dt class="alphaChar"><b>W</b></dt>
+<dd><a href="../qtquick3d/qml-qtquick3d-particles3d-wander3d.html">Wander3D</a></dd>
+</dl>
+</div>
+<h3 id="new-qml-properties">    New QML Properties</h3>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick3d/qml-qtquick3d-texture.html#autoOrientation-prop">autoOrientation</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qml-qtquick-image.html#mirrorVertically-prop">mirrorVertically</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qml-qtquick-systempalette.html#placeholderText-prop">placeholderText</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qml-qtquick-colorgroup.html#placeholderText-prop">placeholderText</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qml-qtquick-tableview.html#selectionModel-prop">selectionModel</a></b></td></tr>
+</table></div>
+<h3 id="new-qml-methods">    New QML Methods</h3>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qml-qtquick-tableview.html#columnWidth-method">columnWidth</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtqml/qml-qtqml-locale.html#formattedDataSize-method">formattedDataSize</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qml-qtquick-tableview.html#implicitColumnWidth-method">implicitColumnWidth</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qml-qtquick-tableview.html#implicitRowHeight-method">implicitRowHeight</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qml-qtquick-tableview.html#isColumnLoaded-method">isColumnLoaded</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qml-qtquick-tableview.html#isRowLoaded-method">isRowLoaded</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick3d/qml-qtquick3d-view3d.html#pickAll-method">pickAll</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick3d/qml-qtquick3d-view3d.html#rayPick-method">rayPick</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick3d/qml-qtquick3d-view3d.html#rayPickAll-method">rayPickAll</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qml-qtquick-tableview.html#rowHeight-method">rowHeight</a></b>()</td></tr>
+</table></div>
+<h2 id="additions-to-other-qt-6-releases">Additions to Other Qt 6 Releases</h2>
+<ul>
+<li><a href="whatsnew61.html">What's New in Qt 6.1</a></li>
+<li><a href="whatsnew60.html">What's New in Qt 6.0</a></li>
+</ul>
+</div>
+<!-- @@@newclasses62.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qassociativeiterable.cpp -->
+  <title>QAssociativeIterable Class | Qt Core 6.2.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 6.2</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>QAssociativeIterable</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 6.2&#x2e;3 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QAssociativeIterable Class</h1>
+<!-- $$$QAssociativeIterable-brief -->
+<p>The QAssociativeIterable class is an iterable interface for an associative container in a <a href="qvariant.html">QVariant</a>. <a href="#details">More...</a></p>
+<!-- @@@QAssociativeIterable -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QAssociativeIterable&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> CMake:</td><td class="memItemRight bottomAlign"> find_package(Qt6 COMPONENTS Core REQUIRED) <br/>
+target_link_libraries(mytarget PRIVATE Qt6::Core)</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += core</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.2</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qiterable.html">QIterable</a></td></tr></table></div>
+<ul>
+<li><a href="qassociativeiterable-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#BidirectionalConstIterator-typedef">BidirectionalConstIterator</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#BidirectionalIterator-typedef">BidirectionalIterator</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#ForwardConstIterator-typedef">ForwardConstIterator</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#ForwardIterator-typedef">ForwardIterator</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#InputConstIterator-typedef">InputConstIterator</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#InputIterator-typedef">InputIterator</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#RandomAccessConstIterator-typedef">RandomAccessConstIterator</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#RandomAccessIterator-typedef">RandomAccessIterator</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#const_iterator-typedef">const_iterator</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#iterator-typedef">iterator</a></b></td></tr>
+</table></div>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#containsKey">containsKey</a></b>(const QVariant &amp;<i>key</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QAssociativeIterable::const_iterator </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#find">find</a></b>(const QVariant &amp;<i>key</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#insertKey">insertKey</a></b>(const QVariant &amp;<i>key</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QAssociativeIterable::iterator </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#mutableFind">mutableFind</a></b>(const QVariant &amp;<i>key</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#removeKey">removeKey</a></b>(const QVariant &amp;<i>key</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#setValue">setValue</a></b>(const QVariant &amp;<i>key</i>, const QVariant &amp;<i>mapped</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVariant </td><td class="memItemRight bottomAlign"><b><a href="qassociativeiterable.html#value">value</a></b>(const QVariant &amp;<i>key</i>) const</td></tr>
+</table></div>
+<!-- $$$QAssociativeIterable-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>This class allows several methods of accessing the elements of an associative container held within a <a href="qvariant.html">QVariant</a>. An instance of QAssociativeIterable can be extracted from a <a href="qvariant.html">QVariant</a> if it can be converted to a QVariantHash or QVariantMap or if a custom mutable view has been registered.</p>
+<pre class="cpp">
+ <span class="type"><a href="qhash.html">QHash</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">,</span> <span class="type"><a href="qstring.html">QString</a></span><span class="operator">&gt;</span> mapping;
+ mapping<span class="operator">.</span>insert(<span class="number">7</span><span class="operator">,</span> <span class="string">&quot;Seven&quot;</span>);
+ mapping<span class="operator">.</span>insert(<span class="number">11</span><span class="operator">,</span> <span class="string">&quot;Eleven&quot;</span>);
+ mapping<span class="operator">.</span>insert(<span class="number">42</span><span class="operator">,</span> <span class="string">&quot;Forty-two&quot;</span>);
+
+ <span class="type"><a href="qvariant.html">QVariant</a></span> variant <span class="operator">=</span> <span class="type"><a href="qvariant.html">QVariant</a></span><span class="operator">::</span>fromValue(mapping);
+ <span class="keyword">if</span> (variant<span class="operator">.</span>canConvert<span class="operator">&lt;</span><span class="type">QVariantHash</span><span class="operator">&gt;</span>()) {
+     <span class="type">QAssociativeIterable</span> iterable <span class="operator">=</span> variant<span class="operator">.</span>value<span class="operator">&lt;</span><span class="type">QAssociativeIterable</span><span class="operator">&gt;</span>();
+     <span class="comment">// Can use foreach over the values:</span>
+     foreach (<span class="keyword">const</span> <span class="type"><a href="qvariant.html">QVariant</a></span> <span class="operator">&amp;</span>v<span class="operator">,</span> iterable) {
+         <a href="qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> v;
+     }
+     <span class="comment">// Can use C++11 range-for over the values:</span>
+     <span class="keyword">for</span> (<span class="keyword">const</span> <span class="type"><a href="qvariant.html">QVariant</a></span> <span class="operator">&amp;</span>v : iterable) {
+         <a href="qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> v;
+     }
+     <span class="comment">// Can use iterators:</span>
+     <span class="type">QAssociativeIterable</span><span class="operator">::</span>const_iterator it <span class="operator">=</span> iterable<span class="operator">.</span>begin();
+     <span class="keyword">const</span> <span class="type">QAssociativeIterable</span><span class="operator">::</span>const_iterator end <span class="operator">=</span> iterable<span class="operator">.</span>end();
+     <span class="keyword">for</span> ( ; it <span class="operator">!</span><span class="operator">=</span> end; <span class="operator">+</span><span class="operator">+</span>it) {
+         <a href="qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="operator">*</span>it; <span class="comment">// The current value</span>
+         <a href="qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> it<span class="operator">.</span>key();
+         <a href="qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> it<span class="operator">.</span>value();
+     }
+ }
+</pre>
+<p>The container itself is not copied before iterating over it.</p>
+</div>
+<p><b>See also </b><a href="qvariant.html">QVariant</a>.</p>
+<!-- @@@QAssociativeIterable -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$BidirectionalConstIterator -->
+<h3 class="fn" id="BidirectionalConstIterator-typedef"><code>[alias] </code>QAssociativeIterable::<span class="name">BidirectionalConstIterator</span></h3>
+<p>Exposes a const_iterator using std::bidirectional_iterator_tag.</p>
+<!-- @@@BidirectionalConstIterator -->
+<!-- $$$BidirectionalIterator -->
+<h3 class="fn" id="BidirectionalIterator-typedef"><code>[alias] </code>QAssociativeIterable::<span class="name">BidirectionalIterator</span></h3>
+<p>Exposes an iterator using std::bidirectional_iterator_tag.</p>
+<!-- @@@BidirectionalIterator -->
+<!-- $$$ForwardConstIterator -->
+<h3 class="fn" id="ForwardConstIterator-typedef"><code>[alias] </code>QAssociativeIterable::<span class="name">ForwardConstIterator</span></h3>
+<p>Exposes a const_iterator using std::forward_iterator_tag.</p>
+<!-- @@@ForwardConstIterator -->
+<!-- $$$ForwardIterator -->
+<h3 class="fn" id="ForwardIterator-typedef"><code>[alias] </code>QAssociativeIterable::<span class="name">ForwardIterator</span></h3>
+<p>Exposes an iterator using std::forward_iterator_tag.</p>
+<!-- @@@ForwardIterator -->
+<!-- $$$InputConstIterator -->
+<h3 class="fn" id="InputConstIterator-typedef"><code>[alias] </code>QAssociativeIterable::<span class="name">InputConstIterator</span></h3>
+<p>Exposes a const_iterator using std::input_iterator_tag.</p>
+<!-- @@@InputConstIterator -->
+<!-- $$$InputIterator -->
+<h3 class="fn" id="InputIterator-typedef"><code>[alias] </code>QAssociativeIterable::<span class="name">InputIterator</span></h3>
+<p>Exposes an iterator using std::input_iterator_tag.</p>
+<!-- @@@InputIterator -->
+<!-- $$$RandomAccessConstIterator -->
+<h3 class="fn" id="RandomAccessConstIterator-typedef"><code>[alias] </code>QAssociativeIterable::<span class="name">RandomAccessConstIterator</span></h3>
+<p>Exposes a const_iterator using std::random_access_iterator_tag.</p>
+<!-- @@@RandomAccessConstIterator -->
+<!-- $$$RandomAccessIterator -->
+<h3 class="fn" id="RandomAccessIterator-typedef"><code>[alias] </code>QAssociativeIterable::<span class="name">RandomAccessIterator</span></h3>
+<p>Exposes an iterator using std::random_access_iterator_tag.</p>
+<!-- @@@RandomAccessIterator -->
+<!-- $$$const_iterator -->
+<h3 class="fn" id="const_iterator-typedef"><code>[alias] </code>QAssociativeIterable::<span class="name">const_iterator</span></h3>
+<p>The QAssociativeIterable::const_iterator allows iteration over a container in a <a href="qvariant.html">QVariant</a>.</p>
+<p>A QAssociativeIterable::const_iterator can only be created by a <a href="qassociativeiterable.html">QAssociativeIterable</a> instance, and can be used in a way similar to other stl-style iterators.</p>
+<pre class="cpp">
+ <span class="type"><a href="qhash.html">QHash</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">,</span> <span class="type"><a href="qstring.html">QString</a></span><span class="operator">&gt;</span> mapping;
+ mapping<span class="operator">.</span>insert(<span class="number">7</span><span class="operator">,</span> <span class="string">&quot;Seven&quot;</span>);
+ mapping<span class="operator">.</span>insert(<span class="number">11</span><span class="operator">,</span> <span class="string">&quot;Eleven&quot;</span>);
+ mapping<span class="operator">.</span>insert(<span class="number">42</span><span class="operator">,</span> <span class="string">&quot;Forty-two&quot;</span>);
+
+ <span class="type"><a href="qvariant.html">QVariant</a></span> variant <span class="operator">=</span> <span class="type"><a href="qvariant.html">QVariant</a></span><span class="operator">::</span>fromValue(mapping);
+ <span class="keyword">if</span> (variant<span class="operator">.</span>canConvert<span class="operator">&lt;</span><span class="type">QVariantHash</span><span class="operator">&gt;</span>()) {
+     <span class="type">QAssociativeIterable</span> iterable <span class="operator">=</span> variant<span class="operator">.</span>value<span class="operator">&lt;</span><span class="type">QAssociativeIterable</span><span class="operator">&gt;</span>();
+     <span class="comment">// Can use foreach over the values:</span>
+     foreach (<span class="keyword">const</span> <span class="type"><a href="qvariant.html">QVariant</a></span> <span class="operator">&amp;</span>v<span class="operator">,</span> iterable) {
+         <a href="qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> v;
+     }
+     <span class="comment">// Can use C++11 range-for over the values:</span>
+     <span class="keyword">for</span> (<span class="keyword">const</span> <span class="type"><a href="qvariant.html">QVariant</a></span> <span class="operator">&amp;</span>v : iterable) {
+         <a href="qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> v;
+     }
+     <span class="comment">// Can use iterators:</span>
+     <span class="type">QAssociativeIterable</span><span class="operator">::</span>const_iterator it <span class="operator">=</span> iterable<span class="operator">.</span>begin();
+     <span class="keyword">const</span> <span class="type">QAssociativeIterable</span><span class="operator">::</span>const_iterator end <span class="operator">=</span> iterable<span class="operator">.</span>end();
+     <span class="keyword">for</span> ( ; it <span class="operator">!</span><span class="operator">=</span> end; <span class="operator">+</span><span class="operator">+</span>it) {
+         <a href="qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="operator">*</span>it; <span class="comment">// The current value</span>
+         <a href="qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> it<span class="operator">.</span>key();
+         <a href="qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> it<span class="operator">.</span>value();
+     }
+ }
+</pre>
+<p><b>See also </b><a href="qassociativeiterable.html">QAssociativeIterable</a>.</p>
+<!-- @@@const_iterator -->
+<!-- $$$iterator -->
+<h3 class="fn" id="iterator-typedef"><code>[alias, since 6.0] </code>QAssociativeIterable::<span class="name">iterator</span></h3>
+<p>The QAssociativeIterable::iterator allows iteration over a container in a <a href="qvariant.html">QVariant</a>.</p>
+<p>A QAssociativeIterable::iterator can only be created by a <a href="qassociativeiterable.html">QAssociativeIterable</a> instance, and can be used in a way similar to other stl-style iterators.</p>
+<p>This typedef was introduced in Qt 6.0.</p>
+<p><b>See also </b><a href="qassociativeiterable.html">QAssociativeIterable</a>.</p>
+<!-- @@@iterator -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$containsKey[overload1]$$$containsKeyconstQVariant& -->
+<h3 class="fn" id="containsKey"><span class="type">bool</span> QAssociativeIterable::<span class="name">containsKey</span>(const <span class="type"><a href="qvariant.html">QVariant</a></span> &amp;<i>key</i>)</h3>
+<p>Returns <code>true</code> if the container has an entry with the given <i>key</i>, or <code>false</code> otherwise. If the <i>key</i> isn't convertible to the expected type, <code>false</code> is returned.</p>
+<!-- @@@containsKey -->
+<!-- $$$find[overload1]$$$findconstQVariant& -->
+<h3 class="fn" id="find"><span class="type">QAssociativeIterable::const_iterator</span> QAssociativeIterable::<span class="name">find</span>(const <span class="type"><a href="qvariant.html">QVariant</a></span> &amp;<i>key</i>) const</h3>
+<p>Retrieves a const_iterator pointing to the element at the given <i>key</i>, or the end of the container if that key does not exist. If the <i>key</i> isn't convertible to the expected type, the end of the container is returned.</p>
+<!-- @@@find -->
+<!-- $$$insertKey[overload1]$$$insertKeyconstQVariant& -->
+<h3 class="fn" id="insertKey"><span class="type">void</span> QAssociativeIterable::<span class="name">insertKey</span>(const <span class="type"><a href="qvariant.html">QVariant</a></span> &amp;<i>key</i>)</h3>
+<p>Inserts a new entry with the given <i>key</i>, or resets the mapped value of any existing entry with the given <i>key</i> to the default constructed mapped value. The <i>key</i> is coerced to the expected type: If it isn't convertible, a default value is inserted.</p>
+<!-- @@@insertKey -->
+<!-- $$$mutableFind[overload1]$$$mutableFindconstQVariant& -->
+<h3 class="fn" id="mutableFind"><span class="type">QAssociativeIterable::iterator</span> QAssociativeIterable::<span class="name">mutableFind</span>(const <span class="type"><a href="qvariant.html">QVariant</a></span> &amp;<i>key</i>)</h3>
+<p>Retrieves an iterator pointing to the element at the given <i>key</i>, or the end of the container if that key does not exist. If the <i>key</i> isn't convertible to the expected type, the end of the container is returned.</p>
+<!-- @@@mutableFind -->
+<!-- $$$removeKey[overload1]$$$removeKeyconstQVariant& -->
+<h3 class="fn" id="removeKey"><span class="type">void</span> QAssociativeIterable::<span class="name">removeKey</span>(const <span class="type"><a href="qvariant.html">QVariant</a></span> &amp;<i>key</i>)</h3>
+<p>Removes the entry with the given <i>key</i> from the container. The <i>key</i> is coerced to the expected type: If it isn't convertible, the default value is removed.</p>
+<!-- @@@removeKey -->
+<!-- $$$setValue[overload1]$$$setValueconstQVariant&constQVariant& -->
+<h3 class="fn" id="setValue"><span class="type">void</span> QAssociativeIterable::<span class="name">setValue</span>(const <span class="type"><a href="qvariant.html">QVariant</a></span> &amp;<i>key</i>, const <span class="type"><a href="qvariant.html">QVariant</a></span> &amp;<i>mapped</i>)</h3>
+<p>Sets the mapped value associated with <i>key</i> to <i>mapped</i>, if possible. Inserts a new entry if none exists yet, for the given <i>key</i>. If the <i>key</i> is not convertible to the key type, the value for the default-constructed key type is overwritten.</p>
+<p><b>See also </b><a href="qassociativeiterable.html#value">value</a>().</p>
+<!-- @@@setValue -->
+<!-- $$$value[overload1]$$$valueconstQVariant& -->
+<h3 class="fn" id="value"><span class="type"><a href="qvariant.html">QVariant</a></span> QAssociativeIterable::<span class="name">value</span>(const <span class="type"><a href="qvariant.html">QVariant</a></span> &amp;<i>key</i>) const</h3>
+<p>Retrieves the mapped value at the given <i>key</i>, or a default-constructed <a href="qvariant.html">QVariant</a> of the mapped type, if the key does not exist. If the <i>key</i> is not convertible to the key type, the mapped value associated with the default-constructed key is returned.</p>
+<p><b>See also </b><a href="qassociativeiterable.html#setValue">setValue</a>().</p>
+<!-- @@@value -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

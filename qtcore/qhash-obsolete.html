@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qhash.cpp -->
+  <title>Obsolete Members for QHash | Qt Core 6.2.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 6.2</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>QHash</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 6.2&#x2e;3 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QHash</h1>
+<p><b>The following members of class <a href="qhash.html">QHash</a> are deprecated.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Related Non-Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.6)) </code>int </td><td class="memItemRight bottomAlign"><b><a href="qhash-obsolete.html#qGlobalQHashSeed">qGlobalQHashSeed</a></b>()</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.6)) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qhash-obsolete.html#qSetGlobalQHashSeed">qSetGlobalQHashSeed</a></b>(int <i>newSeed</i>)</td></tr>
+</table></div>
+<h2>Related Non-Members</h2>
+<!-- $$$qGlobalQHashSeed[overload1]$$$qGlobalQHashSeed -->
+<h3 class="fn" id="qGlobalQHashSeed"><code>[since 5.6] </code><span class="type">int</span> <span class="name">qGlobalQHashSeed</span>()</h3>
+<p>This function is deprecated since 6.6. We strongly advise against using it in new code.</p>
+<p>Use <a href="qhashseed.html#globalSeed">QHashSeed::globalSeed</a>() instead.</p>
+<p>Returns the current global <a href="qhash.html#qhash">QHash</a> seed.</p>
+<p>The seed is set in any newly created <a href="qhash.html#qhash">QHash</a>. See <a href="qhash.html#qhash">qHash</a> about how this seed is being used by <a href="qhash.html#qhash">QHash</a>.</p>
+<p>This function was introduced in Qt 5.6.</p>
+<p><b>See also </b><a href="qhashseed.html">QHashSeed</a> and <a href="qhashseed.html#globalSeed">QHashSeed::globalSeed</a>().</p>
+<!-- @@@qGlobalQHashSeed -->
+<!-- $$$qSetGlobalQHashSeed[overload1]$$$qSetGlobalQHashSeedint -->
+<h3 class="fn" id="qSetGlobalQHashSeed"><code>[since 5.6] </code><span class="type">void</span> <span class="name">qSetGlobalQHashSeed</span>(<span class="type">int</span> <i>newSeed</i>)</h3>
+<p>This function is deprecated since 6.6. We strongly advise against using it in new code.</p>
+<p>Use <a href="qhashseed.html">QHashSeed</a> instead.</p>
+<p>Sets the global <a href="qhash.html#qhash">QHash</a> seed to <i>newSeed</i>.</p>
+<p>Manually setting the global <a href="qhash.html#qhash">QHash</a> seed value should be done only for testing and debugging purposes, when deterministic and reproducible behavior on a <a href="qhash.html#qhash">QHash</a> is needed. We discourage to do it in production code as it can make your application susceptible to <a href="qhash.html#algorithmic-complexity-attacks">algorithmic complexity attacks</a>.</p>
+<p>From Qt 5.10 and onwards, the only allowed values are 0 and -1. Passing the value -1 will reinitialize the global <a href="qhash.html#qhash">QHash</a> seed to a random value, while the value of 0 is used to request a stable algorithm for C++ primitive types types (like <code>int</code>) and string types (<a href="qstring.html">QString</a>, <a href="qbytearray.html">QByteArray</a>).</p>
+<p>The seed is set in any newly created <a href="qhash.html#qhash">QHash</a>. See <a href="qhash.html#qhash">qHash</a> about how this seed is being used by <a href="qhash.html#qhash">QHash</a>.</p>
+<p>If the environment variable <code>QT_HASH_SEED</code> is set, calling this function will result in a no-op.</p>
+<p>This function was introduced in Qt 5.6.</p>
+<p><b>See also </b><a href="qhashseed.html#globalSeed">QHashSeed::globalSeed</a>() and <a href="qhashseed.html">QHashSeed</a>.</p>
+<!-- @@@qSetGlobalQHashSeed -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtDesigner">
+    <examples>
+        <example docUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/qtdesigner-calculatorbuilder-example.html" imageUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/images/calculatorbuilder-example.png" name="Calculator Builder Example" projectPath="designer/calculatorbuilder/calculatorbuilder.pro">
+            <description><![CDATA[Creating a user interface from a Qt Designer form at run-time.]]></description>
+            <tags>builder,calculator,designer</tags>
+            <fileToOpen mainFile="true">designer/calculatorbuilder/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/qtdesigner-calculatorform-example.html" imageUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/images/calculatorform-example.png" name="Calculator Form Example" projectPath="designer/calculatorform/calculatorform.pro">
+            <description><![CDATA[Using a form created with Qt Designer in an application.]]></description>
+            <tags>calculator,designer,form</tags>
+            <fileToOpen>designer/calculatorform/main.cpp</fileToOpen>
+            <fileToOpen>designer/calculatorform/calculatorform.h</fileToOpen>
+            <fileToOpen mainFile="true">designer/calculatorform/calculatorform.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/qtdesigner-containerextension-example.html" imageUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/images/containerextension-example.png" name="Container Extension Example" projectPath="designer/containerextension/containerextension.pro">
+            <description><![CDATA[Creating a custom multi-page plugin for Qt Designer.]]></description>
+            <tags>container,designer,extension</tags>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/qtdesigner-customwidgetplugin-example.html" imageUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/images/customwidgetplugin-example.png" name="Custom Widget Plugin Example" projectPath="designer/customwidgetplugin/customwidgetplugin.pro">
+            <description><![CDATA[Creating a custom widget plugin for Qt Designer.]]></description>
+            <tags>custom,designer,plugin,widget</tags>
+            <fileToOpen>designer/customwidgetplugin/customwidgetplugin.h</fileToOpen>
+            <fileToOpen mainFile="true">designer/customwidgetplugin/customwidgetplugin.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/qtdesigner-taskmenuextension-example.html" imageUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/images/taskmenuextension-example-faded.png" name="Task Menu Extension Example" projectPath="designer/taskmenuextension/taskmenuextension.pro">
+            <description><![CDATA[Creating a custom widget plugin for Qt Designer and providing custom task menu entries that are associated with the plugin.]]></description>
+            <tags>designer,extension,menu,task</tags>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/qtdesigner-worldtimeclockbuilder-example.html" imageUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/images/worldtimeclockbuilder-example.png" name="World Time Clock Builder Example" projectPath="designer/worldtimeclockbuilder/worldtimeclockbuilder.pro">
+            <description><![CDATA[Creating forms with Qt Designer that contain custom widgets that can be dynamically generated at run-time.]]></description>
+            <tags>builder,clock,designer,time,world</tags>
+            <fileToOpen mainFile="true">designer/worldtimeclockbuilder/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/qtdesigner-worldtimeclockplugin-example.html" imageUrl="qthelp://org.qt-project.qtdesigner.623/qtdesigner/images/worldtimeclockplugin-example.png" name="World Time Clock Plugin Example" projectPath="designer/worldtimeclockplugin/worldtimeclockplugin.pro">
+            <description><![CDATA[Creating a custom widget plugin for Qt Designer that uses signals and slots.]]></description>
+            <tags>clock,designer,plugin,time,world</tags>
+            <fileToOpen>designer/worldtimeclockplugin/worldtimeclockplugin.h</fileToOpen>
+            <fileToOpen mainFile="true">designer/worldtimeclockplugin/worldtimeclockplugin.cpp</fileToOpen>
+        </example>
+    </examples>
+</instructionals>

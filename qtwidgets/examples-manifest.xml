@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtWidgets">
+    <examples>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-graphicsview-chip-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/chip-demo.png" name="40000 Chips" projectPath="widgets/graphicsview/chip/chip.pro">
+            <description><![CDATA[Visualizes a huge graphic view scene with 40000 chip items.]]></description>
+            <tags>chips,ios,widgets</tags>
+            <fileToOpen>widgets/graphicsview/chip/main.cpp</fileToOpen>
+            <fileToOpen>widgets/graphicsview/chip/chip.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/graphicsview/chip/chip.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-addressbook-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/addressbook-example.png" name="Address Book Example" projectPath="widgets/itemviews/addressbook/addressbook.pro">
+            <description><![CDATA[The address book example shows how to use proxy models to display different views onto data from a single model.]]></description>
+            <tags>address,android,book,ios,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/addressbook/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-painting-affine-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/affine-demo.png" name="Affine Transformations" projectPath="widgets/painting/affine/affine.pro">
+            <description><![CDATA[Demonstrates how affine transformations in QPainter works.]]></description>
+            <tags>affine,android,transformations,widgets</tags>
+            <fileToOpen mainFile="true">widgets/painting/affine/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-analogclock-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/analogclock-example.png" name="Analog Clock Example" projectPath="widgets/widgets/analogclock/analogclock.pro">
+            <description><![CDATA[The Analog Clock example shows how to draw the contents of a custom widget.]]></description>
+            <tags>analog,android,clock,ios,widgets</tags>
+            <fileToOpen>widgets/widgets/analogclock/main.cpp</fileToOpen>
+            <fileToOpen>widgets/widgets/analogclock/analogclock.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/widgets/analogclock/analogclock.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-graphicsview-anchorlayout-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/graphicsanchorlayout-example.png" name="Anchor Layout Example" projectPath="widgets/graphicsview/anchorlayout/anchorlayout.pro">
+            <description><![CDATA[Demonstrates anchor layout in a graphics view scene.]]></description>
+            <tags>anchor,ios,layout,widgets</tags>
+            <fileToOpen mainFile="true">widgets/graphicsview/anchorlayout/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-painting-basicdrawing-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/basicdrawing-example.png" name="Basic Drawing Example" projectPath="widgets/painting/basicdrawing/basicdrawing.pro">
+            <description><![CDATA[The Basic Drawing example shows how to display basic graphics primitives in a variety of styles using the QPainter class.]]></description>
+            <tags>basic,drawing,ios,widgets</tags>
+            <fileToOpen mainFile="true">widgets/painting/basicdrawing/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-graphicsview-basicgraphicslayouts-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/basicgraphicslayouts-example.png" name="Basic Graphics Layouts Example" projectPath="widgets/graphicsview/basicgraphicslayouts/basicgraphicslayouts.pro">
+            <description><![CDATA[Demonstrates how to create basic graphics layout.]]></description>
+            <tags>basic,graphics,ios,layouts,widgets</tags>
+            <fileToOpen mainFile="true">widgets/graphicsview/basicgraphicslayouts/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-layouts-basiclayouts-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/basiclayouts-example.png" name="Basic Layouts Example" projectPath="widgets/layouts/basiclayouts/basiclayouts.pro">
+            <description><![CDATA[Shows how to use the standard layout managers.]]></description>
+            <tags>android,basic,ios,layouts,widgets</tags>
+            <fileToOpen mainFile="true">widgets/layouts/basiclayouts/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-basicsortfiltermodel-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/basicsortfiltermodel-example.png" name="Basic Sort/Filter Model Example" projectPath="widgets/itemviews/basicsortfiltermodel/basicsortfiltermodel.pro">
+            <description><![CDATA[The Basic Sort/Filter Model example illustrates how to use QSortFilterProxyModel to perform basic sorting and filtering.]]></description>
+            <tags>basic,ios,model,sort/filter,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/basicsortfiltermodel/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-effects-blurpicker-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/blurpickereffect-example.png" name="Blur Picker Effect Example" projectPath="widgets/effects/blurpicker/blurpicker.pro">
+            <description><![CDATA[Demonstrates how to apply graphical effects on items in the view.]]></description>
+            <tags>blur,effect,ios,picker,widgets</tags>
+            <fileToOpen>widgets/effects/blurpicker/main.cpp</fileToOpen>
+            <fileToOpen>widgets/effects/blurpicker/blurpicker.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/effects/blurpicker/blurpicker.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-layouts-borderlayout-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/borderlayout-example.png" name="Border Layout Example" projectPath="widgets/layouts/borderlayout/borderlayout.pro">
+            <description><![CDATA[Shows how to arrange child widgets along a border.]]></description>
+            <tags>android,border,ios,layout,widgets</tags>
+            <fileToOpen>widgets/layouts/borderlayout/main.cpp</fileToOpen>
+            <fileToOpen>widgets/layouts/borderlayout/borderlayout.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/layouts/borderlayout/borderlayout.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-calculator-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/calculator-example.png" name="Calculator Example" projectPath="widgets/widgets/calculator/calculator.pro">
+            <description><![CDATA[The example shows how to use signals and slots to implement the functionality of a calculator widget, and how to use QGridLayout to place child widgets in a grid.]]></description>
+            <tags>calculator,ios,widgets</tags>
+            <fileToOpen>widgets/widgets/calculator/main.cpp</fileToOpen>
+            <fileToOpen>widgets/widgets/calculator/calculator.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/widgets/calculator/calculator.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-richtext-calendar-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/calendar-example.png" name="Calendar Example" projectPath="widgets/richtext/calendar/calendar.pro">
+            <description><![CDATA[The Calendar example shows how to create rich text content and display it using a rich text editor.]]></description>
+            <tags>calendar,ios,widgets</tags>
+            <fileToOpen mainFile="true">widgets/richtext/calendar/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-calendarwidget-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/calendarwidgetexample.png" name="Calendar Widget Example" projectPath="widgets/widgets/calendarwidget/calendarwidget.pro">
+            <description><![CDATA[The Calendar Widget example shows use of QCalendarWidget.]]></description>
+            <tags>calendar,ios,widget,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/calendarwidget/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-charactermap-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/charactermap-example.png" name="Character Map Example" projectPath="widgets/widgets/charactermap/charactermap.pro">
+            <description><![CDATA[The Character Map example shows how to create a custom widget that can both display its own content and respond to user input.]]></description>
+            <tags>character,ios,map,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/charactermap/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-chart-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/chart-example.png" name="Chart Example" projectPath="widgets/itemviews/chart/chart.pro">
+            <description><![CDATA[The Chart example shows how to create a custom view for the model/view framework.]]></description>
+            <tags>chart,ios,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/chart/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-dialogs-classwizard-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/classwizard.png" name="Class Wizard Example" projectPath="widgets/dialogs/classwizard/classwizard.pro">
+            <description><![CDATA[The Class Wizard example shows how to implement linear wizards using QWizard.]]></description>
+            <tags>class,ios,widgets,wizard</tags>
+            <fileToOpen>widgets/dialogs/classwizard/main.cpp</fileToOpen>
+            <fileToOpen>widgets/dialogs/classwizard/classwizard.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/dialogs/classwizard/classwizard.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-codeeditor-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/codeeditor-example.png" name="Code Editor Example" projectPath="widgets/widgets/codeeditor/codeeditor.pro">
+            <description><![CDATA[The Code Editor example shows how to create a simple editor that has line numbers and that highlights the current line.]]></description>
+            <tags>android,code,editor,ios,widgets</tags>
+            <fileToOpen>widgets/widgets/codeeditor/main.cpp</fileToOpen>
+            <fileToOpen>widgets/widgets/codeeditor/codeeditor.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/widgets/codeeditor/codeeditor.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-graphicsview-collidingmice-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/collidingmice-example.png" name="Colliding Mice Example" projectPath="widgets/graphicsview/collidingmice/collidingmice.pro">
+            <description><![CDATA[Demonstrates how to animate items on a graphics view.]]></description>
+            <tags>android,colliding,ios,mice,widgets</tags>
+            <fileToOpen mainFile="true">widgets/graphicsview/collidingmice/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-coloreditorfactory-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/coloreditorfactoryimage.png" name="Color Editor Factory Example" projectPath="widgets/itemviews/coloreditorfactory/coloreditorfactory.pro">
+            <description><![CDATA[This example shows how to create an editor that can be used by a QItemDelegate.]]></description>
+            <tags>color,editor,factory,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/coloreditorfactory/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-combowidgetmapper-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/combowidgetmapper-example.png" name="Combo Widget Mapper Example" projectPath="widgets/itemviews/combowidgetmapper/combowidgetmapper.pro">
+            <description><![CDATA[The Combo Widget Mapper example shows how to use a custom delegate to map information from a model to specific widgets on a form.]]></description>
+            <tags>combo,mapper,widget,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/combowidgetmapper/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tools-completer-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/completer-example.png" name="Completer Example" projectPath="widgets/tools/completer/completer.pro">
+            <description><![CDATA[The Completer example shows how to provide string-completion facilities for an input widget based on data provided by a model.]]></description>
+            <tags>completer,ios,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tools/completer/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-painting-composition-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/composition-demo.png" name="Composition Modes" projectPath="widgets/painting/composition/composition.pro">
+            <description><![CDATA[Demonstrates how Composition Modes work in QPainter.]]></description>
+            <tags>composition,modes,widgets</tags>
+            <fileToOpen>widgets/painting/composition/main.cpp</fileToOpen>
+            <fileToOpen>widgets/painting/composition/composition.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/painting/composition/composition.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-painting-concentriccircles-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/concentriccircles-example.png" name="Concentric Circles Example" projectPath="widgets/painting/concentriccircles/concentriccircles.pro">
+            <description><![CDATA[Demonstrates the improved quality that antialiasing and floating point precision gives.]]></description>
+            <tags>android,circles,concentric,ios,widgets</tags>
+            <fileToOpen mainFile="true">widgets/painting/concentriccircles/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tools-customcompleter-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/customcompleter-example.png" name="Custom Completer Example" projectPath="widgets/tools/customcompleter/customcompleter.pro">
+            <description><![CDATA[The Custom Completer example shows how to provide string-completion facilities for an input widget based on data provided by a model. The completer pops up suggestions for possible words based on the first three characters input by the user and the user's choice of word is inserted into the TextEdit using QTextCursor.]]></description>
+            <tags>completer,custom,ios,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tools/customcompleter/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-customsortfiltermodel-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/customsortfiltermodel-example.png" name="Custom Sort/Filter Model Example" projectPath="widgets/itemviews/customsortfiltermodel/customsortfiltermodel.pro">
+            <description><![CDATA[The Custom Sort/Filter Model example illustrates how to subclass QSortFilterProxyModel to perform advanced sorting and filtering.]]></description>
+            <tags>custom,ios,model,sort/filter,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/customsortfiltermodel/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-graphicsview-diagramscene-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/diagramscene.png" name="Diagram Scene Example" projectPath="widgets/graphicsview/diagramscene/diagramscene.pro">
+            <description><![CDATA[Demonstrate how to use the Graphics View framework.]]></description>
+            <tags>diagram,ios,scene,widgets</tags>
+            <fileToOpen>widgets/graphicsview/diagramscene/main.cpp</fileToOpen>
+            <fileToOpen>widgets/graphicsview/diagramscene/diagramscene.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/graphicsview/diagramscene/diagramscene.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-digitalclock-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/digitalclock-example.png" name="Digital Clock Example" projectPath="widgets/widgets/digitalclock/digitalclock.pro">
+            <description><![CDATA[The Digital Clock example shows how to use QLCDNumber to display a number with LCD-like digits.]]></description>
+            <tags>android,clock,digital,ios,widgets</tags>
+            <fileToOpen>widgets/widgets/digitalclock/main.cpp</fileToOpen>
+            <fileToOpen>widgets/widgets/digitalclock/digitalclock.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/widgets/digitalclock/digitalclock.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-dirview-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/dirview-example.png" name="Dir View Example" projectPath="widgets/itemviews/dirview/dirview.pro">
+            <description><![CDATA[This example demonstrates the usage of a tree view, and smooth flicking on a touchscreen.]]></description>
+            <tags>dir,ios,view,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/dirview/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-mainwindows-dockwidgets-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/dockwidgets-example.png" name="Dock Widgets Example" projectPath="widgets/mainwindows/dockwidgets/dockwidgets.pro">
+            <description><![CDATA[The Dock Widgets example shows how to add dock windows to an application. It also shows how to use Qt's rich text engine.]]></description>
+            <tags>dock,widgets</tags>
+            <fileToOpen mainFile="true">widgets/mainwindows/dockwidgets/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-draganddrop-puzzle-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/draganddroppuzzle-example.png" name="Drag and Drop Puzzle Example" projectPath="widgets/draganddrop/puzzle/puzzle.pro">
+            <description><![CDATA[The Drag and Drop Puzzle example demonstrates a way of using the drag and drop system with item view widgets.]]></description>
+            <tags>drag,drop,puzzle,widgets</tags>
+            <fileToOpen mainFile="true">widgets/draganddrop/puzzle/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-graphicsview-dragdroprobot-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/dragdroprobot-example.png" name="Drag and Drop Robot Example" projectPath="widgets/graphicsview/dragdroprobot/dragdroprobot.pro">
+            <description><![CDATA[Demonstrates how to drag and drop items in a graphics view.]]></description>
+            <tags>drag,drop,robot,widgets</tags>
+            <fileToOpen mainFile="true">widgets/graphicsview/dragdroprobot/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-draganddrop-draggableicons-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/draggableicons-example.png" name="Draggable Icons Example" projectPath="widgets/draganddrop/draggableicons/draggableicons.pro">
+            <description><![CDATA[The Draggable Icons example shows how to drag and drop image data between widgets in the same application, and between different applications.]]></description>
+            <tags>draggable,icons,widgets</tags>
+            <fileToOpen mainFile="true">widgets/draganddrop/draggableicons/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-draganddrop-draggabletext-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/draggabletext-example.png" name="Draggable Text Example" projectPath="widgets/draganddrop/draggabletext/draggabletext.pro">
+            <description><![CDATA[Illustrates how to drag and drop text between widgets.]]></description>
+            <tags>draggable,ios,text,widgets</tags>
+            <fileToOpen mainFile="true">widgets/draganddrop/draggabletext/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-draganddrop-dropsite-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/dropsite-example.png" name="Drop Site Example" projectPath="widgets/draganddrop/dropsite/dropsite.pro">
+            <description><![CDATA[The example shows how to distinguish the various MIME formats available in a drag and drop operation.]]></description>
+            <tags>drop,site,widgets</tags>
+            <fileToOpen mainFile="true">widgets/draganddrop/dropsite/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-layouts-dynamiclayouts-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/dynamiclayouts-example.png" name="Dynamic Layouts Example" projectPath="widgets/layouts/dynamiclayouts/dynamiclayouts.pro">
+            <description><![CDATA[Shows how to re-orient widgets in running applications.]]></description>
+            <tags>android,dynamic,layouts,widgets</tags>
+            <fileToOpen mainFile="true">widgets/layouts/dynamiclayouts/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-animation-easing-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/easing-example.png" name="Easing Curves Example" projectPath="widgets/animation/easing/easing.pro">
+            <description><![CDATA[The Easing Curves example shows how to use easing curves to control the speed of an animation.]]></description>
+            <tags>android,curves,easing,ios,widgets</tags>
+            <fileToOpen mainFile="true">widgets/animation/easing/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tools-echoplugin-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/echopluginexample.png" name="Echo Plugin Example" projectPath="widgets/tools/echoplugin/echoplugin.pro">
+            <description><![CDATA[This example shows how to create a Qt plugin.]]></description>
+            <tags>echo,plugin,widgets</tags>
+            <fileToOpen>widgets/tools/echoplugin/echowindow/main.cpp</fileToOpen>
+            <fileToOpen>widgets/tools/echoplugin/plugin/echoplugin.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/tools/echoplugin/plugin/echoplugin.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-editabletreemodel-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/itemviews-editabletreemodel.png" name="Editable Tree Model Example" projectPath="widgets/itemviews/editabletreemodel/editabletreemodel.pro">
+            <description><![CDATA[This example shows how to implement a simple item-based tree model that can be used with other classes the model/view framework.]]></description>
+            <tags>android,editable,ios,model,tree,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/editabletreemodel/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-graphicsview-elasticnodes-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/elasticnodes-example.png" name="Elastic Nodes Example" projectPath="widgets/graphicsview/elasticnodes/elasticnodes.pro">
+            <description><![CDATA[Demonstrates how to interact with graphical items in a scene.]]></description>
+            <tags>elastic,ios,nodes,widgets</tags>
+            <fileToOpen mainFile="true">widgets/graphicsview/elasticnodes/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-elidedlabel-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/elidedlabel-example.png" name="Elided Label Example" projectPath="widgets/widgets/elidedlabel/elidedlabel.pro">
+            <description><![CDATA[This example creates a widget similar to QLabel, that elides the last visible line, if the text is too long to fit the widget's geometry.]]></description>
+            <tags>android,elided,ios,label,widgets</tags>
+            <fileToOpen>widgets/widgets/elidedlabel/main.cpp</fileToOpen>
+            <fileToOpen>widgets/widgets/elidedlabel/elidedlabel.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/widgets/elidedlabel/elidedlabel.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-graphicsview-embeddeddialogs-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/embeddeddialogs-demo.png" name="Embedded Dialogs" projectPath="widgets/graphicsview/embeddeddialogs/embeddeddialogs.pro">
+            <description><![CDATA[Demonstrates how to embed dialogs into a graphics view.]]></description>
+            <tags>dialogs,embedded,ios,widgets</tags>
+            <fileToOpen mainFile="true">widgets/graphicsview/embeddeddialogs/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-dialogs-extension-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/extension-example.png" name="Extension Example" projectPath="widgets/dialogs/extension/extension.pro">
+            <description><![CDATA[The Extension example shows how to add an extension to a QDialog using the QAbstractButton::toggled() signal and the QWidget::setVisible() slot.]]></description>
+            <tags>extension,widgets</tags>
+            <fileToOpen mainFile="true">widgets/dialogs/extension/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-effects-fademessage-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/fademessageeffect-example.png" name="Fade Message Effect Example" projectPath="widgets/effects/fademessage/fademessage.pro">
+            <description><![CDATA[Demonstrates how to apply effects on items in the view.]]></description>
+            <tags>android,effect,fade,ios,message,widgets</tags>
+            <fileToOpen>widgets/effects/fademessage/main.cpp</fileToOpen>
+            <fileToOpen>widgets/effects/fademessage/fademessage.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/effects/fademessage/fademessage.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-fetchmore-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/fetchmore-example.png" name="Fetch More Example" projectPath="widgets/itemviews/fetchmore/fetchmore.pro">
+            <description><![CDATA[The Fetch More example shows how to add items to an item view model on demand.]]></description>
+            <tags>fetch,more,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/fetchmore/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-dialogs-findfiles-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/findfiles-example.png" name="Find Files Example" projectPath="widgets/dialogs/findfiles/findfiles.pro">
+            <description><![CDATA[A dialog for finding files in a specified folder.]]></description>
+            <tags>files,find,ios,widgets</tags>
+            <fileToOpen mainFile="true">widgets/dialogs/findfiles/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-touch-fingerpaint-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/touch-fingerpaint-example.png" name="Finger Paint Example" projectPath="widgets/touch/fingerpaint/fingerpaint.pro">
+            <description><![CDATA[Shows the use of a touchscreen to make a simple painting application.]]></description>
+            <tags>finger,paint,widgets</tags>
+            <fileToOpen mainFile="true">widgets/touch/fingerpaint/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-layouts-flowlayout-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/flowlayout-example.png" name="Flow Layout Example" projectPath="widgets/layouts/flowlayout/flowlayout.pro">
+            <description><![CDATA[Shows how to arrange widgets for different window sizes.]]></description>
+            <tags>android,flow,ios,layout,widgets</tags>
+            <fileToOpen>widgets/layouts/flowlayout/main.cpp</fileToOpen>
+            <fileToOpen>widgets/layouts/flowlayout/flowlayout.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/layouts/flowlayout/flowlayout.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-painting-fontsampler-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/fontsampler-example.png" name="Font Sampler Example" projectPath="widgets/painting/fontsampler/fontsampler.pro">
+            <description><![CDATA[The Font Sampler example shows how to preview and print multi-page documents.]]></description>
+            <tags>android,font,ios,sampler,widgets</tags>
+            <fileToOpen mainFile="true">widgets/painting/fontsampler/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-draganddrop-fridgemagnets-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/fridgemagnets-example.png" name="Fridge Magnets Example" projectPath="widgets/draganddrop/fridgemagnets/fridgemagnets.pro">
+            <description><![CDATA[The Fridge Magnets example illustrates how to move around several types of MIME-encoded data with drag and drop.]]></description>
+            <tags>fridge,ios,magnets,widgets</tags>
+            <fileToOpen mainFile="true">widgets/draganddrop/fridgemagnets/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-frozencolumn-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/frozencolumn-example.png" name="Frozen Column Example" projectPath="widgets/itemviews/frozencolumn/frozencolumn.pro">
+            <description><![CDATA[This example demonstrates how to freeze a column within a QTableView.]]></description>
+            <tags>android,column,frozen,ios,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/frozencolumn/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tutorials-notepad-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/notepad1.png" name="Getting Started Programming with Qt Widgets" projectPath="widgets/tutorials/notepad/notepad.pro">
+            <description><![CDATA[A tutorial for Qt Widgets based on a notepad application.]]></description>
+            <tags>getting,programming,started,widgets,with</tags>
+            <fileToOpen>widgets/tutorials/notepad/main.cpp</fileToOpen>
+            <fileToOpen>widgets/tutorials/notepad/notepad.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/tutorials/notepad/notepad.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-painting-gradients-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/gradients-demo.png" name="Gradients" projectPath="widgets/painting/gradients/gradients.pro">
+            <description><![CDATA[Shows how gradients can be used with QPainter.]]></description>
+            <tags>android,gradients,ios,widgets</tags>
+            <fileToOpen>widgets/painting/gradients/main.cpp</fileToOpen>
+            <fileToOpen>widgets/painting/gradients/gradients.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/painting/gradients/gradients.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-graphicsview-flowlayout-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/graphicsflowlayout-example.png" name="Graphics View Flow Layout Example" projectPath="widgets/graphicsview/flowlayout/flowlayout.pro">
+            <description><![CDATA[Demonstrates flow layout on a graphics view scene.]]></description>
+            <tags>flow,graphics,ios,layout,view,widgets</tags>
+            <fileToOpen>widgets/graphicsview/flowlayout/main.cpp</fileToOpen>
+            <fileToOpen>widgets/graphicsview/flowlayout/flowlayout.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/graphicsview/flowlayout/flowlayout.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-groupbox-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/groupbox-example.png" name="Group Box Example" projectPath="widgets/widgets/groupbox/groupbox.pro">
+            <description><![CDATA[The Group Box example shows how to use the different kinds of group boxes in Qt.]]></description>
+            <tags>android,box,group,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/groupbox/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tools-i18n-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/i18n-example.png" name="I18N Example" projectPath="widgets/tools/i18n/i18n.pro">
+            <description><![CDATA[The Internationalization (I18N) example demonstrates Qt's support for translated text. Developers can write the initial application text in one language, and translations can be provided later without any modifications to the code. It also demonstrates how to detect the system language settings and show the UI in the appropriate language.]]></description>
+            <tags>i18n,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tools/i18n/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-icons-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/icons-example.png" name="Icons Example" projectPath="widgets/widgets/icons/icons.pro">
+            <description><![CDATA[The Icons example shows how QIcon can generate pixmaps reflecting an icon's state, mode and size.]]></description>
+            <tags>icons,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/icons/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-painting-imagecomposition-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/imagecomposition-example.png" name="Image Composition Example" projectPath="widgets/painting/imagecomposition/imagecomposition.pro">
+            <description><![CDATA[Shows how composition modes work in QPainter.]]></description>
+            <tags>android,composition,image,ios,widgets</tags>
+            <fileToOpen mainFile="true">widgets/painting/imagecomposition/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-gestures-imagegestures-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/imagegestures-example.jpg" name="Image Gestures Example" projectPath="widgets/gestures/imagegestures/imagegestures.pro">
+            <description><![CDATA[Demonstrates the use of simple gestures in a widget.]]></description>
+            <tags>gestures,image,widgets</tags>
+            <fileToOpen mainFile="true">widgets/gestures/imagegestures/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-imageviewer-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/imageviewer-example.png" name="Image Viewer Example" projectPath="widgets/widgets/imageviewer/imageviewer.pro">
+            <description><![CDATA[The example shows how to combine QLabel and QScrollArea to display an image.]]></description>
+            <tags>image,viewer,widgets</tags>
+            <fileToOpen>widgets/widgets/imageviewer/main.cpp</fileToOpen>
+            <fileToOpen>widgets/widgets/imageviewer/imageviewer.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/widgets/imageviewer/imageviewer.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-interview-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/interview-demo.png" name="Interview" projectPath="widgets/itemviews/interview/interview.pro">
+            <description><![CDATA[This example demonstrates the usage of the model/view framework.]]></description>
+            <tags>interview,ios,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/interview/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-puzzle-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/itemviewspuzzle-example.png" name="Item Views Puzzle Example" projectPath="widgets/itemviews/puzzle/puzzle.pro">
+            <description><![CDATA[The Puzzle example shows how to enable drag and drop with a custom model to allow items to be transferred between a view and another widget.]]></description>
+            <tags>item,puzzle,views,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/puzzle/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-dialogs-licensewizard-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/licensewizard-example.png" name="License Wizard Example" projectPath="widgets/dialogs/licensewizard/licensewizard.pro">
+            <description><![CDATA[The License Wizard example shows how to implement complex wizards in Qt.]]></description>
+            <tags>ios,license,widgets,wizard</tags>
+            <fileToOpen>widgets/dialogs/licensewizard/main.cpp</fileToOpen>
+            <fileToOpen>widgets/dialogs/licensewizard/licensewizard.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/dialogs/licensewizard/licensewizard.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-lineedits-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/lineedits-example.png" name="Line Edits Example" projectPath="widgets/widgets/lineedits/lineedits.pro">
+            <description><![CDATA[The Line Edits example demonstrates the many ways that QLineEdit can be used, and shows the effects of various properties and validators on the input and output supplied by the user.]]></description>
+            <tags>android,edits,ios,line,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/lineedits/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-mainwindows-mdi-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/mdi-example.png" name="MDI Example" projectPath="widgets/mainwindows/mdi/mdi.pro">
+            <description><![CDATA[The MDI example shows how to implement a Multiple Document Interface using Qt's QMdiArea class.]]></description>
+            <tags>mdi,widgets</tags>
+            <fileToOpen mainFile="true">widgets/mainwindows/mdi/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-mainwindows-mainwindow-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/mainwindow-demo.png" name="Main Window" projectPath="widgets/mainwindows/mainwindow/mainwindow.pro">
+            <description><![CDATA[The Main Window example shows Qt's extensive support for tool bars, dock windows, menus, and other standard application features.]]></description>
+            <tags>main,widgets,window</tags>
+            <fileToOpen>widgets/mainwindows/mainwindow/main.cpp</fileToOpen>
+            <fileToOpen>widgets/mainwindows/mainwindow/mainwindow.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/mainwindows/mainwindow/mainwindow.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-mainwindows-menus-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/menus-example.png" name="Menus Example" projectPath="widgets/mainwindows/menus/menus.pro">
+            <description><![CDATA[The Menus example demonstrates how menus can be used in a main window application.]]></description>
+            <tags>menus,widgets</tags>
+            <fileToOpen mainFile="true">widgets/mainwindows/menus/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-mousebuttons-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/mousebutton-buttontester.png" name="Mouse Button Tester" projectPath="widgets/widgets/mousebuttons/mousebuttons.pro">
+            <description><![CDATA[The 'Mouse Button Tester' example demonstrates how to reimplement mouse events within a custom class. You can also use this program to verify that Qt is actually receiving mouse events from your mouse.]]></description>
+            <tags>android,button,mouse,tester,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/mousebuttons/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-movie-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/movie-example.png" name="Movie Example" projectPath="widgets/widgets/movie/movie.pro">
+            <description><![CDATA[The Movie example demonstrates how to use QMovie and QLabel to display animations.]]></description>
+            <tags>movie,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/movie/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-richtext-orderform-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/orderform-example.png" name="Order Form Example" projectPath="widgets/richtext/orderform/orderform.pro">
+            <description><![CDATA[The Order Form example shows how to generate rich text documents by combining a simple template with data input by the user in a dialog.]]></description>
+            <tags>form,ios,order,widgets</tags>
+            <fileToOpen mainFile="true">widgets/richtext/orderform/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-painting-painterpaths-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/painterpaths-example.png" name="Painter Paths Example" projectPath="widgets/painting/painterpaths/painterpaths.pro">
+            <description><![CDATA[The Painter Paths example shows how painter paths can be used to beuild complex shapes for rendering.]]></description>
+            <tags>android,ios,painter,paths,widgets</tags>
+            <fileToOpen mainFile="true">widgets/painting/painterpaths/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tutorials-addressbook-part1-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/addressbook-tutorial-part1-screenshot.png" name="Part 1 - Designing the User Interface" projectPath="widgets/tutorials/addressbook/part1/part1.pro">
+            <description><![CDATA[Describes how to code the user interface of the Address Book Example. This first part covers the design of the basic graphical user interface (GUI) for our address book application.]]></description>
+            <tags>designing,interface,part,user,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tutorials/addressbook/part1/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tutorials-addressbook-part2-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/addressbook-tutorial-part2-add-contact.png" name="Part 2 - Adding Addresses" projectPath="widgets/tutorials/addressbook/part2/part2.pro">
+            <description><![CDATA[Describes the code for inserting records in the Address Book Example.]]></description>
+            <tags>adding,addresses,part,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tutorials/addressbook/part2/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tutorials-addressbook-part3-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/addressbook-tutorial-part3-linkedlist.png" name="Part 3 - Navigating between Entries" projectPath="widgets/tutorials/addressbook/part3/part3.pro">
+            <description><![CDATA[Explains the code that enables navigating the contacts.]]></description>
+            <tags>between,entries,navigating,part,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tutorials/addressbook/part3/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tutorials-addressbook-part4-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/addressbook-tutorial-screenshot.png" name="Part 4 - Editing and Removing Addresses" projectPath="widgets/tutorials/addressbook/part4/part4.pro">
+            <description><![CDATA[Explains how to add edit and remove functionality.]]></description>
+            <tags>addresses,editing,part,removing,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tutorials/addressbook/part4/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tutorials-addressbook-part5-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/addressbook-tutorial-part5-screenshot.png" name="Part 5 - Adding a Find Function" projectPath="widgets/tutorials/addressbook/part5/part5.pro">
+            <description><![CDATA[Describes how to add a find function.]]></description>
+            <tags>adding,find,function,part,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tutorials/addressbook/part5/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tutorials-addressbook-part6-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/addressbook-tutorial-part6-screenshot.png" name="Part 6 - Loading and Saving" projectPath="widgets/tutorials/addressbook/part6/part6.pro">
+            <description><![CDATA[Describes how to add save and load functionality.]]></description>
+            <tags>loading,part,saving,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tutorials/addressbook/part6/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tutorials-addressbook-part7-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/addressbook-tutorial-part7-screenshot.png" name="Part 7 - Additional Features" projectPath="widgets/tutorials/addressbook/part7/part7.pro">
+            <description><![CDATA[Describes how to export data in VCard format.]]></description>
+            <tags>additional,features,part,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tutorials/addressbook/part7/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-painting-pathstroke-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/pathstroke-demo.png" name="Path Stroking" projectPath="widgets/painting/pathstroke/pathstroke.pro">
+            <description><![CDATA[The Path Stroking example shows various types of pens that can be used with QPainter.]]></description>
+            <tags>android,path,stroking,widgets</tags>
+            <fileToOpen>widgets/painting/pathstroke/main.cpp</fileToOpen>
+            <fileToOpen>widgets/painting/pathstroke/pathstroke.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/painting/pathstroke/pathstroke.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-touch-pinchzoom-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/touch-pinchzoom-example.png" name="Pinch Zoom Example" projectPath="widgets/touch/pinchzoom/pinchzoom.pro">
+            <description><![CDATA[Shows how to recognize a gesture.]]></description>
+            <tags>pinch,widgets,zoom</tags>
+            <fileToOpen mainFile="true">widgets/touch/pinchzoom/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-pixelator-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/pixelator-example.png" name="Pixelator Example" projectPath="widgets/itemviews/pixelator/pixelator.pro">
+            <description><![CDATA[The Pixelator example shows how delegates can be used to customize the way that items are rendered in standard item views.]]></description>
+            <tags>android,pixelator,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/pixelator/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tools-plugandpaint-plugins-basictools-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/plugandpaint.png" name="Plug &amp; Paint Basic Tools Example" projectPath="widgets/tools/plugandpaint/plugins/basictools/basictools.pro">
+            <description><![CDATA[A plugin providing the basic tools for painting functionality.]]></description>
+            <tags>basic,paint,plug,tools,widgets</tags>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tools-plugandpaint-app-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/plugandpaint.png" name="Plug &amp; Paint Example" projectPath="widgets/tools/plugandpaint/app/app.pro">
+            <description><![CDATA[Demonstrates how to extend Qt applications using plugins.]]></description>
+            <tags>paint,plug,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tools/plugandpaint/app/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tools-plugandpaint-plugins-extrafilters-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/plugandpaint.png" name="Plug &amp; Paint Extra Filters Example" projectPath="widgets/tools/plugandpaint/plugins/extrafilters/extrafilters.pro">
+            <description><![CDATA[A plugin providing the extra filters.]]></description>
+            <tags>extra,filters,paint,plug,widgets</tags>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tools-regularexpression-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/regularexpression-example.png" name="QRegularExpression Example" projectPath="widgets/tools/regularexpression/regularexpression.pro">
+            <description><![CDATA[The QRegularExpression example shows how regular expressions in Qt are applied to text by providing an environment in which new regular expressions can be created and tested on custom text strings.]]></description>
+            <tags>qregularexpression,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tools/regularexpression/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-mainwindows-application-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/application.png" isHighlighted="true" name="Qt Widgets - Application Example" projectPath="widgets/mainwindows/application/application.pro">
+            <description><![CDATA[The Application example shows how to implement a standard widget application with menus, toolbars, and a status bar. The example itself is a simple text editor program built around QPlainTextEdit.]]></description>
+            <tags>application,widgets</tags>
+            <fileToOpen mainFile="true">widgets/mainwindows/application/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-mainwindows-sdi-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/sdi-example.png" name="SDI Example" projectPath="widgets/mainwindows/sdi/sdi.pro">
+            <description><![CDATA[The SDI example shows how to create a Single Document Interface. It uses a number of top-level windows to display the contents of different text files.]]></description>
+            <tags>android,sdi,widgets</tags>
+            <fileToOpen mainFile="true">widgets/mainwindows/sdi/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-desktop-screenshot-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/screenshot-example.png" name="Screenshot Example" projectPath="widgets/desktop/screenshot/screenshot.pro">
+            <description><![CDATA[The Screenshot example shows how to take a screenshot of the desktop.]]></description>
+            <tags>screenshot,widgets</tags>
+            <fileToOpen>widgets/desktop/screenshot/main.cpp</fileToOpen>
+            <fileToOpen>widgets/desktop/screenshot/screenshot.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/desktop/screenshot/screenshot.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-scribble-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/scribble-example.png" name="Scribble Example" projectPath="widgets/widgets/scribble/scribble.pro">
+            <description><![CDATA[The Scribble example shows how to reimplement some of QWidget's event handlers to receive the events generated for the application's widgets.]]></description>
+            <tags>android,ios,scribble,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/scribble/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tools-settingseditor-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/settingseditor-example.png" name="Settings Editor Example" projectPath="widgets/tools/settingseditor/settingseditor.pro">
+            <description><![CDATA[The Settings Editor example shows how Qt's standard settings support is used in an application by providing an editor that enables the user to view the settings for installed applications, and modify those that can be edited.]]></description>
+            <tags>editor,settings,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tools/settingseditor/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-shapedclock-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/shapedclock-example.png" name="Shaped Clock Example" projectPath="widgets/widgets/shapedclock/shapedclock.pro">
+            <description><![CDATA[The Shaped Clock example shows how to apply a translucent background and a widget mask to a top-level widget to produce a shaped window.]]></description>
+            <tags>clock,ios,shaped,widgets</tags>
+            <fileToOpen>widgets/widgets/shapedclock/main.cpp</fileToOpen>
+            <fileToOpen>widgets/widgets/shapedclock/shapedclock.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/widgets/shapedclock/shapedclock.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-graphicsview-simpleanchorlayout-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/graphicssimpleanchorlayout-example.png" name="Simple Anchor Layout Example" projectPath="widgets/graphicsview/simpleanchorlayout/simpleanchorlayout.pro">
+            <description><![CDATA[Demonstrates anchor layout on a graphics view scene.]]></description>
+            <tags>anchor,ios,layout,simple,widgets</tags>
+            <fileToOpen mainFile="true">widgets/graphicsview/simpleanchorlayout/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-simpledommodel-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/simpledommodel-example.png" name="Simple DOM Model Example" projectPath="widgets/itemviews/simpledommodel/simpledommodel.pro">
+            <description><![CDATA[The Simple DOM Model example shows how an existing class can be adapted for use with the model/view framework.]]></description>
+            <tags>dom,model,simple,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/simpledommodel/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-simpletreemodel-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/simpletreemodel-example.png" name="Simple Tree Model Example" projectPath="widgets/itemviews/simpletreemodel/simpletreemodel.pro">
+            <description><![CDATA[The Simple Tree Model example shows how to use a hierarchical model with Qt's standard view classes.]]></description>
+            <tags>android,ios,model,simple,tree,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/simpletreemodel/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-simplewidgetmapper-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/simplewidgetmapper-example.png" name="Simple Widget Mapper Example" projectPath="widgets/itemviews/simplewidgetmapper/simplewidgetmapper.pro">
+            <description><![CDATA[The Simple Widget Mapper example shows how to use a widget mapper to display data from a model in a collection of widgets.]]></description>
+            <tags>ios,mapper,simple,widget,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/simplewidgetmapper/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-sliders-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/sliders-example.png" name="Sliders Example" projectPath="widgets/widgets/sliders/sliders.pro">
+            <description><![CDATA[The Sliders example shows how to use the different types of sliders available in Qt: QSlider, QScrollBar and QDial.]]></description>
+            <tags>android,ios,sliders,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/sliders/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-spinboxdelegate-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/spinboxdelegate-example.png" name="Spin Box Delegate Example" projectPath="widgets/itemviews/spinboxdelegate/spinboxdelegate.pro">
+            <description><![CDATA[The Spin Box Delegate example shows how to create an editor for a custom delegate in the model/view framework by reusing a standard Qt editor widget.]]></description>
+            <tags>box,delegate,spin,widgets</tags>
+            <fileToOpen mainFile="true">widgets/itemviews/spinboxdelegate/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-spinboxes-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/spinboxes-example.png" name="Spin Boxes Example" projectPath="widgets/widgets/spinboxes/spinboxes.pro">
+            <description><![CDATA[The Spin Boxes example shows how to use the many different types of spin boxes available in Qt, from a simple QSpinBox widget to more complex editors like the QDateTimeEdit widget.]]></description>
+            <tags>boxes,spin,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/spinboxes/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-spreadsheet-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/spreadsheet-demo.png" name="Spreadsheet" projectPath="widgets/itemviews/spreadsheet/spreadsheet.pro">
+            <description><![CDATA[The Spreadsheet example shows how to create a simple spreadsheet application.]]></description>
+            <tags>android,spreadsheet,widgets</tags>
+            <fileToOpen>widgets/itemviews/spreadsheet/main.cpp</fileToOpen>
+            <fileToOpen>widgets/itemviews/spreadsheet/spreadsheet.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/itemviews/spreadsheet/spreadsheet.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-dialogs-standarddialogs-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/standarddialogs-example.png" name="Standard Dialogs Example" projectPath="widgets/dialogs/standarddialogs/standarddialogs.pro">
+            <description><![CDATA[The Standard Dialogs example shows the standard dialogs that are provided by Qt.]]></description>
+            <tags>dialogs,ios,standard,widgets</tags>
+            <fileToOpen mainFile="true">widgets/dialogs/standarddialogs/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-itemviews-stardelegate-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/stardelegate.png" name="Star Delegate Example" projectPath="widgets/itemviews/stardelegate/stardelegate.pro">
+            <description><![CDATA[The Star Delegate example shows how to create a delegate that can paint itself and that supports editing.]]></description>
+            <tags>delegate,star,widgets</tags>
+            <fileToOpen>widgets/itemviews/stardelegate/main.cpp</fileToOpen>
+            <fileToOpen>widgets/itemviews/stardelegate/stardelegate.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/itemviews/stardelegate/stardelegate.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tools-styleplugin-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/stylepluginexample.png" name="Style Plugin Example" projectPath="widgets/tools/styleplugin/styleplugin.pro">
+            <description><![CDATA[This example shows how to create a plugin that extends Qt with a new GUI look and feel.]]></description>
+            <tags>plugin,style,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tools/styleplugin/stylewindow/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-stylesheet-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/stylesheet-pagefold.png" name="Style Sheet Example" projectPath="widgets/widgets/stylesheet/stylesheet.pro">
+            <description><![CDATA[The Style Sheet Example shows how to use style sheets.]]></description>
+            <tags>sheet,style,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/stylesheet/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-styles-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/styles-enabledwood.png" name="Styles Example" projectPath="widgets/widgets/styles/styles.pro">
+            <description><![CDATA[The Styles example illustrates how to create custom widget drawing styles using Qt, and demonstrates Qt's predefined styles.]]></description>
+            <tags>styles,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/styles/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-richtext-syntaxhighlighter-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/syntaxhighlighter-example.png" name="Syntax Highlighter Example" projectPath="widgets/richtext/syntaxhighlighter/syntaxhighlighter.pro">
+            <description><![CDATA[The Syntax Highlighter example shows how to perform simple syntax highlighting.]]></description>
+            <tags>highlighter,ios,syntax,widgets</tags>
+            <fileToOpen mainFile="true">widgets/richtext/syntaxhighlighter/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-desktop-systray-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/systemtray-example.png" name="System Tray Icon Example" projectPath="widgets/desktop/systray/systray.pro">
+            <description><![CDATA[The System Tray Icon example shows how to add an icon with a menu and popup messages to a desktop environment's system tray.]]></description>
+            <tags>icon,system,tray,widgets</tags>
+            <fileToOpen mainFile="true">widgets/desktop/systray/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-dialogs-tabdialog-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/tabdialog-example.png" name="Tab Dialog Example" projectPath="widgets/dialogs/tabdialog/tabdialog.pro">
+            <description><![CDATA[The Tab Dialog example shows how to construct a tab dialog using the QTabWidget class.]]></description>
+            <tags>dialog,ios,tab,widgets</tags>
+            <fileToOpen>widgets/dialogs/tabdialog/main.cpp</fileToOpen>
+            <fileToOpen>widgets/dialogs/tabdialog/tabdialog.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/dialogs/tabdialog/tabdialog.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-tablet-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/tabletexample.png" name="Tablet Example" projectPath="widgets/widgets/tablet/tablet.pro">
+            <description><![CDATA[This example shows how to use a Wacom tablet in Qt applications.]]></description>
+            <tags>tablet,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/tablet/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-tetrix-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/tetrix-example.png" name="Tetrix Example" projectPath="widgets/widgets/tetrix/tetrix.pro">
+            <description><![CDATA[The Tetrix example is a Qt version of the classic Tetrix game.]]></description>
+            <tags>tetrix,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/tetrix/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-richtext-textedit-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/textedit-demo.png" name="Text Edit" projectPath="widgets/richtext/textedit/textedit.pro">
+            <description><![CDATA[The Text Edit example shows Qt's rich text editing facilities in action.]]></description>
+            <tags>edit,ios,text,widgets</tags>
+            <fileToOpen>widgets/richtext/textedit/main.cpp</fileToOpen>
+            <fileToOpen>widgets/richtext/textedit/textedit.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/richtext/textedit/textedit.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-tooltips-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/tooltips-example.png" name="Tool Tips Example" projectPath="widgets/widgets/tooltips/tooltips.pro">
+            <description><![CDATA[The Tool Tips example shows how to provide static and dynamic tool tips for an application's widgets.]]></description>
+            <tags>tips,tool,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/tooltips/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-touch-dials-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/touch-dials-example.png" name="Touch Dials Example" projectPath="widgets/touch/dials/dials.pro">
+            <description><![CDATA[Shows how to apply touch to a set of standard Qt widgets.]]></description>
+            <tags>android,dials,touch,widgets</tags>
+            <fileToOpen mainFile="true">widgets/touch/dials/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-touch-knobs-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/touch-knobs-example.png" name="Touch Knobs Example" projectPath="widgets/touch/knobs/knobs.pro">
+            <description><![CDATA[Shows how to create custom controls that accept touch input.]]></description>
+            <tags>knobs,touch,widgets</tags>
+            <fileToOpen mainFile="true">widgets/touch/knobs/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-painting-transformations-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/transformations-example.png" name="Transformations Example" projectPath="widgets/painting/transformations/transformations.pro">
+            <description><![CDATA[The Transformations example shows how transformations influence the way that QPainter renders graphics primitives.]]></description>
+            <tags>android,ios,transformations,widgets</tags>
+            <fileToOpen mainFile="true">widgets/painting/transformations/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tools-treemodelcompleter-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/treemodelcompleter-example.png" name="Tree Model Completer Example" projectPath="widgets/tools/treemodelcompleter/treemodelcompleter.pro">
+            <description><![CDATA[The Tree Model Completer example shows how to provide completion facilities for a hierarchical model, using a period as the separator to access Child, GrandChild and GrandGrandChild level objects.]]></description>
+            <tags>completer,model,tree,widgets</tags>
+            <fileToOpen>widgets/tools/treemodelcompleter/main.cpp</fileToOpen>
+            <fileToOpen>widgets/tools/treemodelcompleter/treemodelcompleter.h</fileToOpen>
+            <fileToOpen mainFile="true">widgets/tools/treemodelcompleter/treemodelcompleter.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-dialogs-trivialwizard-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/trivialwizard-example-flow.png" name="Trivial Wizard Example" projectPath="widgets/dialogs/trivialwizard/trivialwizard.pro">
+            <description><![CDATA[The Trivial Wizard example illustrates how to create a linear three-page registration wizard using three instances of QWizardPage and one instance of QWizard.]]></description>
+            <tags>ios,trivial,widgets,wizard</tags>
+            <fileToOpen mainFile="true">widgets/dialogs/trivialwizard/trivialwizard.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tools-undo-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/undodemo.png" name="Undo Framework" projectPath="widgets/tools/undo/undo.pro">
+            <description><![CDATA[This example shows Qt's undo framework in action.]]></description>
+            <tags>android,framework,ios,undo,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tools/undo/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tools-undoframework-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/undoframeworkexample.png" name="Undo Framework Example" projectPath="widgets/tools/undoframework/undoframework.pro">
+            <description><![CDATA[This example shows how to implement undo/redo functionality with the Qt undo framework.]]></description>
+            <tags>framework,undo,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tools/undoframework/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-validators-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/validators.png" name="Validators Example" projectPath="widgets/widgets/validators/validators.pro">
+            <description><![CDATA[The Validators example shows the signal emission behavior of input validators.]]></description>
+            <tags>ios,validators,widgets</tags>
+            <fileToOpen mainFile="true">widgets/widgets/validators/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-painting-deform-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/deform-demo.png" name="Vector Deformation" projectPath="widgets/painting/deform/deform.pro">
+            <description><![CDATA[Demonstrates how to manipulate the elements of a QPainterPath.]]></description>
+            <tags>android,deformation,vector,widgets</tags>
+            <fileToOpen mainFile="true">widgets/painting/deform/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-graphicsview-weatheranchorlayout-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/weatheranchorlayout-example.png" name="Weather Anchor Layout Example" projectPath="widgets/graphicsview/weatheranchorlayout/weatheranchorlayout.pro">
+            <description><![CDATA[Demonstrates anchor layout on a graphics view scene.]]></description>
+            <tags>anchor,ios,layout,weather,widgets</tags>
+            <fileToOpen mainFile="true">widgets/graphicsview/weatheranchorlayout/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-gallery-example.html" imageUrl="qthelp://org.qt-project.qtdoc.623/qtdoc/images/qt-codesample.png" name="Widgets Gallery Example" projectPath="widgets/gallery/gallery.pro">
+            <description><![CDATA[The Widgets Gallery example shows widgets relevant for designing UIs.]]></description>
+            <tags>gallery,widgets</tags>
+            <fileToOpen mainFile="true">widgets/gallery/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tutorials-widgets-childwidget-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/widgets-tutorial-childwidget.png" name="Widgets Tutorial - Child Widgets" projectPath="widgets/tutorials/widgets/childwidget/childwidget.pro">
+            <description><![CDATA[No description available]]></description>
+            <tags>child,tutorial,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tutorials/widgets/childwidget/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tutorials-widgets-toplevel-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/widgets-tutorial-toplevel.png" name="Widgets Tutorial - Creating a Window" projectPath="widgets/tutorials/widgets/toplevel/toplevel.pro">
+            <description><![CDATA[No description available]]></description>
+            <tags>creating,tutorial,widgets,window</tags>
+            <fileToOpen mainFile="true">widgets/tutorials/widgets/toplevel/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tutorials-widgets-nestedlayouts-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/widgets-tutorial-nestedlayouts.png" name="Widgets Tutorial - Nested Layouts" projectPath="widgets/tutorials/widgets/nestedlayouts/nestedlayouts.pro">
+            <description><![CDATA[No description available]]></description>
+            <tags>layouts,nested,tutorial,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tutorials/widgets/nestedlayouts/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-tutorials-widgets-windowlayout-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/widgets-tutorial-windowlayout.png" name="Widgets Tutorial - Using Layouts" projectPath="widgets/tutorials/widgets/windowlayout/windowlayout.pro">
+            <description><![CDATA[No description available]]></description>
+            <tags>layouts,tutorial,using,widgets</tags>
+            <fileToOpen mainFile="true">widgets/tutorials/widgets/windowlayout/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-wiggly-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/wiggly-example.png" name="Wiggly Example" projectPath="widgets/widgets/wiggly/wiggly.pro">
+            <description><![CDATA[The Wiggly example shows how to animate a widget using QBasicTimer and timerEvent(). In addition, the example demonstrates how to use QFontMetrics to determine the size of text on screen.]]></description>
+            <tags>android,ios,widgets,wiggly</tags>
+            <fileToOpen mainFile="true">widgets/widgets/wiggly/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/qtwidgets-widgets-windowflags-example.html" imageUrl="qthelp://org.qt-project.qtwidgets.623/qtwidgets/images/windowflags-example.png" name="Window Flags Example" projectPath="widgets/widgets/windowflags/windowflags.pro">
+            <description><![CDATA[The Window Flags example shows how to use the window flags available in Qt.]]></description>
+            <tags>flags,ios,widgets,window</tags>
+            <fileToOpen mainFile="true">widgets/widgets/windowflags/main.cpp</fileToOpen>
+        </example>
+    </examples>
+</instructionals>

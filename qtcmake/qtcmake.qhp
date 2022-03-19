@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>org.qt-project.qtcmake.623</namespace>
+    <virtualFolder>qtcmake</virtualFolder>
+    <metaData name="version" value="6.2.3"/>
+    <customFilter name="Build with CMake">
+        <filterAttribute>cmake</filterAttribute>
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>tools</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>6.2.3</filterAttribute>
+        <filterAttribute>cmake</filterAttribute>
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>tools</filterAttribute>
+        <toc>
+            <section ref="cmake-manual.html" title="Build with CMake">
+                <section ref="cmake-manual.html" title="Manual">
+                    <section ref="cmake-get-started.html" title="Getting started with CMake"/>
+                    <section ref="cmake-imported-targets.html" title="Imported targets"/>
+                    <section ref="cmake-qt5-and-qt6-compatibility.html" title="Qt 5 and Qt 6 compatibility"/>
+                    <section ref="cmake-variable-reference.html" title="CMake Variable Reference"/>
+                    <section ref="cmake-property-reference.html" title="CMake Property Reference"/>
+                    <section ref="cmake-command-reference.html" title="CMake Command Reference"/>
+                </section>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="Build with CMake" id="Build with CMake" ref="cmake-manual.html"/>
+            <keyword name="CMake Command Reference" id="CMake Command Reference" ref="cmake-command-reference.html"/>
+            <keyword name="CMake Property Reference" id="CMake Property Reference" ref="cmake-property-reference.html"/>
+            <keyword name="CMake Variable Reference" id="CMake Variable Reference" ref="cmake-variable-reference.html"/>
+            <keyword name="Getting started with CMake" id="Getting started with CMake" ref="cmake-get-started.html"/>
+            <keyword name="Imported targets" id="Imported targets" ref="cmake-imported-targets.html"/>
+            <keyword name="Qt 5 and Qt 6 compatibility" id="Qt 5 and Qt 6 compatibility" ref="cmake-qt5-and-qt6-compatibility.html"/>
+        </keywords>
+        <files>
+            <file>cmake-command-reference.html</file>
+            <file>cmake-get-started.html</file>
+            <file>cmake-imported-targets.html</file>
+            <file>cmake-manual.html</file>
+            <file>cmake-property-reference.html</file>
+            <file>cmake-qt5-and-qt6-compatibility.html</file>
+            <file>cmake-variable-reference.html</file>
+            <file>images/arrow_bc.png</file>
+            <file>images/bgrContent.png</file>
+            <file>images/btn_next.png</file>
+            <file>images/btn_prev.png</file>
+            <file>images/bullet_dn.png</file>
+            <file>images/bullet_sq.png</file>
+            <file>images/home.png</file>
+            <file>images/ico_note.png</file>
+            <file>images/ico_note_attention.png</file>
+            <file>images/ico_out.png</file>
+            <file>images/logo.png</file>
+            <file>style/offline-simple.css</file>
+            <file>style/offline.css</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

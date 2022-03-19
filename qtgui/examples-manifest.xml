@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtGui">
+    <examples>
+        <example docUrl="qthelp://org.qt-project.qtgui.623/qtgui/qtgui-analogclock-example.html" imageUrl="qthelp://org.qt-project.qtgui.623/qtgui/images/analogclock-window-example.png" name="Analog Clock Window Example" projectPath="gui/analogclock/analogclock.pro">
+            <description><![CDATA[The Analog Clock Window example shows how to draw the contents of a custom window.]]></description>
+            <tags>analog,android,clock,gui,ios,window</tags>
+            <fileToOpen mainFile="true">gui/analogclock/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtgui.623/qtgui/qtgui-hellovulkancubes-example.html" imageUrl="qthelp://org.qt-project.qtgui.623/qtgui/images/hellovulkancubes.png" name="Hello Vulkan Cubes Example" projectPath="vulkan/hellovulkancubes/hellovulkancubes.pro">
+            <description><![CDATA[Shows the basics of using QVulkanWindow.]]></description>
+            <tags>cubes,gui,hello,vulkan</tags>
+            <fileToOpen mainFile="true">vulkan/hellovulkancubes/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtgui.623/qtgui/qtgui-hellovulkantexture-example.html" imageUrl="qthelp://org.qt-project.qtgui.623/qtgui/images/hellovulkantexture.png" name="Hello Vulkan Texture Vulkan Example" projectPath="vulkan/hellovulkantexture/hellovulkantexture.pro">
+            <description><![CDATA[Shows the basics of rendering with textures in a QVulkanWindow.]]></description>
+            <tags>gui,hello,texture,vulkan</tags>
+            <fileToOpen>vulkan/hellovulkantexture/main.cpp</fileToOpen>
+            <fileToOpen>vulkan/hellovulkantexture/hellovulkantexture.h</fileToOpen>
+            <fileToOpen mainFile="true">vulkan/hellovulkantexture/hellovulkantexture.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtgui.623/qtgui/qtgui-hellovulkantriangle-example.html" imageUrl="qthelp://org.qt-project.qtgui.623/qtgui/images/hellovulkantriangle.png" name="Hello Vulkan Triangle Example" projectPath="vulkan/hellovulkantriangle/hellovulkantriangle.pro">
+            <description><![CDATA[Shows the basics of rendering with QVulkanWindow and the Vulkan API.]]></description>
+            <tags>gui,hello,triangle,vulkan</tags>
+            <fileToOpen mainFile="true">vulkan/hellovulkantriangle/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtgui.623/qtgui/qtgui-hellovulkanwidget-example.html" imageUrl="qthelp://org.qt-project.qtgui.623/qtgui/images/hellovulkanwidget.png" name="Hello Vulkan Widget Example" projectPath="vulkan/hellovulkanwidget/hellovulkanwidget.pro">
+            <description><![CDATA[Shows the usage of QVulkanWindow in QWidget applications.]]></description>
+            <tags>gui,hello,vulkan,widget</tags>
+            <fileToOpen>vulkan/hellovulkanwidget/main.cpp</fileToOpen>
+            <fileToOpen>vulkan/hellovulkanwidget/hellovulkanwidget.h</fileToOpen>
+            <fileToOpen mainFile="true">vulkan/hellovulkanwidget/hellovulkanwidget.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtgui.623/qtgui/qtgui-hellovulkanwindow-example.html" imageUrl="qthelp://org.qt-project.qtgui.623/qtgui/images/hellovulkanwindow.png" name="Hello Vulkan Window Example" projectPath="vulkan/hellovulkanwindow/hellovulkanwindow.pro">
+            <description><![CDATA[Shows the basics of using QVulkanWindow.]]></description>
+            <tags>gui,hello,vulkan,window</tags>
+            <fileToOpen>vulkan/hellovulkanwindow/main.cpp</fileToOpen>
+            <fileToOpen>vulkan/hellovulkanwindow/hellovulkanwindow.h</fileToOpen>
+            <fileToOpen mainFile="true">vulkan/hellovulkanwindow/hellovulkanwindow.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtgui.623/qtgui/qtgui-rasterwindow-example.html" imageUrl="qthelp://org.qt-project.qtdoc.623/qtdoc/images/qt-codesample.png" name="Raster Window Example" projectPath="gui/rasterwindow/rasterwindow.pro">
+            <description><![CDATA[This example shows how to create a minimal QWindow based application using QPainter for rendering.]]></description>
+            <tags>android,gui,ios,raster,window</tags>
+            <fileToOpen>gui/rasterwindow/main.cpp</fileToOpen>
+            <fileToOpen>gui/rasterwindow/rasterwindow.h</fileToOpen>
+            <fileToOpen mainFile="true">gui/rasterwindow/rasterwindow.cpp</fileToOpen>
+        </example>
+    </examples>
+</instructionals>

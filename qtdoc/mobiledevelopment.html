@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- mobile.qdoc -->
+  <title>Mobile Development | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 6.2</a></li>
+<li>Mobile Development</li>
+<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#android">Android</a></li>
+<li class="level1"><a href="#apple-platforms-ios-tvos-and-watchos">Apple Platforms - iOS, tvOS, and watchOS</a></li>
+<li class="level1"><a href="#tools-for-mobile-development">Tools for Mobile Development</a></li>
+<li class="level2"><a href="#design-tools-for-mobile">Design Tools for Mobile</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Mobile Development</h1>
+<!-- $$$mobiledevelopment.html-description -->
+<div class="descr" id="details">
+<p>Qt supports development and deployment of mobile applications.</p>
+<p>The following pages contain information about setting up Qt Creator and how to get started with the mobile platforms:</p>
+<ul>
+<li><a href="android.html">Android</a></li>
+<li><a href="ios.html">iOS</a></li>
+</ul>
+<h2 id="android">Android</h2>
+<p>There is support for Android development in Qt 6. With Qt Creator, you can connect to devices, develop, test, and package Android applications.</p>
+<div class="table"><table class="generic" width="80%">
+ <thead><tr class="qt-style"><th >Distribution</th><th >Architecture</th><th >Compiler</th><th >Notes</th></tr></thead>
+<tr valign="top" class="odd"><td >Android 6.0 or later (API level 23 or higher)</td><td ><code>armv7a</code>, <code>x86</code>, <code>arm64-v8</code>, and <code>x86_64</code></td><td >Clang 11.0&#x2e;5 (NDK r22b) as provided by Google, MinGW 11.2</td><td ></td></tr>
+</table></div>
+<ul>
+<li><a href="android.html">Qt for Android</a></li>
+<li><a href="examples-android.html">Android Examples</a></li>
+</ul>
+<h2 id="apple-platforms-ios-tvos-and-watchos">Apple Platforms - iOS, tvOS, and watchOS</h2>
+<p>There is support for various Apple mobile devices such as iPad, iPhone, Apple TV, and Apple Watch. Qt Creator supplements <a href="http://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12">Xcode</a> for development and deployment.</p>
+<div class="table"><table class="generic" width="80%">
+ <thead><tr class="qt-style"><th >Target Platform</th><th >Architecture</th><th >Build Environment</th><th >Notes</th></tr></thead>
+<tr valign="top" class="odd"><td >iOS 13, iOS 14, iOS 15</td><td ><code>armv8</code> (<code>arm64</code>)</td><td >Xcode 12 (iOS 14 SDK), <b>Xcode 13</b> (iOS 15 SDK)</td><td ></td></tr>
+</table></div>
+<ul>
+<li><a href="ios.html">Qt for iOS</a></li>
+<li><a href="examples-ios.html">iOS Examples</a></li>
+</ul>
+<h2 id="tools-for-mobile-development">Tools for Mobile Development</h2>
+<p><a href="qtdoc-tutorials-alarms-example.html#qt-creator">Qt Creator</a> is the IDE for Qt development. Qt Creator creates project files, test and debug code, and connects to mobile devices. For Android, Qt Creator can sign and package APK files, ready for publishing to Google Play. <a href="http://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12">Xcode</a> is necessary for development on Apple platforms and Qt Creator can create project files and connect to Apple devices for testing.</p>
+<h3 id="design-tools-for-mobile">Design Tools for Mobile</h3>
+<p>Design tools aid UI development by allowing designers to create layouts and animation that can be converted into Qt compatible formats. 2D and 3D assets created from design software can be integrated into Qt applications.</p>
+<ul>
+<li><a href="https://doc.qt.io/qt3dstudio/index.html">Qt 3D Studio</a></li>
+<li><a href="https://doc.qt.io/qtdesignstudio/index.html">Qt Design Studio</a></li>
+</ul>
+</div>
+<!-- @@@mobiledevelopment.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

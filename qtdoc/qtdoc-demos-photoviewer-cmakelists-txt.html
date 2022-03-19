@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- photoviewer.qdoc -->
+  <title>Qt Quick Demo - Photo Viewer | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 6.2</a></li>
+<li>Qt Quick Demo - Photo Viewer</li>
+<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Qt Quick Demo - Photo Viewer</h1>
+<pre class="cpp">
+ # Generated from photoviewer.pro.
+
+ cmake_minimum_required(VERSION 3.16)
+ project(photoviewer LANGUAGES CXX)
+
+ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_AUTORCC ON)
+ set(CMAKE_AUTOUIC ON)
+
+ if(NOT DEFINED INSTALL_EXAMPLESDIR)
+   set(INSTALL_EXAMPLESDIR &quot;examples&quot;)
+ endif()
+
+ set(INSTALL_EXAMPLEDIR &quot;${INSTALL_EXAMPLESDIR}/demos/photoviewer&quot;)
+
+ find_package(Qt6 COMPONENTS Core)
+ find_package(Qt6 COMPONENTS Gui)
+ find_package(Qt6 COMPONENTS Qml)
+ find_package(Qt6 COMPONENTS Quick)
+ find_package(Qt6 COMPONENTS QmlXmlListModel)
+
+ qt_add_executable(photoviewer
+     main.cpp
+ )
+ set_target_properties(photoviewer PROPERTIES
+     WIN32_EXECUTABLE TRUE
+     MACOSX_BUNDLE TRUE
+ )
+
+ target_link_libraries(photoviewer PUBLIC
+     Qt::Core
+     Qt::Gui
+     Qt::Qml
+     Qt::Quick
+     Qt::QmlXmlListModel
+ )
+
+ # Resources:
+ set(qmake_immediate_resource_files
+     &quot;PhotoViewerCore/AlbumDelegate.qml&quot;
+     &quot;PhotoViewerCore/BusyIndicator.qml&quot;
+     &quot;PhotoViewerCore/Button.qml&quot;
+     &quot;PhotoViewerCore/EditableButton.qml&quot;
+     &quot;PhotoViewerCore/PhotoDelegate.qml&quot;
+     &quot;PhotoViewerCore/ProgressBar.qml&quot;
+     &quot;PhotoViewerCore/RssModel.qml&quot;
+     &quot;PhotoViewerCore/Tag.qml&quot;
+     &quot;PhotoViewerCore/images/box-shadow.png&quot;
+     &quot;PhotoViewerCore/images/busy.png&quot;
+     &quot;PhotoViewerCore/images/cardboard.png&quot;
+     &quot;PhotoViewerCore/script/script.mjs&quot;
+     &quot;main.qml&quot;
+ )
+
+ qt6_add_resources(photoviewer &quot;qmake_immediate&quot;
+     PREFIX
+         &quot;/&quot;
+     FILES
+         ${qmake_immediate_resource_files}
+ )
+
+ if(lupdate_only)
+     target_sources(photoviewer PUBLIC
+         *.qml
+         PhotoViewerCore/*.qml
+         PhotoViewerCore/script/*.js
+     )
+ endif()
+
+ install(TARGETS photoviewer
+     RUNTIME DESTINATION &quot;${INSTALL_EXAMPLEDIR}&quot;
+     BUNDLE DESTINATION &quot;${INSTALL_EXAMPLEDIR}&quot;
+     LIBRARY DESTINATION &quot;${INSTALL_EXAMPLEDIR}&quot;
+ )
+</pre>

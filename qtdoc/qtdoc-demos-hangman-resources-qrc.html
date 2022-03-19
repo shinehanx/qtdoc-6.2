@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtpurchasing-overview.qdoc -->
+  <title>In-App purchasing demo | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 6.2</a></li>
+<li>In-App purchasing demo</li>
+<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">In-App purchasing demo</h1>
+<pre class="cpp">
+ &lt;RCC&gt;
+     &lt;qresource prefix=&quot;/&quot;&gt;
+         &lt;file&gt;dict.txt&lt;/file&gt;
+         &lt;file&gt;main.qml&lt;/file&gt;
+         &lt;file&gt;qml/GameView.qml&lt;/file&gt;
+         &lt;file&gt;qml/GuessWordView.qml&lt;/file&gt;
+         &lt;file&gt;qml/Hangman.qml&lt;/file&gt;
+         &lt;file&gt;qml/HowToView.qml&lt;/file&gt;
+         &lt;file&gt;qml/Key.qml&lt;/file&gt;
+         &lt;file&gt;qml/Letter.qml&lt;/file&gt;
+         &lt;file&gt;qml/LetterSelector.qml&lt;/file&gt;
+         &lt;file&gt;qml/MainView.qml&lt;/file&gt;
+         &lt;file&gt;qml/PageHeader.qml&lt;/file&gt;
+         &lt;file&gt;qml/ScoreItem.qml&lt;/file&gt;
+         &lt;file&gt;qml/SimpleButton.qml&lt;/file&gt;
+         &lt;file&gt;qml/SplashScreen.qml&lt;/file&gt;
+         &lt;file&gt;qml/StoreItem.qml&lt;/file&gt;
+         &lt;file&gt;qml/StoreView.qml&lt;/file&gt;
+         &lt;file&gt;qml/Word.qml&lt;/file&gt;
+     &lt;/qresource&gt;
+ &lt;/RCC&gt;
+</pre>

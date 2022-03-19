@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtpurchasing-overview.qdoc -->
+  <title>In-App purchasing demo | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 6.2</a></li>
+<li>In-App purchasing demo</li>
+<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">In-App purchasing demo</h1>
+<pre class="cpp">
+ <span class="comment">/****************************************************************************
+ **
+ ** Copyright (C) 2021 The Qt Company Ltd.
+ ** Contact: https://www.qt.io/licensing/
+ **
+ ** This file is part of the examples of the Qt Toolkit.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** Commercial License Usage
+ ** Licensees holding valid commercial Qt licenses may use this file in
+ ** accordance with the commercial license agreement provided with the
+ ** Software or, alternatively, in accordance with the terms contained in
+ ** a written agreement between you and The Qt Company. For licensing terms
+ ** and conditions see https://www.qt.io/terms-conditions. For further
+ ** information use the contact form at https://www.qt.io/contact-us.
+ **
+ ** BSD License Usage
+ ** Alternatively, you may use this file under the terms of the BSD license
+ ** as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of The Qt Company Ltd nor the names of its
+ **     contributors may be used to endorse or promote products derived
+ **     from this software without specific prior written permission.
+ **
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ **
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ <span class="preprocessor">#ifndef INAPPSTORE_H</span>
+ <span class="preprocessor">#define INAPPSTORE_H</span>
+
+ <span class="preprocessor">#include &lt;QObject&gt;</span>
+ <span class="preprocessor">#include &lt;QMutex&gt;</span>
+ <span class="preprocessor">#include &lt;QHash&gt;</span>
+
+ <span class="preprocessor">#include &quot;inappproduct.h&quot;</span>
+ <span class="preprocessor">#include &quot;inapppurchasebackend.h&quot;</span>
+
+ <span class="keyword">class</span> InAppProduct;
+ <span class="keyword">class</span> InAppTransaction;
+ <span class="keyword">class</span> InAppPurchaseBackend;
+ <span class="keyword">class</span> InAppStorePrivate
+ {
+ <span class="keyword">public</span>:
+     InAppStorePrivate()
+         : backend(<span class="number">0</span>)
+         <span class="operator">,</span> hasCalledInitialize(<span class="keyword">false</span>)
+         <span class="operator">,</span> pendingRestorePurchases(<span class="keyword">false</span>)
+     {
+     }
+
+     <span class="operator">~</span>InAppStorePrivate()
+     {
+         <span class="keyword">delete</span> backend;
+     }
+
+     <span class="type"><a href="../qtcore/qhash.html">QHash</a></span><span class="operator">&lt;</span><span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> InAppProduct<span class="operator">::</span>ProductType<span class="operator">&gt;</span> pendingProducts;
+     <span class="type"><a href="../qtcore/qhash.html">QHash</a></span><span class="operator">&lt;</span><span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> InAppProduct <span class="operator">*</span><span class="operator">&gt;</span> registeredProducts;
+     InAppPurchaseBackend <span class="operator">*</span>backend;
+     bool hasCalledInitialize;
+     bool pendingRestorePurchases;
+ };
+ <span class="keyword">class</span> InAppStore: <span class="keyword">public</span> <span class="type"><a href="../qtcore/qobject.html">QObject</a></span>
+ {
+     Q_OBJECT
+
+ <span class="keyword">public</span>:
+     <span class="keyword">explicit</span> InAppStore(<span class="type"><a href="../qtcore/qobject.html">QObject</a></span> <span class="operator">*</span>parent <span class="operator">=</span> nullptr);
+     <span class="operator">~</span>InAppStore();
+
+     Q_INVOKABLE <span class="type">void</span> restorePurchases();
+     Q_INVOKABLE <span class="type">void</span> registerProduct(InAppProduct<span class="operator">::</span>ProductType productType<span class="operator">,</span> <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>identifier);
+     Q_INVOKABLE InAppProduct <span class="operator">*</span>registeredProduct(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>identifier) <span class="keyword">const</span>;
+     Q_INVOKABLE <span class="type">void</span> setPlatformProperty(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>propertyName<span class="operator">,</span> <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>value);
+
+ <span class="keyword">signals</span>:
+     <span class="type">void</span> productRegistered(InAppProduct <span class="operator">*</span>product);
+     <span class="type">void</span> productUnknown(InAppProduct<span class="operator">::</span>ProductType productType<span class="operator">,</span> <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>identifier);
+     <span class="type">void</span> transactionReady(InAppTransaction <span class="operator">*</span>transaction);
+
+ <span class="keyword">private</span> Q_SLOTS:
+     <span class="type">void</span> registerPendingProducts();
+     <span class="type">void</span> registerProduct(InAppProduct <span class="operator">*</span>);
+
+ <span class="keyword">private</span>:
+     <span class="type">void</span> setupBackend();
+
+     Q_DISABLE_COPY(InAppStore)
+     <span class="type"><a href="../qtcore/qsharedpointer.html">QSharedPointer</a></span><span class="operator">&lt;</span>InAppStorePrivate<span class="operator">&gt;</span> d;
+ };
+
+ <span class="preprocessor">#endif // INAPPSTORE_H</span>
+</pre>

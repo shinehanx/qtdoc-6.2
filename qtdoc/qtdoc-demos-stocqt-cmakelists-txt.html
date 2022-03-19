@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- stocqt.qdoc -->
+  <title>Qt Quick Demo - StocQt | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 6.2</a></li>
+<li>Qt Quick Demo - StocQt</li>
+<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Qt Quick Demo - StocQt</h1>
+<pre class="cpp">
+ # Generated from stocqt.pro.
+
+ cmake_minimum_required(VERSION 3.16)
+ project(stocqt LANGUAGES CXX)
+
+ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_AUTORCC ON)
+ set(CMAKE_AUTOUIC ON)
+
+ if(NOT DEFINED INSTALL_EXAMPLESDIR)
+   set(INSTALL_EXAMPLESDIR &quot;examples&quot;)
+ endif()
+
+ set(INSTALL_EXAMPLEDIR &quot;${INSTALL_EXAMPLESDIR}/demos/stocqt&quot;)
+
+ find_package(Qt6 COMPONENTS Core)
+ find_package(Qt6 COMPONENTS Gui)
+ find_package(Qt6 COMPONENTS Qml)
+ find_package(Qt6 COMPONENTS Quick)
+
+ qt_add_executable(stocqt
+     main.cpp
+ )
+ set_target_properties(stocqt PROPERTIES
+     WIN32_EXECUTABLE TRUE
+     MACOSX_BUNDLE TRUE
+ )
+ target_link_libraries(stocqt PUBLIC
+     Qt::Core
+     Qt::Gui
+     Qt::Qml
+     Qt::Quick
+ )
+
+ # Resources:
+ set(stocqt_resource_files
+     &quot;content/+windows/Settings.qml&quot;
+     &quot;content/Banner.qml&quot;
+     &quot;content/Button.qml&quot;
+     &quot;content/CheckBox.qml&quot;
+     &quot;content/Settings.qml&quot;
+     &quot;content/StockChart.qml&quot;
+     &quot;content/StockInfo.qml&quot;
+     &quot;content/StockListDelegate.qml&quot;
+     &quot;content/StockListModel.qml&quot;
+     &quot;content/StockListView.qml&quot;
+     &quot;content/StockModel.qml&quot;
+     &quot;content/StockSettingsPanel.qml&quot;
+     &quot;content/StockView.qml&quot;
+     &quot;content/data/AAPL.csv&quot;
+     &quot;content/data/ADSK.csv&quot;
+     &quot;content/data/AMD.csv&quot;
+     &quot;content/data/AMZN.csv&quot;
+     &quot;content/data/CSCO.csv&quot;
+     &quot;content/data/EA.csv&quot;
+     &quot;content/data/EBAY.csv&quot;
+     &quot;content/data/FB.csv&quot;
+     &quot;content/data/GOOG.csv&quot;
+     &quot;content/data/GOOGL.csv&quot;
+     &quot;content/data/INTC.csv&quot;
+     &quot;content/data/MSFT.csv&quot;
+     &quot;content/data/NCLH.csv&quot;
+     &quot;content/data/NFLX.csv&quot;
+     &quot;content/data/NTAP.csv&quot;
+     &quot;content/data/NVDA.csv&quot;
+     &quot;content/data/PYPL.csv&quot;
+     &quot;content/data/QCOM.csv&quot;
+     &quot;content/data/TSLA.csv&quot;
+     &quot;content/data/TXN.csv&quot;
+     &quot;content/images/icon-left-arrow.png&quot;
+     &quot;content/images/wheel-touch.png&quot;
+     &quot;content/images/wheel.png&quot;
+     &quot;content/qmldir&quot;
+     &quot;stocqt.qml&quot;
+ )
+
+ qt6_add_resources(stocqt &quot;stocqt&quot;
+     PREFIX
+         &quot;/demos/stocqt&quot;
+     FILES
+         ${stocqt_resource_files}
+ )
+
+ install(TARGETS stocqt
+     RUNTIME DESTINATION &quot;${INSTALL_EXAMPLEDIR}&quot;
+     BUNDLE DESTINATION &quot;${INSTALL_EXAMPLEDIR}&quot;
+     LIBRARY DESTINATION &quot;${INSTALL_EXAMPLEDIR}&quot;
+ )
+</pre>

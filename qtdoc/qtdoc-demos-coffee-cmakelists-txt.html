@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- coffee.qdoc -->
+  <title>Coffee Machine Example | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 6.2</a></li>
+<li>Coffee Machine Example</li>
+<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Coffee Machine Example</h1>
+<pre class="cpp">
+ # Generated from coffee.pro.
+
+ cmake_minimum_required(VERSION 3.16)
+ project(coffee LANGUAGES CXX)
+
+ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_AUTORCC ON)
+ set(CMAKE_AUTOUIC ON)
+
+ if(NOT DEFINED INSTALL_EXAMPLESDIR)
+   set(INSTALL_EXAMPLESDIR &quot;examples&quot;)
+ endif()
+
+ set(INSTALL_EXAMPLEDIR &quot;${INSTALL_EXAMPLESDIR}&quot;)
+
+ find_package(Qt6 COMPONENTS Core)
+ find_package(Qt6 COMPONENTS Gui)
+ find_package(Qt6 COMPONENTS Qml)
+ find_package(Qt6 COMPONENTS Quick)
+
+ qt_add_executable(coffee
+     main.cpp
+ )
+ set_target_properties(coffee PROPERTIES
+     WIN32_EXECUTABLE TRUE
+     MACOSX_BUNDLE TRUE
+ )
+ target_link_libraries(coffee PUBLIC
+     Qt::Core
+     Qt::Gui
+     Qt::Qml
+     Qt::Quick
+ )
+
+ # Resources:
+ set(qml_resource_files
+     &quot;ApplicationFlow.qml&quot;
+     &quot;ApplicationFlowForm.ui.qml&quot;
+     &quot;Brewing.qml&quot;
+     &quot;BrewingForm.ui.qml&quot;
+     &quot;ChoosingCoffee.ui.qml&quot;
+     &quot;CoffeeButton.qml&quot;
+     &quot;CupForm.ui.qml&quot;
+     &quot;EmptyCupForm.ui.qml&quot;
+     &quot;NavigationButton.ui.qml&quot;
+     &quot;SideBar.qml&quot;
+     &quot;SideBarForm.ui.qml&quot;
+     &quot;images/cup structure/coffee_cup_large.png&quot;
+     &quot;images/cup structure/coffee_cup_outline.png&quot;
+     &quot;images/cup structure/cup elements/coffee_cup_back.png&quot;
+     &quot;images/cup structure/cup elements/coffee_cup_coverplate.png&quot;
+     &quot;images/cup structure/cup elements/coffee_cup_front.png&quot;
+     &quot;images/cup structure/liquids/liquid_coffee.png&quot;
+     &quot;images/cup structure/liquids/liquid_foam.png&quot;
+     &quot;images/cup structure/liquids/liquid_milk.png&quot;
+     &quot;images/icons/coffees/Americano.png&quot;
+     &quot;images/icons/coffees/Espresso.png&quot;
+     &quot;images/icons/coffees/Latte.png&quot;
+     &quot;images/icons/coffees/Macchiato.png&quot;
+     &quot;images/icons/coffees/cappucino.png&quot;
+     &quot;images/icons/contents/coffee.png&quot;
+     &quot;images/icons/contents/milk.png&quot;
+     &quot;images/icons/contents/sugar.png&quot;
+     &quot;images/ui controls/buttons/back/white.png&quot;
+     &quot;images/ui controls/buttons/go/white.png&quot;
+     &quot;images/ui controls/line.png&quot;
+     &quot;imports/Coffee/Constants.qml&quot;
+     &quot;imports/Coffee/TitilliumWeb-Regular.ttf&quot;
+     &quot;imports/Coffee/qmldir&quot;
+     &quot;main.qml&quot;
+     &quot;qtquickcontrols2.conf&quot;
+ )
+
+ qt6_add_resources(coffee &quot;qml&quot;
+     PREFIX
+         &quot;/&quot;
+     FILES
+         ${qml_resource_files}
+ )
+
+ install(TARGETS coffee
+     RUNTIME DESTINATION &quot;${INSTALL_EXAMPLEDIR}&quot;
+     BUNDLE DESTINATION &quot;${INSTALL_EXAMPLEDIR}&quot;
+     LIBRARY DESTINATION &quot;${INSTALL_EXAMPLEDIR}&quot;
+ )
+</pre>

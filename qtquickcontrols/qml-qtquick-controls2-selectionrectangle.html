@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquickselectionrectangle.cpp -->
+  <title>SelectionRectangle QML Type | Qt Quick Controls 6.2.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 6.2</a></li>
+<li><a href="qtquickcontrols-index.html">Qt Quick Controls</a></li>
+<li><a href="qtquick-controls2-qmlmodule.html">QML Types</a></li>
+<li>SelectionRectangle QML Type</li>
+<li id="buildversion"><a href="qtquickcontrols-index.html">Qt 6.2&#x2e;3 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#attached-properties">Attached Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">SelectionRectangle QML Type</h1>
+<!-- $$$SelectionRectangle-brief -->
+<p>Used to select table cells inside a <a href="../qtquick/qml-qtquick-tableview.html">TableView</a>. <a href="#details">More...</a></p>
+<!-- @@@SelectionRectangle -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick.Controls</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 6.2</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qtquick-controls2-control.html">Control</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qtquick-controls2-selectionrectangle-members.html">List of all members, including inherited members</a></li>
+</ul>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><a href="qml-qtquick-controls2-selectionrectangle.html#active-prop">active</a></b> : bool</li>
+<li class="fn"><b><a href="qml-qtquick-controls2-selectionrectangle.html#bottomRightHandle-prop">bottomRightHandle</a></b> : Component</li>
+<li class="fn"><b><a href="qml-qtquick-controls2-selectionrectangle.html#dragging-prop">dragging</a></b> : bool</li>
+<li class="fn"><b><a href="qml-qtquick-controls2-selectionrectangle.html#selectionMode-prop">selectionMode</a></b> : enumeration</li>
+<li class="fn"><b><a href="qml-qtquick-controls2-selectionrectangle.html#target-prop">target</a></b> : Item</li>
+<li class="fn"><b><a href="qml-qtquick-controls2-selectionrectangle.html#topLeftHandle-prop">topLeftHandle</a></b> : Component</li>
+</ul>
+<h2 id="attached-properties">Attached Properties</h2>
+<ul>
+<li class="fn"><b><a href="qml-qtquick-controls2-selectionrectangle.html#control-attached-prop">control</a></b> : SelectionRectangle</li>
+<li class="fn"><b><a href="qml-qtquick-controls2-selectionrectangle.html#dragging-attached-prop">dragging</a></b> : bool</li>
+</ul>
+<!-- $$$SelectionRectangle-description -->
+<h2 id="details">Detailed Description</h2>
+<p class="centerAlign"><img src="images/qtquickcontrols2-selectionrectangle.png" alt="" /></p><p>SelectionRectangle is used for selecting table cells in a <a href="../qtquick/qml-qtquick-tableview.html">TableView</a>. It lets the user start a selection by doing a pointer drag inside the viewport, or by doing a long press on top of a cell.</p>
+<p>For a SelectionRectangle to be able to select cells, <a href="../qtquick/qml-qtquick-tableview.html">TableView</a> must have an <a href="../qtqmlmodels/qml-qtqml-models-itemselectionmodel.html">ItemSelectionModel</a> assigned. The <a href="../qtqmlmodels/qml-qtqml-models-itemselectionmodel.html">ItemSelectionModel</a> will store any selections done on the model, and can be used for querying which cells that the user has selected.</p>
+<p>The following example shows how you can make a SelectionRectangle target a <a href="../qtquick/qml-qtquick-tableview.html">TableView</a>:</p>
+<pre class="qml">
+     <span class="type"><a href="../qtquick/qml-qtquick-tableview.html">TableView</a></span> {
+         <span class="name">id</span>: <span class="name">tableView</span>
+         <span class="name">anchors</span>.fill: <span class="name">parent</span>
+         <span class="name">clip</span>: <span class="number">true</span>
+
+         <span class="name">model</span>: <span class="name">TableModel</span> {
+             <span class="type"><a href="../qtqmlmodels/qml-qt-labs-qmlmodels-tablemodelcolumn.html">TableModelColumn</a></span> { <span class="name">display</span>: <span class="string">&quot;name&quot;</span> }
+             <span class="name">rows</span>: [ { &quot;name&quot;: <span class="string">&quot;Harry&quot;</span> }, { &quot;name&quot;: <span class="string">&quot;Hedwig&quot;</span> } ]
+         }
+
+         <span class="name">selectionModel</span>: <span class="name">ItemSelectionModel</span> {
+             <span class="name">model</span>: <span class="name">tableView</span>.<span class="name">model</span>
+         }
+
+         <span class="name">delegate</span>: <span class="name">Rectangle</span> {
+             <span class="name">implicitWidth</span>: <span class="number">100</span>
+             <span class="name">implicitHeight</span>: <span class="number">30</span>
+             <span class="name">color</span>: <span class="name">selected</span> ? <span class="string">&quot;blue&quot;</span> : <span class="string">&quot;lightgray&quot;</span>
+
+             required property <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span> <span class="name">selected</span>
+
+             <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> { <span class="name">text</span>: <span class="name">display</span> }
+         }
+     }
+
+     <span class="type"><a href="qml-qtquick-controls2-selectionrectangle.html">SelectionRectangle</a></span> {
+         <span class="name">target</span>: <span class="name">tableView</span>
+     }
+</pre>
+<div class="admonition note">
+<p><b>Note: </b>A SelectionRectangle itself is not shown as part of a selection. Only the delegates (like <a href="qml-qtquick-controls2-selectionrectangle.html#topLeftHandle-prop">topLeftHandle</a> and <a href="qml-qtquick-controls2-selectionrectangle.html#bottomRightHandle-prop">bottomRightHandle</a>) are used. You should also consider <a href="../qtquick/qml-qtquick-tableview.html#selecting-items">rendering the TableView delegate as selected</a>.</p>
+</div>
+<p><b>See also </b><a href="../qtquick/qml-qtquick-tableview.html">TableView</a>, <a href="../qtquick/qml-qtquick-tableview.html#selectionModel-prop">TableView::selectionModel</a>, and <a href="../qtqmlmodels/qml-qtqml-models-itemselectionmodel.html">ItemSelectionModel</a>.</p>
+<!-- @@@SelectionRectangle -->
+<h2>Property Documentation</h2>
+<!-- $$$active -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="active-prop">
+<td class="tblQmlPropNode"><p>
+<span class="qmlextra">[read-only] </span><span class="name">active</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property is <code>true</code> while the user is performing a selection. The selection will be active from the time the the user starts to select, and until the selection is removed again, for example from tapping inside the viewport.</p>
+</div></div><!-- @@@active -->
+<br/>
+<!-- $$$bottomRightHandle -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="bottomRightHandle-prop">
+<td class="tblQmlPropNode"><p>
+<span class="name">bottomRightHandle</span> : <span class="type"><a href="../qtqml/qml-qtqml-component.html">Component</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property holds the delegate that will be shown on the center of the top-left corner of the selection rectangle. When a handle is provided, the user can drag it to adjust the selection.</p>
+<p>Set this property to <code>null</code> if you don't want a selection handle on the bottom-right.</p>
+<p><b>See also </b><a href="qml-qtquick-controls2-selectionrectangle.html#topLeftHandle-prop">topLeftHandle</a>.</p>
+</div></div><!-- @@@bottomRightHandle -->
+<br/>
+<!-- $$$dragging -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="dragging-prop">
+<td class="tblQmlPropNode"><p>
+<span class="qmlextra">[read-only] </span><span class="name">dragging</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property is <code>true</code> whenever the user is doing a pointer drag or a handle drag to adjust the selection rectangle.</p>
+</div></div><!-- @@@dragging -->
+<br/>
+<!-- $$$selectionMode -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="selectionMode-prop">
+<td class="tblQmlPropNode"><p>
+<span class="name">selectionMode</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property holds when a selection should start.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>SelectionRectangle.Drag</code></td><td class="topAlign">A selection will start by doing a pointer drag inside the viewport</td></tr>
+<tr><td class="topAlign"><code>SelectionRectangle.PressAndHold</code></td><td class="topAlign">A selection will start by doing a press and hold on top a cell</td></tr>
+<tr><td class="topAlign"><code>SelectionRectangle.Auto</code></td><td class="topAlign"><a href="qml-qtquick-controls2-selectionrectangle.html">SelectionRectangle</a> will choose which mode to use based on the target and the platform. This normally means <code>PressAndHold</code> on touch based platforms, and <code>Drag</code> on desktop. However, <code>Drag</code> will only be used if it doesn't conflict with flicking. This means that <a href="../qtquick/qml-qtquick-tableview.html">TableView</a> will need to be configured with <code>interactive</code> set to <code>false</code>, or placed inside a <a href="qml-qtquick-controls2-scrollview.html">ScrollView</a> (where flicking, by default, is off for mouse events), for <code>Drag</code> to be chosen.</td></tr>
+</table></div>
+<p>The default value is <code>Auto</code>.</p>
+</div></div><!-- @@@selectionMode -->
+<br/>
+<!-- $$$target -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="target-prop">
+<td class="tblQmlPropNode"><p>
+<span class="name">target</span> : <span class="type"><a href="../qtquick/qml-qtquick-item.html">Item</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property holds the <a href="../qtquick/qml-qtquick-tableview.html">TableView</a> on which the <a href="qml-qtquick-controls2-selectionrectangle.html">SelectionRectangle</a> should act.</p>
+</div></div><!-- @@@target -->
+<br/>
+<!-- $$$topLeftHandle -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="topLeftHandle-prop">
+<td class="tblQmlPropNode"><p>
+<span class="name">topLeftHandle</span> : <span class="type"><a href="../qtqml/qml-qtqml-component.html">Component</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property holds the delegate that will be shown on the center of the top-left corner of the selection rectangle. When a handle is provided, the user can drag it to adjust the selection.</p>
+<p>Set this property to <code>null</code> if you don't want a selection handle on the top-left.</p>
+<p><b>See also </b><a href="qml-qtquick-controls2-selectionrectangle.html#bottomRightHandle-prop">bottomRightHandle</a>.</p>
+</div></div><!-- @@@topLeftHandle -->
+<br/>
+<h2>Attached Property Documentation</h2>
+<!-- $$$control -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="control-attached-prop">
+<td class="tblQmlPropNode"><p>
+<span class="name">SelectionRectangle.control</span> : <span class="type"><a href="qml-qtquick-controls2-selectionrectangle.html">SelectionRectangle</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This attached property holds the <a href="qml-qtquick-controls2-selectionrectangle.html">SelectionRectangle</a> that manages the delegate instance. It is attached to each handle instance.</p>
+</div></div><!-- @@@control -->
+<br/>
+<!-- $$$dragging -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="dragging-attached-prop">
+<td class="tblQmlPropNode"><p>
+<span class="name">SelectionRectangle.dragging</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This attached property will be <code>true</code> if the user is dragging on the handle. It is attached to each handle instance.</p>
+</div></div><!-- @@@dragging -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtpurchasing-overview.qdoc -->
+  <title>In-App purchasing demo | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 6.2</a></li>
+<li>In-App purchasing demo</li>
+<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">In-App purchasing demo</h1>
+<pre class="cpp">
+ QT += quick qml quickcontrols2
+
+ INCLUDEPATH += purchasing/qmltypes \
+     purchasing/inapp
+
+ CONFIG += qmltypes
+ QML_IMPORT_PATH = $$PWD/hangmangame.h
+ QML_IMPORT_NAME = Hangman
+ QML_IMPORT_MAJOR_VERSION = 1
+
+ SOURCES += $$PWD/main.cpp \
+     $$PWD/hangmangame.cpp
+
+ HEADERS += $$PWD/hangmangame.h
+
+ RESOURCES += resources.qrc
+
+ target.path = $$[QT_INSTALL_EXAMPLES]/demos/hangman
+ INSTALLS += target
+
+ include($$PWD/purchasing/purchasing.pri)
+</pre>

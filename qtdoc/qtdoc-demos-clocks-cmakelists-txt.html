@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- clocks.qdoc -->
+  <title>Qt Quick Demo - Clocks | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 6.2</a></li>
+<li>Qt Quick Demo - Clocks</li>
+<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Qt Quick Demo - Clocks</h1>
+<pre class="cpp">
+ # Generated from clocks.pro.
+
+ cmake_minimum_required(VERSION 3.16)
+ project(clocks LANGUAGES CXX)
+
+ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_AUTORCC ON)
+ set(CMAKE_AUTOUIC ON)
+
+ if(NOT DEFINED INSTALL_EXAMPLESDIR)
+   set(INSTALL_EXAMPLESDIR &quot;examples&quot;)
+ endif()
+
+ set(INSTALL_EXAMPLEDIR &quot;${INSTALL_EXAMPLESDIR}/demos/clocks&quot;)
+
+ find_package(Qt6 COMPONENTS Core)
+ find_package(Qt6 COMPONENTS Gui)
+ find_package(Qt6 COMPONENTS Qml)
+ find_package(Qt6 COMPONENTS Quick)
+
+ qt_add_executable(clocks
+     main.cpp
+ )
+ set_target_properties(clocks PROPERTIES
+     WIN32_EXECUTABLE TRUE
+     MACOSX_BUNDLE TRUE
+ )
+ target_link_libraries(clocks PUBLIC
+     Qt::Core
+     Qt::Gui
+     Qt::Qml
+     Qt::Quick
+ )
+
+ # Resources:
+ set(clocks_resource_files
+     &quot;clocks.qml&quot;
+     &quot;content/Clock.qml&quot;
+     &quot;content/arrow.png&quot;
+     &quot;content/background.png&quot;
+     &quot;content/center.png&quot;
+     &quot;content/clock-night.png&quot;
+     &quot;content/clock.png&quot;
+     &quot;content/hour.png&quot;
+     &quot;content/minute.png&quot;
+     &quot;content/quit.png&quot;
+     &quot;content/second.png&quot;
+ )
+
+ qt6_add_resources(clocks &quot;clocks&quot;
+     PREFIX
+         &quot;/demos/clocks&quot;
+     FILES
+         ${clocks_resource_files}
+ )
+
+ install(TARGETS clocks
+     RUNTIME DESTINATION &quot;${INSTALL_EXAMPLEDIR}&quot;
+     BUNDLE DESTINATION &quot;${INSTALL_EXAMPLEDIR}&quot;
+     LIBRARY DESTINATION &quot;${INSTALL_EXAMPLEDIR}&quot;
+ )
+</pre>

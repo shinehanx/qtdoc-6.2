@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qt_wrap_cpp.qdoc -->
+  <title>qt_wrap_cpp | Qt Core 6.2.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 6.2</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="cmake-commands-qtcore.html">CMake Commands in Qt6 Core</a></li>
+<li>qt_wrap_cpp</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 6.2&#x2e;3 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#synopsis">Synopsis</a></li>
+<li class="level1"><a href="#description">Description</a></li>
+<li class="level1"><a href="#arguments">Arguments</a></li>
+<li class="level1"><a href="#examples">Examples</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">qt_wrap_cpp</h1>
+<!-- $$$qt_wrap_cpp.html-description -->
+<div class="descr" id="details">
+<span id="qt6-wrap-cpp"></span><p>Creates .moc files from sources.</p>
+<p>The command is defined in the <code>Core</code> component of the <code>Qt6</code> package. Load the package with:</p>
+<pre class="cpp">
+ find_package(Qt6 REQUIRED COMPONENTS Core)
+</pre>
+<h2 id="synopsis">Synopsis</h2>
+<pre class="cpp plain">
+ qt_wrap_cpp(&lt;VAR&gt; src_file1 [src_file2 ..&#x2e;]
+             [TARGET target]
+             [OPTIONS ..&#x2e;]
+             [DEPENDS ..&#x2e;])
+</pre>
+<p>If <a href="../qtcmake/cmake-qt5-and-qt6-compatibility.html#versionless-commands">versionless commands</a> are disabled, use <code>qt6_wrap_cpp()</code> instead. It supports the same set of arguments as this command.</p>
+<h2 id="description">Description</h2>
+<p>Creates rules for calling the <a href="../qtdoc/moc.html">Meta-Object Compiler (moc)</a> on the given source files. For each input file, an output file is generated in the build directory. The paths of the generated files are added to <code>&lt;VAR&gt;</code>.</p>
+<div class="admonition note">
+<p><b>Note: </b>This is a low-level macro. See the <a href="https://cmake.org/cmake/help/latest/manual/cmake-qt.7.html#automoc">CMake AUTOMOC Documentation</a> for a more convenient way to let source files be processed with <code>moc</code>.</p>
+</div>
+<h2 id="arguments">Arguments</h2>
+<p>You can set an explicit <code>TARGET</code>. This will make sure that the target properties <code>INCLUDE_DIRECTORIES</code> and <code>COMPILE_DEFINITIONS</code> are also used when scanning the source files with <code>moc</code>.</p>
+<p>You can set additional <code>OPTIONS</code> that should be added to the <code>moc</code> calls. You can find possible options in the <a href="../qtdoc/moc.html">moc documentation</a>.</p>
+<p><code>DEPENDS</code> allows you to add additional dependencies for recreation of the generated files. This is useful when the sources have implicit dependencies, like code for a Qt plugin that includes a <code>.json</code> file using the <a href="qtplugin.html#Q_PLUGIN_METADATA">Q_PLUGIN_METADATA</a>() macro.</p>
+<h2 id="examples">Examples</h2>
+<pre class="cpp">
+ set(SOURCES myapp.cpp main.cpp)
+ qt_wrap_cpp(SOURCES myapp.h)
+ add_executable(myapp ${SOURCES})
+</pre>
+</div>
+<!-- @@@qt_wrap_cpp.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtUiTools">
+    <examples>
+        <example docUrl="qthelp://org.qt-project.qtuitools.623/qtuitools/qtuitools-multipleinheritance-example.html" imageUrl="qthelp://org.qt-project.qtuitools.623/qtuitools/images/multipleinheritance-example.png" name="Multiple Inheritance Example" projectPath="uitools/multipleinheritance/multipleinheritance.pro">
+            <description><![CDATA[Using a form created with Qt Designer in an application.]]></description>
+            <tags>inheritance,multiple,tools,ui</tags>
+            <fileToOpen mainFile="true">uitools/multipleinheritance/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtuitools.623/qtuitools/qtuitools-textfinder-example.html" imageUrl="qthelp://org.qt-project.qtuitools.623/qtuitools/images/textfinder-example-find.png" name="Text Finder Example" projectPath="uitools/textfinder/textfinder.pro">
+            <description><![CDATA[Dynamically loading .ui files using QUiLoader.]]></description>
+            <tags>android,finder,text,tools,ui</tags>
+            <fileToOpen>uitools/textfinder/main.cpp</fileToOpen>
+            <fileToOpen>uitools/textfinder/textfinder.h</fileToOpen>
+            <fileToOpen mainFile="true">uitools/textfinder/textfinder.cpp</fileToOpen>
+        </example>
+    </examples>
+</instructionals>

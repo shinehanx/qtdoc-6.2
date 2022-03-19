@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtNetwork">
+    <examples>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-blockingfortuneclient-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/blockingfortuneclient-example.png" name="Blocking Fortune Client Example" projectPath="network/blockingfortuneclient/blockingfortuneclient.pro">
+            <description><![CDATA[Demonstrates how to create a client for a network service.]]></description>
+            <tags>blocking,client,fortune,network</tags>
+            <fileToOpen mainFile="true">network/blockingfortuneclient/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-broadcastreceiver-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/broadcastreceiver-example.png" name="Broadcast Receiver Example" projectPath="network/broadcastreceiver/broadcastreceiver.pro">
+            <description><![CDATA[Demonstrates how to receive information broadcasted over a local network.]]></description>
+            <tags>broadcast,network,receiver</tags>
+            <fileToOpen mainFile="true">network/broadcastreceiver/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-broadcastsender-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/broadcastsender-example.png" name="Broadcast Sender Example" projectPath="network/broadcastsender/broadcastsender.pro">
+            <description><![CDATA[Demonstrates how to broadcast information to multiple clients on a local network.]]></description>
+            <tags>broadcast,network,sender</tags>
+            <fileToOpen mainFile="true">network/broadcastsender/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-secureudpclient-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/secureudpclient-example.png" name="DTLS client" projectPath="network/secureudpclient/secureudpclient.pro">
+            <description><![CDATA[This example demonstrates how to implement client-side DTLS connections.]]></description>
+            <tags>client,dtls,network</tags>
+            <fileToOpen mainFile="true">network/secureudpclient/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-secureudpserver-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/secureudpserver-example.png" name="DTLS server" projectPath="network/secureudpserver/secureudpserver.pro">
+            <description><![CDATA[This examples demonstrates how to implement a simple DTLS server.]]></description>
+            <tags>dtls,network,server</tags>
+            <fileToOpen mainFile="true">network/secureudpserver/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-fortuneclient-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/fortuneclient-example.png" name="Fortune Client Example" projectPath="network/fortuneclient/fortuneclient.pro">
+            <description><![CDATA[Demonstrates how to create a client for a network service.]]></description>
+            <tags>client,fortune,network</tags>
+            <fileToOpen mainFile="true">network/fortuneclient/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-fortuneserver-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/fortuneserver-example.png" name="Fortune Server Example" projectPath="network/fortuneserver/fortuneserver.pro">
+            <description><![CDATA[Demonstrates how to create a server for a network service.]]></description>
+            <tags>fortune,network,server</tags>
+            <fileToOpen mainFile="true">network/fortuneserver/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-googlesuggest-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/googlesuggest-example.png" name="Google Suggest Example" projectPath="network/googlesuggest/googlesuggest.pro">
+            <description><![CDATA[Obtains the list of search recommendations by the Google search engine.]]></description>
+            <tags>google,network,suggest</tags>
+            <fileToOpen>network/googlesuggest/main.cpp</fileToOpen>
+            <fileToOpen>network/googlesuggest/googlesuggest.h</fileToOpen>
+            <fileToOpen mainFile="true">network/googlesuggest/googlesuggest.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-http-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/http-example.png" isHighlighted="true" name="HTTP Example" projectPath="network/http/http.pro">
+            <description><![CDATA[Demonstrates a simple HTTP client.]]></description>
+            <tags>http,network</tags>
+            <fileToOpen mainFile="true">network/http/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-loopback-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/loopback-example.png" name="Loopback Example" projectPath="network/loopback/loopback.pro">
+            <description><![CDATA[Demonstrates the client-server communication on a local host.]]></description>
+            <tags>ios,loopback,network</tags>
+            <fileToOpen mainFile="true">network/loopback/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-multicastreceiver-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/multicastreceiver-example.png" name="Multicast Receiver Example" projectPath="network/multicastreceiver/multicastreceiver.pro">
+            <description><![CDATA[Demonstrates how to receive information sent to a multicast group.]]></description>
+            <tags>multicast,network,receiver</tags>
+            <fileToOpen mainFile="true">network/multicastreceiver/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-multicastsender-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/multicastsender-example.png" name="Multicast Sender Example" projectPath="network/multicastsender/multicastsender.pro">
+            <description><![CDATA[Demonstrates how to send messages to a multicast group.]]></description>
+            <tags>multicast,network,sender</tags>
+            <fileToOpen mainFile="true">network/multicastsender/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-network-chat-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/network-chat-example.png" name="Network Chat Example" projectPath="network/network-chat/network-chat.pro">
+            <description><![CDATA[Demonstrates a stateful peer-to-peer Chat client.]]></description>
+            <tags>chat,ios,network</tags>
+            <fileToOpen mainFile="true">network/network-chat/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-download-example.html" imageUrl="qthelp://org.qt-project.qtdoc.623/qtdoc/images/qt-codesample.png" name="Network Download Example" projectPath="network/download/download.pro">
+            <description><![CDATA[Demonstrates how to use networking APIs for multiple downloads.]]></description>
+            <tags>download,network</tags>
+            <fileToOpen mainFile="true">network/download/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-downloadmanager-example.html" imageUrl="qthelp://org.qt-project.qtdoc.623/qtdoc/images/qt-codesample.png" name="Network Download Manager Example" projectPath="network/downloadmanager/downloadmanager.pro">
+            <description><![CDATA[Demonstrates how to use the networking APIs for multiple downloads.]]></description>
+            <tags>download,manager,network</tags>
+            <fileToOpen>network/downloadmanager/main.cpp</fileToOpen>
+            <fileToOpen>network/downloadmanager/downloadmanager.h</fileToOpen>
+            <fileToOpen mainFile="true">network/downloadmanager/downloadmanager.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-securesocketclient-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/securesocketclient.png" name="Secure Socket Client Example" projectPath="network/securesocketclient/securesocketclient.pro">
+            <description><![CDATA[Demonstrates how to communicate over an encrypted (SSL) connection.]]></description>
+            <tags>client,network,secure,socket</tags>
+            <fileToOpen mainFile="true">network/securesocketclient/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-threadedfortuneserver-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/threadedfortuneserver-example.png" name="Threaded Fortune Server Example" projectPath="network/threadedfortuneserver/threadedfortuneserver.pro">
+            <description><![CDATA[The Threaded Fortune Server example shows how to create a server for a simple network service that uses threads to handle requests from different clients. It is intended to be run alongside the Fortune Client example.]]></description>
+            <tags>fortune,network,server,threaded</tags>
+            <fileToOpen mainFile="true">network/threadedfortuneserver/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/qtnetwork-torrent-example.html" imageUrl="qthelp://org.qt-project.qtnetwork.623/qtnetwork/images/torrent-example.png" name="Torrent Example" projectPath="network/torrent/torrent.pro">
+            <description><![CDATA[Demonstrates complex TCP/IP operations.]]></description>
+            <tags>ios,network,torrent</tags>
+            <fileToOpen mainFile="true">network/torrent/main.cpp</fileToOpen>
+        </example>
+    </examples>
+</instructionals>

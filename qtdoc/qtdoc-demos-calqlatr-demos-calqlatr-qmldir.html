@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- calqlatr.qdoc -->
+  <title>Qt Quick Demo - Calqlatr | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 6.2</a></li>
+<li>Qt Quick Demo - Calqlatr</li>
+<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Qt Quick Demo - Calqlatr</h1>
+<pre class="cpp">
+ module demos<span class="operator">.</span>calqlatr
+ typeinfo calqlatrexample<span class="operator">.</span>qmltypes
+ prefer :<span class="operator">/</span>demos<span class="operator">/</span>calqlatr<span class="operator">/</span>
+ Display <span class="number">1.0</span> content<span class="operator">/</span>Display<span class="operator">.</span>qml
+ NumberPad <span class="number">1.0</span> content<span class="operator">/</span>NumberPad<span class="operator">.</span>qml
+ CalculatorButton <span class="number">1.0</span> content<span class="operator">/</span>CalculatorButton<span class="operator">.</span>qml
+</pre>

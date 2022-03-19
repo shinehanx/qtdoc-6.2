@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtOpenGL">
+    <examples>
+        <example docUrl="qthelp://org.qt-project.qtopengl.623/qtopengl/qtopengl-2dpainting-example.html" imageUrl="qthelp://org.qt-project.qtopengl.623/qtopengl/images/2dpainting-example.png" name="2D Painting Example" projectPath="opengl/2dpainting/2dpainting.pro">
+            <description><![CDATA[The 2D Painting example shows how QPainter and QOpenGLWidget can be used together to display accelerated 2D graphics on supported hardware.]]></description>
+            <tags>android,ios,opengl,painting</tags>
+            <fileToOpen mainFile="true">opengl/2dpainting/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtopengl.623/qtopengl/qtopengl-cube-example.html" imageUrl="qthelp://org.qt-project.qtopengl.623/qtopengl/images/cube.png" name="Cube OpenGL ES 2.0 example" projectPath="opengl/cube/cube.pro">
+            <description><![CDATA[The Cube OpenGL ES 2.0 example shows how to write mouse rotateable textured 3D cube using OpenGL ES 2.0 with Qt. It shows how to handle polygon geometries efficiently and how to write simple vertex and fragment shader for programmable graphics pipeline. In addition it shows how to use quaternions for representing 3D object orientation.]]></description>
+            <tags>cube,es,opengl</tags>
+            <fileToOpen mainFile="true">opengl/cube/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtopengl.623/qtopengl/qtopengl-hellogl2-example.html" imageUrl="qthelp://org.qt-project.qtopengl.623/qtopengl/images/hellogl2-example.png" name="Hello GL2 Example" projectPath="opengl/hellogl2/hellogl2.pro">
+            <description><![CDATA[The Hello GL2 example demonstrates the basic use of the OpenGL-related classes provided with Qt.]]></description>
+            <tags>gl2,hello,opengl</tags>
+            <fileToOpen mainFile="true">opengl/hellogl2/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtopengl.623/qtopengl/qtopengl-hellogles3-example.html" imageUrl="qthelp://org.qt-project.qtopengl.623/qtopengl/images/hellogles3-example.png" name="Hello GLES3 Example" projectPath="opengl/hellogles3/hellogles3.pro">
+            <description><![CDATA[The Hello GLES3 example demonstrates easy, cross-platform usage of OpenGL ES 3.0 functions via QOpenGLExtraFunctions in an application that works identically on desktop platforms with OpenGL 3.3 and mobile/embedded devices with OpenGL ES 3.0.]]></description>
+            <tags>android,gles3,hello,opengl</tags>
+            <fileToOpen mainFile="true">opengl/hellogles3/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtopengl.623/qtopengl/qtopengl-openglwindow-example.html" imageUrl="qthelp://org.qt-project.qtopengl.623/qtopengl/images/openglwindow-example.png" name="OpenGL Window Example" projectPath="opengl/openglwindow/openglwindow.pro">
+            <description><![CDATA[This example shows how to create a minimal QWindow based application for the purpose of using OpenGL.]]></description>
+            <tags>opengl,window</tags>
+            <fileToOpen>opengl/openglwindow/main.cpp</fileToOpen>
+            <fileToOpen>opengl/openglwindow/openglwindow.h</fileToOpen>
+            <fileToOpen mainFile="true">opengl/openglwindow/openglwindow.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtopengl.623/qtopengl/qtopengl-textures-example.html" imageUrl="qthelp://org.qt-project.qtopengl.623/qtopengl/images/textures-example.png" name="Textures Example" projectPath="opengl/textures/textures.pro">
+            <description><![CDATA[The Textures example demonstrates the use of Qt's image classes as textures in applications that use both OpenGL and Qt to display graphics.]]></description>
+            <tags>android,ios,opengl,textures</tags>
+            <fileToOpen mainFile="true">opengl/textures/main.cpp</fileToOpen>
+        </example>
+    </examples>
+</instructionals>

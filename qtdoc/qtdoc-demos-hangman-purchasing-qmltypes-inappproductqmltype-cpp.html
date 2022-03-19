@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtpurchasing-overview.qdoc -->
+  <title>In-App purchasing demo | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 6.2</a></li>
+<li>In-App purchasing demo</li>
+<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">In-App purchasing demo</h1>
+<pre class="cpp">
+ <span class="comment">/****************************************************************************
+ **
+ ** Copyright (C) 2021 The Qt Company Ltd.
+ ** Contact: https://www.qt.io/licensing/
+ **
+ ** This file is part of the examples of the Qt Toolkit.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** Commercial License Usage
+ ** Licensees holding valid commercial Qt licenses may use this file in
+ ** accordance with the commercial license agreement provided with the
+ ** Software or, alternatively, in accordance with the terms contained in
+ ** a written agreement between you and The Qt Company. For licensing terms
+ ** and conditions see https://www.qt.io/terms-conditions. For further
+ ** information use the contact form at https://www.qt.io/contact-us.
+ **
+ ** BSD License Usage
+ ** Alternatively, you may use this file under the terms of the BSD license
+ ** as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of The Qt Company Ltd nor the names of its
+ **     contributors may be used to endorse or promote products derived
+ **     from this software without specific prior written permission.
+ **
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ **
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ <span class="preprocessor">#include &lt;QtCore/qcoreevent.h&gt;</span>
+
+ <span class="preprocessor">#include &quot;inappproductqmltype.h&quot;</span>
+ <span class="preprocessor">#include &quot;inappstoreqmltype.h&quot;</span>
+ <span class="preprocessor">#include &quot;../inapp/inapptransaction.h&quot;</span>
+ <span class="preprocessor">#include &quot;../inapp/inappstore.h&quot;</span>
+
+ InAppProductQmlType<span class="operator">::</span>InAppProductQmlType(<span class="type"><a href="../qtcore/qobject.html">QObject</a></span> <span class="operator">*</span>parent)
+     : <span class="type"><a href="../qtcore/qobject.html">QObject</a></span>(parent)
+     <span class="operator">,</span> m_status(Uninitialized)
+     <span class="operator">,</span> m_type(InAppProductQmlType<span class="operator">::</span>ProductType(<span class="operator">-</span><span class="number">1</span>))
+     <span class="operator">,</span> m_componentComplete(<span class="keyword">false</span>)
+     <span class="operator">,</span> m_store(<span class="number">0</span>)
+     <span class="operator">,</span> m_product(<span class="number">0</span>)
+ {
+ }
+
+ <span class="type">void</span> InAppProductQmlType<span class="operator">::</span>setStore(InAppStoreQmlType <span class="operator">*</span>store)
+ {
+     <span class="keyword">if</span> (m_store <span class="operator">=</span><span class="operator">=</span> store)
+         <span class="keyword">return</span>;
+
+     <span class="keyword">if</span> (m_store <span class="operator">!</span><span class="operator">=</span> <span class="number">0</span>)
+         m_store<span class="operator">-</span><span class="operator">&gt;</span>store()<span class="operator">-</span><span class="operator">&gt;</span>disconnect(<span class="keyword">this</span>);
+
+     m_store <span class="operator">=</span> store;
+     connect(m_store<span class="operator">-</span><span class="operator">&gt;</span>store()<span class="operator">,</span> <span class="operator">&amp;</span>InAppStore<span class="operator">::</span>productRegistered<span class="operator">,</span>
+             <span class="keyword">this</span><span class="operator">,</span> <span class="operator">&amp;</span>InAppProductQmlType<span class="operator">::</span>handleProductRegistered);
+     connect(m_store<span class="operator">-</span><span class="operator">&gt;</span>store()<span class="operator">,</span> <span class="operator">&amp;</span>InAppStore<span class="operator">::</span>productUnknown<span class="operator">,</span>
+             <span class="keyword">this</span><span class="operator">,</span> <span class="operator">&amp;</span>InAppProductQmlType<span class="operator">::</span>handleProductUnknown);
+     connect(m_store<span class="operator">-</span><span class="operator">&gt;</span>store()<span class="operator">,</span> <span class="operator">&amp;</span>InAppStore<span class="operator">::</span>transactionReady<span class="operator">,</span>
+                      <span class="keyword">this</span><span class="operator">,</span> <span class="operator">&amp;</span>InAppProductQmlType<span class="operator">::</span>handleTransaction);
+
+     updateProduct();
+
+     <span class="keyword">emit</span> storeChanged();
+ }
+
+ InAppStoreQmlType <span class="operator">*</span>InAppProductQmlType<span class="operator">::</span>store() <span class="keyword">const</span>
+ {
+     <span class="keyword">return</span> m_store;
+ }
+
+ <span class="type">void</span> InAppProductQmlType<span class="operator">::</span>componentComplete()
+ {
+     <span class="keyword">if</span> (<span class="operator">!</span>m_componentComplete) {
+         m_componentComplete <span class="operator">=</span> <span class="keyword">true</span>;
+         updateProduct();
+     }
+ }
+
+ <span class="type">void</span> InAppProductQmlType<span class="operator">::</span>setIdentifier(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>identifier)
+ {
+     <span class="keyword">if</span> (m_identifier <span class="operator">=</span><span class="operator">=</span> identifier)
+         <span class="keyword">return</span>;
+
+     <span class="keyword">if</span> (m_status <span class="operator">!</span><span class="operator">=</span> Uninitialized) {
+         <a href="../qtcore/qtglobal.html#qWarning">qWarning</a>(<span class="string">&quot;A product's identifier cannot be changed once the product has been initialized.&quot;</span>);
+         <span class="keyword">return</span>;
+     }
+
+     m_identifier <span class="operator">=</span> identifier;
+     <span class="keyword">if</span> (m_componentComplete)
+         updateProduct();
+     <span class="keyword">emit</span> identifierChanged();
+ }
+
+ <span class="type">void</span> InAppProductQmlType<span class="operator">::</span>updateProduct()
+ {
+     <span class="keyword">if</span> (m_store <span class="operator">=</span><span class="operator">=</span> <span class="number">0</span>)
+         <span class="keyword">return</span>;
+
+     Status oldStatus <span class="operator">=</span> m_status;
+     InAppProduct <span class="operator">*</span>product <span class="operator">=</span> <span class="number">0</span>;
+     <span class="keyword">if</span> (m_identifier<span class="operator">.</span>isEmpty() <span class="operator">|</span><span class="operator">|</span> m_type <span class="operator">=</span><span class="operator">=</span> InAppProductQmlType<span class="operator">::</span>ProductType(<span class="operator">-</span><span class="number">1</span>)) {
+         m_status <span class="operator">=</span> Uninitialized;
+     } <span class="keyword">else</span> {
+         product <span class="operator">=</span> m_store<span class="operator">-</span><span class="operator">&gt;</span>store()<span class="operator">-</span><span class="operator">&gt;</span>registeredProduct(m_identifier);
+         <span class="keyword">if</span> (product <span class="operator">!</span><span class="operator">=</span> <span class="number">0</span> <span class="operator">&amp;</span><span class="operator">&amp;</span> product <span class="operator">=</span><span class="operator">=</span> m_product)
+             <span class="keyword">return</span>;
+
+         <span class="keyword">if</span> (product <span class="operator">=</span><span class="operator">=</span> <span class="number">0</span>) {
+             m_status <span class="operator">=</span> PendingRegistration;
+             m_store<span class="operator">-</span><span class="operator">&gt;</span>store()<span class="operator">-</span><span class="operator">&gt;</span>registerProduct(InAppProduct<span class="operator">::</span>ProductType(m_type)<span class="operator">,</span> m_identifier);
+         } <span class="keyword">else</span> <span class="keyword">if</span> (product<span class="operator">-</span><span class="operator">&gt;</span>productType() <span class="operator">!</span><span class="operator">=</span> InAppProduct<span class="operator">::</span>ProductType(m_type)) {
+             <a href="../qtcore/qtglobal.html#qWarning">qWarning</a>(<span class="string">&quot;Product registered multiple times with different product types.&quot;</span>);
+             product <span class="operator">=</span> <span class="number">0</span>;
+             m_status <span class="operator">=</span> Uninitialized;
+         } <span class="keyword">else</span> {
+             m_status <span class="operator">=</span> Registered;
+         }
+     }
+
+     setProduct(product);
+     <span class="keyword">if</span> (oldStatus <span class="operator">!</span><span class="operator">=</span> m_status)
+         <span class="keyword">emit</span> statusChanged();
+ }
+
+ <span class="type">void</span> InAppProductQmlType<span class="operator">::</span>resetStatus()
+ {
+     updateProduct();
+ }
+
+ <span class="type"><a href="../qtcore/qstring.html">QString</a></span> InAppProductQmlType<span class="operator">::</span>identifier() <span class="keyword">const</span>
+ {
+     <span class="keyword">return</span> m_identifier;
+ }
+
+ <span class="type">void</span> InAppProductQmlType<span class="operator">::</span>setType(InAppProductQmlType<span class="operator">::</span>ProductType type)
+ {
+     <span class="keyword">if</span> (m_type <span class="operator">=</span><span class="operator">=</span> type)
+         <span class="keyword">return</span>;
+
+     <span class="keyword">if</span> (m_status <span class="operator">!</span><span class="operator">=</span> Uninitialized) {
+         <a href="../qtcore/qtglobal.html#qWarning">qWarning</a>(<span class="string">&quot;A product's type cannot be changed once the product has been initialized.&quot;</span>);
+         <span class="keyword">return</span>;
+     }
+
+     m_type <span class="operator">=</span> type;
+     <span class="keyword">if</span> (m_componentComplete)
+         updateProduct();
+
+     <span class="keyword">emit</span> typeChanged();
+ }
+
+ InAppProductQmlType<span class="operator">::</span>ProductType InAppProductQmlType<span class="operator">::</span>type() <span class="keyword">const</span>
+ {
+     <span class="keyword">return</span> m_type;
+ }
+
+ InAppProductQmlType<span class="operator">::</span>Status InAppProductQmlType<span class="operator">::</span>status() <span class="keyword">const</span>
+ {
+     <span class="keyword">return</span> m_status;
+ }
+
+ <span class="type"><a href="../qtcore/qstring.html">QString</a></span> InAppProductQmlType<span class="operator">::</span>price() <span class="keyword">const</span>
+ {
+     <span class="keyword">return</span> m_product <span class="operator">!</span><span class="operator">=</span> <span class="number">0</span> <span class="operator">?</span> m_product<span class="operator">-</span><span class="operator">&gt;</span>price() : <span class="type"><a href="../qtcore/qstring.html">QString</a></span>();
+ }
+
+ <span class="type"><a href="../qtcore/qstring.html">QString</a></span> InAppProductQmlType<span class="operator">::</span>title() <span class="keyword">const</span>
+ {
+     <span class="keyword">return</span> m_product <span class="operator">!</span><span class="operator">=</span> <span class="number">0</span> <span class="operator">?</span> m_product<span class="operator">-</span><span class="operator">&gt;</span>title() : <span class="type"><a href="../qtcore/qstring.html">QString</a></span>();
+ }
+
+ <span class="type"><a href="../qtcore/qstring.html">QString</a></span> InAppProductQmlType<span class="operator">::</span>description() <span class="keyword">const</span>
+ {
+     <span class="keyword">return</span> m_product <span class="operator">!</span><span class="operator">=</span> <span class="number">0</span> <span class="operator">?</span> m_product<span class="operator">-</span><span class="operator">&gt;</span>description() : <span class="type"><a href="../qtcore/qstring.html">QString</a></span>();
+ }
+
+ <span class="type">void</span> InAppProductQmlType<span class="operator">::</span>setProduct(InAppProduct <span class="operator">*</span>product)
+ {
+     <span class="keyword">if</span> (m_product <span class="operator">=</span><span class="operator">=</span> product)
+         <span class="keyword">return</span>;
+
+     <span class="type"><a href="../qtcore/qstring.html">QString</a></span> oldPrice <span class="operator">=</span> price();
+     <span class="type"><a href="../qtcore/qstring.html">QString</a></span> oldTitle <span class="operator">=</span> title();
+     <span class="type"><a href="../qtcore/qstring.html">QString</a></span> oldDescription <span class="operator">=</span> description();
+     m_product <span class="operator">=</span> product;
+     <span class="keyword">if</span> (price() <span class="operator">!</span><span class="operator">=</span> oldPrice)
+         <span class="keyword">emit</span> priceChanged();
+     <span class="keyword">if</span> (title() <span class="operator">!</span><span class="operator">=</span> oldTitle)
+         <span class="keyword">emit</span> titleChanged();
+     <span class="keyword">if</span> (description() <span class="operator">!</span><span class="operator">=</span> oldDescription)
+         <span class="keyword">emit</span> descriptionChanged();
+ }
+
+ <span class="type">void</span> InAppProductQmlType<span class="operator">::</span>handleProductRegistered(InAppProduct <span class="operator">*</span>product)
+ {
+     <span class="keyword">if</span> (product<span class="operator">-</span><span class="operator">&gt;</span>identifier() <span class="operator">=</span><span class="operator">=</span> m_identifier) {
+         Q_ASSERT(product<span class="operator">-</span><span class="operator">&gt;</span>productType() <span class="operator">=</span><span class="operator">=</span> InAppProduct<span class="operator">::</span>ProductType(m_type));
+         setProduct(product);
+         <span class="keyword">if</span> (m_status <span class="operator">!</span><span class="operator">=</span> Registered) {
+             m_status <span class="operator">=</span> Registered;
+             <span class="keyword">emit</span> statusChanged();
+         }
+     }
+ }
+
+ <span class="type">void</span> InAppProductQmlType<span class="operator">::</span>handleProductUnknown(InAppProduct<span class="operator">::</span>ProductType<span class="operator">,</span> <span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>identifier)
+ {
+     <span class="keyword">if</span> (identifier <span class="operator">=</span><span class="operator">=</span> m_identifier) {
+         setProduct(<span class="number">0</span>);
+         <span class="keyword">if</span> (m_status <span class="operator">!</span><span class="operator">=</span> Unknown) {
+             m_status <span class="operator">=</span> Unknown;
+             <span class="keyword">emit</span> statusChanged();
+         }
+     }
+ }
+
+ <span class="type">void</span> InAppProductQmlType<span class="operator">::</span>handleTransaction(InAppTransaction <span class="operator">*</span>transaction)
+ {
+     <span class="keyword">if</span> (transaction<span class="operator">-</span><span class="operator">&gt;</span>product()<span class="operator">-</span><span class="operator">&gt;</span>identifier() <span class="operator">!</span><span class="operator">=</span> m_identifier)
+         <span class="keyword">return</span>;
+
+     <span class="keyword">if</span> (transaction<span class="operator">-</span><span class="operator">&gt;</span>status() <span class="operator">=</span><span class="operator">=</span> InAppTransaction<span class="operator">::</span>PurchaseApproved)
+         <span class="keyword">emit</span> purchaseSucceeded(transaction);
+     <span class="keyword">else</span> <span class="keyword">if</span> (transaction<span class="operator">-</span><span class="operator">&gt;</span>status() <span class="operator">=</span><span class="operator">=</span> InAppTransaction<span class="operator">::</span>PurchaseRestored)
+         <span class="keyword">emit</span> purchaseRestored(transaction);
+     <span class="keyword">else</span>{
+         <span class="keyword">emit</span> purchaseFailed(transaction);}
+ }
+
+ <span class="type">void</span> InAppProductQmlType<span class="operator">::</span>purchase()
+ {
+     <span class="keyword">if</span> (m_product <span class="operator">!</span><span class="operator">=</span> <span class="number">0</span> <span class="operator">&amp;</span><span class="operator">&amp;</span> m_status <span class="operator">=</span><span class="operator">=</span> Registered)
+         m_product<span class="operator">-</span><span class="operator">&gt;</span>purchase();
+     <span class="keyword">else</span>
+         <a href="../qtcore/qtglobal.html#qWarning">qWarning</a>(<span class="string">&quot;Attempted to purchase unregistered product&quot;</span>);
+ }
+</pre>

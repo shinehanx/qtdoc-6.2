@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtConcurrent">
+    <examples>
+        <example docUrl="qthelp://org.qt-project.qtconcurrent.623/qtconcurrent/qtconcurrent-imagescaling-example.html" imageUrl="qthelp://org.qt-project.qtconcurrent.623/qtconcurrent/images/imagescaling_example.png" isHighlighted="true" name="Image Scaling Example" projectPath="qtconcurrent/imagescaling/imagescaling.pro">
+            <description><![CDATA[Demonstrates how to asynchronously download and scale images.]]></description>
+            <tags>concurrent,image,scaling</tags>
+            <fileToOpen>qtconcurrent/imagescaling/main.cpp</fileToOpen>
+            <fileToOpen>qtconcurrent/imagescaling/imagescaling.h</fileToOpen>
+            <fileToOpen mainFile="true">qtconcurrent/imagescaling/imagescaling.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtconcurrent.623/qtconcurrent/qtconcurrent-map-example.html" imageUrl="qthelp://org.qt-project.qtdoc.623/qtdoc/images/qt-codesample.png" name="Map Example" projectPath="qtconcurrent/map/map.pro">
+            <description><![CDATA[Demonstrates how to scale images synchronously.]]></description>
+            <tags>concurrent,map</tags>
+            <fileToOpen mainFile="true">qtconcurrent/map/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtconcurrent.623/qtconcurrent/qtconcurrent-progressdialog-example.html" imageUrl="qthelp://org.qt-project.qtconcurrent.623/qtconcurrent/images/qtconcurrent-progressdialog.png" name="QtConcurrent Progress Dialog Example" projectPath="qtconcurrent/progressdialog/progressdialog.pro">
+            <description><![CDATA[Demonstrates how to monitor the progress of the active processes.]]></description>
+            <tags>android,concurrent,dialog,progress,qtconcurrent</tags>
+            <fileToOpen mainFile="true">qtconcurrent/progressdialog/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtconcurrent.623/qtconcurrent/qtconcurrent-wordcount-example.html" imageUrl="qthelp://org.qt-project.qtdoc.623/qtdoc/images/qt-codesample.png" name="QtConcurrent Word Count Example" projectPath="qtconcurrent/wordcount/wordcount.pro">
+            <description><![CDATA[Demonstrates how to use the map-reduce algorithm.]]></description>
+            <tags>concurrent,count,qtconcurrent,word</tags>
+            <fileToOpen mainFile="true">qtconcurrent/wordcount/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtconcurrent.623/qtconcurrent/qtconcurrent-runfunction-example.html" imageUrl="qthelp://org.qt-project.qtdoc.623/qtdoc/images/qt-codesample.png" name="Run Function Example" projectPath="qtconcurrent/runfunction/runfunction.pro">
+            <description><![CDATA[Demonstrates how to run standard functions concurrently.]]></description>
+            <tags>concurrent,function,run</tags>
+            <fileToOpen mainFile="true">qtconcurrent/runfunction/main.cpp</fileToOpen>
+        </example>
+    </examples>
+</instructionals>

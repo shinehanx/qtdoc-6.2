@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qpromise.qdoc -->
+  <title>QPromise Class | Qt Core 6.2.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 6.2</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>QPromise</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 6.2&#x2e;3 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">Contents</h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QPromise Class</h1>
+<span class="small-subtitle">template &lt;typename T&gt; class QPromise</span>
+<!-- $$$QPromise-brief -->
+<p>The QPromise class provides a way to store computation results to be accessed by <a href="qfuture.html">QFuture</a>. <a href="#details">More...</a></p>
+<!-- @@@QPromise -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QPromise&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> CMake:</td><td class="memItemRight bottomAlign"> find_package(Qt6 COMPONENTS Core REQUIRED) <br/>
+target_link_libraries(mytarget PRIVATE Qt6::Core)</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += core</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 6.0</td></tr></table></div>
+<ul>
+<li><a href="qpromise-members.html">List of all members, including inherited members</a></li>
+</ul>
+<p><b>Note:</b> All functions in this class are <a href="../qtdoc/threads-reentrancy.html">thread-safe</a>.</p>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#QPromise-2">QPromise</a></b>(QPromise&lt;T&gt; &amp;&amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#QPromise">QPromise</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QPromise&lt;T&gt; &amp;</td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#operator-eq-1">operator=</a></b>(QPromise&lt;T&gt; &amp;&amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#dtor.QPromise">~QPromise</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#addResult-1">addResult</a></b>(const T &amp;<i>result</i>, int <i>index</i> = -1)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#addResult-2">addResult</a></b>(T &amp;&amp;<i>result</i>, int <i>index</i> = -1)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#finish">finish</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QFuture&lt;T&gt; </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#future">future</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#isCanceled">isCanceled</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#setException">setException</a></b>(const QException &amp;<i>e</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#setException-1">setException</a></b>(std::exception_ptr <i>e</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#setProgressRange">setProgressRange</a></b>(int <i>minimum</i>, int <i>maximum</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#setProgressValue">setProgressValue</a></b>(int <i>progressValue</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#setProgressValueAndText">setProgressValueAndText</a></b>(int <i>progressValue</i>, const QString &amp;<i>progressText</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#start">start</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#suspendIfRequested">suspendIfRequested</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qpromise.html#swap">swap</a></b>(QPromise&lt;T&gt; &amp;<i>other</i>)</td></tr>
+</table></div>
+<!-- $$$QPromise-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>QPromise provides a simple way to communicate progress and results of the user-defined computation to <a href="qfuture.html">QFuture</a> in an asynchronous fashion. For the communication to work, <a href="qfuture.html">QFuture</a> must be constructed by QPromise.</p>
+<p>You can use QPromise based workloads as an alternative to <a href="../qtconcurrent/qtconcurrent-index.html">Qt Concurrent</a> framework when fine-grained control is needed or high-level communication primitive to accompany <a href="qfuture.html">QFuture</a> is sufficient.</p>
+<p>The simplest case of promise and future collaboration would be a single result communication:</p>
+<pre class="cpp">
+     <span class="type"><a href="qpromise.html#QPromise">QPromise</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span> promise;
+     <span class="type"><a href="qfuture.html">QFuture</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span> future <span class="operator">=</span> promise<span class="operator">.</span>future();
+
+     <span class="type"><a href="qscopedpointer.html">QScopedPointer</a></span><span class="operator">&lt;</span><span class="type"><a href="qthread.html">QThread</a></span><span class="operator">&gt;</span> thread(<span class="type"><a href="qthread.html">QThread</a></span><span class="operator">::</span>create(<span class="operator">[</span><span class="operator">]</span> (<span class="type"><a href="qpromise.html#QPromise">QPromise</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span> promise) {
+         promise<span class="operator">.</span>start();   <span class="comment">// notifies QFuture that the computation is started</span>
+         promise<span class="operator">.</span>addResult(<span class="number">42</span>);
+         promise<span class="operator">.</span>finish();  <span class="comment">// notifies QFuture that the computation is finished</span>
+     }<span class="operator">,</span> std<span class="operator">::</span>move(promise)));
+     thread<span class="operator">-</span><span class="operator">&gt;</span>start();
+
+     future<span class="operator">.</span>waitForFinished();  <span class="comment">// blocks until QPromise::finish is called</span>
+     future<span class="operator">.</span>result();  <span class="comment">// returns 42</span>
+</pre>
+<p>By design, QPromise is a move-only object. This behavior helps to ensure that whenever the promise is destroyed, the associated future object is notified and will not wait forever for the results to become available. However, this is inconvenient if one wants to use the same promise to report results from different threads. There is no specific way to do that at the moment, but known mechanisms exist, such as the use of smart pointers or raw pointers/references. <a href="qsharedpointer.html">QSharedPointer</a> is a good default choice if you want to copy your promise and use it in multiple places simultaneously. Raw pointers or references are, in a sense, easier, and probably perform better (since there is no need to do a resource management) but may lead to dangling.</p>
+<p>Here is an example of how a promise can be used in multiple threads:</p>
+<pre class="cpp">
+     <span class="type"><a href="qsharedpointer.html">QSharedPointer</a></span><span class="operator">&lt;</span><span class="type"><a href="qpromise.html#QPromise">QPromise</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span><span class="operator">&gt;</span> sharedPromise(<span class="keyword">new</span> <span class="type"><a href="qpromise.html#QPromise">QPromise</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span>());
+     <span class="type"><a href="qfuture.html">QFuture</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span> future <span class="operator">=</span> sharedPromise<span class="operator">-</span><span class="operator">&gt;</span>future();
+
+     <span class="comment">// ...</span>
+
+     <span class="comment">// here, QPromise is shared between threads via a smart pointer</span>
+     <span class="type"><a href="qscopedpointer.html">QScopedPointer</a></span><span class="operator">&lt;</span><span class="type"><a href="qthread.html">QThread</a></span><span class="operator">&gt;</span> threads<span class="operator">[</span><span class="operator">]</span> <span class="operator">=</span> {
+         <span class="type"><a href="qscopedpointer.html">QScopedPointer</a></span><span class="operator">&lt;</span><span class="type"><a href="qthread.html">QThread</a></span><span class="operator">&gt;</span>(<span class="type"><a href="qthread.html">QThread</a></span><span class="operator">::</span>create(<span class="operator">[</span><span class="operator">]</span> (<span class="keyword">auto</span> sharedPromise) {
+             sharedPromise<span class="operator">-</span><span class="operator">&gt;</span>addResult(<span class="number">0</span><span class="operator">,</span> <span class="number">0</span>);  <span class="comment">// adds value 0 by index 0</span>
+         }<span class="operator">,</span> sharedPromise))<span class="operator">,</span>
+         <span class="type"><a href="qscopedpointer.html">QScopedPointer</a></span><span class="operator">&lt;</span><span class="type"><a href="qthread.html">QThread</a></span><span class="operator">&gt;</span>(<span class="type"><a href="qthread.html">QThread</a></span><span class="operator">::</span>create(<span class="operator">[</span><span class="operator">]</span> (<span class="keyword">auto</span> sharedPromise) {
+             sharedPromise<span class="operator">-</span><span class="operator">&gt;</span>addResult(<span class="operator">-</span><span class="number">1</span><span class="operator">,</span> <span class="number">1</span>);  <span class="comment">// adds value -1 by index 1</span>
+         }<span class="operator">,</span> sharedPromise))<span class="operator">,</span>
+         <span class="type"><a href="qscopedpointer.html">QScopedPointer</a></span><span class="operator">&lt;</span><span class="type"><a href="qthread.html">QThread</a></span><span class="operator">&gt;</span>(<span class="type"><a href="qthread.html">QThread</a></span><span class="operator">::</span>create(<span class="operator">[</span><span class="operator">]</span> (<span class="keyword">auto</span> sharedPromise) {
+             sharedPromise<span class="operator">-</span><span class="operator">&gt;</span>addResult(<span class="operator">-</span><span class="number">2</span><span class="operator">,</span> <span class="number">2</span>);  <span class="comment">// adds value -2 by index 2</span>
+         }<span class="operator">,</span> sharedPromise))<span class="operator">,</span>
+         <span class="comment">// ...</span>
+     };
+     <span class="comment">// start all threads</span>
+     <span class="keyword">for</span> (<span class="keyword">auto</span><span class="operator">&amp;</span> t : threads)
+         t<span class="operator">-</span><span class="operator">&gt;</span>start();
+
+     <span class="comment">// ...</span>
+
+     future<span class="operator">.</span>resultAt(<span class="number">0</span>);  <span class="comment">// waits until result at index 0 becomes available. returns value  0</span>
+     future<span class="operator">.</span>resultAt(<span class="number">1</span>);  <span class="comment">// waits until result at index 1 becomes available. returns value -1</span>
+     future<span class="operator">.</span>resultAt(<span class="number">2</span>);  <span class="comment">// waits until result at index 2 becomes available. returns value -2</span>
+</pre>
+</div>
+<p><b>See also </b><a href="qfuture.html">QFuture</a>.</p>
+<!-- @@@QPromise -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ -->
+<div class="fngroup">
+<h3 class="fn fngroupitem" id="addResult-2"><span class="type">bool</span> QPromise::<span class="name">addResult</span>(<span class="type">T</span> &amp;&amp;<i>result</i>, <span class="type">int</span> <i>index</i> = -1)</h3><h3 class="fn fngroupitem" id="addResult-1"><span class="type">bool</span> QPromise::<span class="name">addResult</span>(const <span class="type">T</span> &amp;<i>result</i>, <span class="type">int</span> <i>index</i> = -1)</h3></div>
+<p>Adds <i>result</i> to the internal result collection at <i>index</i> position. If index is unspecified, <i>result</i> is added to the end of the collection.</p>
+<p>Returns <code>true</code> when <i>result</i> is added to the collection.</p>
+<p>Returns <code>false</code> when this promise is in canceled or finished state or when <i>result</i> is rejected. <a href="qpromise.html#addResult-1">addResult</a>() rejects <i>result</i> if there's already another result in the collection stored at the same index.</p>
+<p>You can get a result at a specific index by calling <a href="qfuture.html#resultAt">QFuture::resultAt</a>().</p>
+<div class="admonition note">
+<p><b>Note: </b>It is possible to specify an arbitrary index and request result at that index. However, some <a href="qfuture.html">QFuture</a> methods operate with continuous results. For instance, iterative approaches that use <a href="qfuture.html#resultCount">QFuture::resultCount</a>() or <a href="qfuture-const-iterator.html">QFuture::const_iterator</a>. In order to get all available results without thinking if there are index gaps or not, use <a href="qfuture.html#results">QFuture::results</a>().</p>
+</div>
+<!-- @@@ -->
+<!-- $$$QPromise$$$QPromiseQPromise<T>&& -->
+<h3 class="fn" id="QPromise-2">QPromise::<span class="name">QPromise</span>(<span class="type"><a href="qpromise.html#QPromise">QPromise</a></span>&lt;<span class="type">T</span>&gt; &amp;&amp;<i>other</i>)</h3>
+<p>Move constructs a new QPromise from <i>other</i>.</p>
+<p><b>See also </b><a href="qpromise.html#operator-eq-1">operator=</a>().</p>
+<!-- @@@QPromise -->
+<!-- $$$QPromise[overload1]$$$QPromise -->
+<h3 class="fn" id="QPromise">QPromise::<span class="name">QPromise</span>()</h3>
+<p>Constructs a QPromise with a default state.</p>
+<!-- @@@QPromise -->
+<!-- $$$operator=$$$operator=QPromise<T>&& -->
+<h3 class="fn" id="operator-eq-1"><span class="type"><a href="qpromise.html#QPromise">QPromise</a></span>&lt;<span class="type">T</span>&gt; &amp;QPromise::<span class="name">operator=</span>(<span class="type"><a href="qpromise.html#QPromise">QPromise</a></span>&lt;<span class="type">T</span>&gt; &amp;&amp;<i>other</i>)</h3>
+<p>Move assigns <i>other</i> to this promise and returns a reference to this promise.</p>
+<!-- @@@operator= -->
+<!-- $$$~QPromise[overload1]$$$~QPromise -->
+<h3 class="fn" id="dtor.QPromise">QPromise::<span class="name">~QPromise</span>()</h3>
+<p>Destroys the promise.</p>
+<div class="admonition note">
+<p><b>Note: </b>The promise implicitly transitions to a canceled state on destruction unless <a href="qpromise.html#finish">finish</a>() is called beforehand by the user.</p>
+</div>
+<!-- @@@~QPromise -->
+<!-- $$$finish[overload1]$$$finish -->
+<h3 class="fn" id="finish"><span class="type">void</span> QPromise::<span class="name">finish</span>()</h3>
+<p>Reports that the computation is finished. Once finished, no new results will be added when calling <a href="qpromise.html#addResult-1">addResult</a>(). This method accompanies <a href="qpromise.html#start">start</a>().</p>
+<p><b>See also </b><a href="qfuture.html#isFinished">QFuture::isFinished</a>(), <a href="qfuture.html#waitForFinished">QFuture::waitForFinished</a>(), and <a href="qpromise.html#start">start</a>().</p>
+<!-- @@@finish -->
+<!-- $$$future[overload1]$$$future -->
+<h3 class="fn" id="future"><span class="type"><a href="qfuture.html">QFuture</a></span>&lt;<span class="type">T</span>&gt; QPromise::<span class="name">future</span>() const</h3>
+<p>Returns a future associated with this promise.</p>
+<!-- @@@future -->
+<!-- $$$isCanceled[overload1]$$$isCanceled -->
+<h3 class="fn" id="isCanceled"><span class="type">bool</span> QPromise::<span class="name">isCanceled</span>() const</h3>
+<p>Returns whether the computation has been canceled with the <a href="qfuture.html#cancel">QFuture::cancel</a>() function. The returned value <code>true</code> indicates that the computation should be finished and <a href="qpromise.html#finish">finish</a>() called.</p>
+<div class="admonition note">
+<p><b>Note: </b>After cancellation, results currently available may still be accessed by a future, but new results will not be added when calling <a href="qpromise.html#addResult-1">addResult</a>().</p>
+</div>
+<!-- @@@isCanceled -->
+<!-- $$$setException[overload1]$$$setExceptionconstQException& -->
+<h3 class="fn" id="setException"><span class="type">void</span> QPromise::<span class="name">setException</span>(const <span class="type"><a href="qexception.html">QException</a></span> &amp;<i>e</i>)</h3>
+<p>Sets exception <i>e</i> to be the result of the computation.</p>
+<div class="admonition note">
+<p><b>Note: </b>You can set at most one exception throughout the computation execution.</p>
+</div>
+<div class="admonition note">
+<p><b>Note: </b>This method must not be used after <a href="qfuture.html#cancel">QFuture::cancel</a>() or <a href="qpromise.html#finish">finish</a>().</p>
+</div>
+<p><b>See also </b><a href="qpromise.html#isCanceled">isCanceled</a>().</p>
+<!-- @@@setException -->
+<!-- $$$setException$$$setExceptionstd::exception_ptr -->
+<h3 class="fn" id="setException-1"><span class="type">void</span> QPromise::<span class="name">setException</span>(<span class="type">std::exception_ptr</span> <i>e</i>)</h3>
+<p>This is an overloaded function.</p>
+<!-- @@@setException -->
+<!-- $$$setProgressRange[overload1]$$$setProgressRangeintint -->
+<h3 class="fn" id="setProgressRange"><span class="type">void</span> QPromise::<span class="name">setProgressRange</span>(<span class="type">int</span> <i>minimum</i>, <span class="type">int</span> <i>maximum</i>)</h3>
+<p>Sets the progress range of the computation to be between <i>minimum</i> and <i>maximum</i>.</p>
+<p>If <i>maximum</i> is smaller than <i>minimum</i>, <i>minimum</i> becomes the only legal value.</p>
+<p>The progress value is reset to be <i>minimum</i>.</p>
+<p>The progress range usage can be disabled by using setProgressRange(0, 0). In this case progress value is also reset to 0.</p>
+<p><b>See also </b><a href="qfuture.html#progressMinimum">QFuture::progressMinimum</a>(), <a href="qfuture.html#progressMaximum">QFuture::progressMaximum</a>(), and <a href="qfuture.html#progressValue">QFuture::progressValue</a>().</p>
+<!-- @@@setProgressRange -->
+<!-- $$$setProgressValue[overload1]$$$setProgressValueint -->
+<h3 class="fn" id="setProgressValue"><span class="type">void</span> QPromise::<span class="name">setProgressValue</span>(<span class="type">int</span> <i>progressValue</i>)</h3>
+<p>Sets the progress value of the computation to <i>progressValue</i>. It is possible to only increment the progress value. This is a convenience method for calling <a href="qpromise.html#setProgressValueAndText">setProgressValueAndText</a>(progressValue, QString()).</p>
+<p>In case of the <i>progressValue</i> falling out of the progress range, this method has no effect.</p>
+<p><b>See also </b><a href="qfuture.html#progressValue">QFuture::progressValue</a>() and <a href="qpromise.html#setProgressRange">setProgressRange</a>().</p>
+<!-- @@@setProgressValue -->
+<!-- $$$setProgressValueAndText[overload1]$$$setProgressValueAndTextintconstQString& -->
+<h3 class="fn" id="setProgressValueAndText"><span class="type">void</span> QPromise::<span class="name">setProgressValueAndText</span>(<span class="type">int</span> <i>progressValue</i>, const <span class="type"><a href="qstring.html">QString</a></span> &amp;<i>progressText</i>)</h3>
+<p>Sets the progress value and the progress text of the computation to <i>progressValue</i> and <i>progressText</i> respectively. It is possible to only increment the progress value.</p>
+<div class="admonition note">
+<p><b>Note: </b>This function has no effect if the promise is in canceled or finished state.</p>
+</div>
+<p><b>See also </b><a href="qfuture.html#progressValue">QFuture::progressValue</a>(), <a href="qfuture.html#progressText">QFuture::progressText</a>(), <a href="qfuture.html#cancel">QFuture::cancel</a>(), and <a href="qpromise.html#finish">finish</a>().</p>
+<!-- @@@setProgressValueAndText -->
+<!-- $$$start[overload1]$$$start -->
+<h3 class="fn" id="start"><span class="type">void</span> QPromise::<span class="name">start</span>()</h3>
+<p>Reports that the computation is started. Calling this method is important to state the beginning of the computation as <a href="qfuture.html">QFuture</a> methods rely on this information.</p>
+<div class="admonition note">
+<p><b>Note: </b>Extra attention is required when start() is called from a newly created thread. In such case, the call might naturally be delayed due to the implementation details of the thread scheduling.</p>
+</div>
+<p><b>See also </b><a href="qfuture.html#isStarted">QFuture::isStarted</a>(), <a href="qfuture.html#waitForFinished">QFuture::waitForFinished</a>(), and <a href="qpromise.html#finish">finish</a>().</p>
+<!-- @@@start -->
+<!-- $$$suspendIfRequested[overload1]$$$suspendIfRequested -->
+<h3 class="fn" id="suspendIfRequested"><span class="type">void</span> QPromise::<span class="name">suspendIfRequested</span>()</h3>
+<p>Conditionally suspends current thread of execution and waits until resumed or canceled by the corresponding methods of <a href="qfuture.html">QFuture</a>. This method does not block unless the computation is requested to be suspended by <a href="qfuture.html#suspend">QFuture::suspend</a>() or another related method. If you want to check that the execution has been suspended, use <a href="qfuture.html#isSuspended">QFuture::isSuspended</a>().</p>
+<div class="admonition note">
+<p><b>Note: </b>When using the same promise in multiple threads, <a href="qfuture.html#isSuspended">QFuture::isSuspended</a>() becomes <code>true</code> as soon as at least one thread with the promise suspends.</p>
+</div>
+<p>The following code snippets show the usage of suspension mechanism:</p>
+<pre class="cpp">
+     <span class="comment">// Create promise and future</span>
+     <span class="type"><a href="qpromise.html#QPromise">QPromise</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span> promise;
+     <span class="type"><a href="qfuture.html">QFuture</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span> future <span class="operator">=</span> promise<span class="operator">.</span>future();
+
+     promise<span class="operator">.</span>start();
+     <span class="comment">// Start a computation thread that supports suspension and cancellation</span>
+     <span class="type"><a href="qscopedpointer.html">QScopedPointer</a></span><span class="operator">&lt;</span><span class="type"><a href="qthread.html">QThread</a></span><span class="operator">&gt;</span> thread(<span class="type"><a href="qthread.html">QThread</a></span><span class="operator">::</span>create(<span class="operator">[</span><span class="operator">]</span> (<span class="type"><a href="qpromise.html#QPromise">QPromise</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span> promise) {
+         <span class="keyword">for</span> (<span class="type">int</span> i <span class="operator">=</span> <span class="number">0</span>; i <span class="operator">&lt;</span> <span class="number">100</span>; <span class="operator">+</span><span class="operator">+</span>i) {
+             promise<span class="operator">.</span>addResult(i);
+             promise<span class="operator">.</span>suspendIfRequested();   <span class="comment">// support suspension</span>
+             <span class="keyword">if</span> (promise<span class="operator">.</span>isCanceled())       <span class="comment">// support cancellation</span>
+                 <span class="keyword">break</span>;
+         }
+         promise<span class="operator">.</span>finish();
+     }<span class="operator">,</span> std<span class="operator">::</span>move(promise)));
+     thread<span class="operator">-</span><span class="operator">&gt;</span>start();
+</pre>
+<p><a href="qfuture.html#suspend">QFuture::suspend</a>() requests the associated promise to suspend:</p>
+<pre class="cpp">
+     future<span class="operator">.</span>suspend();
+</pre>
+<p>After <a href="qfuture.html#isSuspended">QFuture::isSuspended</a>() becomes <code>true</code>, you can get intermediate results:</p>
+<pre class="cpp">
+     future<span class="operator">.</span>resultCount();  <span class="comment">// returns some number between 0 and 100</span>
+     <span class="keyword">for</span> (<span class="type">int</span> i <span class="operator">=</span> <span class="number">0</span>; i <span class="operator">&lt;</span> future<span class="operator">.</span>resultCount(); <span class="operator">+</span><span class="operator">+</span>i) {
+         <span class="comment">// process results available before suspension</span>
+     }
+</pre>
+<p>When suspended, you can resume or cancel the awaiting computation:</p>
+<pre class="cpp">
+     future<span class="operator">.</span>resume();  <span class="comment">// resumes computation, this call will unblock the promise</span>
+     <span class="comment">// alternatively, call future.cancel() to stop the computation</span>
+
+     future<span class="operator">.</span>waitForFinished();
+     future<span class="operator">.</span>results();  <span class="comment">// returns all computation results - array of values from 0 to 99</span>
+</pre>
+<p><b>See also </b><a href="qfuture.html#resume">QFuture::resume</a>(), <a href="qfuture.html#cancel">QFuture::cancel</a>(), <a href="qfuture.html#setSuspended">QFuture::setSuspended</a>(), and <a href="qfuture.html#toggleSuspended">QFuture::toggleSuspended</a>().</p>
+<!-- @@@suspendIfRequested -->
+<!-- $$$swap[overload1]$$$swapQPromise<T>& -->
+<h3 class="fn" id="swap"><span class="type">void</span> QPromise::<span class="name">swap</span>(<span class="type"><a href="qpromise.html#QPromise">QPromise</a></span>&lt;<span class="type">T</span>&gt; &amp;<i>other</i>)</h3>
+<p>Swaps promise <i>other</i> with this promise. This operation is very fast and never fails.</p>
+<!-- @@@swap -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

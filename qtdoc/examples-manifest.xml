@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtDoc">
+    <examples>
+        <example docUrl="qthelp://org.qt-project.qtdoc.623/qtdoc/qtdoc-tutorials-alarms-example.html" imageUrl="qthelp://org.qt-project.qtdoc.623/qtdoc/images/mainscreen.png" name="Getting Started Programming with Qt Quick" projectPath="tutorials/alarms/alarms.pro">
+            <description><![CDATA[A tutorial for Qt Quick based on an alarms application.]]></description>
+            <tags>getting,programming,quick,started,with</tags>
+            <fileToOpen>tutorials/alarms/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">tutorials/alarms/main.qml</fileToOpen>
+        </example>
+    </examples>
+</instructionals>

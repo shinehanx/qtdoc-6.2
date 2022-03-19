@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtpurchasing-overview.qdoc -->
+  <title>In-App purchasing demo | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 6.2</a></li>
+<li>In-App purchasing demo</li>
+<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">In-App purchasing demo</h1>
+<pre class="cpp">
+ <span class="comment">/****************************************************************************
+ **
+ ** Copyright (C) 2021 The Qt Company Ltd.
+ ** Contact: https://www.qt.io/licensing/
+ **
+ ** This file is part of the examples of the Qt Toolkit.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** Commercial License Usage
+ ** Licensees holding valid commercial Qt licenses may use this file in
+ ** accordance with the commercial license agreement provided with the
+ ** Software or, alternatively, in accordance with the terms contained in
+ ** a written agreement between you and The Qt Company. For licensing terms
+ ** and conditions see https://www.qt.io/terms-conditions. For further
+ ** information use the contact form at https://www.qt.io/contact-us.
+ **
+ ** BSD License Usage
+ ** Alternatively, you may use this file under the terms of the BSD license
+ ** as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of The Qt Company Ltd nor the names of its
+ **     contributors may be used to endorse or promote products derived
+ **     from this software without specific prior written permission.
+ **
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ **
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ <span class="preprocessor">#include &lt;QtCore/qdatetime.h&gt;</span>
+ <span class="preprocessor">#include &lt;jni.h&gt;</span>
+ <span class="preprocessor">#include &lt;QJniObject&gt;</span>
+
+ <span class="preprocessor">#include &quot;androidinapppurchasebackend.h&quot;</span>
+
+ QT_USE_NAMESPACE
+
+ <span class="keyword">static</span> <span class="type">void</span> purchasedProductsQueried(JNIEnv <span class="operator">*</span><span class="operator">,</span> jclass<span class="operator">,</span> jlong nativePointer)
+ {
+     AndroidInAppPurchaseBackend <span class="operator">*</span>backend <span class="operator">=</span> <span class="keyword">reinterpret_cast</span><span class="operator">&lt;</span>AndroidInAppPurchaseBackend <span class="operator">*</span><span class="operator">&gt;</span>(nativePointer);
+     <span class="type"><a href="../qtcore/qmetaobject.html">QMetaObject</a></span><span class="operator">::</span>invokeMethod(backend<span class="operator">,</span>
+                               <span class="string">&quot;registerReady&quot;</span><span class="operator">,</span>
+                               <span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>AutoConnection);
+ }
+
+ <span class="keyword">static</span> <span class="type">void</span> registerProduct(JNIEnv <span class="operator">*</span><span class="operator">,</span> jclass<span class="operator">,</span> jlong nativePointer<span class="operator">,</span> jstring productId<span class="operator">,</span> jstring price<span class="operator">,</span> jstring title<span class="operator">,</span> jstring description)
+ {
+     AndroidInAppPurchaseBackend <span class="operator">*</span>backend <span class="operator">=</span> <span class="keyword">reinterpret_cast</span><span class="operator">&lt;</span>AndroidInAppPurchaseBackend <span class="operator">*</span><span class="operator">&gt;</span>(nativePointer);
+     <span class="type"><a href="../qtcore/qmetaobject.html">QMetaObject</a></span><span class="operator">::</span>invokeMethod(backend<span class="operator">,</span>
+                               <span class="string">&quot;registerProduct&quot;</span><span class="operator">,</span>
+                               <span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>AutoConnection<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(productId)<span class="operator">.</span>toString())<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(price)<span class="operator">.</span>toString())<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(title)<span class="operator">.</span>toString())<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(description)<span class="operator">.</span>toString()));
+ }
+
+ <span class="keyword">static</span> <span class="type">void</span> registerPurchased(JNIEnv <span class="operator">*</span><span class="operator">,</span> jclass<span class="operator">,</span> jlong nativePointer<span class="operator">,</span> jstring identifier<span class="operator">,</span>
+                               jstring signature<span class="operator">,</span> jstring data<span class="operator">,</span> jstring purchaseToken<span class="operator">,</span> jstring orderId<span class="operator">,</span> jlong timestamp)
+ {
+     <span class="type"><a href="../qtcore/qdatetime.html">QDateTime</a></span> dateTime <span class="operator">=</span> <span class="type"><a href="../qtcore/qdatetime.html">QDateTime</a></span><span class="operator">::</span>fromMSecsSinceEpoch(<span class="type"><a href="../qtcore/qtglobal.html#qint64-typedef">qint64</a></span>(timestamp));
+     dateTime<span class="operator">.</span>setTimeSpec(<span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>LocalTime);
+
+     AndroidInAppPurchaseBackend <span class="operator">*</span>backend <span class="operator">=</span> <span class="keyword">reinterpret_cast</span><span class="operator">&lt;</span>AndroidInAppPurchaseBackend <span class="operator">*</span><span class="operator">&gt;</span>(nativePointer);
+     <span class="type"><a href="../qtcore/qmetaobject.html">QMetaObject</a></span><span class="operator">::</span>invokeMethod(backend<span class="operator">,</span>
+                               <span class="string">&quot;registerPurchased&quot;</span><span class="operator">,</span>
+                               <span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>AutoConnection<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(identifier)<span class="operator">.</span>toString())<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(signature)<span class="operator">.</span>toString())<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(data)<span class="operator">.</span>toString())<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(purchaseToken)<span class="operator">.</span>toString())<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(orderId)<span class="operator">.</span>toString())<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qdatetime.html">QDateTime</a></span><span class="operator">,</span> dateTime));
+ }
+
+ <span class="keyword">static</span> <span class="type">void</span> purchaseSucceeded(JNIEnv <span class="operator">*</span><span class="operator">,</span> jclass<span class="operator">,</span> jlong nativePointer<span class="operator">,</span> jint requestCode<span class="operator">,</span>
+                               jstring signature<span class="operator">,</span> jstring data<span class="operator">,</span> jstring purchaseToken<span class="operator">,</span> jstring orderId<span class="operator">,</span> jlong timestamp)
+ {
+     <span class="type"><a href="../qtcore/qdatetime.html">QDateTime</a></span> dateTime <span class="operator">=</span> <span class="type"><a href="../qtcore/qdatetime.html">QDateTime</a></span><span class="operator">::</span>fromMSecsSinceEpoch(<span class="type"><a href="../qtcore/qtglobal.html#qint64-typedef">qint64</a></span>(timestamp));
+     dateTime<span class="operator">.</span>setTimeSpec(<span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>LocalTime);
+
+     AndroidInAppPurchaseBackend <span class="operator">*</span>backend <span class="operator">=</span> <span class="keyword">reinterpret_cast</span><span class="operator">&lt;</span>AndroidInAppPurchaseBackend <span class="operator">*</span><span class="operator">&gt;</span>(nativePointer);
+     <span class="type"><a href="../qtcore/qmetaobject.html">QMetaObject</a></span><span class="operator">::</span>invokeMethod(backend<span class="operator">,</span>
+                               <span class="string">&quot;purchaseSucceeded&quot;</span><span class="operator">,</span>
+                               <span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>AutoConnection<span class="operator">,</span>
+                               Q_ARG(<span class="type">int</span><span class="operator">,</span> <span class="type">int</span>(requestCode))<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(signature)<span class="operator">.</span>toString())<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(data)<span class="operator">.</span>toString())<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(purchaseToken)<span class="operator">.</span>toString())<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(orderId)<span class="operator">.</span>toString())<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qdatetime.html">QDateTime</a></span><span class="operator">,</span> dateTime));
+ }
+
+ <span class="keyword">static</span> <span class="type">void</span> purchaseFailed(JNIEnv <span class="operator">*</span><span class="operator">,</span> jclass<span class="operator">,</span> jlong nativePointer<span class="operator">,</span> jint requestCode<span class="operator">,</span> jint failureReason<span class="operator">,</span> jstring errorString)
+ {
+     AndroidInAppPurchaseBackend <span class="operator">*</span>backend <span class="operator">=</span> <span class="keyword">reinterpret_cast</span><span class="operator">&lt;</span>AndroidInAppPurchaseBackend <span class="operator">*</span><span class="operator">&gt;</span>(nativePointer);
+     <span class="type"><a href="../qtcore/qmetaobject.html">QMetaObject</a></span><span class="operator">::</span>invokeMethod(backend<span class="operator">,</span>
+                               <span class="string">&quot;purchaseFailed&quot;</span><span class="operator">,</span>
+                               <span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>AutoConnection<span class="operator">,</span>
+                               Q_ARG(<span class="type">int</span><span class="operator">,</span> <span class="type">int</span>(requestCode))<span class="operator">,</span>
+                               Q_ARG(<span class="type">int</span><span class="operator">,</span> <span class="type">int</span>(failureReason))<span class="operator">,</span>
+                               Q_ARG(<span class="type"><a href="../qtcore/qstring.html">QString</a></span><span class="operator">,</span> <span class="type"><a href="../qtcore/qjniobject.html">QJniObject</a></span>(errorString)<span class="operator">.</span>toString()));
+ }
+
+ <span class="keyword">static</span> JNINativeMethod methods<span class="operator">[</span><span class="operator">]</span> <span class="operator">=</span> {
+     {<span class="string">&quot;purchasedProductsQueried&quot;</span><span class="operator">,</span> <span class="string">&quot;(J)V&quot;</span><span class="operator">,</span> (<span class="type">void</span> <span class="operator">*</span>)purchasedProductsQueried}<span class="operator">,</span>
+     {<span class="string">&quot;registerProduct&quot;</span><span class="operator">,</span> <span class="string">&quot;(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V&quot;</span><span class="operator">,</span> (<span class="type">void</span> <span class="operator">*</span>)registerProduct}<span class="operator">,</span>
+     {<span class="string">&quot;registerPurchased&quot;</span><span class="operator">,</span> <span class="string">&quot;(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V&quot;</span><span class="operator">,</span> (<span class="type">void</span> <span class="operator">*</span>)registerPurchased}<span class="operator">,</span>
+     {<span class="string">&quot;purchaseSucceeded&quot;</span><span class="operator">,</span> <span class="string">&quot;(JILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V&quot;</span><span class="operator">,</span> (<span class="type">void</span> <span class="operator">*</span>)purchaseSucceeded}<span class="operator">,</span>
+     {<span class="string">&quot;purchaseFailed&quot;</span><span class="operator">,</span> <span class="string">&quot;(JIILjava/lang/String;)V&quot;</span><span class="operator">,</span> (<span class="type">void</span> <span class="operator">*</span>)purchaseFailed}
+ };
+
+ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM <span class="operator">*</span>vm<span class="operator">,</span> <span class="type">void</span> <span class="operator">*</span>)
+ {
+     <span class="keyword">static</span> bool initialized <span class="operator">=</span> <span class="keyword">false</span>;
+     <span class="keyword">if</span> (initialized){
+         <span class="keyword">return</span> JNI_VERSION_1_6;}
+     initialized <span class="operator">=</span> <span class="keyword">true</span>;
+
+     JNIEnv <span class="operator">*</span>env;
+     <span class="keyword">if</span> (vm<span class="operator">-</span><span class="operator">&gt;</span>GetEnv((<span class="type">void</span> <span class="operator">*</span><span class="operator">*</span>)<span class="operator">&amp;</span>env<span class="operator">,</span> JNI_VERSION_1_6) <span class="operator">!</span><span class="operator">=</span> JNI_OK){
+         <span class="keyword">return</span> JNI_ERR;}
+
+     jclass clazz <span class="operator">=</span> env<span class="operator">-</span><span class="operator">&gt;</span>FindClass(<span class="string">&quot;org/qtproject/qt/android/purchasing/InAppPurchase&quot;</span>);
+     <span class="keyword">if</span> (<span class="operator">!</span>clazz){
+         <span class="keyword">return</span> JNI_ERR;}
+
+     <span class="keyword">if</span> (env<span class="operator">-</span><span class="operator">&gt;</span>RegisterNatives(clazz<span class="operator">,</span> methods<span class="operator">,</span> <span class="keyword">sizeof</span>(methods) <span class="operator">/</span> <span class="keyword">sizeof</span>(methods<span class="operator">[</span><span class="number">0</span><span class="operator">]</span>)) <span class="operator">&lt;</span> <span class="number">0</span>){
+         <span class="keyword">return</span> JNI_ERR;}
+
+     <span class="keyword">return</span> JNI_VERSION_1_6;
+ }
+</pre>

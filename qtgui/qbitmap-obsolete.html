@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qbitmap.cpp -->
+  <title>Obsolete Members for QBitmap | Qt GUI 6.2.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 6.2</a></li>
+<li><a href="qtgui-index.html">Qt GUI</a></li>
+<li><a href="qtgui-module.html">C++ Classes</a></li>
+<li>QBitmap</li>
+<li id="buildversion"><a href="qtgui-index.html">Qt 6.2&#x2e;3 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QBitmap</h1>
+<p><b>The following members of class <a href="qbitmap.html">QBitmap</a> are deprecated.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.0)) </code></td><td class="memItemRight bottomAlign"><b><a href="qbitmap-obsolete.html#QBitmap-3">QBitmap</a></b>(const QSize &amp;<i>size</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.0)) </code></td><td class="memItemRight bottomAlign"><b><a href="qbitmap-obsolete.html#QBitmap-1">QBitmap</a></b>(const QPixmap &amp;<i>pixmap</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(deprecated (6.0)) </code>QBitmap &amp;</td><td class="memItemRight bottomAlign"><b><a href="qbitmap-obsolete.html#operator-eq">operator=</a></b>(const QPixmap &amp;<i>pixmap</i>)</td></tr>
+</table></div>
+<h2>Member Function Documentation</h2>
+<!-- $$$QBitmap$$$QBitmapconstQSize& -->
+<h3 class="fn" id="QBitmap-3">QBitmap::<span class="name">QBitmap</span>(const <span class="type"><a href="../qtcore/qsize.html">QSize</a></span> &amp;<i>size</i>)</h3>
+<p>This function is deprecated since 6.0. We strongly advise against using it in new code.</p>
+<p>Use <a href="qbitmap.html#fromPixmap">fromPixmap</a> instead.</p>
+<p>Constructs a bitmap with the given <i>size</i>. The pixels in the bitmap are uninitialized.</p>
+<p><b>See also </b><a href="qbitmap.html#clear">clear</a>().</p>
+<!-- @@@QBitmap -->
+<!-- $$$QBitmap$$$QBitmapconstQPixmap& -->
+<h3 class="fn" id="QBitmap-1">QBitmap::<span class="name">QBitmap</span>(const <span class="type"><a href="qpixmap.html#QPixmap">QPixmap</a></span> &amp;<i>pixmap</i>)</h3>
+<p>This function is deprecated since 6.0. We strongly advise against using it in new code.</p>
+<p>Use <a href="qbitmap.html#fromPixmap">fromPixmap</a> instead. Constructs a bitmap that is a copy of the given <i>pixmap</i>.</p>
+<p>If the pixmap has a depth greater than 1, the resulting bitmap will be dithered automatically.</p>
+<p><b>See also </b><a href="qpixmap.html#depth">QPixmap::depth</a>(), <a href="qbitmap.html#fromImage">fromImage</a>(), and <a href="qbitmap.html#fromData">fromData</a>().</p>
+<!-- @@@QBitmap -->
+<!-- $$$operator=[overload1]$$$operator=constQPixmap& -->
+<h3 class="fn" id="operator-eq"><span class="type"><a href="qbitmap.html#QBitmap">QBitmap</a></span> &amp;QBitmap::<span class="name">operator=</span>(const <span class="type"><a href="qpixmap.html#QPixmap">QPixmap</a></span> &amp;<i>pixmap</i>)</h3>
+<p>This function is deprecated since 6.0. We strongly advise against using it in new code.</p>
+<p>Use <a href="qbitmap.html#fromPixmap">fromPixmap</a> instead. <p>This is an overloaded function.</p>
+<p>Assigns the given <i>pixmap</i> to this bitmap and returns a reference to this bitmap.</p>
+<p>If the pixmap has a depth greater than 1, the resulting bitmap will be dithered automatically.</p>
+<p><b>See also </b><a href="qpixmap.html#depth">QPixmap::depth</a>().</p>
+<!-- @@@operator= -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

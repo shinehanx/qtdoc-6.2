@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtXml">
+    <examples>
+        <example docUrl="qthelp://org.qt-project.qtxml.623/qtxml/qtxml-dombookmarks-example.html" imageUrl="qthelp://org.qt-project.qtxml.623/qtxml/images/dombookmarks-example.png" name="DOM Bookmarks Example" projectPath="xml/dombookmarks/dombookmarks.pro">
+            <description><![CDATA[Provides a reader for XML Bookmark Exchange Language files.]]></description>
+            <tags>bookmarks,dom,xml</tags>
+            <fileToOpen mainFile="true">xml/dombookmarks/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtxml.623/qtxml/qtxml-streambookmarks-example.html" imageUrl="qthelp://org.qt-project.qtxml.623/qtxml/images/xmlstreamexample-screenshot.png" name="QXmlStream Bookmarks Example" projectPath="xml/streambookmarks/streambookmarks.pro">
+            <description><![CDATA[Demonstrates how to read and write to XBEL files.]]></description>
+            <tags>bookmarks,qxmlstream,xml</tags>
+            <fileToOpen mainFile="true">xml/streambookmarks/main.cpp</fileToOpen>
+        </example>
+        <example docUrl="qthelp://org.qt-project.qtxml.623/qtxml/qtxml-xmlstreamlint-example.html" imageUrl="qthelp://org.qt-project.qtdoc.623/qtdoc/images/qt-codesample.png" name="XML Stream Lint Example" projectPath="xml/xmlstreamlint/xmlstreamlint.pro">
+            <description><![CDATA[A commandline tool reading from an input file and writing to the standard output file.]]></description>
+            <tags>lint,stream,xml</tags>
+            <fileToOpen mainFile="true">xml/xmlstreamlint/main.cpp</fileToOpen>
+        </example>
+    </examples>
+</instructionals>
