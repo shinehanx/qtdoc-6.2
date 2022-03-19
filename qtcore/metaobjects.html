@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <!-- metaobjects.qdoc -->
-  <title>The Meta-Object System | Qt Core 6.2.3</title>
+  <title>元对象系统 | Qt Core 6.2.3 | Qt6 中文参考手册</title>
   <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
   <script type="text/javascript">
     document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
@@ -27,8 +27,8 @@
         <ul>
 <li><a href="../qtdoc/index.html">Qt 6.2</a></li>
 <li><a href="qtcore-index.html">Qt Core</a></li>
-<li>The Meta-Object System</li>
-<li id="buildversion"><a href="qtcore-index.html">Qt 6.2&#x2e;3 Reference Documentation</a></li>
+<li>元对象系统</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 6.2&#x2e;3 参考文档</a></li>
     </ul>
     </div>
 </div>
@@ -36,35 +36,35 @@
 <div class="line">
 <div class="content mainContent">
 <div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
-<h1 class="title">The Meta-Object System</h1>
+<h1 class="title">元对象系统(The Meta-Object System)</h1>
 <!-- $$$metaobjects.html-description -->
 <div class="descr" id="details">
-<p>Qt's meta-object system provides the signals and slots mechanism for inter-object communication, run-time type information, and the dynamic property system.</p>
-<p>The meta-object system is based on three things:</p>
-<ol class="1" type="1"><li>The <a href="qobject.html">QObject</a> class provides a base class for objects that can take advantage of the meta-object system.</li>
-<li>The <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> macro inside the private section of the class declaration is used to enable meta-object features, such as dynamic properties, signals, and slots.</li>
-<li>The <a href="../qtdoc/moc.html">Meta-Object Compiler</a> (<code>moc</code>) supplies each <a href="qobject.html">QObject</a> subclass with the necessary code to implement meta-object features.</li>
+<p>Qt的元对象系统为对象间通信、运行时类型信息和动态属性系统提供了信号和槽机制。</p>
+<p>元对象系统基于三件事：</p>
+<ol class="1" type="1"><li><a href="qobject.html">QObject</a> 类为可以利用元对象系统的对象提供了一个基类。</li>
+<li>类声明为private的 <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> 宏用于启用元对象功能，例如动态属性、信号和槽。</li>
+<li><a href="../qtdoc/moc.html">元对象编译器(Meta-Object Compiler)</a> (<code>简写：moc</code>)  为每个 <a href="qobject.html">QObject</a> 子类生成实现元对象功能所需的代码。</li>
 </ol>
-<p>The <code>moc</code> tool reads a C++ source file. If it finds one or more class declarations that contain the <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> macro, it produces another C++ source file which contains the meta-object code for each of those classes. This generated source file is either <code>#include</code>'d into the class's source file or, more usually, compiled and linked with the class's implementation.</p>
-<p>In addition to providing the <a href="signalsandslots.html">signals and slots</a> mechanism for communication between objects (the main reason for introducing the system), the meta-object code provides the following additional features:</p>
+<p><code>moc</code> 工具读取C++源文件。如果它找到一个或多个包含 <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> 宏的类声明, 它将生成另一个C++源文件，其中包含每个类的元对象代码。此生成的源文件 <code>#include</code>到类的源文件中，要么更常见的是编译并与类的实现链接。</p>
+<p>除了提供 <a href="signalsandslots.html">信号和插槽</a> 机制用于对象之间的通信（引入系统的主要原因）之外，元对象代码还提供以下附加功能：</p>
 <ul>
-<li><a href="qobject.html#metaObject">QObject::metaObject</a>() returns the associated <a href="qmetaobject.html">meta-object</a> for the class.</li>
-<li><a href="qmetaobject.html#className">QMetaObject::className</a>() returns the class name as a string at run-time, without requiring native run-time type information (RTTI) support through the C++ compiler.</li>
-<li><a href="qobject.html#inherits">QObject::inherits</a>() function returns whether an object is an instance of a class that inherits a specified class within the <a href="qobject.html">QObject</a> inheritance tree.</li>
-<li><a href="qobject.html#tr">QObject::tr</a>() translates strings for <a href="../qtdoc/internationalization.html">internationalization</a>.</li>
-<li><a href="qobject.html#setProperty">QObject::setProperty</a>() and <a href="qobject.html#property">QObject::property</a>() dynamically set and get properties by name.</li>
-<li><a href="qmetaobject.html#newInstance">QMetaObject::newInstance</a>() constructs a new instance of the class.</li>
+<li><a href="qobject.html#metaObject">QObject::metaObject()</a> 函数返回类的关联 <a href="qmetaobject.html">元对象(meta-object)</a> .</li>
+<li><a href="qmetaobject.html#className">QMetaObject::className()</a> 在运行时以字符串形式返回类名，而无需通过C++编译器提供本机运行时类型信息 （RTTI） 支持。</li>
+<li><a href="qobject.html#inherits">QObject::inherits</a>() 函数返回对象是否是在 <a href="qobject.html">QObject</a> 继承树中继承指定类名为参数className的实例</li>
+<li><a href="qobject.html#tr">QObject::tr</a>() 翻译<a href="../qtdoc/internationalization.html">国际化的字符串</a>.</li>
+<li><a href="qobject.html#setProperty">QObject::setProperty</a>() 和 <a href="qobject.html#property">QObject::property</a>() ，动态设置属性，和按名称获取属性。</li>
+<li><a href="qmetaobject.html#newInstance">QMetaObject::newInstance</a>() 创建类的新实例。</li>
 </ul>
-<span id="qobjectcast"></span><p>It is also possible to perform dynamic casts using <a href="qobject.html#qobject_cast-1">qobject_cast</a>() on <a href="qobject.html">QObject</a> classes. The <a href="qobject.html#qobject_cast-1">qobject_cast</a>() function behaves similarly to the standard C++ <code>dynamic_cast()</code>, with the advantages that it doesn't require RTTI support and it works across dynamic library boundaries. It attempts to cast its argument to the pointer type specified in angle-brackets, returning a non-zero pointer if the object is of the correct type (determined at run-time), or <code>nullptr</code> if the object's type is incompatible.</p>
-<p>For example, let's assume <code>MyWidget</code> inherits from <a href="../qtwidgets/qwidget.html">QWidget</a> and is declared with the <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> macro:</p>
+<span id="qobjectcast"></span><p>还可以在 <a href="qobject.html">QObject</a> 类上使用<a href="qobject.html#qobject_cast-1">qobject_cast</a>() 执行动态转换。<a href="qobject.html#qobject_cast-1">qobject_cast</a>() 函数的行为类似于标准C++的  <code>dynamic_cast()</code>, 其优点是它不需要 RTTI 支持，并且可以跨动态库工作。它尝试将其参数转换为尖括号中指定的指针类型，如果对象类型正确（在运行时确定），则返回非零指针;如果对象的类型不兼容，则返回 <code>nullptr</code>.</p>
+<p>例如，假设 <code>MyWidget</code> 继承自 <a href="../qtwidgets/qwidget.html">QWidget</a> 并使用<a href="qobject.html#Q_OBJECT">Q_OBJECT</a> 宏声明：</p>
 <pre class="cpp">
      <span class="type"><a href="qobject.html">QObject</a></span> <span class="operator">*</span>obj <span class="operator">=</span> <span class="keyword">new</span> MyWidget;
 </pre>
-<p>The <code>obj</code> variable, of type <code>QObject *</code>, actually refers to a <code>MyWidget</code> object, so we can cast it appropriately:</p>
+<p>类型为<code>QObject *</code> 的 <code>obj</code> 变量实际上引用了一个 <code>MyWidget</code> 对象，因此我们可以适当地转换它：</p>
 <pre class="cpp">
      <span class="type"><a href="../qtwidgets/qwidget.html">QWidget</a></span> <span class="operator">*</span>widget <span class="operator">=</span> qobject_cast<span class="operator">&lt;</span><span class="type"><a href="../qtwidgets/qwidget.html">QWidget</a></span> <span class="operator">*</span><span class="operator">&gt;</span>(obj);
 </pre>
-<p>The cast from <a href="qobject.html">QObject</a> to <a href="../qtwidgets/qwidget.html">QWidget</a> is successful, because the object is actually a <code>MyWidget</code>, which is a subclass of <a href="../qtwidgets/qwidget.html">QWidget</a>. Since we know that <code>obj</code> is a <code>MyWidget</code>, we can also cast it to <code>MyWidget *</code>:</p>
+<p>从<a href="qobject.html">QObject</a> 到 <a href="../qtwidgets/qwidget.html">QWidget</a> 的强制转换是成功的，因为该对象实际上是 <code>MyWidget</code>，它是  <a href="../qtwidgets/qwidget.html">QWidget</a>的子类。由于我们知道<code>obj</code> 是 <code>MyWidget</code>，我们也可以将其转换为 <code>MyWidget *</code>:</p>
 <pre class="cpp">
      MyWidget <span class="operator">*</span>myWidget <span class="operator">=</span> qobject_cast<span class="operator">&lt;</span>MyWidget <span class="operator">*</span><span class="operator">&gt;</span>(obj);
 </pre>

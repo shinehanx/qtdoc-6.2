@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="http://qtdoc.cutebook.net/qtdoc/index.html">Qt 6.2</a></li>
+<li>所有模块</li>
+<li id="buildversion">Qt 6.2.3 参考文档</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3 id="toc">内容</h3>
+<ul>
+<li class="level1"><a href="#qt-essentials">Qt基础模块</a></li>
+<li class="level1"><a href="#qt-add-ons">Qt扩展模块</a></li>
+<li class="level1"><a href="#where-to-go-from-here">接下来去哪里？</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">所有模块</h1>
+<!-- $$$qtmodules.html-description -->
+<div class="descr" id="details">
+<h2 id="qt-essentials">Qt基础模块</h2>
+<p>Qt基础模块在所有平台上定义了Qt的基础。它们可在所有受支持的开发平台和经过测试的目标平台上使用。除了测试模块将保持源代码兼容外，这些模块将在整个Qt 6中保持源代码和二进制兼容</p>
+<p>基本模块是通用的，对于大多数Qt应用都很有用。用于特殊用途的模块被视为扩展模块，即使它在所有受支持的平台上都可用。</p>
+<p>下表列出了Qt的基础模块：</p>
+<div class="table"><table class="generic" width="80%">
+ <thead><tr class="qt-style"><th >模块</th><th >描述</th></tr></thead>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtcore/qtcore-index.html">Qt Core</a></td><td >下面其他模块使用的核心基础类（Qt Core是非图形模块）。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtdbus/qtdbus-index.html">Qt D-Bus</a></td><td >用于通过 D-Bus 协议进行进程间通信的类。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtgui/qtgui-index.html">Qt GUI</a></td><td >图形用户界面 （GUI） 组件的基类。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtnetwork/qtnetwork-index.html">Qt Network</a></td><td >使网络编程更轻松、更易移植的类。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtqml/qtqml-index.html">Qt QML</a></td><td >QML 和 JavaScript 语言的类。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtquick/qtquick-index.html">Qt Quick</a></td><td >一个声明性框架，用于构建具有自定义用户界面的高度动态的应用程序。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtquickcontrols/qtquickcontrols-index.html">Qt Quick Controls</a></td><td >提供轻量级 QML 类，用于为桌面、嵌入式和移动设备创建高性能用户界面。这些类型采用简单的样式体系结构，并且非常高效。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtquickdialogs/qtquickdialogs-index.html">Qt Quick Dialogs</a></td><td >用于从 Qt 快速应用程序创建系统对话框并与之交互的类。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtquick/qtquicklayouts-index.html">Qt Quick Layouts</a></td><td >布局是用于在用户界面中排列基于 Qt Quick 2 的项目的项。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtqmltest/qtquicktest-index.html">Qt Quick Test</a></td><td >QML 应用程序的单元测试框架，其中测试用例编写为 JavaScript 函数。<div class="admonition note">
+<p><b>Note: </b>二进制兼容性保证不适用于Qt快速测试。但是，它将保持源兼容。</p>
+</div>
+</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qttestlib/qttest-index.html">Qt Test</a></td><td >用于单元测试 Qt 应用程序和库的类。<div class="admonition note">
+<p><b>Note: </b>二进制兼容性保证不适用于 Qt 测试。但是，它将保持源兼容。</p>
+</div>
+</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtwidgets/qtwidgets-index.html">Qt Widgets</a></td><td >使用C++ widget扩展Qt GUI的类。</td></tr>
+</table></div>
+<h2 id="qt-add-ons">Qt扩展模块</h2>
+<p><i>Qt扩展</i> 模块为特定目的带来了额外的价值。这些模块可能仅在某些开发平台上可用。许多扩展模块要么功能齐全，并且是为了向后兼容而存在，要么仅适用于某些平台。每个扩展模块单独指定其兼容性。</p>
+<p>Qt安装程序包括下载扩展模块的选项。有关更多信息，请访问<a href="http://qtdoc.cutebook.net/qtdoc/gettingstarted.html">Qt 入门</a>页面.</p>
+<p>下表列出了 Qt 扩展模块：</p>
+<div class="table"><table class="generic" width="80%">
+ <thead><tr class="qt-style"><th >模块</th><th >开发平台</th><th >目标平台</th><th >描述</th></tr></thead>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../activeqt/activeqt-index.html">Active Qt</a></td><td ><a href="http://qtdoc.cutebook.net/qtdoc/windows.html">Windows</a></td><td ><a href="http://qtdoc.cutebook.net/qtdoc/windows.html">Windows</a></td><td >适用于使用 ActiveX 和 COM 的应用程序的类</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtbluetooth/qtbluetooth-index.html">Qt Bluetooth</a></td><td >All</td><td ><a href="http://qtdoc.cutebook.net/qtdoc/android.html">Android</a>, <a href="http://qtdoc.cutebook.net/qtdoc/ios.html">iOS</a>, <a href="http://qtdoc.cutebook.net/qtdoc/linux.html">Linux</a>, <a href="://doc.qt.io/QtForDeviceCreation/qtb2-index.html">Boot to Qt</a>, <a href="http://qtdoc.cutebook.net/qtdoc/macos.html">macOS</a> and <a href="http://qtdoc.cutebook.net/qtdoc/windows.html">Windows</a></td><td >提供对蓝牙设备的访问。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qt3d/qt3d-index.html">Qt 3D</a></td><td >All</td><td >All</td><td >支持 2D 和 3D 渲染的，接近实时的仿真系统功能。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtcore5compat/qtcore5-index.html">Qt 5 Core Compatibility APIs</a></td><td >All</td><td >All</td><td >Qt Core API 在 Qt 5 中，但不是 Qt 6 中。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtconcurrent/qtconcurrent-index.html">Qt Concurrent</a></td><td >All</td><td >All</td><td >用于在不使用低级线程基元的情况下编写多线程程序的类。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qthelp/qthelp-index.html">Qt Help</a></td><td >All</td><td >All</td><td >用于将文档集成到应用程序中的类。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtimageformats/qtimageformats-index.html">Qt Image Formats</a></td><td >All</td><td >All</td><td >其他图像格式的插件：TIFF，MNG，TGA，WBMP。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtopengl/qtopengl-index.html">Qt OpenGL</a></td><td >All</td><td >All</td><td >C++类，使在Qt应用程序中使用OpenGL变得容易。<a href="http://qtdoc.cutebook.net/qtdoc/../qtopengl/qtopenglwidgets-module.html">Qt OpenGL Widgets C++类库</a>，单独提供了一个用于渲染 OpenGL 图形的组件。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtmultimedia/qtmultimedia-index.html">Qt Multimedia</a></td><td >All</td><td >All*</td><td >一组丰富的 QML 类型和C++类来处理多媒体API。还包括用于处理摄像头访问的 API。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtprintsupport/qtprintsupport-index.html">Qt Print Support</a></td><td >All</td><td >All</td><td >使打印更轻松、更容易移植的类。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtquick/qtquickwidgets-module.html">Qt Quick Widgets</a></td><td >All</td><td >All</td><td >用于显示 Qt quick用户界面的C++ Widget类。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtremoteobjects/qtremoteobjects-index.html#qt-remote-objects">Qt Remote Objects</a></td><td >All</td><td >All</td><td >提供一种易于使用的机制，用于在进程或设备之间共享 <a href="http://qtdoc.cutebook.net/qtdoc/../qtcore/qobject.html">QObject</a> 的 API（属性/信号/插槽 - Properties/Signals/Slots）。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtscxml/qtscxml-index.html">Qt SCXML</a></td><td >All</td><td >All</td><td >用于从SCXML文件创建状态机并将其嵌入应用程序的类和工具。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtsensors/qtsensors-index.html">Qt Sensors</a></td><td >All</td><td ><a href="http://qtdoc.cutebook.net/qtdoc/android.html">Android</a>, <a href="http://qtdoc.cutebook.net/qtdoc/ios.html">iOS</a>, and <a href="http://qtdoc.cutebook.net/qtdoc/windows.html">Windows</a></td><td >提供对传感器设备的访问。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtserialbus/qtserialbus-index.html">Qt Serial Bus</a></td><td >All</td><td ><a href="http://qtdoc.cutebook.net/qtdoc/linux.html">Linux</a>, <a href="://doc.qt.io/QtForDeviceCreation/qtb2-index.html">Boot to Qt</a>, <a href="http://qtdoc.cutebook.net/qtdoc/macos.html">macOS</a> and <a href="http://qtdoc.cutebook.net/qtdoc/windows.html">Windows</a></td><td >提供对串行工业总线接口的访问。目前，该模块支持CAN总线和Modbus协议。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtserialport/qtserialport-index.html">Qt Serial Port</a></td><td >All</td><td ><a href="http://qtdoc.cutebook.net/qtdoc/linux.html">Linux</a>, <a href="://doc.qt.io/QtForDeviceCreation/qtb2-index.html">Boot to Qt</a>, <a href="http://qtdoc.cutebook.net/qtdoc/macos.html">macOS</a> and <a href="http://qtdoc.cutebook.net/qtdoc/windows.html">Windows</a></td><td >提供与硬件和虚拟串行端口交互的类。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtsql/qtsql-index.html">Qt SQL</a></td><td >All</td><td >All</td><td >使用SQL进行数据库访问的类。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtstatemachine/qtstatemachine-index.html">Qt State Machine</a></td><td >All</td><td >All</td><td >用于创建和执行状态图的类。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtsvg/qtsvg-index.html">Qt SVG</a></td><td >All</td><td >All</td><td >用于显示SVG文件内容的类。支持<a href="://www.w3.org/TR/SVGTiny12/">SVG 1.2 Tiny</a> 标准的一个子集。<a href="http://qtdoc.cutebook.net/qtdoc/../qtsvg/qtsvgwidgets-module.html">Qt SVG Widgets C++类库</a>提供了在Widget UI中显示SVG文件的支持。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtuitools/qtuitools-index.html">Qt UI Tools</a></td><td >All</td><td >All</td><td >用于在运行时动态加载<i>Qt Designer</i>中创建的，继承<a href="http://qtdoc.cutebook.net/qtdoc/../qtwidgets/qwidget.html">QWidget</a>的表单的子类。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtwebchannel/qtwebchannel-index.html">Qt WebChannel</a></td><td >All</td><td >All</td><td >提供从 HTML 客户端访问<a href="http://qtdoc.cutebook.net/qtdoc/../qtcore/qobject.html">QObject</a>或 QML 对象，以便将 Qt 应用程序与 HTML/JavaScript 客户端无缝集成。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtwebengine/qtwebengine-index.html">Qt WebEngine</a></td><td >All</td><td ><a href="http://qtdoc.cutebook.net/qtdoc/windows.html">Windows</a>, <a href="http://qtdoc.cutebook.net/qtdoc/linux.html">Linux</a>, and <a href="http://qtdoc.cutebook.net/qtdoc/macos.html">macOS</a>.</td><td >用于在应用程序中嵌入 Web 内容的类和函数，使用<a href="://www.chromium.org/Home">Chromium浏览器项目</a>.</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtwebsockets/qtwebsockets-index.html">Qt WebSockets</a></td><td >All</td><td >All</td><td >提供WebSocket 通信的类，符合<a href="s://datatracker.ietf.org/doc/html/rfc6455">RFC 6455</a> 规范</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtwebview/qtwebview-index.html">Qt WebView</a></td><td >All</td><td >具有本机 Web 引擎的平台。</td><td >使用平台的本机 API 在 QML 应用程序中显示 Web 内容，而无需包含完整的 Web 浏览器堆栈。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtxml/qtxml-index.html">Qt XML</a></td><td >All</td><td >All</td><td >在文档对象模型 （DOM） API 中处理 XML。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtpositioning/qtpositioning-index.html">Qt Positioning</a></td><td >All</td><td ><a href="http://qtdoc.cutebook.net/qtdoc/android.html">Android</a>, <a href="http://qtdoc.cutebook.net/qtdoc/ios.html">iOS</a>, <a href="http://qtdoc.cutebook.net/qtdoc/macos.html">macOS</a>, <a href="http://qtdoc.cutebook.net/qtdoc/linux.html">Linux</a> and <a href="http://qtdoc.cutebook.net/qtdoc/windows.html">Windows</a></td><td >提供卫星定位系统的信息（GPS），和区域监视的访问的类。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtnfc/qtnfc-index.html">Qt NFC</a></td><td >All</td><td ><a href="http://qtdoc.cutebook.net/qtdoc/android.html">Android</a> and <a href="http://qtdoc.cutebook.net/qtdoc/ios.html">iOS</a></td><td >提供对近场通信 （NFC） 硬件的访问。</td></tr>
+<tr valign="top" class="even"></tr>
+<thead><tr class="qt-style"><th  colspan="4"><span id="gpl-licensed-addons"></span><p>商业许可证或 GNU 通用公共许可证 v3 的扩展模块</p>
+</th></tr></thead>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtcharts/qtcharts-index.html">Qt Charts</a></td><td >All</td><td >All</td><td >图表UI组件，用于显示由静态或动态数据模型驱动的，有视觉冲击的图表。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtdatavis3d/qtdatavisualization-index.html">Qt Data Visualization</a></td><td >All</td><td >All</td><td >用于创建令人惊叹的 3D 数据可视化的 UI 组件。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtlottieanimation/qtlottieanimation-index.html">Qt Lottie Animation</a></td><td >All</td><td >All</td><td >用于以JSON格式渲染图形和动画的QML API，导出了Adobe® After Effects的<a href="s://aescripts.com/bodymovin/">Bodymovin</a> 插件。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtnetworkauth/qtnetworkauth-index.html">Qt Network Authorization</a></td><td >All</td><td >All</td><td >支持对在线服务进行 OAuth 授权认证模块。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtquick3d/qtquick3d-index.html">Qt Quick 3D</a></td><td >All</td><td >All</td><td >提供高级 API，用于基于 Qt Quick 创建 3D 内容或 UI。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtquicktimeline/qtquicktimeline-index.html">Qt Quick Timeline</a></td><td >All</td><td >All</td><td >启用基于关键帧的动画和参数化。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtshadertools/qtshadertools-index.html">Qt Shader Tools</a></td><td >All</td><td >All</td><td >为跨平台 Qt 着色器管道提供工具。这些允许处理图形和计算着色器，使其可用于Qt Quick和Qt生态系统中的其他组件。</td></tr>
+<tr valign="top" class="even"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtvirtualkeyboard/qtvirtualkeyboard-index.html">Qt Virtual Keyboard</a></td><td >All</td><td ><a href="http://qtdoc.cutebook.net/qtdoc/linux.html">Linux</a> and <a href="http://qtdoc.cutebook.net/qtdoc/windows.html">Windows</a> desktop, and <a href="://doc.qt.io/QtForDeviceCreation/qtb2-index.html">Boot to Qt</a> targets.</td><td >用于实现不同输入法以及 QML 虚拟键盘的框架。支持本地化的键盘布局，和自定义界面主题。</td></tr>
+<tr valign="top" class="odd"><td ><a href="http://qtdoc.cutebook.net/qtdoc/../qtwaylandcompositor/qtwaylandcompositor-index.html">Qt Wayland Compositor</a></td><td ><a href="http://qtdoc.cutebook.net/qtdoc/linux.html">Linux</a></td><td ><a href="http://qtdoc.cutebook.net/qtdoc/linux.html">Linux</a> and <a href="://doc.qt.io/QtForDeviceCreation/qtb2-index.html">Boot to Qt</a> targets.</td><td >提供开发 Wayland 合成器的框架。</td></tr>
+</table></div>
+<div class="admonition note">
+<p><b>Note: </b><b>All*</b> 是指除 QNX 和 INTEGRITY 之外的所有受支持的平台。</p>
+</div>
+<h2 id="where-to-go-from-here">接下来去哪里？</h2>
+<p>我们邀请您探索Qt的其余部分。我们准备了概述，可帮助您决定使用哪些 API，我们的示例演示了如何使用我们的 API。</p>
+<ul>
+<li><a href="http://qtdoc.cutebook.net/qtdoc/overviews-main.html">Qt概述</a> - 有关应用程序开发的主题列表</li>
+<li><a href="http://qtdoc.cutebook.net/qtdoc/qtexamplesandtutorials.html">示例和教程</a> - 代码示例和教程</li>
+<li><a href="http://qtdoc.cutebook.net/qtdoc/reference-overview.html">Qt 参考页面</a> - C++和 QML API 列表</li>
+<li><a href="http://qtdoc.cutebook.net/qtdoc/whatsnew60.html#changes-to-supported-modules">对支持模块的更改</a> - Qt 5 模块在 Qt 6.0 中的状态</li>
+</ul>
+</div>
+<!-- @@@qtmodules.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>
