@@ -73,7 +73,7 @@
      <span class="type"><a href="../qtwidgets/qlabel.html">QLabel</a></span> <span class="operator">*</span>label <span class="operator">=</span> qobject_cast<span class="operator">&lt;</span><span class="type"><a href="../qtwidgets/qlabel.html">QLabel</a></span> <span class="operator">*</span><span class="operator">&gt;</span>(obj);
      <span class="comment">// label is 0</span>
 </pre>
-<p>另一方面，转换为< href="../qtwidgets/qlabel.html">QLabel</a> 失败。然后将指针设置为 0。这样就可以在运行时根据类型以不同的方式处理不同类型的对象：</p>
+<p>另一方面，转换为<a href="../qtwidgets/qlabel.html">QLabel</a> 失败。然后将指针设置为 0。这样就可以在运行时根据类型以不同的方式处理不同类型的对象：</p>
 <pre class="cpp">
      <span class="keyword">if</span> (<span class="type"><a href="../qtwidgets/qlabel.html">QLabel</a></span> <span class="operator">*</span>label <span class="operator">=</span> qobject_cast<span class="operator">&lt;</span><span class="type"><a href="../qtwidgets/qlabel.html">QLabel</a></span> <span class="operator">*</span><span class="operator">&gt;</span>(obj)) {
          label<span class="operator">-</span><span class="operator">&gt;</span>setText(tr(<span class="string">&quot;Ping&quot;</span>));
