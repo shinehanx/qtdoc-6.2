@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="utf-8">
 <!-- analogclock.qdoc -->
-  <title>Analog Clock Example | Qt Widgets 6.2.3</title>
-  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <title>模拟时钟示例 | Qt控件6.2.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css">
   <script type="text/javascript">
     document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
     // loading style sheet breaks anchors that were jumped to before
@@ -18,45 +16,758 @@
         }, 0);
     }, 0);
   </script>
-</head>
-<body>
-<div class="header" id="qtdocheader">
-    <div class="main">
-    <div class="main-rounded">
-        <div class="navigationbar">
-        <ul>
-<li><a href="../qtdoc/index.html">Qt 6.2</a></li>
-<li><a href="qtwidgets-index.html">Qt Widgets</a></li>
-<li><a href="examples-widgets.html">Qt Widgets Examples</a></li>
-<li>Analog Clock Example</li>
-<li id="buildversion"><a href="qtwidgets-index.html">Qt 6.2&#x2e;3 Reference Documentation</a></li>
+<style data-id="immersive-translate-input-injected-css">.immersive-translate-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2147483647;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+
+.immersive-translate-input-loading {
+  --loading-color: #f78fb6;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  margin: 12px auto;
+  position: relative;
+  color: white;
+  left: -100px;
+  box-sizing: border-box;
+  animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+}
+
+@keyframes immersiveTranslateShadowRolling {
+  0% {
+    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  12% {
+    box-shadow: 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  25% {
+    box-shadow: 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  36% {
+    box-shadow: 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow: 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color);
+  }
+
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color);
+  }
+
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color);
+  }
+
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color);
+  }
+
+  100% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+  }
+}
+
+
+.immersive-translate-search-recomend {
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  font-size: 16px;
+}
+.immersive-translate-search-enhancement-en-title {
+  color: #4d5156;
+}
+/* dark */
+@media (prefers-color-scheme: dark) {
+  .immersive-translate-search-recomend {
+    border: 1px solid #3c4043;
+  }
+  .immersive-translate-close-action svg {
+    fill: #bdc1c6;
+  }
+
+.immersive-translate-search-enhancement-en-title {
+  color: #bdc1c6;
+}
+}
+
+
+.immersive-translate-search-settings {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.immersive-translate-search-recomend::before {
+  /* content: " "; */
+  /* width: 20px; */
+  /* height: 20px; */
+  /* top: 16px; */
+  /* position: absolute; */
+  /* background: center / contain url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAxlBMVEUAAADpTInqTIjpSofnSIfqS4nfS4XqS4nqTIjsTYnrTInqTIroS4jvQIDqTIn////+/v7rSYjpTIn8/v7uaZzrTIr9/f3wfansWJL88/b85e73qc39+/v3xNnylrvrVI/98fb62Obva5/8+fr76vH4y9zpSIj74e353Oj1ocTzm77xhK/veKbtYpjsXJTqU47oTInxjrXyh7L99fj40eH2ttH1udD3sc31ssz1rMnykLXucqPtbqD85e/1xdn2u9DzqcXrUY6FaJb8AAAADnRSTlMA34BgIM8Q37/fz7+/EGOHcVQAAAGhSURBVDjLhZPncuowEEZFTW7bXVU7xsYYTO/p7bb3f6lICIOYJOT4h7/VnFmvrBFjrF3/CR/SajBHswafctG0Qg3O8O0Xa8BZ6uw7eLjqr30SofCDVSkemMinfL1ecy20r5ygR5zz3ArcAqJExPTPKhDENEmS30Q9+yo4lEQkqVTiIEAHCT10xWERRdH0Bq0aCOPZNDV3s0xaYce1lHEoDHU8wEh3qRJypNcTAeKUIjgKMeGLDoRCLVLTVf+Ownj8Kk6H9HM6QXPgYjQSB0F00EJEu10ILQrs/QeP77BSSr0MzLOyuJJQbnUoOOIUI/A8EeJk9E4YUHUWiRyTVKGgQUB8/3e/NpdGlfI+FMQyWsCBWyz4A/ZyHXyiiz0Ne5aGZssoxRmcChw8/EFKQ5JwwkUo3FRT5yXS7q+Y/rHDZmFktzpGMvO+5QofA4FPpEmGw+EWRCFvnaof7Zhe8NuYSLR0xErKLThUSs8gnODh87ssy6438yzbLzxl012HS19vfCf3CNhnbWOL1eEsDda+gDPUvri8tSZzNFrwIZf1NmNvqC1I/t8j7nYAAAAASUVORK5CYII='); */
+}
+
+.immersive-translate-search-title {}
+
+.immersive-translate-search-title-wrapper {}
+
+.immersive-translate-search-time {
+  font-size: 12px;
+  margin: 4px 0 24px;
+  color: #70757a;
+}
+
+.immersive-translate-expand-items {
+  display: none;
+}
+
+.immersive-translate-search-more {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.immersive-translate-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size:15px;
+}
+
+.immersive-translate-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.immersive-translate-modal-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: hsl(205, 20%, 32%);
+}
+
+.immersive-translate-modal-body {
+  color: hsl(205, 20%, 32%)
+}
+
+.immersive-translate-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.immersive-translate-close:hover,
+.immersive-translate-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.immersive-translate-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.immersive-translate-btn {
+  width: fit-content;
+  color: #fff;
+  background-color: #ea4c89;
+  border: none;
+  font-size: 14px;
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.immersive-translate-btn:hover {
+  background-color: #f082ac;
+}
+.immersive-translate-cancel-btn {
+  /* gray color */
+  background-color: rgb(89, 107, 120);
+}
+
+
+.immersive-translate-cancel-btn:hover {
+  background-color: hsl(205, 20%, 32%);
+}
+
+
+.immersive-translate-btn svg {
+  margin-right: 5px;
+}
+
+.immersive-translate-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #007bff;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+}
+
+.immersive-translate-primary-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #ea4c89;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+}
+
+.immersive-translate-modal input[type="radio"] {
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.immersive-translate-modal label {
+  cursor: pointer;
+}
+
+.immersive-translate-close-action {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  cursor: pointer;
+}
+</style><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: dashed underline var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: dotted underline var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: wavy underline var(--immersive-translate-theme-wavy-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: help;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+}
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">
+</style></head>
+<body data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+<div class="header" id="qtdocheader" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+    <div class="main" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+    <div class="main-rounded" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+        <div class="navigationbar" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+        <ul data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+<li data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"><a href="../qtdoc/index.html" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1">Qt 6.2</a></li>
+<li data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"><a href="qtwidgets-index.html" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">QtWidgets</font></font></font></a></li>
+<li data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"><a href="examples-widgets.html" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">QtWidgets示例</font></font></font></a></li>
+<li data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">模拟时钟示例 </font></font></font></li>
+<li id="buildversion" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"><a href="qtwidgets-index.html" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt 6.2.3参考文档</font></font></font></a></li>
     </ul>
     </div>
 </div>
-<div class="content">
-<div class="line">
-<div class="content mainContent">
-<div class="sidebar">
-<div class="toc">
-<h3 id="toc">Contents</h3>
-<ul>
-<li class="level1"><a href="#analogclock-class-definition">AnalogClock Class Definition</a></li>
-<li class="level1"><a href="#analogclock-class-implementation">AnalogClock Class Implementation</a></li>
+<div class="content" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+<div class="line" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+<div class="content mainContent" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+<div class="sidebar" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+<div class="toc" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+<h3 id="toc" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">目录</font></font></font></h3>
+<ul data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+<li class="level1" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"><a href="#analogclock-class-definition" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner"> AnalogClock类定义</font></font></font></a></li>
+<li class="level1" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"><a href="#analogclock-class-implementation" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner"> AnalogClock类实现</font></font></font></a></li>
 </ul>
 </div>
-<div class="sidebar-content" id="sidebar-content"></div></div>
-<h1 class="title">Analog Clock Example</h1>
+<div class="sidebar-content" id="sidebar-content" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"></div></div>
+<h1 class="title" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">模拟时钟示例 </font></font></font></h1>
 <!-- $$$widgets/analogclock-brief -->
-<p>The Analog Clock example shows how to draw the contents of a custom widget.</p>
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Analog Clock示例展示了如何绘制自定义Widgets的内容。 </font></font></font></p>
 <!-- @@@widgets/analogclock -->
 <!-- $$$widgets/analogclock-description -->
-<div class="descr" id="details">
-<div class="border"><p class="centerAlign"><img src="images/analogclock-example.png" alt="" /></p></div><p class="figCaption">Screenshot of the Analog Clock example</p>
-<p>This example also demonstrates how the transformation and scaling features of <a href="../qtgui/qpainter.html">QPainter</a> can be used to make drawing custom widgets easier.</p>
-<h4 id="analogclock-class-definition">AnalogClock Class Definition</h4>
-<p>The <code>AnalogClock</code> class provides a clock widget with hour and minute hands that is automatically updated every few seconds. We subclass <a href="qwidget.html">QWidget</a> and reimplement the standard <a href="qwidget.html#paintEvent">paintEvent</a>() function to draw the clock face:</p>
-<pre class="cpp">
- <span class="keyword">class</span> AnalogClock : <span class="keyword">public</span> <span class="type"><a href="qwidget.html">QWidget</a></span>
+<div class="descr" id="details" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+<div class="border" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"><p class="centerAlign" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"><img src="images/analogclock-example.png" alt="" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"></p></div><p class="figCaption" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">模拟时钟示例的屏幕截图 </font></font></font></p>
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">这个例子还演示了如何使用QPainter的转换和缩放功能来更轻松地绘制自定义Widgets。</font></font></font></p>
+<h4 id="analogclock-class-definition" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">AnalogClock类定义 </font></font></font></h4>
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">该类提供了一个带有时针和分针的时钟Widgets，每隔几秒自动更新一次。我们子类化QWidget并重新实现标准的paintEvent（）函数来绘制钟面：</font></font></font></p>
+<pre class="cpp"> <span class="keyword">class</span> AnalogClock : <span class="keyword">public</span> <span class="type"><a href="qwidget.html">QWidget</a></span>
  {
      Q_OBJECT
 
@@ -67,23 +778,21 @@
      <span class="type">void</span> paintEvent(<span class="type"><a href="../qtgui/qpaintevent.html">QPaintEvent</a></span> <span class="operator">*</span>event) override;
  };
 </pre>
-<h4 id="analogclock-class-implementation">AnalogClock Class Implementation</h4>
-<pre class="cpp">
- AnalogClock<span class="operator">::</span>AnalogClock(<span class="type"><a href="qwidget.html">QWidget</a></span> <span class="operator">*</span>parent)
+<h4 id="analogclock-class-implementation" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">AnalogClock类实现 </font></font></font></h4>
+<pre class="cpp"> AnalogClock<span class="operator">::</span>AnalogClock(<span class="type"><a href="qwidget.html">QWidget</a></span> <span class="operator">*</span>parent)
      : <span class="type"><a href="qwidget.html">QWidget</a></span>(parent)
  {
      <span class="type"><a href="../qtcore/qtimer.html">QTimer</a></span> <span class="operator">*</span>timer <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="../qtcore/qtimer.html">QTimer</a></span>(<span class="keyword">this</span>);
      connect(timer<span class="operator">,</span> <span class="operator">&amp;</span><span class="type"><a href="../qtcore/qtimer.html">QTimer</a></span><span class="operator">::</span>timeout<span class="operator">,</span> <span class="keyword">this</span><span class="operator">,</span> <span class="type">QOverload</span><span class="operator">&lt;</span><span class="operator">&gt;</span><span class="operator">::</span>of(<span class="operator">&amp;</span>AnalogClock<span class="operator">::</span>update));
      timer<span class="operator">-</span><span class="operator">&gt;</span>start(<span class="number">1000</span>);
 
-     setWindowTitle(tr(<span class="string">&quot;Analog Clock&quot;</span>));
+     setWindowTitle(tr(<span class="string">"Analog Clock"</span>));
      resize(<span class="number">200</span><span class="operator">,</span> <span class="number">200</span>);
  }
 </pre>
-<p>When the widget is constructed, we set up a one-second timer to keep track of the current time, and we connect it to the standard <a href="qwidget.html#update">update</a>() slot so that the clock face is updated when the timer emits the <a href="../qtcore/qtimer.html#timeout">timeout</a>() signal.</p>
-<p>Finally, we resize the widget so that it is displayed at a reasonable size.</p>
-<pre class="cpp">
- <span class="type">void</span> AnalogClock<span class="operator">::</span>paintEvent(<span class="type"><a href="../qtgui/qpaintevent.html">QPaintEvent</a></span> <span class="operator">*</span>)
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">当Widgets被构造时，我们设置一个一秒计时器来跟踪当前时间，并将其连接到标准的update（）插槽，以便在计时器发出timeout（）信号时更新时钟面。</font></font></font></p>
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">最后，我们调整Widgets的大小，使其以合理的大小显示。 </font></font></font></p>
+<pre class="cpp"> <span class="type">void</span> AnalogClock<span class="operator">::</span>paintEvent(<span class="type"><a href="../qtgui/qpaintevent.html">QPaintEvent</a></span> <span class="operator">*</span>)
  {
      <span class="keyword">static</span> <span class="keyword">const</span> <span class="type"><a href="../qtcore/qpoint.html">QPoint</a></span> hourHand<span class="operator">[</span><span class="number">3</span><span class="operator">]</span> <span class="operator">=</span> {
          <span class="type"><a href="../qtcore/qpoint.html">QPoint</a></span>(<span class="number">7</span><span class="operator">,</span> <span class="number">8</span>)<span class="operator">,</span>
@@ -102,44 +811,39 @@
      <span class="type">int</span> side <span class="operator">=</span> qMin(width()<span class="operator">,</span> height());
      <span class="type"><a href="../qtcore/qtime.html">QTime</a></span> time <span class="operator">=</span> <span class="type"><a href="../qtcore/qtime.html">QTime</a></span><span class="operator">::</span>currentTime();
 </pre>
-<p>The <code>paintEvent()</code> function is called whenever the widget's contents need to be updated. This happens when the widget is first shown, and when it is covered then exposed, but it is also executed when the widget's <a href="qwidget.html#update">update</a>() slot is called. Since we connected the timer's <a href="../qtcore/qtimer.html#timeout">timeout</a>() signal to this slot, it will be called at least once every five seconds.</p>
-<p>Before we set up the painter and draw the clock, we first define two lists of <a href="../qtcore/qpoint.html">QPoint</a>s and two <a href="../qtgui/qcolor.html">QColor</a>s that will be used for the hour and minute hands. The minute hand's color has an alpha component of 191, meaning that it's 75% opaque.</p>
-<p>We also determine the length of the widget's shortest side so that we can fit the clock face inside the widget. It is also useful to determine the current time before we start drawing.</p>
-<pre class="cpp">
-     <span class="type"><a href="../qtgui/qpainter.html">QPainter</a></span> painter(<span class="keyword">this</span>);
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">每当Widgets的内容需要更新时，就会调用该函数。当Widgets第一次显示时，以及当它被覆盖然后暴露时，都会发生这种情况，但是当Widgets的update（）插槽被调用时，也会执行这种情况。由于我们将计时器的timeout（）信号连接到这个插槽，因此它将至少每五秒被调用一次。</font></font></font></p>
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">在设置画家并绘制时钟之前，我们首先定义两个QPoint列表和两个QColors，它们将用于时针和分针。分针的alpha分量为191，这意味着它有75%的不透明。</font></font></font></p>
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">我们还确定了Widgets最短边的长度，这样我们就可以在Widgets内安装时钟面。在开始绘制之前确定当前时间也很有用。 </font></font></font></p>
+<pre class="cpp">     <span class="type"><a href="../qtgui/qpainter.html">QPainter</a></span> painter(<span class="keyword">this</span>);
      painter<span class="operator">.</span>setRenderHint(<span class="type"><a href="../qtgui/qpainter.html">QPainter</a></span><span class="operator">::</span>Antialiasing);
      painter<span class="operator">.</span>translate(width() <span class="operator">/</span> <span class="number">2</span><span class="operator">,</span> height() <span class="operator">/</span> <span class="number">2</span>);
      painter<span class="operator">.</span>scale(side <span class="operator">/</span> <span class="number">200.0</span><span class="operator">,</span> side <span class="operator">/</span> <span class="number">200.0</span>);
 </pre>
-<p>The contents of custom widgets are drawn with a <a href="../qtgui/qpainter.html">QPainter</a>. Painters can be used to draw on any <a href="../qtgui/qpaintdevice.html">QPaintDevice</a>, but they are usually used with widgets, so we pass the widget instance to the painter's constructor.</p>
-<p>We call <a href="../qtgui/qpainter.html#setRenderHint">QPainter::setRenderHint</a>() with <a href="../qtgui/qpainter.html#RenderHint-enum">QPainter::Antialiasing</a> to turn on antialiasing. This makes drawing of diagonal lines much smoother.</p>
-<p>The translation moves the origin to the center of the widget, and the scale operation ensures that the following drawing operations are scaled to fit within the widget. We use a scale factor that let's us use x and y coordinates between -100 and 100, and that ensures that these lie within the length of the widget's shortest side.</p>
-<p>To make our code simpler, we will draw a fixed size clock face that will be positioned and scaled so that it lies in the center of the widget.</p>
-<p>The painter takes care of all the transformations made during the paint event, and ensures that everything is drawn correctly. Letting the painter handle transformations is often easier than performing manual calculations just to draw the contents of a custom widget.</p>
-<p class="centerAlign"><img src="images/analogclock-viewport.png" alt="" /></p><p>We draw the hour hand first, using a formula that rotates the coordinate system counterclockwise by a number of degrees determined by the current hour and minute. This means that the hand will be shown rotated clockwise by the required amount.</p>
-<pre class="cpp">
-     painter<span class="operator">.</span>setPen(<span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>NoPen);
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">自定义Widgets的内容是用QPainter绘制的。绘制器可用于在任何QPaintDevice上绘制，但它们通常与Widgets一起使用，因此我们将Widgets实例传递给绘制器的构造函数。</font></font></font></p>
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">我们使用QPainter：：抗锯齿调用QPainter：：setRenderHint()来打开抗锯齿。这使得对角线的绘制更加流畅。</font></font></font></p>
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">平移将原点移动到Widgets的中心，缩放操作确保缩放以下绘制操作以适应Widgets。我们使用一个比例因子，让我们使用介于-100和100之间的x和y坐标，从而确保这些坐标位于Widgets最短的边的长度内。</font></font></font></p>
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">为了使代码更简单，我们将绘制一个固定大小的钟面，该钟面将被定位和缩放，以使其位于Widgets的中心。</font></font></font></p>
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">绘制程序负责处理绘制事件期间所做的所有变换，并确保所有内容都被正确绘制。让画师处理转换通常比仅仅为了绘制定制Widgets的内容而执行手动计算要容易得多。</font></font></font></p>
+<p class="centerAlign" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"><img src="images/analogclock-viewport.png" alt="" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"></p><p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">我们首先绘制时针，使用一个公式将坐标系逆时针旋转由当前小时和分钟确定的度数。这意味着指针将显示为顺时针旋转所需的量。</font></font></font></p>
+<pre class="cpp">     painter<span class="operator">.</span>setPen(<span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>NoPen);
      painter<span class="operator">.</span>setBrush(hourColor);
 </pre>
-<p>We set the pen to be <a href="../qtcore/qt.html#PenStyle-enum">Qt::NoPen</a> because we don't want any outline, and we use a solid brush with the color appropriate for displaying hours. Brushes are used when filling in polygons and other geometric shapes.</p>
-<pre class="cpp">
-     painter<span class="operator">.</span>save();
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">我们将笔设置为Qt：：NoPen，因为我们不想要任何轮廓，并且我们使用具有适合显示小时的颜色的实心画笔。填充多边形和其他几何形状时使用画笔。</font></font></font></p>
+<pre class="cpp">     painter<span class="operator">.</span>save();
      painter<span class="operator">.</span>rotate(<span class="number">30.0</span> <span class="operator">*</span> ((time<span class="operator">.</span>hour() <span class="operator">+</span> time<span class="operator">.</span>minute() <span class="operator">/</span> <span class="number">60.0</span>)));
      painter<span class="operator">.</span>drawConvexPolygon(hourHand<span class="operator">,</span> <span class="number">3</span>);
      painter<span class="operator">.</span>restore();
 </pre>
-<p>We save and restore the transformation matrix before and after the rotation because we want to place the minute hand without having to take into account any previous rotations.</p>
-<pre class="cpp">
-     painter<span class="operator">.</span>setPen(hourColor);
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">我们保存并恢复旋转前后的变换矩阵，因为我们希望放置分针，而不必考虑任何先前的旋转。</font></font></font></p>
+<pre class="cpp">     painter<span class="operator">.</span>setPen(hourColor);
 
      <span class="keyword">for</span> (<span class="type">int</span> i <span class="operator">=</span> <span class="number">0</span>; i <span class="operator">&lt;</span> <span class="number">12</span>; <span class="operator">+</span><span class="operator">+</span>i) {
          painter<span class="operator">.</span>drawLine(<span class="number">88</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="number">96</span><span class="operator">,</span> <span class="number">0</span>);
          painter<span class="operator">.</span>rotate(<span class="number">30.0</span>);
      }
 </pre>
-<p>We draw markers around the edge of the clock for each hour. We draw each marker then rotate the coordinate system so that the painter is ready for the next one.</p>
-<pre class="cpp">
-     painter<span class="operator">.</span>setPen(<span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>NoPen);
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">我们在时钟的边缘画上每小时的记号。我们绘制每个标记，然后旋转坐标系，以便画家为下一个标记做好准备。</font></font></font></p>
+<pre class="cpp">     painter<span class="operator">.</span>setPen(<span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>NoPen);
      painter<span class="operator">.</span>setBrush(minuteColor);
 
      painter<span class="operator">.</span>save();
@@ -147,9 +851,8 @@
      painter<span class="operator">.</span>drawConvexPolygon(minuteHand<span class="operator">,</span> <span class="number">3</span>);
      painter<span class="operator">.</span>restore();
 </pre>
-<p>The minute hand is rotated in a similar way to the hour hand.</p>
-<pre class="cpp">
-     painter<span class="operator">.</span>setPen(minuteColor);
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">分针的旋转方式与时针相似。</font></font></font></p>
+<pre class="cpp">     painter<span class="operator">.</span>setPen(minuteColor);
 
      <span class="keyword">for</span> (<span class="type">int</span> j <span class="operator">=</span> <span class="number">0</span>; j <span class="operator">&lt;</span> <span class="number">60</span>; <span class="operator">+</span><span class="operator">+</span>j) {
          <span class="keyword">if</span> ((j <span class="operator">%</span> <span class="number">5</span>) <span class="operator">!</span><span class="operator">=</span> <span class="number">0</span>)
@@ -158,8 +861,8 @@
      }
  }
 </pre>
-<p>Again, we draw markers around the edge of the clock, but this time to indicate minutes. We skip multiples of 5 to avoid drawing minute markers on top of hour markers.</p>
-<p><a href="https://code.qt.io/cgit/qt/qtbase.git/tree/examples/widgets/widgets/analogclock?h=6.2">Example project @ code.qt.io</a></p>
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">同样，我们在时钟的边缘绘制标记，但这一次是表示分钟。我们跳过5的倍数，以避免在小时标记上绘制分钟标记。</font></font></font></p>
+<p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"><a href="https://code.qt.io/cgit/qt/qtbase.git/tree/examples/widgets/widgets/analogclock?h=6.2" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">示例project@code.qt.io</font></font></font></a></p>
 </div>
 <!-- @@@widgets/analogclock -->
         </div>
@@ -167,12 +870,10 @@
    </div>
    </div>
 </div>
-<div class="footer">
-   <p>
-   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
-   Documentation contributions included herein are the copyrights of
-   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
-   of their respective owners. </p>
+<div class="footer" data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4">
+   <p data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4" data-immersive-translate-paragraph="1">
+   <font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">©2022，QT有限公司。此处包含的文档投稿是其各自所有者的版权。</font></font></font><br data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">本文提供的文档是根据自由软件基金会发布的GNU自由文档许可证1.3版的条款进行许可的。</font></font></font><br data-immersive-translate-walked="73dc9ab9-8481-42a2-a3bc-abccc80062b4"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt和各自的徽标是Qt有限公司在芬兰和/或世界其他国家/地区的商标。所有其他商标均为其各自所有者的财产。</font></font></font></p>
 </div>
-</body>
-</html>
+
+
+</body><div id="immersive-translate-popup" style="all: initial"></div></html>

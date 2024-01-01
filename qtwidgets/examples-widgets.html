@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="utf-8">
 <!-- qtwidgets-examples.qdoc -->
-  <title>Qt Widgets Examples | Qt Widgets 6.2.3</title>
-  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <title>Qt Widgets 示例 | Qt Widgets 6.2.3</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css">
   <script type="text/javascript">
     document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
     // loading style sheet breaks anchors that were jumped to before
@@ -18,69 +16,781 @@
         }, 0);
     }, 0);
   </script>
-</head>
-<body>
-<div class="header" id="qtdocheader">
-    <div class="main">
-    <div class="main-rounded">
-        <div class="navigationbar">
-        <ul>
-<li><a href="../qtdoc/index.html">Qt 6.2</a></li>
-<li><a href="qtwidgets-index.html">Qt Widgets</a></li>
-<li>Qt Widgets Examples</li>
-<li id="buildversion"><a href="qtwidgets-index.html">Qt 6.2&#x2e;3 Reference Documentation</a></li>
+<style data-id="immersive-translate-input-injected-css">.immersive-translate-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2147483647;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+
+.immersive-translate-input-loading {
+  --loading-color: #f78fb6;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  margin: 12px auto;
+  position: relative;
+  color: white;
+  left: -100px;
+  box-sizing: border-box;
+  animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+}
+
+@keyframes immersiveTranslateShadowRolling {
+  0% {
+    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  12% {
+    box-shadow: 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  25% {
+    box-shadow: 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  36% {
+    box-shadow: 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow: 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color);
+  }
+
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color);
+  }
+
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color);
+  }
+
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color);
+  }
+
+  100% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+  }
+}
+
+
+.immersive-translate-search-recomend {
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  font-size: 16px;
+}
+.immersive-translate-search-enhancement-en-title {
+  color: #4d5156;
+}
+/* dark */
+@media (prefers-color-scheme: dark) {
+  .immersive-translate-search-recomend {
+    border: 1px solid #3c4043;
+  }
+  .immersive-translate-close-action svg {
+    fill: #bdc1c6;
+  }
+
+.immersive-translate-search-enhancement-en-title {
+  color: #bdc1c6;
+}
+}
+
+
+.immersive-translate-search-settings {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.immersive-translate-search-recomend::before {
+  /* content: " "; */
+  /* width: 20px; */
+  /* height: 20px; */
+  /* top: 16px; */
+  /* position: absolute; */
+  /* background: center / contain url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAxlBMVEUAAADpTInqTIjpSofnSIfqS4nfS4XqS4nqTIjsTYnrTInqTIroS4jvQIDqTIn////+/v7rSYjpTIn8/v7uaZzrTIr9/f3wfansWJL88/b85e73qc39+/v3xNnylrvrVI/98fb62Obva5/8+fr76vH4y9zpSIj74e353Oj1ocTzm77xhK/veKbtYpjsXJTqU47oTInxjrXyh7L99fj40eH2ttH1udD3sc31ssz1rMnykLXucqPtbqD85e/1xdn2u9DzqcXrUY6FaJb8AAAADnRSTlMA34BgIM8Q37/fz7+/EGOHcVQAAAGhSURBVDjLhZPncuowEEZFTW7bXVU7xsYYTO/p7bb3f6lICIOYJOT4h7/VnFmvrBFjrF3/CR/SajBHswafctG0Qg3O8O0Xa8BZ6uw7eLjqr30SofCDVSkemMinfL1ecy20r5ygR5zz3ArcAqJExPTPKhDENEmS30Q9+yo4lEQkqVTiIEAHCT10xWERRdH0Bq0aCOPZNDV3s0xaYce1lHEoDHU8wEh3qRJypNcTAeKUIjgKMeGLDoRCLVLTVf+Ownj8Kk6H9HM6QXPgYjQSB0F00EJEu10ILQrs/QeP77BSSr0MzLOyuJJQbnUoOOIUI/A8EeJk9E4YUHUWiRyTVKGgQUB8/3e/NpdGlfI+FMQyWsCBWyz4A/ZyHXyiiz0Ne5aGZssoxRmcChw8/EFKQ5JwwkUo3FRT5yXS7q+Y/rHDZmFktzpGMvO+5QofA4FPpEmGw+EWRCFvnaof7Zhe8NuYSLR0xErKLThUSs8gnODh87ssy6438yzbLzxl012HS19vfCf3CNhnbWOL1eEsDda+gDPUvri8tSZzNFrwIZf1NmNvqC1I/t8j7nYAAAAASUVORK5CYII='); */
+}
+
+.immersive-translate-search-title {}
+
+.immersive-translate-search-title-wrapper {}
+
+.immersive-translate-search-time {
+  font-size: 12px;
+  margin: 4px 0 24px;
+  color: #70757a;
+}
+
+.immersive-translate-expand-items {
+  display: none;
+}
+
+.immersive-translate-search-more {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.immersive-translate-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size:15px;
+}
+
+.immersive-translate-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.immersive-translate-modal-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: hsl(205, 20%, 32%);
+}
+
+.immersive-translate-modal-body {
+  color: hsl(205, 20%, 32%)
+}
+
+.immersive-translate-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.immersive-translate-close:hover,
+.immersive-translate-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.immersive-translate-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.immersive-translate-btn {
+  width: fit-content;
+  color: #fff;
+  background-color: #ea4c89;
+  border: none;
+  font-size: 14px;
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.immersive-translate-btn:hover {
+  background-color: #f082ac;
+}
+.immersive-translate-cancel-btn {
+  /* gray color */
+  background-color: rgb(89, 107, 120);
+}
+
+
+.immersive-translate-cancel-btn:hover {
+  background-color: hsl(205, 20%, 32%);
+}
+
+
+.immersive-translate-btn svg {
+  margin-right: 5px;
+}
+
+.immersive-translate-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #007bff;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+}
+
+.immersive-translate-primary-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #ea4c89;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+}
+
+.immersive-translate-modal input[type="radio"] {
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.immersive-translate-modal label {
+  cursor: pointer;
+}
+
+.immersive-translate-close-action {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  cursor: pointer;
+}
+</style><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: dashed underline var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: dotted underline var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: wavy underline var(--immersive-translate-theme-wavy-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: help;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+}
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">
+</style></head>
+<body data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca">
+<div class="header" id="qtdocheader" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca">
+    <div class="main" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca">
+    <div class="main-rounded" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca">
+        <div class="navigationbar" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca">
+        <ul data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca">
+<li data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="../qtdoc/index.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1">Qt 6.2</a></li>
+<li data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-index.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt Widgets</font></font></font></a></li>
+<li data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt Widgets示例</font></font></font></li>
+<li id="buildversion" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-index.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt 6.2.3参考文档</font></font></font></a></li>
     </ul>
     </div>
 </div>
-<div class="content">
-<div class="line">
-<div class="content mainContent">
-<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
-<h1 class="title">Qt Widgets Examples</h1>
+<div class="content" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca">
+<div class="line" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca">
+<div class="content mainContent" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca">
+<div class="sidebar" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><div class="sidebar-content" id="sidebar-content" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"></div></div>
+<h1 class="title" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt Widgets示例</font></font></font></h1>
 <!-- $$$examples-widgets-description -->
-<div class="descr" id="details">
-<p class="centerAlign"><img src="images/widget-examples.png" alt="" /></p><p>Qt comes with a large range of standard widgets that users of modern applications have come to expect.</p>
-<p>You can also develop your own custom widgets and controls, and use them alongside standard widgets.</p>
-<p>It is even possible to provide custom styles and themes for widgets that can be used to change the appearance of standard widgets and appropriately written custom widgets.</p>
+<div class="descr" id="details" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca">
+<p class="centerAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><img src="images/widget-examples.png" alt="" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"></p><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt附带了大量的标准Widgets，这是现代应用程序的用户所期待的。</font></font></font></p>
+<p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">您还可以开发自己的定制Widgets和控件，并将它们与标准Widgets一起使用。</font></font></font></p>
+<p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">甚至可以为Widgets提供定制样式和主题，这些样式和主题可用于更改标准Widgets和适当编写的定制Widgets的外观。</font></font></font></p>
 </div>
 <!-- @@@examples-widgets -->
-<div class="table"><table class="annotated">
-<tr class="odd topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-analogclock-example.html">Analog Clock Example</a></p></td><td class="tblDescr"><p>The Analog Clock example shows how to draw the contents of a custom widget.</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-calculator-example.html">Calculator Example</a></p></td><td class="tblDescr"><p>The example shows how to use signals and slots to implement the functionality of a calculator widget, and how to use QGridLayout to place child widgets in a grid.</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-calendarwidget-example.html">Calendar Widget Example</a></p></td><td class="tblDescr"><p>The Calendar Widget example shows use of QCalendarWidget.</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-charactermap-example.html">Character Map Example</a></p></td><td class="tblDescr"><p>The Character Map example shows how to create a custom widget that can both display its own content and respond to user input.</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-codeeditor-example.html">Code Editor Example</a></p></td><td class="tblDescr"><p>The Code Editor example shows how to create a simple editor that has line numbers and that highlights the current line.</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-digitalclock-example.html">Digital Clock Example</a></p></td><td class="tblDescr"><p>The Digital Clock example shows how to use QLCDNumber to display a number with LCD-like digits.</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-groupbox-example.html">Group Box Example</a></p></td><td class="tblDescr"><p>The Group Box example shows how to use the different kinds of group boxes in Qt.</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-icons-example.html">Icons Example</a></p></td><td class="tblDescr"><p>The Icons example shows how QIcon can generate pixmaps reflecting an icon's state, mode and size.</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-imageviewer-example.html">Image Viewer Example</a></p></td><td class="tblDescr"><p>The example shows how to combine QLabel and QScrollArea to display an image.</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-lineedits-example.html">Line Edits Example</a></p></td><td class="tblDescr"><p>The Line Edits example demonstrates the many ways that QLineEdit can be used, and shows the effects of various properties and validators on the input and output supplied by the user.</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-movie-example.html">Movie Example</a></p></td><td class="tblDescr"><p>The Movie example demonstrates how to use QMovie and QLabel to display animations.</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-scribble-example.html">Scribble Example</a></p></td><td class="tblDescr"><p>The Scribble example shows how to reimplement some of QWidget's event handlers to receive the events generated for the application's widgets.</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-shapedclock-example.html">Shaped Clock Example</a></p></td><td class="tblDescr"><p>The Shaped Clock example shows how to apply a translucent background and a widget mask to a top-level widget to produce a shaped window.</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-sliders-example.html">Sliders Example</a></p></td><td class="tblDescr"><p>The Sliders example shows how to use the different types of sliders available in Qt: QSlider, QScrollBar and QDial.</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-spinboxes-example.html">Spin Boxes Example</a></p></td><td class="tblDescr"><p>The Spin Boxes example shows how to use the many different types of spin boxes available in Qt, from a simple QSpinBox widget to more complex editors like the QDateTimeEdit widget.</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-stylesheet-example.html">Style Sheet Example</a></p></td><td class="tblDescr"><p>The Style Sheet Example shows how to use style sheets.</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-styles-example.html">Styles Example</a></p></td><td class="tblDescr"><p>The Styles example illustrates how to create custom widget drawing styles using Qt, and demonstrates Qt's predefined styles.</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="qtwidgets-desktop-systray-example.html">System Tray Icon Example</a></p></td><td class="tblDescr"><p>The System Tray Icon example shows how to add an icon with a menu and popup messages to a desktop environment's system tray.</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-tablet-example.html">Tablet Example</a></p></td><td class="tblDescr"><p>This example shows how to use a Wacom tablet in Qt applications.</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-tetrix-example.html">Tetrix Example</a></p></td><td class="tblDescr"><p>The Tetrix example is a Qt version of the classic Tetrix game.</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-tooltips-example.html">Tool Tips Example</a></p></td><td class="tblDescr"><p>The Tool Tips example shows how to provide static and dynamic tool tips for an application's widgets.</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="qtwidgets-gallery-example.html">Widgets Gallery Example</a></p></td><td class="tblDescr"><p>The Widgets Gallery example shows widgets relevant for designing UIs.</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-wiggly-example.html">Wiggly Example</a></p></td><td class="tblDescr"><p>The Wiggly example shows how to animate a widget using QBasicTimer and timerEvent(). In addition, the example demonstrates how to use QFontMetrics to determine the size of text on screen.</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="qtwidgets-widgets-windowflags-example.html">Window Flags Example</a></p></td><td class="tblDescr"><p>The Window Flags example shows how to use the window flags available in Qt.</p></td></tr>
-</table></div>
+<div class="table" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><table class="annotated" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca">
+<tbody data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><tr class="odd topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-analogclock-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">模拟时钟示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Analog Clock示例展示了如何绘制自定义Widgets的内容。</font></font></font></p></td></tr>
+<tr class="even topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-calculator-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">计算器示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">该示例展示了如何使用信号和槽来实现计算器Widgets的功能，以及如何使用QGridLayout将子Widgets放置在网格中。</font></font></font></p></td></tr>
+<tr class="odd topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-calendarwidget-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">日历Widgets示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">日历Widgets示例显示了QCalendarWidget的用法。</font></font></font></p></td></tr>
+<tr class="even topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-charactermap-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">字符映射表示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Character Map示例展示了如何创建既能显示自己的内容又能响应用户输入的定制Widgets。</font></font></font></p></td></tr>
+<tr class="odd topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-codeeditor-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">代码编辑器示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">代码编辑器示例演示如何创建具有行号并突出显示当前行的简单编辑器。</font></font></font></p></td></tr>
+<tr class="even topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-digitalclock-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">数字时钟示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Digital Clock示例演示如何使用QLCDNumber显示具有类似LCD的数字的数字。</font></font></font></p></td></tr>
+<tr class="odd topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-groupbox-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">组框示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">组框示例展示了如何在Qt中使用不同类型的组框。</font></font></font></p></td></tr>
+<tr class="even topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-icons-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">图标示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Icons示例展示了QIcon如何生成反映图标状态、模式和大小的像素图。</font></font></font></p></td></tr>
+<tr class="odd topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-imageviewer-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">图像查看器示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">该示例展示了如何组合QLabel和QScrollArea来显示图像。</font></font></font></p></td></tr>
+<tr class="even topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-lineedits-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">行编辑示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Line Edits示例演示了QLineEDIT的多种使用方法，并展示了各种属性和验证器对用户提供的输入和输出的影响。</font></font></font></p></td></tr>
+<tr class="odd topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-movie-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">电影示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Movie示例演示如何使用QMovie和QLabel来显示动画。</font></font></font></p></td></tr>
+<tr class="even topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-scribble-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">涂鸦示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Scribble示例展示了如何重新实现一些QWidget的事件处理程序，以接收为应用程序的Widgets生成的事件。</font></font></font></p></td></tr>
+<tr class="odd topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-shapedclock-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">异形钟表示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Shape Clock示例展示了如何将半透明背景和小工具蒙版应用于顶级小工具以生成一个Shape窗口。</font></font></font></p></td></tr>
+<tr class="even topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-sliders-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">滑块示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Sliders示例显示如何使用Qt中可用的不同类型的滑块：QSlider、QScrollBar和QDial。</font></font></font></p></td></tr>
+<tr class="odd topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-spinboxes-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">数字显示框示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">数字显示框示例展示了如何使用Qt中提供的许多不同类型的数字显示框，从简单的QSpinBoxWidgets到更复杂的编辑器，如QDateTimeEditWidgets。</font></font></font></p></td></tr>
+<tr class="even topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-stylesheet-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">样式表示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">样式表示例说明如何使用样式表。</font></font></font></p></td></tr>
+<tr class="odd topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-styles-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">样式示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Styles示例说明了如何使用Qt创建自定义Widgets绘制样式，并演示了Qt的预定义样式。</font></font></font></p></td></tr>
+<tr class="even topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-desktop-systray-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">系统托盘图标示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">系统任务栏图标示例显示如何将带有菜单和弹出消息的图标添加到桌面环境的系统任务栏中。</font></font></font></p></td></tr>
+<tr class="odd topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-tablet-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">平板电脑示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">这个例子展示了如何在Qt应用程序中使用Wacom平板电脑。</font></font></font></p></td></tr>
+<tr class="even topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-tetrix-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">TETRIX示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">TETRIX的例子是经典TETRIX游戏的Qt版本。</font></font></font></p></td></tr>
+<tr class="odd topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-tooltips-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">工具提示示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">工具提示示例展示了如何为应用程序的Widgets提供静态和动态工具提示。</font></font></font></p></td></tr>
+<tr class="even topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-gallery-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">微件图库示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Widget Gallery示例显示了与设计UI相关的Widget。</font></font></font></p></td></tr>
+<tr class="odd topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-wiggly-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">摇摆的例子</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Wiggly示例展示了如何使用QBasicTimer和timerEvent()为Widgets制作动画。此外，该示例还演示了如何使用QFontMetrics来确定屏幕上的文本大小。</font></font></font></p></td></tr>
+<tr class="even topAlign" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><td class="tblName" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><a href="qtwidgets-widgets-windowflags-example.html" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">窗口标志示例</font></font></font></a></p></td><td class="tblDescr" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">窗口标志示例显示如何使用Qt中可用的窗口标志。</font></font></font></p></td></tr>
+</tbody></table></div>
         </div>
        </div>
    </div>
    </div>
 </div>
-<div class="footer">
-   <p>
-   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
-   Documentation contributions included herein are the copyrights of
-   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
-   of their respective owners. </p>
+<div class="footer" data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca">
+   <p data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca" data-immersive-translate-paragraph="1">
+   <font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">©2022，QT有限公司。此处包含的文档投稿是其各自所有者的版权。</font></font></font><br data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">本文提供的文档是根据自由软件基金会发布的GNU自由文档许可证1.3版的条款进行许可的。</font></font></font><br data-immersive-translate-walked="30593842-cc9a-4fdd-869e-7fb23bca18ca"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt和各自的徽标是Qt有限公司在芬兰和/或世界其他国家/地区的商标。所有其他商标均为其各自所有者的财产。</font></font></font></p>
 </div>
-</body>
-</html>
+
+
+</body><div id="immersive-translate-popup" style="all: initial"></div></html>

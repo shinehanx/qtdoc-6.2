@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="utf-8">
 <!-- accessible.qdoc -->
-  <title>Accessibility | Qt 6.2</title>
-  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <title>易用性 | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css">
   <script type="text/javascript">
     document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
     // loading style sheet breaks anchors that were jumped to before
@@ -18,7 +16,721 @@
         }, 0);
     }, 0);
   </script>
-</head>
+<style data-id="immersive-translate-input-injected-css">.immersive-translate-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2147483647;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+
+.immersive-translate-input-loading {
+  --loading-color: #f78fb6;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  margin: 12px auto;
+  position: relative;
+  color: white;
+  left: -100px;
+  box-sizing: border-box;
+  animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+}
+
+@keyframes immersiveTranslateShadowRolling {
+  0% {
+    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  12% {
+    box-shadow: 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  25% {
+    box-shadow: 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  36% {
+    box-shadow: 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow: 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color);
+  }
+
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color);
+  }
+
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color);
+  }
+
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color);
+  }
+
+  100% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+  }
+}
+
+
+.immersive-translate-search-recomend {
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  font-size: 16px;
+}
+.immersive-translate-search-enhancement-en-title {
+  color: #4d5156;
+}
+/* dark */
+@media (prefers-color-scheme: dark) {
+  .immersive-translate-search-recomend {
+    border: 1px solid #3c4043;
+  }
+  .immersive-translate-close-action svg {
+    fill: #bdc1c6;
+  }
+
+.immersive-translate-search-enhancement-en-title {
+  color: #bdc1c6;
+}
+}
+
+
+.immersive-translate-search-settings {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.immersive-translate-search-recomend::before {
+  /* content: " "; */
+  /* width: 20px; */
+  /* height: 20px; */
+  /* top: 16px; */
+  /* position: absolute; */
+  /* background: center / contain url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAxlBMVEUAAADpTInqTIjpSofnSIfqS4nfS4XqS4nqTIjsTYnrTInqTIroS4jvQIDqTIn////+/v7rSYjpTIn8/v7uaZzrTIr9/f3wfansWJL88/b85e73qc39+/v3xNnylrvrVI/98fb62Obva5/8+fr76vH4y9zpSIj74e353Oj1ocTzm77xhK/veKbtYpjsXJTqU47oTInxjrXyh7L99fj40eH2ttH1udD3sc31ssz1rMnykLXucqPtbqD85e/1xdn2u9DzqcXrUY6FaJb8AAAADnRSTlMA34BgIM8Q37/fz7+/EGOHcVQAAAGhSURBVDjLhZPncuowEEZFTW7bXVU7xsYYTO/p7bb3f6lICIOYJOT4h7/VnFmvrBFjrF3/CR/SajBHswafctG0Qg3O8O0Xa8BZ6uw7eLjqr30SofCDVSkemMinfL1ecy20r5ygR5zz3ArcAqJExPTPKhDENEmS30Q9+yo4lEQkqVTiIEAHCT10xWERRdH0Bq0aCOPZNDV3s0xaYce1lHEoDHU8wEh3qRJypNcTAeKUIjgKMeGLDoRCLVLTVf+Ownj8Kk6H9HM6QXPgYjQSB0F00EJEu10ILQrs/QeP77BSSr0MzLOyuJJQbnUoOOIUI/A8EeJk9E4YUHUWiRyTVKGgQUB8/3e/NpdGlfI+FMQyWsCBWyz4A/ZyHXyiiz0Ne5aGZssoxRmcChw8/EFKQ5JwwkUo3FRT5yXS7q+Y/rHDZmFktzpGMvO+5QofA4FPpEmGw+EWRCFvnaof7Zhe8NuYSLR0xErKLThUSs8gnODh87ssy6438yzbLzxl012HS19vfCf3CNhnbWOL1eEsDda+gDPUvri8tSZzNFrwIZf1NmNvqC1I/t8j7nYAAAAASUVORK5CYII='); */
+}
+
+.immersive-translate-search-title {}
+
+.immersive-translate-search-title-wrapper {}
+
+.immersive-translate-search-time {
+  font-size: 12px;
+  margin: 4px 0 24px;
+  color: #70757a;
+}
+
+.immersive-translate-expand-items {
+  display: none;
+}
+
+.immersive-translate-search-more {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.immersive-translate-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size:15px;
+}
+
+.immersive-translate-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.immersive-translate-modal-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: hsl(205, 20%, 32%);
+}
+
+.immersive-translate-modal-body {
+  color: hsl(205, 20%, 32%)
+}
+
+.immersive-translate-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.immersive-translate-close:hover,
+.immersive-translate-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.immersive-translate-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.immersive-translate-btn {
+  width: fit-content;
+  color: #fff;
+  background-color: #ea4c89;
+  border: none;
+  font-size: 14px;
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.immersive-translate-btn:hover {
+  background-color: #f082ac;
+}
+.immersive-translate-cancel-btn {
+  /* gray color */
+  background-color: rgb(89, 107, 120);
+}
+
+
+.immersive-translate-cancel-btn:hover {
+  background-color: hsl(205, 20%, 32%);
+}
+
+
+.immersive-translate-btn svg {
+  margin-right: 5px;
+}
+
+.immersive-translate-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #007bff;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+}
+
+.immersive-translate-primary-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #ea4c89;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+}
+
+.immersive-translate-modal input[type="radio"] {
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.immersive-translate-modal label {
+  cursor: pointer;
+}
+
+.immersive-translate-close-action {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  cursor: pointer;
+}
+</style><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: dashed underline var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: dotted underline var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: wavy underline var(--immersive-translate-theme-wavy-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: help;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+}
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">
+</style></head>
 <body>
 <div class="header" id="qtdocheader">
     <div class="main">
@@ -26,80 +738,80 @@
         <div class="navigationbar">
         <ul>
 <li><a href="index.html">Qt 6.2</a></li>
-<li><a href="overviews-main.html#best-practices">Best Practice Guides</a></li>
-<li>Accessibility</li>
-<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+<li><a href="overviews-main.html#best-practices">最佳实践指南</a></li>
+<li>易用性</li>
+<li id="buildversion" data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt 6.2.3参考文档</font></font></font></li>
     </ul>
     </div>
 </div>
 <div class="content">
 <div class="line">
 <div class="content mainContent">
-  <link rel="next" href="accessible-qwidget.html" />
-<p class="naviNextPrevious headerNavi">
-<a class="nextPage" href="accessible-qwidget.html">Accessibility for QWidget Applications</a>
+  <link rel="next" href="accessible-qwidget.html">
+<p class="naviNextPrevious headerNavi" data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd">
+<a class="nextPage" href="accessible-qwidget.html" data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">QWidget应用程序的易用性</font></font></font></a>
 </p>
 <div class="sidebar">
 <div class="toc">
 <h3 id="toc">Contents</h3>
 <ul>
-<li class="level1"><a href="#introduction">Introduction</a></li>
-<li class="level1"><a href="#making-applications-accessible">Making Applications Accessible</a></li>
+<li class="level1" data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd"><a href="#introduction" data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">引言</font></font></font></a></li>
+<li class="level1" data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd"><a href="#making-applications-accessible" data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">使应用程序具有易用性</font></font></font></a></li>
 </ul>
 </div>
 <div class="sidebar-content" id="sidebar-content"></div></div>
-<h1 class="title">Accessibility</h1>
+<h1 class="title">易用性</h1>
 <!-- $$$accessible.html-description -->
 <div class="descr" id="details">
-<h2 id="introduction">Introduction</h2>
-<p>Accessibility in computer software is making applications usable for people with different abilities. It is important to take different people's needs into account, for example, in case of low vision, hearing, dexterity, or cognitive problems. Some examples of accessibility measures are keyboard shortcuts, a high-contrast user interface that uses specially selected colors and fonts, or support for assistive tools such as screen readers and braille displays.</p>
-<p>A basic checklist that any application should aim for:</p>
+<h2 id="introduction" data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">介绍 </font></font></font></h2>
+<p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">计算机软件的易用性使不同能力的人都可以使用应用程序。重要的是要考虑到不同人的需求，例如，在视力、听力、灵巧或认知问题的情况下。辅助功能测量的一些示例包括键盘快捷键、使用特别选择的颜色和字体的高对比度用户界面，或对屏幕阅读器和盲文显示等辅助工具的支持。</font></font></font></p>
+<p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">任何应用程序都应该以此为目标的基本清单：</font></font></font></p>
 <ul>
-<li><b>Usability</b> - Usability and user centric design generally lead to more usable applications, including improvements for people with various abilities.</li>
-<li><b>Fonts</b> - Font settings should follow the system/platform. This allows users to select fonts for readability and increasing the font size.</li>
-<li><b>Colors</b> - Provide enough contrast and consider the most common cases of low vision and color blindness. Make sure that the application is usable, for example, for people with red/green blindness, and don't depend on colors only.</li>
-<li><b>Scalable UI</b> - A user interface that works in various sizes and properly supports different fonts and accommodates size changes.</li>
-<li><b>Sounds</b> - Do not exclusively rely on sound notifications, provide a visual alternative when a sound signal is imperative to using the application.</li>
-<li><b>Spelling</b> - Offer spell checking wherever it makes sense, even when only a single word is expected.</li>
-<li><b>Assistive Technology</b> - Support the use of assistive tools (AT). Either use standard widgets/controls which support ATs out of the box, or make sure that your custom widgets and controls support accessibility properly. In order to learn more about this read on below.</li>
+<li data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">可用性-可用性和以用户为中心的设计通常会带来更多可用的应用程序，包括为具有各种能力的人提供改进。</font></font></font></li>
+<li data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">字体-字体设置应遵循系统/平台。这允许用户选择字体以提高可读性并增加字体大小。</font></font></font></li>
+<li data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">颜色-提供足够的对比度，并考虑最常见的视力低下和色盲情况。确保应用程序是可用的，例如，对于红/绿盲人，而不是只依赖于颜色。</font></font></font></li>
+<li data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">可伸缩的用户界面--以各种大小工作的用户界面，适当地支持不同的字体，并适应大小的变化。</font></font></font></li>
+<li data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">声音-不完全依赖声音通知，当使用应用程序必须使用声音信号时，提供一种视觉替代方案。</font></font></font></li>
+<li data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">拼写-提供任何有意义的拼写检查，即使只需要一个单词。</font></font></font></li>
+<li data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">辅助技术-支持使用辅助工具(AT)。要么使用支持开箱即用的AT的标准小部件/控件，要么确保您的自定义小部件和控件正确地支持易用性。为了更多地了解这一点，请阅读下面的内容。</font></font></font></li>
 </ul>
-<p>This part of the documentation assumes that the basics for accessibility, which go hand in hand with usability, are already in good shape. The rest of this document focuses more specifically on supporting assistive technology.</p>
-<p>Assistive Tools (or ATs) come in great variety and help users with different tasks. For this reason what individual applications offer (with the help of Qt) is a generic API that allows to inspect what is on screen in a semantic way and offers the typical interactions with the UI elements.</p>
-<p>Applications do not usually communicate directly with the assistive tools, but through a platform specific API. Generally the communication with the ATs works though an IPC mechanism. Semantic information about user interface elements, such as buttons and scroll bars, is exposed to the assistive technologies. Qt supports UI Automation on Windows, macOS Accessibility on macOS, and AT-SPI via DBus on Unix/X11. The platform specific technologies are abstracted by Qt, so that applications do not need any platform specific changes to work with the different native APIs. Qt tries to make adding accessibility support to your application as easy as possible, only a few changes from your side may be required to allow even more users to enjoy it.</p>
-<p>The main reason to consult this documentation is to learn how to make custom <a href="../qtwidgets/qwidget.html">QWidget</a> subclasses and <a href="../qtquick/qquickitem.html">QQuickItem</a>s accessible.</p>
-<p>In this overview document, we will examine the overall Qt accessibility architecture, and how to implement accessibility for custom widgets and elements.</p>
-<h2 id="making-applications-accessible">Making Applications Accessible</h2>
-<p>These two pages focus on giving an overview of how to achieve good accessibility:</p>
-<p><a href="accessible-qwidget.html">Accessibility for QWidget Applications</a></p>
-<p><a href="accessible-qtquick.html">Accessibility for Qt Quick Applications</a></p>
-<p>These classes provide support for accessible applications: <div class="table"><table class="annotated">
-<tr class="odd topAlign"><td class="tblName"><p><a href="../qtquick/qml-qtquick-accessible.html">Accessible</a></p></td><td class="tblDescr"><p>Enables accessibility of QML items</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessible.html">QAccessible</a></p></td><td class="tblDescr"><p>Enums and static functions related to accessibility</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibleactioninterface.html">QAccessibleActionInterface</a></p></td><td class="tblDescr"><p>Implements support for invocable actions in the interface</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibleeditabletextinterface.html">QAccessibleEditableTextInterface</a></p></td><td class="tblDescr"><p>Implements support for objects with editable text</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibleevent.html">QAccessibleEvent</a></p></td><td class="tblDescr"><p>The base class for accessibility notifications</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibleinterface.html">QAccessibleInterface</a></p></td><td class="tblDescr"><p>Defines an interface that exposes information about accessible objects</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibleobject.html">QAccessibleObject</a></p></td><td class="tblDescr"><p>Implements parts of the QAccessibleInterface for QObjects</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibleplugin.html">QAccessiblePlugin</a></p></td><td class="tblDescr"><p>Abstract base class for plugins provinding accessibility information for user interface elements</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessiblestatechangeevent.html">QAccessibleStateChangeEvent</a></p></td><td class="tblDescr"><p>Notfies the accessibility framework that the state of an object has changed</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletablecellinterface.html">QAccessibleTableCellInterface</a></p></td><td class="tblDescr"><p>Implements support for the IAccessibleTable2 Cell interface</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletableinterface.html">QAccessibleTableInterface</a></p></td><td class="tblDescr"><p>Implements support for the IAccessibleTable2 interface</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletablemodelchangeevent.html">QAccessibleTableModelChangeEvent</a></p></td><td class="tblDescr"><p>Signifies a change in a table, list, or tree where cells are added or removed. If the change affected a number of rows, firstColumn and lastColumn will return -1. Likewise for columns, the row functions may return -1</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletextcursorevent.html">QAccessibleTextCursorEvent</a></p></td><td class="tblDescr"><p>Notifies of cursor movements</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletextinsertevent.html">QAccessibleTextInsertEvent</a></p></td><td class="tblDescr"><p>Notifies of text being inserted</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletextinterface.html">QAccessibleTextInterface</a></p></td><td class="tblDescr"><p>Implements support for text handling</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletextremoveevent.html">QAccessibleTextRemoveEvent</a></p></td><td class="tblDescr"><p>Notifies of text being deleted</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletextselectionevent.html">QAccessibleTextSelectionEvent</a></p></td><td class="tblDescr"><p>Signals a change in the text selection of an object</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletextupdateevent.html">QAccessibleTextUpdateEvent</a></p></td><td class="tblDescr"><p>Notifies about text changes. This is for accessibles that support editable text such as line edits. This event occurs for example when a portion of selected text gets replaced by pasting a new text or in override mode of editors</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessiblevaluechangeevent.html">QAccessibleValueChangeEvent</a></p></td><td class="tblDescr"><p>Describes a change in value for an accessible object</p></td></tr>
-<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessiblevalueinterface.html">QAccessibleValueInterface</a></p></td><td class="tblDescr"><p>Implements support for objects that manipulate a value</p></td></tr>
-<tr class="odd topAlign"><td class="tblName"><p><a href="../qtwidgets/qaccessiblewidget.html">QAccessibleWidget</a></p></td><td class="tblDescr"><p>Implements the QAccessibleInterface for QWidgets</p></td></tr>
-</table></div>
-</p>
+<p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">文档的这一部分假定，与可用性齐头并进的易用性基础已经很好了。本文档的其余部分更具体地关注支持辅助技术。</font></font></font></p>
+<p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">辅助工具(或称AT)种类繁多，可帮助用户完成不同的任务。因此，个别应用程序(在Qt的帮助下)提供的是一个通用API，它允许以语义的方式检查屏幕上显示的内容，并提供与UI元素的典型交互。</font></font></font></p>
+<p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">应用程序通常不直接与辅助工具通信，而是通过特定于平台的API进行通信。通常，与ATS的通信通过IPC机制工作。关于用户界面元素(例如按钮和滚动条)的语义信息被暴露给辅助技术。Qt支持Windows上的UI自动化、MacOS上的MacOS易用性，以及Unix/X11上通过DBus实现的AT-SPI。Qt抽象了特定于平台的技术，因此应用程序不需要任何特定于平台的更改即可使用不同的原生API。Qt试图尽可能容易地将辅助功能支持添加到您的应用程序中，您可能只需要做一些更改，就可以让更多的用户享受它。</font></font></font></p>
+<p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">参考本文档的主要原因是了解如何使定制的QWidget子类和QQuickItems可访问。</font></font></font></p>
+<p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">在这篇概述文档中，我们将研究整个Qt辅助功能体系结构，以及如何实现自定义小部件和元素的辅助功能。</font></font></font></p>
+<h2 id="making-applications-accessible" data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">使应用程序具有易用性</font></font></font></h2>
+<p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">这两个页面重点概述如何实现良好的易用性：</font></font></font></p>
+<p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd"><a href="accessible-qwidget.html" data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1">易用性 for QWidget Applications</a></p>
+<p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd"><a href="accessible-qtquick.html" data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1">易用性 for Qt Quick Applications</a></p>
+<p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">这些类支持可访问的应用程序：</font></font></font></p><div class="table"><table class="annotated">
+<tbody><tr class="odd topAlign"><td class="tblName"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd"><a href="../qtquick/qml-qtquick-accessible.html" data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1">Accessible</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">启用QML项目的易用性</font></font></font></p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessible.html">QAccessible</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">与易用性相关的枚举和静态函数</font></font></font></p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibleactioninterface.html">QAccessibleActionInterface</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">在接口中实现对可调用操作的支持</font></font></font></p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibleeditabletextinterface.html">QAccessibleEditableTextInterface</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">实现对具有可编辑文本的对象的支持</font></font></font></p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibleevent.html">QAccessibleEvent</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">辅助功能通知的基类</font></font></font></p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibleinterface.html">QAccessibleInterface</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">定义公开有关辅助对象的信息的接口</font></font></font></p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibleobject.html">QAccessibleObject</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">实现QObject的部分QAccessible接口</font></font></font></p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibleplugin.html">QAccessiblePlugin</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">插件的抽象基类，用于提取用户界面元素的辅助功能信息</font></font></font></p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessiblestatechangeevent.html">QAccessibleStateChangeEvent</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">通知辅助功能框架对象的状态已更改</font></font></font></p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletablecellinterface.html">QAccessibleTableCellInterface</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">实现对IAccessibleTable2单元格接口的支持</font></font></font></p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletableinterface.html">QAccessibleTableInterface</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">实现对IAccessibleTable2接口的支持</font></font></font></p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletablemodelchangeevent.html">QAccessibleTableModelChangeEvent</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">表示在表格、列表或树中添加或删除单元格的更改。如果更改影响多个行，则FirstColumn和lastColumn将返回-1。同样，对于列，行函数可能返回-1</font></font></font></p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletextcursorevent.html">QAccessibleTextCursorEvent</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">通知光标移动</font></font></font></p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletextinsertevent.html">QAccessibleTextInsertEvent</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">通知插入的文本</font></font></font></p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletextinterface.html">QAccessibleTextInterface</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">实现对文本处理的支持</font></font></font></p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletextremoveevent.html">QAccessibleTextRemoveEvent</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">通知文本被删除</font></font></font></p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletextselectionevent.html">QAccessibleTextSelectionEvent</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">表示对象的文本选择发生更改</font></font></font></p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessibletextupdateevent.html">QAccessibleTextUpdateEvent</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">通知文本更改。这适用于支持可编辑文本的可访问者，例如行编辑。例如，当通过粘贴新文本替换部分选定文本或在编辑器的覆盖模式下替换选定文本时，就会发生此事件</font></font></font></p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="../qtgui/qaccessiblevaluechangeevent.html">QAccessibleValueChangeEvent</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">描述可访问对象的值更改。</font></font></font></p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="../qtgui/qaccessiblevalueinterface.html">QAccessibleValueInterface</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">实现对操作值的对象的支持</font></font></font></p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="../qtwidgets/qaccessiblewidget.html">QAccessibleWidget</a></p></td><td class="tblDescr"><p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">实现QWidget的QAccessible接口</font></font></font></p></td></tr>
+</tbody></table></div>
+<p></p>
 </div>
 <!-- @@@accessible.html -->
 <p class="naviNextPrevious footerNavi">
-<a class="nextPage" href="accessible-qwidget.html">Accessibility for QWidget Applications</a>
+<a class="nextPage" href="accessible-qwidget.html">易用性 for QWidget Applications</a>
 </p>
         </div>
        </div>
@@ -107,11 +819,9 @@
    </div>
 </div>
 <div class="footer">
-   <p>
-   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
-   Documentation contributions included herein are the copyrights of
-   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
-   of their respective owners. </p>
+   <p data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd" data-immersive-translate-paragraph="1">
+   <font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">©2022，QT有限公司。此处包含的文档投稿是其各自所有者的版权。</font></font></font><br data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">本文提供的文档是根据自由软件基金会发布的GNU自由文档许可证1.3版的条款进行许可的。</font></font></font><br data-immersive-translate-walked="fe52de82-89d5-49ca-b5fa-a73f119601cd"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt和各自的徽标是Qt有限公司在芬兰和/或世界其他国家/地区的商标。所有其他商标均为其各自所有者的财产。</font></font></font></p>
 </div>
-</body>
-</html>
+
+
+</body><div id="immersive-translate-popup" style="all: initial"></div></html>

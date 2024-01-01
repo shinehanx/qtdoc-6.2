@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="utf-8">
 <!-- whatsnew60.qdoc -->
-  <title>What's New in Qt 6.0 | Qt 6.2</title>
-  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <title>Qt 6.0的新特性 | Qt 6.2</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css">
   <script type="text/javascript">
     document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
     // loading style sheet breaks anchors that were jumped to before
@@ -18,7 +17,721 @@
         }, 0);
     }, 0);
   </script>
-</head>
+<style data-id="immersive-translate-input-injected-css">.immersive-translate-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2147483647;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+
+.immersive-translate-input-loading {
+  --loading-color: #f78fb6;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  margin: 12px auto;
+  position: relative;
+  color: white;
+  left: -100px;
+  box-sizing: border-box;
+  animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+}
+
+@keyframes immersiveTranslateShadowRolling {
+  0% {
+    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  12% {
+    box-shadow: 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  25% {
+    box-shadow: 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  36% {
+    box-shadow: 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow: 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color);
+  }
+
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color);
+  }
+
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color);
+  }
+
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color);
+  }
+
+  100% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+  }
+}
+
+
+.immersive-translate-search-recomend {
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  font-size: 16px;
+}
+.immersive-translate-search-enhancement-en-title {
+  color: #4d5156;
+}
+/* dark */
+@media (prefers-color-scheme: dark) {
+  .immersive-translate-search-recomend {
+    border: 1px solid #3c4043;
+  }
+  .immersive-translate-close-action svg {
+    fill: #bdc1c6;
+  }
+
+.immersive-translate-search-enhancement-en-title {
+  color: #bdc1c6;
+}
+}
+
+
+.immersive-translate-search-settings {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.immersive-translate-search-recomend::before {
+  /* content: " "; */
+  /* width: 20px; */
+  /* height: 20px; */
+  /* top: 16px; */
+  /* position: absolute; */
+  /* background: center / contain url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAxlBMVEUAAADpTInqTIjpSofnSIfqS4nfS4XqS4nqTIjsTYnrTInqTIroS4jvQIDqTIn////+/v7rSYjpTIn8/v7uaZzrTIr9/f3wfansWJL88/b85e73qc39+/v3xNnylrvrVI/98fb62Obva5/8+fr76vH4y9zpSIj74e353Oj1ocTzm77xhK/veKbtYpjsXJTqU47oTInxjrXyh7L99fj40eH2ttH1udD3sc31ssz1rMnykLXucqPtbqD85e/1xdn2u9DzqcXrUY6FaJb8AAAADnRSTlMA34BgIM8Q37/fz7+/EGOHcVQAAAGhSURBVDjLhZPncuowEEZFTW7bXVU7xsYYTO/p7bb3f6lICIOYJOT4h7/VnFmvrBFjrF3/CR/SajBHswafctG0Qg3O8O0Xa8BZ6uw7eLjqr30SofCDVSkemMinfL1ecy20r5ygR5zz3ArcAqJExPTPKhDENEmS30Q9+yo4lEQkqVTiIEAHCT10xWERRdH0Bq0aCOPZNDV3s0xaYce1lHEoDHU8wEh3qRJypNcTAeKUIjgKMeGLDoRCLVLTVf+Ownj8Kk6H9HM6QXPgYjQSB0F00EJEu10ILQrs/QeP77BSSr0MzLOyuJJQbnUoOOIUI/A8EeJk9E4YUHUWiRyTVKGgQUB8/3e/NpdGlfI+FMQyWsCBWyz4A/ZyHXyiiz0Ne5aGZssoxRmcChw8/EFKQ5JwwkUo3FRT5yXS7q+Y/rHDZmFktzpGMvO+5QofA4FPpEmGw+EWRCFvnaof7Zhe8NuYSLR0xErKLThUSs8gnODh87ssy6438yzbLzxl012HS19vfCf3CNhnbWOL1eEsDda+gDPUvri8tSZzNFrwIZf1NmNvqC1I/t8j7nYAAAAASUVORK5CYII='); */
+}
+
+.immersive-translate-search-title {}
+
+.immersive-translate-search-title-wrapper {}
+
+.immersive-translate-search-time {
+  font-size: 12px;
+  margin: 4px 0 24px;
+  color: #70757a;
+}
+
+.immersive-translate-expand-items {
+  display: none;
+}
+
+.immersive-translate-search-more {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.immersive-translate-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size:15px;
+}
+
+.immersive-translate-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.immersive-translate-modal-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: hsl(205, 20%, 32%);
+}
+
+.immersive-translate-modal-body {
+  color: hsl(205, 20%, 32%)
+}
+
+.immersive-translate-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.immersive-translate-close:hover,
+.immersive-translate-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.immersive-translate-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.immersive-translate-btn {
+  width: fit-content;
+  color: #fff;
+  background-color: #ea4c89;
+  border: none;
+  font-size: 14px;
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.immersive-translate-btn:hover {
+  background-color: #f082ac;
+}
+.immersive-translate-cancel-btn {
+  /* gray color */
+  background-color: rgb(89, 107, 120);
+}
+
+
+.immersive-translate-cancel-btn:hover {
+  background-color: hsl(205, 20%, 32%);
+}
+
+
+.immersive-translate-btn svg {
+  margin-right: 5px;
+}
+
+.immersive-translate-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #007bff;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+}
+
+.immersive-translate-primary-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #ea4c89;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+}
+
+.immersive-translate-modal input[type="radio"] {
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.immersive-translate-modal label {
+  cursor: pointer;
+}
+
+.immersive-translate-close-action {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  cursor: pointer;
+}
+</style><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+.immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+.immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+.immersive-translate-pdf-target-container .immersive-translate-target-wrapper font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+.immersive-translate-state-dual>br {
+  display: none;
+}
+
+.immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+
+.immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline var(--immersive-translate-theme-nativeUnderline-borderColor) !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-dashedBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: block;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(--immersive-translate-theme-solidBorder-borderRadius) !important;
+  padding: 2px;
+}
+
+.immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: dashed underline var(--immersive-translate-theme-nativeDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(to right,
+      var(--immersive-translate-theme-dotted-borderColor) 30%,
+      rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+.immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: dotted underline var(--immersive-translate-theme-nativeDotted-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: wavy underline var(--immersive-translate-theme-wavy-borderColor) !important;
+}
+
+.immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%) repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+.immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+.immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+.immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+.immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(to right,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+      rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: block;
+}
+
+.immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: block;
+}
+
+.immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* opacity theme start */
+
+.immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner,.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(calc(var(--immersive-translate-theme-opacity-opacity) * 1%)) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+
+.immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+
+[data-immersive-translate-root-translation-theme="mask"] .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: help;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+}
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000C;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip:hover+.immersive-translate-tooltip-content {
+  display: block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+
+.immersive-translate-tooltip:hover:before {
+  display: block;
+}
+
+
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">
+</style></head>
 <body>
 <div class="header" id="qtdocheader">
     <div class="main">
@@ -26,8 +739,8 @@
         <div class="navigationbar">
         <ul>
 <li><a href="index.html">Qt 6.2</a></li>
-<li>What's New in Qt 6.0</li>
-<li id="buildversion">Qt 6.2.3 Reference Documentation</li>
+<li data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt 6.0的新特性</font></font></font></li>
+<li id="buildversion" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt 6.2.3参考文档</font></font></font></li>
     </ul>
     </div>
 </div>
@@ -36,85 +749,85 @@
 <div class="content mainContent">
 <div class="sidebar">
 <div class="toc">
-<h3 id="toc">Contents</h3>
+<h3 id="toc" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">目录</font></font></font></h3>
 <ul>
-<li class="level1"><a href="#build-system-changes-in-qt-6">Build System Changes in Qt 6</a></li>
-<li class="level1"><a href="#changes-to-supported-modules">Changes to Supported Modules</a></li>
-<li class="level1"><a href="#new-modules-in-qt-6-0">New Modules in Qt 6.0</a></li>
-<li class="level1"><a href="#removed-modules-in-qt-6-0">Removed Modules in Qt 6.0</a></li>
-<li class="level1"><a href="#new-classes-and-functions">New Classes and Functions</a></li>
+<li class="level1" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#build-system-changes-in-qt-6" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">在Qt 6中构建系统更改</font></font></font></a></li>
+<li class="level1" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#changes-to-supported-modules" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">对支持的模块的更改</font></font></font></a></li>
+<li class="level1" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-modules-in-qt-6-0" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt 6.0中的新模块</font></font></font></a></li>
+<li class="level1" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#removed-modules-in-qt-6-0" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner"> Qt 6.0中删除的模块</font></font></font></a></li>
+<li class="level1" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-classes-and-functions" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner"> 新的类和函数</font></font></font></a></li>
 </ul>
 </div>
 <div class="sidebar-content" id="sidebar-content"></div></div>
-<h1 class="title">What's New in Qt 6.0</h1>
+<h1 class="title" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt 6.0的新特性</font></font></font></h1>
 <!-- $$$whatsnew60.html-description -->
 <div class="descr" id="details">
-<h2 id="build-system-changes-in-qt-6">Build System Changes in Qt 6</h2>
-<p>Building Qt from sources now requires CMake and Ninja. See <a href="qt6-buildsystem.html">Build System Changes in Qt 6</a> for more details on this and other changes in configure.</p>
-<h2 id="changes-to-supported-modules">Changes to Supported Modules</h2>
-<p>Qt 6.0 is streamlined compared to Qt 5 and some modules are no longer in the default installation of Qt 6.0&#x2e; Because of the modularized structure of Qt, new modules or previous Qt 5 modules may appear in future releases of Qt 6. For more information, visit the <a href="qtmodules.html">All Modules</a> page.</p>
-<p>The <a href="modulechanges.html">Changes to Qt Modules in Qt 6</a> has a list of API changes.</p>
-<h2 id="new-modules-in-qt-6-0">New Modules in Qt 6.0</h2>
-<p>The following are new modules in Qt 6.0&#x2e;</p>
+<h2 id="build-system-changes-in-qt-6" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">在Qt 6中构建系统更改</font></font></font></h2>
+<p data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">从源代码构建Qt现在需要CMake和Ninja。请参阅Qt 6中的Build System Changes，了解有关configure中的此更改和其他更改的更多详细信息。</font></font></font></p>
+<h2 id="changes-to-supported-modules" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">对支持的模块的更改</font></font></font></h2>
+<p data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">与Qt 5相比，Qt 6.0得到了简化，一些模块不再是Qt 6.0的默认安装。由于Qt的模块化结构，未来的Qt 6版本中可能会出现新的模块或以前的Qt 5模块。有关更多信息，请访问所有模块页面。</font></font></font></p>
+<p data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt 6中对Qt模块的更改有一个API更改列表。</font></font></font></p>
+<h2 id="new-modules-in-qt-6-0" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt 6.0中的新模块</font></font></font></h2>
+<p data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">以下是Qt 6.0中的新模块。 </font></font></font></p>
 <ul>
 <li><a href="../qtcore5compat/qtcore5-index.html">Qt 5 Core Compatibility APIs</a></li>
 <li><a href="../qtshadertools/qtshadertools-index.html">Qt Shader Tools</a> - for graphics and compute shaders</li>
 </ul>
-<h2 id="removed-modules-in-qt-6-0">Removed Modules in Qt 6.0</h2>
-<p>The following are Qt 5 modules that are not in Qt 6.0&#x2e; They may be re-introduced in a future release of Qt 6.</p>
+<h2 id="removed-modules-in-qt-6-0" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt 6.0中删除的模块</font></font></font></h2>
+<p data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">以下是Qt 6.0中没有的Qt 5模块。它们可能会在未来的Qt6版本中重新引入。</font></font></font></p>
 <div class="table"><table class="generic" width="80%">
- <thead><tr class="qt-style"><th >Module</th><th >qmake</th><th >Comments</th></tr></thead>
-<tr valign="top" class="odd"><td >Qt Android Extras</td><td ><code>androidextras</code></td><td >See <a href="extras-changes-qt6.html">Changes to Qt Extras Modules</a></td></tr>
-<tr valign="top" class="even"><td >Qt Bluetooth</td><td ><code>bluetooth</code></td><td ></td></tr>
-<tr valign="top" class="odd"><td >Qt Charts</td><td ><code>charts</code></td><td ></td></tr>
-<tr valign="top" class="even"><td >Qt Data Visualization</td><td ><code>datavisualization</code></td><td ></td></tr>
-<tr valign="top" class="odd"><td >Qt Graphical Effects</td><td ></td><td >only QML types</td></tr>
-<tr valign="top" class="even"><td >Qt Location</td><td ><code>location</code></td><td ></td></tr>
-<tr valign="top" class="odd"><td >Qt Mac Extras</td><td ><code>macextras</code></td><td >See <a href="extras-changes-qt6.html">Changes to Qt Extras Modules</a></td></tr>
-<tr valign="top" class="even"><td >Qt Multimedia</td><td ><code>multimedia</code></td><td ></td></tr>
-<tr valign="top" class="odd"><td >Qt Multimedia Widgets</td><td ><code>multimediawidgets</code></td></tr>
-<tr valign="top" class="even"><td >Qt NFC</td><td ><code>nfc</code></td><td ></td></tr>
-<tr valign="top" class="odd"><td >Qt Positioning</td><td ><code>positioning</code></td><td ></td></tr>
-<tr valign="top" class="even"><td >Qt Purchasing</td><td ><code>purchasing</code></td><td ></td></tr>
-<tr valign="top" class="odd"><td >Qt Quick Extras</td><td ></td><td >Merged into <a href="../qtquickcontrols/qtquickcontrols-index.html">Qt Quick Controls</a></td></tr>
-<tr valign="top" class="even"><td >Qt Remote Objects</td><td ><code>remoteobjects</code></td><td ></td></tr>
-<tr valign="top" class="odd"><td >Qt Script</td><td ><code>qtscript</code></td><td ></td></tr>
-<tr valign="top" class="even"><td >Qt SCXML</td><td ><code>scxml</code></td><td ></td></tr>
-<tr valign="top" class="odd"><td >Qt Script Tools</td><td ><code>scripttools</code></td><td ></td></tr>
-<tr valign="top" class="even"><td >Qt Sensors</td><td ><code>sensors</code></td><td ></td></tr>
-<tr valign="top" class="odd"><td >Qt Serial Bus</td><td ><code>serialbus</code></td><td ></td></tr>
-<tr valign="top" class="even"><td >Qt Serial Port</td><td ><code>serialport</code></td><td ></td></tr>
-<tr valign="top" class="odd"><td >Qt Speech</td><td ><code>texttospeech</code></td><td ></td></tr>
-<tr valign="top" class="even"><td >Qt WebChannel</td><td ><code>webchannel</code></td><td ></td></tr>
-<tr valign="top" class="odd"><td >Qt <a href="../qtwebengine/qml-qtwebengine-webengine.html">WebEngine</a></td><td ><code>webenginecore</code></td><td ></td></tr>
-<tr valign="top" class="even"><td >Qt WebSockets</td><td ><code>websockets</code></td><td ></td></tr>
-<tr valign="top" class="odd"><td >Qt <a href="../qtwebview/qml-qtwebview-webview.html">WebView</a></td><td ><code>webview</code></td><td ></td></tr>
-<tr valign="top" class="even"><td >Qt Windows Extras</td><td ><code>winextras</code></td><td >See <a href="extras-changes-qt6.html">Changes to Qt Extras Modules</a></td></tr>
-<tr valign="top" class="odd"><td >Qt X11 Extras</td><td ><code>x11extras</code></td><td >See <a href="extras-changes-qt6.html">Changes to Qt Extras Modules</a></td></tr>
-<tr valign="top" class="even"><td >Qt XML Patterns</td><td ><code>xmlpatterns</code></td><td ></td></tr>
-</table></div>
-<h2 id="new-classes-and-functions">New Classes and Functions</h2>
-<p>The section provides a comprehensive list of all new classes and functions introduced in Qt 6.</p>
+ <thead><tr class="qt-style"><th data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">模块</font></font></font></th><th>qmake</th><th data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">评论</font></font></font></th></tr></thead>
+<tbody><tr valign="top" class="odd"><td>Qt Android Extras</td><td><code>androidextras</code></td><td>See <a href="extras-changes-qt6.html">Changes to Qt Extras Modules</a></td></tr>
+<tr valign="top" class="even"><td>Qt Bluetooth</td><td><code>bluetooth</code></td><td></td></tr>
+<tr valign="top" class="odd"><td>Qt Charts</td><td><code>charts</code></td><td></td></tr>
+<tr valign="top" class="even"><td>Qt Data Visualization</td><td><code>datavisualization</code></td><td></td></tr>
+<tr valign="top" class="odd"><td>Qt Graphical Effects</td><td></td><td data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">仅QML类型</font></font></font></td></tr>
+<tr valign="top" class="even"><td>Qt Location</td><td><code>location</code></td><td></td></tr>
+<tr valign="top" class="odd"><td>Qt Mac Extras</td><td><code>macextras</code></td><td>See <a href="extras-changes-qt6.html">Changes to Qt Extras Modules</a></td></tr>
+<tr valign="top" class="even"><td>Qt Multimedia</td><td><code>multimedia</code></td><td></td></tr>
+<tr valign="top" class="odd"><td>Qt Multimedia Widgets</td><td><code>multimediawidgets</code></td></tr>
+<tr valign="top" class="even"><td>Qt NFC</td><td><code>nfc</code></td><td></td></tr>
+<tr valign="top" class="odd"><td>Qt Positioning</td><td><code>positioning</code></td><td></td></tr>
+<tr valign="top" class="even"><td>Qt Purchasing</td><td><code>purchasing</code></td><td></td></tr>
+<tr valign="top" class="odd"><td>Qt Quick Extras</td><td></td><td>Merged into <a href="../qtquickcontrols/qtquickcontrols-index.html">Qt Quick Controls</a></td></tr>
+<tr valign="top" class="even"><td>Qt Remote Objects</td><td><code>remoteobjects</code></td><td></td></tr>
+<tr valign="top" class="odd"><td>Qt Script</td><td><code>qtscript</code></td><td></td></tr>
+<tr valign="top" class="even"><td>Qt SCXML</td><td><code>scxml</code></td><td></td></tr>
+<tr valign="top" class="odd"><td>Qt Script Tools</td><td><code>scripttools</code></td><td></td></tr>
+<tr valign="top" class="even"><td>Qt Sensors</td><td><code>sensors</code></td><td></td></tr>
+<tr valign="top" class="odd"><td>Qt Serial Bus</td><td><code>serialbus</code></td><td></td></tr>
+<tr valign="top" class="even"><td>Qt Serial Port</td><td><code>serialport</code></td><td></td></tr>
+<tr valign="top" class="odd"><td>Qt Speech</td><td><code>texttospeech</code></td><td></td></tr>
+<tr valign="top" class="even"><td>Qt WebChannel</td><td><code>webchannel</code></td><td></td></tr>
+<tr valign="top" class="odd"><td>Qt <a href="../qtwebengine/qml-qtwebengine-webengine.html">WebEngine</a></td><td><code>webenginecore</code></td><td></td></tr>
+<tr valign="top" class="even"><td>Qt WebSockets</td><td><code>websockets</code></td><td></td></tr>
+<tr valign="top" class="odd"><td>Qt <a href="../qtwebview/qml-qtwebview-webview.html">WebView</a></td><td><code>webview</code></td><td></td></tr>
+<tr valign="top" class="even"><td>Qt Windows Extras</td><td><code>winextras</code></td><td>See <a href="extras-changes-qt6.html">Changes to Qt Extras Modules</a></td></tr>
+<tr valign="top" class="odd"><td>Qt X11 Extras</td><td><code>x11extras</code></td><td>See <a href="extras-changes-qt6.html">Changes to Qt Extras Modules</a></td></tr>
+<tr valign="top" class="even"><td>Qt XML Patterns</td><td><code>xmlpatterns</code></td><td></td></tr>
+</tbody></table></div>
+<h2 id="new-classes-and-functions" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新的类和函数</font></font></font></h2>
+<p data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">本节提供了Qt6中引入的所有新类和函数的全面列表。</font></font></font></p>
 <ul>
-<li><a href="#new-namespaces">    New Namespaces</a></li>
-<li><a href="#new-classes">    New Classes</a></li>
-<li><a href="#new-member-functions">    New Member Functions</a></li>
-<li><a href="#new-functions-in-namespaces">    New Functions in Namespaces</a></li>
-<li><a href="#new-global-functions">    New Global Functions</a></li>
-<li><a href="#new-macros">    New Macros</a></li>
-<li><a href="#new-enum-types">    New Enum Types</a></li>
-<li><a href="#new-type-aliases">    New Type Aliases</a></li>
-<li><a href="#new-properties">    New Properties</a></li>
-<li><a href="#new-variables">    New Variables</a></li>
-<li><a href="#new-qml-types">    New QML Types</a></li>
-<li><a href="#new-qml-properties">    New QML Properties</a></li>
+<li data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-namespaces" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新命名空间</font></font></font></a></li>
+<li data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-classes" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新班级</font></font></font></a></li>
+<li data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-member-functions" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新成员函数</font></font></font></a></li>
+<li data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-functions-in-namespaces" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">命名空间中的新函数</font></font></font></a></li>
+<li data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-global-functions" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新的全局功能</font></font></font></a></li>
+<li data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-macros" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新宏</font></font></font></a></li>
+<li data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-enum-types" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新的枚举类型</font></font></font></a></li>
+<li data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-type-aliases" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新类型别名</font></font></font></a></li>
+<li data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-properties" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新属性</font></font></font></a></li>
+<li data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-variables" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新变量</font></font></font></a></li>
+<li data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-qml-types" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新的QML类型</font></font></font></a></li>
+<li data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="#new-qml-properties" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新建QML属性</font></font></font></a></li>
 </ul>
-<h3 id="new-namespaces">    New Namespaces</h3>
+<h3 id="new-namespaces" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新命名空间</font></font></font></h3>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> namespace </td><td class="memItemRight bottomAlign"><b><a href="../qtplatformintegration/qnativeinterface.html">QNativeInterface</a></b></td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> namespace </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickopenglutils.html">QQuickOpenGLUtils</a></b></td></tr>
-</table></div>
-<h3 id="new-classes">    New Classes</h3>
+<tbody><tr><td class="memItemLeft rightAlign topAlign" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">命名空间</font></font></font></td><td class="memItemRight bottomAlign"><b><a href="../qtplatformintegration/qnativeinterface.html">QNativeInterface</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">命名空间</font></font></font></td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickopenglutils.html">QQuickOpenGLUtils</a></b></td></tr>
+</tbody></table></div>
+<h3 id="new-classes" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1">    新的类</h3>
 <div class="flowListDiv">
 <dl class="flowList odd"><dt class="alphaChar"><b>A</b></dt>
 <dd><a href="../qtgui/qabstractfileiconprovider.html">QAbstractFileIconProvider</a></dd>
@@ -206,27 +919,27 @@
 <dd><a href="../qtgui/qnativeinterface-qwglcontext.html">QWGLContext</a> (<a href="../qtgui/qnativeinterface-sub-qtgui.html">QNativeInterface</a>)</dd>
 </dl>
 </div>
-<h3 id="new-member-functions">    New Member Functions</h3>
-<p>Class <a href="../qtbluetooth/qbluetoothdeviceinfo.html">QBluetoothDeviceInfo</a>:</p>
+<h3 id="new-member-functions" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新成员函数</font></font></font></h3>
+<p data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1">Class <a href="../qtbluetooth/qbluetoothdeviceinfo.html" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452">QBluetoothDeviceInfo</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QBluetoothUuid&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qbluetoothdeviceinfo.html#serviceUuids">serviceUuids</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qabstractitemmodel.html">QAbstractItemModel</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QBluetoothUuid&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtbluetooth/qbluetoothdeviceinfo.html#serviceUuids">serviceUuids</a></b>() const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qabstractitemmodel.html">QAbstractItemModel</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qabstractitemmodel.html#clearItemData">clearItemData</a></b>(const QModelIndex &amp;<i>index</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qabstractitemmodel.html#clearItemData">clearItemData</a></b>(const QModelIndex &amp;<i>index</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qabstractitemmodel.html#multiData">multiData</a></b>(const QModelIndex &amp;<i>index</i>, QModelRoleDataSpan <i>roleDataSpan</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qabstractproxymodel.html">QAbstractProxyModel</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qabstractproxymodel.html">QAbstractProxyModel</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qabstractproxymodel.html#clearItemData">clearItemData</a></b>(const QModelIndex &amp;<i>index</i>) override</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qbitarray.html">QBitArray</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qabstractproxymodel.html#clearItemData">clearItemData</a></b>(const QModelIndex &amp;<i>index</i>) override</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qbitarray.html">QBitArray</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> quint32 </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbitarray.html#toUInt32">toUInt32</a></b>(QSysInfo::Endian <i>endianness</i>, bool *<i>ok</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qbytearray.html">QByteArray</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> quint32 </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbitarray.html#toUInt32">toUInt32</a></b>(QSysInfo::Endian <i>endianness</i>, bool *<i>ok</i>) const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qbytearray.html">QByteArray</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbytearray.html#compare">compare</a></b>(QByteArrayView <i>bv</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbytearray.html#compare">compare</a></b>(QByteArrayView <i>bv</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbytearray.html#contains">contains</a></b>(QByteArrayView <i>bv</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbytearray.html#count">count</a></b>(QByteArrayView <i>bv</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbytearray.html#endsWith">endsWith</a></b>(QByteArrayView <i>bv</i>) const</td></tr>
@@ -241,73 +954,73 @@
 <tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbytearray.html#sliced">sliced</a></b>(qsizetype <i>pos</i>, qsizetype <i>n</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbytearray.html#sliced-1">sliced</a></b>(qsizetype <i>pos</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qbytearray.html#startsWith">startsWith</a></b>(QByteArrayView <i>bv</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qchar.html">QChar</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qchar.html">QChar</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QChar </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qchar.html#fromUcs2">fromUcs2</a></b>(char16_t <i>c</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QChar </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qchar.html#fromUcs2">fromUcs2</a></b>(char16_t <i>c</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> R </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qchar.html#fromUcs4">fromUcs4</a></b>(char32_t <i>c</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qdate.html">QDate</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qdate.html">QDate</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QDate </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdate.html#fromString-1">fromString</a></b>(QStringView <i>string</i>, Qt::DateFormat <i>format</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QDate </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdate.html#fromString-1">fromString</a></b>(QStringView <i>string</i>, Qt::DateFormat <i>format</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QDate </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdate.html#fromString-2">fromString</a></b>(QStringView <i>string</i>, QStringView <i>format</i>, QCalendar <i>cal</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QDate </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdate.html#fromString-3">fromString</a></b>(const QString &amp;<i>string</i>, QStringView <i>format</i>, QCalendar <i>cal</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qdatastream.html">QDataStream</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qdatastream.html">QDataStream</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QDataStream &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdatastream.html#operator-lt-lt-15">operator&lt;&lt;</a></b>(char16_t <i>c</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QDataStream &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdatastream.html#operator-lt-lt-15">operator&lt;&lt;</a></b>(char16_t <i>c</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QDataStream &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdatastream.html#operator-lt-lt-16">operator&lt;&lt;</a></b>(char32_t <i>c</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QDataStream &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdatastream.html#operator-lt-lt-17">operator&lt;&lt;</a></b>(QDataStream &amp;<i>out</i>, const std::pair&lt;T1, T2&gt; &amp;<i>pair</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QDataStream &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdatastream.html#operator-gt-gt-15">operator&gt;&gt;</a></b>(char16_t &amp;<i>c</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QDataStream &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdatastream.html#operator-gt-gt-16">operator&gt;&gt;</a></b>(char32_t &amp;<i>c</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QDataStream &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdatastream.html#operator-gt-gt-17">operator&gt;&gt;</a></b>(QDataStream &amp;<i>in</i>, std::pair&lt;T1, T2&gt; &amp;<i>pair</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qdatetime.html">QDateTime</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qdatetime.html">QDateTime</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QDateTime </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdatetime.html#fromString-1">fromString</a></b>(QStringView <i>string</i>, Qt::DateFormat <i>format</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QDateTime </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdatetime.html#fromString-1">fromString</a></b>(QStringView <i>string</i>, Qt::DateFormat <i>format</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QDateTime </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdatetime.html#fromString-2">fromString</a></b>(QStringView <i>string</i>, QStringView <i>format</i>, QCalendar <i>cal</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QDateTime </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdatetime.html#fromString-3">fromString</a></b>(const QString &amp;<i>string</i>, QStringView <i>format</i>, QCalendar <i>cal</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qdebug.html">QDebug</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qdebug.html">QDebug</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QDebug &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdebug.html#operator-lt-lt-16">operator&lt;&lt;</a></b>(const char16_t *<i>t</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QDebug &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdebug.html#operator-lt-lt-16">operator&lt;&lt;</a></b>(const char16_t *<i>t</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QDebug &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdebug.html#operator-lt-lt-19">operator&lt;&lt;</a></b>(QUtf8StringView <i>s</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QDebug &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdebug.html#operator-lt-lt-22">operator&lt;&lt;</a></b>(QByteArrayView <i>t</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdebug.html#toString">toString</a></b>(T &amp;&amp;<i>object</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qdir.html">QDir</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qdir.html">QDir</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdir.html#addSearchPath-1">addSearchPath</a></b>(const QString &amp;<i>prefix</i>, const std::filesystem::path &amp;<i>path</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdir.html#addSearchPath-1">addSearchPath</a></b>(const QString &amp;<i>prefix</i>, const std::filesystem::path &amp;<i>path</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> std::filesystem::path </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdir.html#filesystemAbsolutePath">filesystemAbsolutePath</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> std::filesystem::path </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdir.html#filesystemCanonicalPath">filesystemCanonicalPath</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> std::filesystem::path </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdir.html#filesystemPath">filesystemPath</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qdir.html#setPath-1">setPath</a></b>(const std::filesystem::path &amp;<i>path</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qevent.html">QEvent</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qevent.html">QEvent</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> virtual QEvent *</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qevent.html#clone">clone</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual QEvent *</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qevent.html#clone">clone</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qevent.html#isInputEvent">isInputEvent</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qevent.html#isPointerEvent">isPointerEvent</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qevent.html#isSinglePointEvent">isSinglePointEvent</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qexplicitlyshareddatapointer.html">QExplicitlySharedDataPointer</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qexplicitlyshareddatapointer.html">QExplicitlySharedDataPointer</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> T *</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qexplicitlyshareddatapointer.html#get">get</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> T *</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qexplicitlyshareddatapointer.html#get">get</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qexplicitlyshareddatapointer.html#reset">reset</a></b>(T *<i>ptr</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qfile.html">QFile</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qfile.html">QFile</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfile.html#copy-1">copy</a></b>(const std::filesystem::path &amp;<i>newName</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfile.html#copy-1">copy</a></b>(const std::filesystem::path &amp;<i>newName</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> std::filesystem::path </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfile.html#filesystemFileName">filesystemFileName</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfile.html#link-1">link</a></b>(const std::filesystem::path &amp;<i>newName</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QFileDevice::Permissions </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfile.html#permissions-2">permissions</a></b>(const std::filesystem::path &amp;<i>filename</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfile.html#rename-1">rename</a></b>(const std::filesystem::path &amp;<i>newName</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfile.html#setFileName-1">setFileName</a></b>(const std::filesystem::path &amp;<i>name</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfile.html#setPermissions-2">setPermissions</a></b>(const std::filesystem::path &amp;<i>filename</i>, QFileDevice::Permissions <i>permissionSpec</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qfileinfo.html">QFileInfo</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qfileinfo.html">QFileInfo</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> std::filesystem::path </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfileinfo.html#filesystemAbsoluteFilePath">filesystemAbsoluteFilePath</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> std::filesystem::path </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfileinfo.html#filesystemAbsoluteFilePath">filesystemAbsoluteFilePath</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> std::filesystem::path </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfileinfo.html#filesystemAbsolutePath">filesystemAbsolutePath</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> std::filesystem::path </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfileinfo.html#filesystemCanonicalFilePath">filesystemCanonicalFilePath</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> std::filesystem::path </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfileinfo.html#filesystemCanonicalPath">filesystemCanonicalPath</a></b>() const</td></tr>
@@ -316,10 +1029,10 @@
 <tr><td class="memItemLeft rightAlign topAlign"> std::filesystem::path </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfileinfo.html#filesystemSymLinkTarget">filesystemSymLinkTarget</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfileinfo.html#setFile-3">setFile</a></b>(const std::filesystem::path &amp;<i>file</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfileinfo.html#stat">stat</a></b>()</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qfuture.html">QFuture</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qfuture.html">QFuture</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuture.html#isSuspended">isSuspended</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuture.html#isSuspended">isSuspended</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuture.html#isSuspending">isSuspending</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuture.html#isValid">isValid</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QFuture&lt;T&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuture.html#onCanceled">onCanceled</a></b>(Function &amp;&amp;<i>handler</i>)</td></tr>
@@ -331,20 +1044,20 @@
 <tr><td class="memItemLeft rightAlign topAlign"> QFuture&lt;ResultType&lt;Function&gt;&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuture.html#then-1">then</a></b>(QtFuture::Launch <i>policy</i>, Function &amp;&amp;<i>function</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QFuture&lt;ResultType&lt;Function&gt;&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuture.html#then-2">then</a></b>(QThreadPool *<i>pool</i>, Function &amp;&amp;<i>function</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuture.html#toggleSuspended">toggleSuspended</a></b>()</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qfuturewatcher.html">QFutureWatcher</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qfuturewatcher.html">QFutureWatcher</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuturewatcher.html#isSuspended">isSuspended</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuturewatcher.html#isSuspended">isSuspended</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuturewatcher.html#isSuspending">isSuspending</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuturewatcher.html#setSuspended">setSuspended</a></b>(bool <i>suspend</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuturewatcher.html#suspend">suspend</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuturewatcher.html#suspended">suspended</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuturewatcher.html#suspending">suspending</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfuturewatcher.html#toggleSuspended">toggleSuspended</a></b>()</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qhash.html">QHash</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qhash.html">QHash</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> size_t </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qhash.html#qHash-16">qHash</a></b>(char8_t <i>key</i>, size_t <i>seed</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> size_t </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qhash.html#qHash-16">qHash</a></b>(char8_t <i>key</i>, size_t <i>seed</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> size_t </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qhash.html#qHash-17">qHash</a></b>(char16_t <i>key</i>, size_t <i>seed</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> size_t </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qhash.html#qHash-18">qHash</a></b>(char32_t <i>key</i>, size_t <i>seed</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> size_t </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qhash.html#qHash-19">qHash</a></b>(wchar_t <i>key</i>, size_t <i>seed</i>)</td></tr>
@@ -354,31 +1067,31 @@
 <tr><td class="memItemLeft rightAlign topAlign"> size_t </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qhash.html#qHash-35">qHash</a></b>(const QTypeRevision &amp;<i>key</i>, size_t <i>seed</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> size_t </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qhash.html#qHashMulti">qHashMulti</a></b>(size_t <i>seed</i>, const T &amp;... <i>args</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> size_t </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qhash.html#qHashMultiCommutative">qHashMultiCommutative</a></b>(size_t <i>seed</i>, const T &amp;... <i>args</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qiodevice.html">QIODevice</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qiodevice.html">QIODevice</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> virtual qint64 </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qiodevice.html#skipData">skipData</a></b>(qint64 <i>maxSize</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qjsonvalue.html">QJsonValue</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual qint64 </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qiodevice.html#skipData">skipData</a></b>(qint64 <i>maxSize</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qjsonvalue.html">QJsonValue</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qjsonvalue.html#toInteger">toInteger</a></b>(qint64 <i>defaultValue</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qlatin1string.html">QLatin1String</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qjsonvalue.html#toInteger">toInteger</a></b>(qint64 <i>defaultValue</i>) const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qlatin1string.html">QLatin1String</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QLatin1String </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlatin1string.html#first">first</a></b>(qsizetype <i>n</i>) const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QLatin1String </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlatin1string.html#first">first</a></b>(qsizetype <i>n</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QLatin1String </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlatin1string.html#last">last</a></b>(qsizetype <i>n</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QLatin1String </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlatin1string.html#sliced">sliced</a></b>(qsizetype <i>pos</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QLatin1String </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlatin1string.html#sliced-1">sliced</a></b>(qsizetype <i>pos</i>, qsizetype <i>n</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlatin1string.html#toString">toString</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> decltype(qTokenize(*this, std::forward&lt;Needle&gt;(needle), flags...)) </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlatin1string.html#tokenize">tokenize</a></b>(Needle &amp;&amp;<i>sep</i>, Flags... <i>flags</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qlibraryinfo.html">QLibraryInfo</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qlibraryinfo.html">QLibraryInfo</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlibraryinfo.html#path">path</a></b>(QLibraryInfo::LibraryPath <i>p</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qlist.html">QList</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlibraryinfo.html#path">path</a></b>(QLibraryInfo::LibraryPath <i>p</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qlist.html">QList</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlist.html#append-4">append</a></b>(QList&lt;T&gt; &amp;&amp;<i>value</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlist.html#append-4">append</a></b>(QList&lt;T&gt; &amp;&amp;<i>value</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QList&lt;T&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlist.html#first-2">first</a></b>(qsizetype <i>n</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QList&lt;T&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlist.html#last-2">last</a></b>(qsizetype <i>n</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QList&lt;T&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlist.html#operator-2b-1">operator+</a></b>(QList&lt;T&gt; &amp;&amp;<i>other</i>) const</td></tr>
@@ -386,102 +1099,102 @@
 <tr><td class="memItemLeft rightAlign topAlign"> QList&lt;T&gt; &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlist.html#operator-lt-lt-2">operator&lt;&lt;</a></b>(QList&lt;T&gt; &amp;&amp;<i>other</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QList&lt;T&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlist.html#sliced">sliced</a></b>(qsizetype <i>pos</i>, qsizetype <i>n</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QList&lt;T&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlist.html#sliced-1">sliced</a></b>(qsizetype <i>pos</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qlocale.html">QLocale</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qlocale.html">QLocale</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlocale.html#quoteString-1">quoteString</a></b>(QStringView <i>str</i>, QLocale::QuotationStyle <i>style</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qmap.html">QMap</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qlocale.html#quoteString-1">quoteString</a></b>(QStringView <i>str</i>, QLocale::QuotationStyle <i>style</i>) const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qmap.html">QMap</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QMap::iterator </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmap.html#erase-1">erase</a></b>(QMap::const_iterator <i>first</i>, QMap::const_iterator <i>last</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qmargins.html">QMargins</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QMap::iterator </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmap.html#erase-1">erase</a></b>(QMap::const_iterator <i>first</i>, QMap::const_iterator <i>last</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qmargins.html">QMargins</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QMargins </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmargins.html#operator-7c">operator|</a></b>(const QMargins &amp;<i>m1</i>, const QMargins &amp;<i>m2</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qmarginsf.html">QMarginsF</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QMargins </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmargins.html#operator-7c">operator|</a></b>(const QMargins &amp;<i>m1</i>, const QMargins &amp;<i>m2</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qmarginsf.html">QMarginsF</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QMarginsF </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmarginsf.html#operator-7c">operator|</a></b>(const QMarginsF &amp;<i>m1</i>, const QMarginsF &amp;<i>m2</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qmetamethod.html">QMetaMethod</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QMarginsF </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmarginsf.html#operator-7c">operator|</a></b>(const QMarginsF &amp;<i>m1</i>, const QMarginsF &amp;<i>m2</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qmetamethod.html">QMetaMethod</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QMetaType </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetamethod.html#parameterMetaType">parameterMetaType</a></b>(int <i>index</i>) const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QMetaType </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetamethod.html#parameterMetaType">parameterMetaType</a></b>(int <i>index</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetamethod.html#parameterTypeName">parameterTypeName</a></b>(int <i>index</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetamethod.html#relativeMethodIndex">relativeMethodIndex</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QMetaType </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetamethod.html#returnMetaType">returnMetaType</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qmetaproperty.html">QMetaProperty</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qmetaproperty.html">QMetaProperty</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QUntypedBindable </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetaproperty.html#bindable">bindable</a></b>(QObject *<i>object</i>) const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QUntypedBindable </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetaproperty.html#bindable">bindable</a></b>(QObject *<i>object</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetaproperty.html#isBindable">isBindable</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QMetaType </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetaproperty.html#metaType">metaType</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetaproperty.html#typeId">typeId</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qmetatype.html">QMetaType</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qmetatype.html">QMetaType</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetatype.html#alignOf">alignOf</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetatype.html#alignOf">alignOf</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QPartialOrdering </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetatype.html#compare">compare</a></b>(const void *<i>lhs</i>, const void *<i>rhs</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetatype.html#equals">equals</a></b>(const void *<i>lhs</i>, const void *<i>rhs</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetatype.html#hasRegisteredDebugStreamOperator">hasRegisteredDebugStreamOperator</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetatype.html#hasRegisteredMutableViewFunction-1">hasRegisteredMutableViewFunction</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetatype.html#view">view</a></b>(QMetaType <i>fromType</i>, void *<i>from</i>, QMetaType <i>toType</i>, void *<i>to</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qmetasequence.html">QMetaSequence</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qmetasequence.html">QMetaSequence</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QMetaSequence </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetasequence.html#fromContainer">fromContainer</a></b>()</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qmodelindex.html">QModelIndex</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QMetaSequence </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmetasequence.html#fromContainer">fromContainer</a></b>()</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qmodelindex.html">QModelIndex</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmodelindex.html#multiData">multiData</a></b>(QModelRoleDataSpan <i>roleDataSpan</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qmultimap.html">QMultiMap</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmodelindex.html#multiData">multiData</a></b>(QModelRoleDataSpan <i>roleDataSpan</i>) const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qmultimap.html">QMultiMap</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QMultiMap::iterator </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmultimap.html#erase-1">erase</a></b>(QMultiMap::const_iterator <i>first</i>, QMultiMap::const_iterator <i>last</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qmultihash.html">QMultiHash</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QMultiMap::iterator </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmultimap.html#erase-1">erase</a></b>(QMultiMap::const_iterator <i>first</i>, QMultiMap::const_iterator <i>last</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qmultihash.html">QMultiHash</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QMultiHash&lt;Key, T&gt; &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmultihash.html#unite-1">unite</a></b>(const QHash&lt;Key, T&gt; &amp;<i>other</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qpersistentmodelindex.html">QPersistentModelIndex</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QMultiHash&lt;Key, T&gt; &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qmultihash.html#unite-1">unite</a></b>(const QHash&lt;Key, T&gt; &amp;<i>other</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qpersistentmodelindex.html">QPersistentModelIndex</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qpersistentmodelindex.html#multiData">multiData</a></b>(QModelRoleDataSpan <i>roleDataSpan</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qpointer.html">QPointer</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qpersistentmodelindex.html#multiData">multiData</a></b>(QModelRoleDataSpan <i>roleDataSpan</i>) const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qpointer.html">QPointer</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> T *</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qpointer.html#get">get</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qprocess.html">QProcess</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> T *</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qpointer.html#get">get</a></b>() const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qprocess.html">QProcess</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> std::function&lt;void ()&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qprocess.html#childProcessModifier">childProcessModifier</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> std::function&lt;void ()&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qprocess.html#childProcessModifier">childProcessModifier</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qprocess.html#setChildProcessModifier">setChildProcessModifier</a></b>(const std::function&lt;void ()&gt; &amp;<i>modifier</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qprocess.html#startCommand">startCommand</a></b>(const QString &amp;<i>command</i>, QIODeviceBase::OpenMode <i>mode</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qrect.html">QRect</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qrect.html">QRect</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QRect </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qrect.html#span">span</a></b>(const QPoint &amp;<i>p1</i>, const QPoint &amp;<i>p2</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qregularexpression.html">QRegularExpression</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QRect </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qrect.html#span">span</a></b>(const QPoint &amp;<i>p1</i>, const QPoint &amp;<i>p2</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qregularexpression.html">QRegularExpression</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QRegularExpression </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qregularexpression.html#fromWildcard">fromWildcard</a></b>(QStringView <i>pattern</i>, Qt::CaseSensitivity <i>cs</i>, QRegularExpression::WildcardConversionOptions <i>options</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QRegularExpression </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qregularexpression.html#fromWildcard">fromWildcard</a></b>(QStringView <i>pattern</i>, Qt::CaseSensitivity <i>cs</i>, QRegularExpression::WildcardConversionOptions <i>options</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QRegularExpressionMatchIterator </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qregularexpression.html#globalMatch-1">globalMatch</a></b>(QStringView <i>subjectView</i>, qsizetype <i>offset</i>, QRegularExpression::MatchType <i>matchType</i>, QRegularExpression::MatchOptions <i>matchOptions</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QRegularExpressionMatch </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qregularexpression.html#match-1">match</a></b>(QStringView <i>subjectView</i>, qsizetype <i>offset</i>, QRegularExpression::MatchType <i>matchType</i>, QRegularExpression::MatchOptions <i>matchOptions</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qshareddatapointer.html">QSharedDataPointer</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qshareddatapointer.html">QSharedDataPointer</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> T *</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qshareddatapointer.html#get">get</a></b>()</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> T *</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qshareddatapointer.html#get">get</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> const T *</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qshareddatapointer.html#get-1">get</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qshareddatapointer.html#reset">reset</a></b>(T *<i>ptr</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> T *</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qshareddatapointer.html#take">take</a></b>()</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qsortfilterproxymodel.html">QSortFilterProxyModel</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qsortfilterproxymodel.html">QSortFilterProxyModel</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qsortfilterproxymodel.html#autoAcceptChildRowsChanged">autoAcceptChildRowsChanged</a></b>(bool <i>autoAcceptChildRows</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qsortfilterproxymodel.html#autoAcceptChildRowsChanged">autoAcceptChildRowsChanged</a></b>(bool <i>autoAcceptChildRows</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qsortfilterproxymodel.html#invalidateColumnsFilter">invalidateColumnsFilter</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qsortfilterproxymodel.html#invalidateRowsFilter">invalidateRowsFilter</a></b>()</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qstring.html">QString</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qstring.html">QString</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#count-3">count</a></b>(QStringView <i>str</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#count-3">count</a></b>(QStringView <i>str</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#first">first</a></b>(qsizetype <i>n</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#fromLatin1-1">fromLatin1</a></b>(QByteArrayView <i>str</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#fromLocal8Bit-1">fromLocal8Bit</a></b>(QByteArrayView <i>str</i>)</td></tr>
@@ -495,16 +1208,16 @@
 <tr><td class="memItemLeft rightAlign topAlign"> QString &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#prepend-3">prepend</a></b>(QStringView <i>str</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#sliced">sliced</a></b>(qsizetype <i>pos</i>, qsizetype <i>n</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#sliced-1">sliced</a></b>(qsizetype <i>pos</i>) const</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> decltype(qTokenize(*this, std::forward&lt;Needle&gt;(needle), flags...)) </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#tokenize">tokenize</a></b>(Needle &amp;&amp;<i>sep</i>, Flags... <i>flags</i>) const &</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> decltype(qTokenize(std::move(*this), std::forward&lt;Needle&gt;(needle), flags...)) </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#tokenize-1">tokenize</a></b>(Needle &amp;&amp;<i>sep</i>, Flags... <i>flags</i>) &&</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qstringlistmodel.html">QStringListModel</a>:</p>
+<tr><td class="memItemLeft rightAlign topAlign"> decltype(qTokenize(*this, std::forward&lt;Needle&gt;(needle), flags...)) </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#tokenize">tokenize</a></b>(Needle &amp;&amp;<i>sep</i>, Flags... <i>flags</i>) const &amp;</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> decltype(qTokenize(std::move(*this), std::forward&lt;Needle&gt;(needle), flags...)) </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstring.html#tokenize-1">tokenize</a></b>(Needle &amp;&amp;<i>sep</i>, Flags... <i>flags</i>) &amp;&amp;</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qstringlistmodel.html">QStringListModel</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringlistmodel.html#clearItemData">clearItemData</a></b>(const QModelIndex &amp;<i>index</i>) override</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qstringview.html">QStringView</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringlistmodel.html#clearItemData">clearItemData</a></b>(const QModelIndex &amp;<i>index</i>) override</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qstringview.html">QStringView</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QStringView::const_pointer </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringview.html#constData">constData</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QStringView::const_pointer </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringview.html#constData">constData</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringview.html#count-1">count</a></b>(QChar <i>ch</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> qsizetype </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringview.html#count-2">count</a></b>(QStringView <i>str</i>, Qt::CaseSensitivity <i>cs</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QStringView </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringview.html#first">first</a></b>(qsizetype <i>n</i>) const</td></tr>
@@ -527,174 +1240,174 @@
 <tr><td class="memItemLeft rightAlign topAlign"> qulonglong </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringview.html#toULongLong">toULongLong</a></b>(bool *<i>ok</i>, int <i>base</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> ushort </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringview.html#toUShort">toUShort</a></b>(bool *<i>ok</i>, int <i>base</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> decltype(qTokenize(*this, std::forward&lt;Needle&gt;(needle), flags...)) </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringview.html#tokenize">tokenize</a></b>(Needle &amp;&amp;<i>sep</i>, Flags... <i>flags</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qstringtokenizer.html">QStringTokenizer</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qstringtokenizer.html">QStringTokenizer</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> decltype(QtPrivate::Tok::TokenizerResult&lt;Haystack, Needle&gt;({std::forward&lt;Haystack&gt;(h), std::forward&lt;Needle&gt;(n), flags...})) </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringtokenizer.html#qTokenize">qTokenize</a></b>(Haystack &amp;&amp;<i>haystack</i>, Needle &amp;&amp;<i>needle</i>, Flags... <i>flags</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qthreadpool.html">QThreadPool</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> decltype(QtPrivate::Tok::TokenizerResult&lt;Haystack, Needle&gt;({std::forward&lt;Haystack&gt;(h), std::forward&lt;Needle&gt;(n), flags...})) </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qstringtokenizer.html#qTokenize">qTokenize</a></b>(Haystack &amp;&amp;<i>haystack</i>, Needle &amp;&amp;<i>needle</i>, Flags... <i>flags</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qthreadpool.html">QThreadPool</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qthreadpool.html#contains">contains</a></b>(const QThread *<i>thread</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qtime.html">QTime</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qthreadpool.html#contains">contains</a></b>(const QThread *<i>thread</i>) const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qtime.html">QTime</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QTime </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtime.html#fromString-1">fromString</a></b>(QStringView <i>string</i>, Qt::DateFormat <i>format</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QTime </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtime.html#fromString-1">fromString</a></b>(QStringView <i>string</i>, Qt::DateFormat <i>format</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QTime </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtime.html#fromString-2">fromString</a></b>(QStringView <i>string</i>, QStringView <i>format</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QTime </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtime.html#fromString-3">fromString</a></b>(const QString &amp;<i>string</i>, QStringView <i>format</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qtyperevision.html">QTypeRevision</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qtyperevision.html">QTypeRevision</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QDataStream &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtyperevision.html#operator-lt-lt">operator&lt;&lt;</a></b>(QDataStream &amp;<i>out</i>, const QTypeRevision &amp;<i>revision</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QDataStream &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtyperevision.html#operator-lt-lt">operator&lt;&lt;</a></b>(QDataStream &amp;<i>out</i>, const QTypeRevision &amp;<i>revision</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QDataStream &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtyperevision.html#operator-gt-gt">operator&gt;&gt;</a></b>(QDataStream &amp;<i>in</i>, QTypeRevision &amp;<i>revision</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qunhandledexception.html">QUnhandledException</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qunhandledexception.html">QUnhandledException</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> std::exception_ptr </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qunhandledexception.html#exception">exception</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> std::exception_ptr </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qunhandledexception.html#exception">exception</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qunhandledexception.html#swap">swap</a></b>(QUnhandledException &amp;<i>other</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qvariant.html">QVariant</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qvariant.html">QVariant</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qvariant.html#canConvert">canConvert</a></b>(QMetaType <i>type</i>) const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qvariant.html#canConvert">canConvert</a></b>(QMetaType <i>type</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QPartialOrdering </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qvariant.html#compare">compare</a></b>(const QVariant &amp;<i>lhs</i>, const QVariant &amp;<i>rhs</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qvariant.html#convert">convert</a></b>(QMetaType <i>targetType</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QMetaType </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qvariant.html#metaType">metaType</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtcore/qvarlengtharray.html">QVarLengthArray</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtcore/qvarlengtharray.html">QVarLengthArray</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QVarLengthArray&lt;T, Prealloc&gt; &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qvarlengtharray.html#operator-eq-1">operator=</a></b>(QVarLengthArray&lt;T, Prealloc&gt; &amp;&amp;<i>other</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qaction.html">QAction</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QVarLengthArray&lt;T, Prealloc&gt; &amp;</td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qvarlengtharray.html#operator-eq-1">operator=</a></b>(QVarLengthArray&lt;T, Prealloc&gt; &amp;&amp;<i>other</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qaction.html">QAction</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QObject *&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qaction.html#associatedObjects">associatedObjects</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qicon.html">QIcon</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QObject *&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qaction.html#associatedObjects">associatedObjects</a></b>() const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qicon.html">QIcon</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QPixmap </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qicon.html#pixmap-3">pixmap</a></b>(const QSize &amp;<i>size</i>, qreal <i>devicePixelRatio</i>, QIcon::Mode <i>mode</i>, QIcon::State <i>state</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qimageiohandler.html">QImageIOHandler</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QPixmap </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qicon.html#pixmap-3">pixmap</a></b>(const QSize &amp;<i>size</i>, qreal <i>devicePixelRatio</i>, QIcon::Mode <i>mode</i>, QIcon::State <i>state</i>) const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qimageiohandler.html">QImageIOHandler</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimageiohandler.html#allocateImage">allocateImage</a></b>(QSize <i>size</i>, QImage::Format <i>format</i>, QImage *<i>image</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qimage.html">QImage</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimageiohandler.html#allocateImage">allocateImage</a></b>(QSize <i>size</i>, QImage::Format <i>format</i>, QImage *<i>image</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qimage.html">QImage</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QImage </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimage.html#convertedTo">convertedTo</a></b>(QImage::Format <i>format</i>, Qt::ImageConversionFlags <i>flags</i>) const &</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> QImage </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimage.html#convertedTo-1">convertedTo</a></b>(QImage::Format <i>format</i>, Qt::ImageConversionFlags <i>flags</i>) &&</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QImage </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimage.html#convertedTo">convertedTo</a></b>(QImage::Format <i>format</i>, Qt::ImageConversionFlags <i>flags</i>) const &amp;</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QImage </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimage.html#convertedTo-1">convertedTo</a></b>(QImage::Format <i>format</i>, Qt::ImageConversionFlags <i>flags</i>) &amp;&amp;</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QImage </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimage.html#fromHBITMAP">fromHBITMAP</a></b>(HBITMAP <i>hbitmap</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QImage </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimage.html#fromHICON">fromHICON</a></b>(HICON <i>icon</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimage.html#mirror">mirror</a></b>(bool <i>horizontal</i>, bool <i>vertical</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimage.html#rgbSwap">rgbSwap</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> HBITMAP </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimage.html#toHBITMAP">toHBITMAP</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> HICON </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimage.html#toHICON">toHICON</a></b>(const QImage &amp;<i>mask</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qimagereader.html">QImageReader</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qimagereader.html">QImageReader</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimagereader.html#allocationLimit">allocationLimit</a></b>()</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimagereader.html#allocationLimit">allocationLimit</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qimagereader.html#setAllocationLimit">setAllocationLimit</a></b>(int <i>mbLimit</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qinputevent.html">QInputEvent</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qinputevent.html">QInputEvent</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> const QInputDevice *</td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qinputevent.html#device">device</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qkeyevent.html">QKeyEvent</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> const QInputDevice *</td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qinputevent.html#device">device</a></b>() const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qkeyevent.html">QKeyEvent</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QKeyCombination </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qkeyevent.html#keyCombination">keyCombination</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qpagedpaintdevice.html">QPagedPaintDevice</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QKeyCombination </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qkeyevent.html#keyCombination">keyCombination</a></b>() const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qpagedpaintdevice.html">QPagedPaintDevice</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QPageRanges </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qpagedpaintdevice.html#pageRanges">pageRanges</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QPageRanges </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qpagedpaintdevice.html#pageRanges">pageRanges</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qpagedpaintdevice.html#setPageRanges">setPageRanges</a></b>(const QPageRanges &amp;<i>ranges</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qregion.html">QRegion</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qregion.html">QRegion</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QRegion </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qregion.html#fromHRGN">fromHRGN</a></b>(HRGN <i>hrgn</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QRegion </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qregion.html#fromHRGN">fromHRGN</a></b>(HRGN <i>hrgn</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> HRGN </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qregion.html#toHRGN">toHRGN</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qshortcut.html">QShortcut</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qshortcut.html">QShortcut</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QKeySequence&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qshortcut.html#keys">keys</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QKeySequence&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qshortcut.html#keys">keys</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qshortcut.html#setKeys">setKeys</a></b>(QKeySequence::StandardKey <i>key</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qshortcut.html#setKeys-1">setKeys</a></b>(const QList&lt;QKeySequence&gt; &amp;<i>keys</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qstandarditem.html">QStandardItem</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qstandarditem.html">QStandardItem</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qstandarditem.html#multiData">multiData</a></b>(QModelRoleDataSpan <i>roleDataSpan</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qsurfaceformat.html">QSurfaceFormat</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qstandarditem.html#multiData">multiData</a></b>(QModelRoleDataSpan <i>roleDataSpan</i>) const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qsurfaceformat.html">QSurfaceFormat</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qsurfaceformat.html#setColorSpace">setColorSpace</a></b>(const QColorSpace &amp;<i>colorSpace</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qtextcharformat.html">QTextCharFormat</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qsurfaceformat.html#setColorSpace">setColorSpace</a></b>(const QColorSpace &amp;<i>colorSpace</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qtextcharformat.html">QTextCharFormat</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextcharformat.html#baselineOffset">baselineOffset</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextcharformat.html#baselineOffset">baselineOffset</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextcharformat.html#setBaselineOffset">setBaselineOffset</a></b>(qreal <i>baseline</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextcharformat.html#setSubScriptBaseline">setSubScriptBaseline</a></b>(qreal <i>baseline</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextcharformat.html#setSuperScriptBaseline">setSuperScriptBaseline</a></b>(qreal <i>baseline</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextcharformat.html#subScriptBaseline">subScriptBaseline</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextcharformat.html#superScriptBaseline">superScriptBaseline</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qtextdocument.html">QTextDocument</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qtextdocument.html">QTextDocument</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextdocument.html#baselineOffset">baselineOffset</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextdocument.html#baselineOffset">baselineOffset</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextdocument.html#setBaselineOffset">setBaselineOffset</a></b>(qreal <i>baseline</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextdocument.html#setSubScriptBaseline">setSubScriptBaseline</a></b>(qreal <i>baseline</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextdocument.html#setSuperScriptBaseline">setSuperScriptBaseline</a></b>(qreal <i>baseline</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextdocument.html#subScriptBaseline">subScriptBaseline</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qtextdocument.html#superScriptBaseline">superScriptBaseline</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtgui/qwindow.html">QWindow</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtgui/qwindow.html">QWindow</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qwindow.html#mapFromGlobal">mapFromGlobal</a></b>(const QPointF &amp;<i>pos</i>) const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qwindow.html#mapFromGlobal">mapFromGlobal</a></b>(const QPointF &amp;<i>pos</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qwindow.html#mapToGlobal">mapToGlobal</a></b>(const QPointF &amp;<i>pos</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="../qtgui/qwindow.html#paintEvent">paintEvent</a></b>(QPaintEvent *<i>ev</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtnetwork/qsslconfiguration.html">QSslConfiguration</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtnetwork/qsslconfiguration.html">QSslConfiguration</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qsslconfiguration.html#handshakeMustInterruptOnError">handshakeMustInterruptOnError</a></b>() const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qsslconfiguration.html#handshakeMustInterruptOnError">handshakeMustInterruptOnError</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qsslconfiguration.html#missingCertificateIsFatal">missingCertificateIsFatal</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qsslconfiguration.html#setCiphers-1">setCiphers</a></b>(const QString &amp;<i>ciphers</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qsslconfiguration.html#setHandshakeMustInterruptOnError">setHandshakeMustInterruptOnError</a></b>(bool <i>interrupt</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qsslconfiguration.html#setMissingCertificateIsFatal">setMissingCertificateIsFatal</a></b>(bool <i>cannotRecover</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtnetwork/qsslsocket.html">QSslSocket</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtnetwork/qsslsocket.html">QSslSocket</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qsslsocket.html#continueInterruptedHandshake">continueInterruptedHandshake</a></b>()</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtquick/qnativeinterface-qsgvulkantexture.html">QSGVulkanTexture</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qsslsocket.html#continueInterruptedHandshake">continueInterruptedHandshake</a></b>()</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtquick/qnativeinterface-qsgvulkantexture.html">QSGVulkanTexture</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QSGTexture *</td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qnativeinterface-qsgvulkantexture.html#fromNative">fromNative</a></b>(VkImage <i>image</i>, VkImageLayout <i>layout</i>, QQuickWindow *<i>window</i>, const QSize &amp;<i>size</i>, QQuickWindow::CreateTextureOptions <i>options</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtquick/qnativeinterface-qsgopengltexture.html">QSGOpenGLTexture</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QSGTexture *</td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qnativeinterface-qsgvulkantexture.html#fromNative">fromNative</a></b>(VkImage <i>image</i>, VkImageLayout <i>layout</i>, QQuickWindow *<i>window</i>, const QSize &amp;<i>size</i>, QQuickWindow::CreateTextureOptions <i>options</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtquick/qnativeinterface-qsgopengltexture.html">QSGOpenGLTexture</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QSGTexture *</td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qnativeinterface-qsgopengltexture.html#fromNative">fromNative</a></b>(GLuint <i>textureId</i>, QQuickWindow *<i>window</i>, const QSize &amp;<i>size</i>, QQuickWindow::CreateTextureOptions <i>options</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtqml/qqmlapplicationengine.html">QQmlApplicationEngine</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QSGTexture *</td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qnativeinterface-qsgopengltexture.html#fromNative">fromNative</a></b>(GLuint <i>textureId</i>, QQuickWindow *<i>window</i>, const QSize &amp;<i>size</i>, QQuickWindow::CreateTextureOptions <i>options</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtqml/qqmlapplicationengine.html">QQmlApplicationEngine</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtqml/qqmlapplicationengine.html#setExtraFileSelectors">setExtraFileSelectors</a></b>(const QStringList &amp;<i>extraFileSelectors</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtquick/qnativeinterface-qsgmetaltexture.html">QSGMetalTexture</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtqml/qqmlapplicationengine.html#setExtraFileSelectors">setExtraFileSelectors</a></b>(const QStringList &amp;<i>extraFileSelectors</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtquick/qnativeinterface-qsgmetaltexture.html">QSGMetalTexture</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QSGTexture *</td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qnativeinterface-qsgmetaltexture.html#fromNative">fromNative</a></b>(int <i>texture</i>, QQuickWindow *<i>window</i>, const QSize &amp;<i>size</i>, QQuickWindow::CreateTextureOptions <i>options</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtquick/qnativeinterface-qsgd3d11texture.html">QSGD3D11Texture</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QSGTexture *</td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qnativeinterface-qsgmetaltexture.html#fromNative">fromNative</a></b>(int <i>texture</i>, QQuickWindow *<i>window</i>, const QSize &amp;<i>size</i>, QQuickWindow::CreateTextureOptions <i>options</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtquick/qnativeinterface-qsgd3d11texture.html">QSGD3D11Texture</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QSGTexture *</td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qnativeinterface-qsgd3d11texture.html#fromNative">fromNative</a></b>(void *<i>texture</i>, QQuickWindow *<i>window</i>, const QSize &amp;<i>size</i>, QQuickWindow::CreateTextureOptions <i>options</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtquick/qquickitem.html">QQuickItem</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QSGTexture *</td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qnativeinterface-qsgd3d11texture.html#fromNative">fromNative</a></b>(void *<i>texture</i>, QQuickWindow *<i>window</i>, const QSize &amp;<i>size</i>, QQuickWindow::CreateTextureOptions <i>options</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtquick/qquickitem.html">QQuickItem</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickitem.html#geometryChange">geometryChange</a></b>(const QRectF &amp;<i>newGeometry</i>, const QRectF &amp;<i>oldGeometry</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtquick/qquickrendercontrol.html">QQuickRenderControl</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickitem.html#geometryChange">geometryChange</a></b>(const QRectF &amp;<i>newGeometry</i>, const QRectF &amp;<i>oldGeometry</i>)</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtquick/qquickrendercontrol.html">QQuickRenderControl</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickrendercontrol.html#beginFrame">beginFrame</a></b>()</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickrendercontrol.html#beginFrame">beginFrame</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickrendercontrol.html#endFrame">endFrame</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickrendercontrol.html#initialize">initialize</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickrendercontrol.html#samples">samples</a></b>() const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickrendercontrol.html#setSamples">setSamples</a></b>(int <i>sampleCount</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QQuickWindow *</td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickrendercontrol.html#window">window</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtquick/qquickwindow.html">QQuickWindow</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtquick/qquickwindow.html">QQuickWindow</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickwindow.html#afterFrameEnd">afterFrameEnd</a></b>()</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickwindow.html#afterFrameEnd">afterFrameEnd</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickwindow.html#beforeFrameBegin">beforeFrameBegin</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QSGRendererInterface::GraphicsApi </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickwindow.html#graphicsApi">graphicsApi</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QQuickGraphicsConfiguration </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickwindow.html#graphicsConfiguration">graphicsConfiguration</a></b>() const</td></tr>
@@ -703,86 +1416,86 @@
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickwindow.html#setGraphicsConfiguration">setGraphicsConfiguration</a></b>(const QQuickGraphicsConfiguration &amp;<i>config</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickwindow.html#setGraphicsDevice">setGraphicsDevice</a></b>(const QQuickGraphicsDevice &amp;<i>device</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickwindow.html#setRenderTarget">setRenderTarget</a></b>(const QQuickRenderTarget &amp;<i>target</i>)</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtquick/qsgrendernode.html">QSGRenderNode</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtquick/qsgrendernode.html">QSGRenderNode</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qsgrendernode.html#prepare">prepare</a></b>()</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtserialbus/qcanbusdeviceinfo.html">QCanBusDeviceInfo</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qsgrendernode.html#prepare">prepare</a></b>()</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtserialbus/qcanbusdeviceinfo.html">QCanBusDeviceInfo</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtserialbus/qcanbusdeviceinfo.html#alias">alias</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtserialbus/qmodbusreply.html">QModbusReply</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="../qtserialbus/qcanbusdeviceinfo.html#alias">alias</a></b>() const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtserialbus/qmodbusreply.html">QModbusReply</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QModbusDevice::IntermediateError&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtserialbus/qmodbusreply.html#intermediateErrors">intermediateErrors</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtsql/qsqldriver.html">QSqlDriver</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QModbusDevice::IntermediateError&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtserialbus/qmodbusreply.html#intermediateErrors">intermediateErrors</a></b>() const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtsql/qsqldriver.html">QSqlDriver</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> virtual int </td><td class="memItemRight bottomAlign"><b><a href="../qtsql/qsqldriver.html#maximumIdentifierLength">maximumIdentifierLength</a></b>(QSqlDriver::IdentifierType <i>type</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtsql/qsqlquery.html">QSqlQuery</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual int </td><td class="memItemRight bottomAlign"><b><a href="../qtsql/qsqldriver.html#maximumIdentifierLength">maximumIdentifierLength</a></b>(QSqlDriver::IdentifierType <i>type</i>) const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtsql/qsqlquery.html">QSqlQuery</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QVariantList </td><td class="memItemRight bottomAlign"><b><a href="../qtsql/qsqlquery.html#boundValues">boundValues</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtwidgets/qabstractitemview.html">QAbstractItemView</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QVariantList </td><td class="memItemRight bottomAlign"><b><a href="../qtsql/qsqlquery.html#boundValues">boundValues</a></b>() const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtwidgets/qabstractitemview.html">QAbstractItemView</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qabstractitemview.html#initViewItemOption">initViewItemOption</a></b>(QStyleOptionViewItem *<i>option</i>) const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qabstractitemview.html#initViewItemOption">initViewItemOption</a></b>(QStyleOptionViewItem *<i>option</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> virtual QAbstractItemDelegate *</td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qabstractitemview.html#itemDelegateForIndex">itemDelegateForIndex</a></b>(const QModelIndex &amp;<i>index</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtwidgets/qgraphicslayoutitem.html">QGraphicsLayoutItem</a>:</p>
+</tbody></table></div>
+<br><p>Class <a href="../qtwidgets/qgraphicslayoutitem.html">QGraphicsLayoutItem</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qgraphicslayoutitem.html#isEmpty">isEmpty</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtwidgets/qheaderview.html">QHeaderView</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qgraphicslayoutitem.html#isEmpty">isEmpty</a></b>() const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtwidgets/qheaderview.html">QHeaderView</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qheaderview.html#initStyleOptionForIndex">initStyleOptionForIndex</a></b>(QStyleOptionHeader *<i>option</i>, int <i>logicalIndex</i>) const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtwidgets/qlabel.html">QLabel</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qheaderview.html#initStyleOptionForIndex">initStyleOptionForIndex</a></b>(QStyleOptionHeader *<i>option</i>, int <i>logicalIndex</i>) const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtwidgets/qlabel.html">QLabel</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QPicture </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qlabel.html#picture-1">picture</a></b>() const</td></tr>
-</table></div>
-<br/><p>Class <a href="../qtwidgets/qwidget.html">QWidget</a>:</p>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QPicture </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qlabel.html#picture-1">picture</a></b>() const</td></tr>
+</tbody></table></div>
+<br><p>Class <a href="../qtwidgets/qwidget.html">QWidget</a>:</p>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qwidget.html#mapFrom">mapFrom</a></b>(const QWidget *<i>parent</i>, const QPointF &amp;<i>pos</i>) const</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qwidget.html#mapFrom">mapFrom</a></b>(const QWidget *<i>parent</i>, const QPointF &amp;<i>pos</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qwidget.html#mapFromGlobal">mapFromGlobal</a></b>(const QPointF &amp;<i>pos</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qwidget.html#mapFromParent">mapFromParent</a></b>(const QPointF &amp;<i>pos</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qwidget.html#mapTo">mapTo</a></b>(const QWidget *<i>parent</i>, const QPointF &amp;<i>pos</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qwidget.html#mapToGlobal">mapToGlobal</a></b>(const QPointF &amp;<i>pos</i>) const</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QPointF </td><td class="memItemRight bottomAlign"><b><a href="../qtwidgets/qwidget.html#mapToParent">mapToParent</a></b>(const QPointF &amp;<i>pos</i>) const</td></tr>
-</table></div>
-<br/><h3 id="new-functions-in-namespaces">    New Functions in Namespaces</h3>
+</tbody></table></div>
+<br><h3 id="new-functions-in-namespaces">    New Functions in Namespaces</h3>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickopenglutils.html#resetOpenGLState">resetOpenGLState</a></b>()</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qquickopenglutils.html#resetOpenGLState">resetOpenGLState</a></b>()</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> QTaskBuilder&lt;Task&gt; </td><td class="memItemRight bottomAlign"><b><a href="../qtconcurrent/qtconcurrent.html#task">task</a></b>(Task &amp;&amp;<i>task</i>)</td></tr>
-</table></div>
+</tbody></table></div>
 <h3 id="new-global-functions">    New Global Functions</h3>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> long double </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtmath.html#qDegreesToRadians-2">qDegreesToRadians</a></b>(long double <i>degrees</i>)</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> long double </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtmath.html#qDegreesToRadians-2">qDegreesToRadians</a></b>(long double <i>degrees</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> long double </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtmath.html#qRadiansToDegrees-2">qRadiansToDegrees</a></b>(long double <i>radians</i>)</td></tr>
-</table></div>
+</tbody></table></div>
 <h3 id="new-macros">    New Macros</h3>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qchar.html#QT_IMPLICIT_QCHAR_CONSTRUCTION">QT_IMPLICIT_QCHAR_CONSTRUCTION</a></b></td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qchar.html#QT_IMPLICIT_QCHAR_CONSTRUCTION">QT_IMPLICIT_QCHAR_CONSTRUCTION</a></b></td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qfileinfo.html#QT_IMPLICIT_QFILEINFO_CONSTRUCTION">QT_IMPLICIT_QFILEINFO_CONSTRUCTION</a></b></td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qobject.html#Q_MOC_INCLUDE">Q_MOC_INCLUDE</a></b></td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qobjectbindableproperty.html#Q_OBJECT_BINDABLE_PROPERTY">Q_OBJECT_BINDABLE_PROPERTY</a></b>(<i>containingClass</i>, <i>type</i>, <i>name</i>, <i>signal</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qobjectbindableproperty.html#Q_OBJECT_BINDABLE_PROPERTY_WITH_ARGS">Q_OBJECT_BINDABLE_PROPERTY_WITH_ARGS</a></b>(<i>containingClass</i>, <i>type</i>, <i>name</i>, <i>initialvalue</i>, <i>signal</i>)</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qobjectcomputedproperty.html#Q_OBJECT_COMPUTED_PROPERTY">Q_OBJECT_COMPUTED_PROPERTY</a></b>(<i>containingClass</i>, <i>type</i>, <i>name</i>, <i>callback</i>)</td></tr>
-</table></div>
+</tbody></table></div>
 <h3 id="new-enum-types">    New Enum Types</h3>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="../qtserialbus/qmodbusdevice.html#IntermediateError-enum">IntermediateError</a></b> { ResponseCrcError, ResponseRequestMismatch }</td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="../qtserialbus/qmodbusdevice.html#IntermediateError-enum">IntermediateError</a></b> { ResponseCrcError, ResponseRequestMismatch }</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qregularexpression.html#WildcardConversionOption-enum">WildcardConversionOption</a></b> { DefaultWildcardConversion, UnanchoredWildcardConversion }</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> enum class </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qsslsocket.html#AlertLevel-enum">AlertLevel</a></b> { Warning, Fatal, Unknown }</td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> enum class </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qsslsocket.html#AlertType-enum">AlertType</a></b> { CloseNotify, UnexpectedMessage, BadRecordMac, RecordOverflow, DecompressionFailure, &hellip;, UnknownAlertMessage }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum class </td><td class="memItemRight bottomAlign"><b><a href="../qtnetwork/qsslsocket.html#AlertType-enum">AlertType</a></b> { CloseNotify, UnexpectedMessage, BadRecordMac, RecordOverflow, DecompressionFailure, …, UnknownAlertMessage }</td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> enum class </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qtfuture.html#Launch-enum">Launch</a></b> { Sync, Async, Inherit }</td></tr>
-</table></div>
+</tbody></table></div>
 <h3 id="new-type-aliases">    New Type Aliases</h3>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qassociativeiterable.html#iterator-typedef">iterator</a></b></td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qassociativeiterable.html#iterator-typedef">iterator</a></b></td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qpair-proxy.html#QPair-typedef">QPair</a></b></td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qsequentialiterable.html#iterator-typedef">iterator</a></b></td></tr>
-</table></div>
+</tbody></table></div>
 <h3 id="new-properties">    New Properties</h3>
 <ul>
 <li class="fn"><b><a href="../qt3d/qt3drender-qgeometryrenderer.html#sortIndex-prop">sortIndex</a></b> : const </li>
@@ -792,8 +1505,8 @@
 </ul>
 <h3 id="new-variables">    New Variables</h3>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qoperatingsystemversion.html#MacOSBigSur-var">MacOSBigSur</a></b></td></tr>
-</table></div>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtcore/qoperatingsystemversion.html#MacOSBigSur-var">MacOSBigSur</a></b></td></tr>
+</tbody></table></div>
 <h3 id="new-qml-types">    New QML Types</h3>
 <div class="flowListDiv">
 <dl class="flowList odd"><dt class="alphaChar"><b>C</b></dt>
@@ -806,15 +1519,15 @@
 <dd><a href="../qtwaylandcompositor/qml-qtwayland-compositor-qttextinputmethodmanager.html">QtTextInputMethodManager</a></dd>
 </dl>
 </div>
-<h3 id="new-qml-properties">    New QML Properties</h3>
+<h3 id="new-qml-properties" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1"><font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;</font><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">新建QML属性</font></font></font></h3>
 <div class="table"><table class="alignedsummary">
-<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtwaylandcompositor/qml-qtwayland-compositor-waylandcompositor.html#additionalShmFormats-prop">additionalShmFormats</a></b></td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qml-qtquick-fontloader.html#font-prop">font</a></b></td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qml-qtquick-window.html#palette-prop">palette</a></b></td></tr>
-<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick/qml-qtquick-item.html#palette-prop">palette</a></b></td></tr>
+<tbody><tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><b data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="../qtwaylandcompositor/qml-qtwayland-compositor-waylandcompositor.html#additionalShmFormats-prop" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1">additionalShmFormats</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><b data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="../qtquick/qml-qtquick-fontloader.html#font-prop" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1">font</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><b data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="../qtquick/qml-qtquick-window.html#palette-prop" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1">palette</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><b data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><a href="../qtquick/qml-qtquick-item.html#palette-prop" data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1">palette</a></b></td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qt3d/qml-qt3d-render-geometryrenderer.html#sortIndex-prop">sortIndex</a></b></td></tr>
 <tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="../qtquick3d/qml-qtquick3d-sceneenvironment.html#tonemapMode-prop">tonemapMode</a></b></td></tr>
-</table></div>
+</tbody></table></div>
 </div>
 <!-- @@@whatsnew60.html -->
         </div>
@@ -823,11 +1536,9 @@
    </div>
 </div>
 <div class="footer">
-   <p>
-   <acronym title="Copyright">&copy;</acronym> 2022 The Qt Company Ltd.
-   Documentation contributions included herein are the copyrights of
-   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
-   of their respective owners. </p>
+   <p data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452" data-immersive-translate-paragraph="1">
+   <font class="notranslate immersive-translate-target-wrapper immersive-translate-state-dual" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">©2022，QT有限公司。此处包含的文档投稿是其各自所有者的版权。</font></font></font><br data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">本文提供的文档是根据自由软件基金会发布的GNU自由文档许可证1.3版的条款进行许可的。</font></font></font><br data-immersive-translate-walked="b95276c3-cb60-462f-96c4-50ad5b356452"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" data-immersive-translate-translation-element-mark="1"><br><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper"><font class="notranslate immersive-translate-target-dual" data-immersive-translate-translation-element-mark="1" data-immersive-translate-class-bak="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner">Qt和各自的徽标是Qt有限公司在芬兰和/或世界其他国家/地区的商标。所有其他商标均为其各自所有者的财产。</font></font></font></p>
 </div>
-</body>
-</html>
+
+
+</body><div id="immersive-translate-popup" style="all: initial"></div></html>
